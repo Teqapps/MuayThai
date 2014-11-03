@@ -88,7 +88,7 @@ CFShareCircleView *shareCircleView;
     [hud show:YES];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
-    [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
+    [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {

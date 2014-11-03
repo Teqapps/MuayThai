@@ -27,11 +27,11 @@
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     
     // Initialize tracker. Replace with your tracking ID.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-56329849-1"];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-56329849-2"];
 
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"X5ipXQpsYBTBQEtozIli4dZQUsEy8aigsfy1Ynd3"
-                  clientKey:@"8AybZTMuyy9hmgnneN15udBK4x8nlTWS4fZCXiJ0"];
+    [Parse setApplicationId:@"Edo4mqMRpZRho3V0KMhNU3L56qFh9TOQ1SfwMx6o"
+                  clientKey:@"a1pOFTR9QQrDIZcYo6TaCi4z49wlPqxNDDS71mHv"];
     [PFFacebookUtils initializeFacebook];
         [PFTwitterUtils initializeWithConsumerKey:@"your_twitter_consumer_key" consumerSecret:@"your_twitter_consumer_secret"];
 

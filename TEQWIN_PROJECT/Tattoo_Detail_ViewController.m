@@ -234,7 +234,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Tattoo_Master"];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
    
-    [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
+    [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
@@ -249,7 +249,7 @@
     NSLog(@"start query_image");
    
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
-    [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
+    [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -632,25 +632,27 @@
          [self.navigationController pushViewController:mapVC animated:YES];
          TattooMasterCell * tattoomasterCell = [[TattooMasterCell alloc] init];
          tattoomasterCell.object_id = [selectobject objectForKey:@"object"];
-         tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
-         tattoomasterCell.bookmark = [selectobject objectForKey:@"bookmark"];
-         tattoomasterCell.name = [selectobject objectForKey:@"Name"];
-         tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
-         tattoomasterCell.gender = [selectobject objectForKey:@"Gender"];
+         tattoomasterCell.muay_id = [selectobject objectForKey:@"muay_id"];
+         tattoomasterCell.name = [selectobject objectForKey:@"name"];
+         tattoomasterCell.gender=[selectobject objectForKey:@"gender"];
+         tattoomasterCell.person_incharge=[selectobject objectForKey:@"person_incharge"];
          tattoomasterCell.tel = [selectobject objectForKey:@"Tel"];
-         tattoomasterCell.email = [selectobject objectForKey:@"Email"];
+         tattoomasterCell.fax = [selectobject objectForKey:@"fax"];
          tattoomasterCell.address = [selectobject objectForKey:@"Address"];
          tattoomasterCell.latitude = [selectobject objectForKey:@"Latitude"];
          tattoomasterCell.longitude = [selectobject objectForKey:@"Longitude"];
+         tattoomasterCell.email = [selectobject objectForKey:@"Email"];
          tattoomasterCell.website = [selectobject objectForKey:@"Website"];
-         tattoomasterCell.personage = [selectobject objectForKey:@"Personage"];
-         tattoomasterCell.master_id = [selectobject objectForKey:@"Master_id"];
          tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
-         tattoomasterCell.gallery_m1 = [selectobject objectForKey:@"Gallery_M1"];
+         tattoomasterCell.promotion=[selectobject objectForKey:@"promotion"];
+         tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
+         tattoomasterCell.bookmark =[selectobject objectForKey:@"bookmark"];
+         tattoomasterCell.view = [selectobject objectForKey:@"view"];
+         
          tattoomasterCell.object_id = selectobject.objectId;
          
          mapVC.tattoomasterCell = tattoomasterCell;
-         NSLog(@"%@",tattoomasterCell.master_id);
+        // NSLog(@"%@",tattoomasterCell.master_id);
      }
 
 }
