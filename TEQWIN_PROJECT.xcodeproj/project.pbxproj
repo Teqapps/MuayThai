@@ -231,6 +231,10 @@
 		42AF20D619E7E6B800FC3BEC /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF20D419E7E6B800FC3BEC /* splash@2x.png */; };
 		42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */; };
 		42D3D5DA19F7481800B01A97 /* FACEBOOK.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 42D3D5D919F7481800B01A97 /* FACEBOOK.JPG */; };
+		42DB2C3B1A09D7FF002BAF1B /* muay_history.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */; };
+		42DB2C3D1A09DA12002BAF1B /* muay_notice.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DB2C3C1A09DA12002BAF1B /* muay_notice.png */; };
+		42DB2C3F1A09DA74002BAF1B /* bmi.gif in Resources */ = {isa = PBXBuildFile; fileRef = 42DB2C3E1A09DA74002BAF1B /* bmi.gif */; };
+		42DB2C411A09DBD0002BAF1B /* icon-gallery_nophoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DB2C401A09DBD0002BAF1B /* icon-gallery_nophoto.png */; };
 		42EA3D6319C8273F0051057C /* GalleryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA3D6219C8273F0051057C /* GalleryCell.m */; };
 		42EA3D6619C827600051057C /* Gallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA3D6519C827600051057C /* Gallery.m */; };
 		42EA4ECE19CAE1B20051057C /* Facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 42EA4ECD19CAE1B20051057C /* Facebook-icon.png */; };
@@ -529,6 +533,10 @@
 		42AF211819EBC6D000FC3BEC /* ImageExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageExampleCell.h; sourceTree = "<group>"; };
 		42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageExampleCell.m; sourceTree = "<group>"; };
 		42D3D5D919F7481800B01A97 /* FACEBOOK.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FACEBOOK.JPG; sourceTree = "<group>"; };
+		42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = muay_history.jpg; sourceTree = "<group>"; };
+		42DB2C3C1A09DA12002BAF1B /* muay_notice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muay_notice.png; sourceTree = "<group>"; };
+		42DB2C3E1A09DA74002BAF1B /* bmi.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bmi.gif; sourceTree = "<group>"; };
+		42DB2C401A09DBD0002BAF1B /* icon-gallery_nophoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-gallery_nophoto.png"; sourceTree = "<group>"; };
 		42EA3D6119C8273F0051057C /* GalleryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryCell.h; sourceTree = "<group>"; };
 		42EA3D6219C8273F0051057C /* GalleryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryCell.m; sourceTree = "<group>"; };
 		42EA3D6419C827600051057C /* Gallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gallery.h; sourceTree = "<group>"; };
@@ -1025,6 +1033,8 @@
 		42A4917A19E236EE00E4D65E /* notice */ = {
 			isa = PBXGroup;
 			children = (
+				42DB2C3E1A09DA74002BAF1B /* bmi.gif */,
+				42DB2C3C1A09DA12002BAF1B /* muay_notice.png */,
 				42A4917E19E2370C00E4D65E /* noticeViewController.h */,
 				42A4917F19E2370C00E4D65E /* noticeViewController.m */,
 			);
@@ -1034,6 +1044,8 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				42DB2C401A09DBD0002BAF1B /* icon-gallery_nophoto.png */,
+				42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */,
 				42A960251A071AD2002C0508 /* view.png */,
 				42A960231A07151A002C0508 /* bar.png */,
 				42A960171A0378E9002C0508 /* bg-login拷貝.png */,
@@ -1196,6 +1208,7 @@
 				42065FC719EE2CEE0012628C /* title.jpg in Resources */,
 				42A960051A032F41002C0508 /* icon-share.png in Resources */,
 				4263005D199083C3007B8C8F /* app-map-icon.png in Resources */,
+				42DB2C3F1A09DA74002BAF1B /* bmi.gif in Resources */,
 				4219409A19878191007E3C52 /* Tattoo_Logo.jpg in Resources */,
 				42A95FF81A032F41002C0508 /* bg-login.png in Resources */,
 				427D34A9199E076400814463 /* more.png in Resources */,
@@ -1259,6 +1272,7 @@
 				4266571819A6F1A6001D94B5 /* share.png in Resources */,
 				42A960241A07151A002C0508 /* bar.png in Resources */,
 				42AF20D519E7E6B800FC3BEC /* splash.png in Resources */,
+				42DB2C411A09DBD0002BAF1B /* icon-gallery_nophoto.png in Resources */,
 				428E7B6319FF765D00CA2C14 /* star.png in Resources */,
 				42A4918A19E23CB800E4D65E /* notice.png in Resources */,
 				428189041999F55D004D09EF /* gallery.png in Resources */,
@@ -1311,10 +1325,12 @@
 				42A9600E1A032F41002C0508 /* menu-logo.png in Resources */,
 				42A9600F1A032F41002C0508 /* slash-background.png in Resources */,
 				42A0096019F4A1EB003DCD0D /* tattoo_cover@2x.png in Resources */,
+				42DB2C3D1A09DA12002BAF1B /* muay_notice.png in Resources */,
 				426300A71990DAE4007B8C8F /* background3.jpg in Resources */,
 				427D34A6199E076400814463 /* google_drive@2x.png in Resources */,
 				420E2F7D19FE282900667E6C /* image001.jpg in Resources */,
 				42065FC919EE31D20012628C /* tattoologo.png in Resources */,
+				42DB2C3B1A09D7FF002BAF1B /* muay_history.jpg in Resources */,
 				427D349D199E076400814463 /* close.png in Resources */,
 				42630044198F5F3C007B8C8F /* heart_empty.png in Resources */,
 				42EA4ECE19CAE1B20051057C /* Facebook-icon.png in Resources */,

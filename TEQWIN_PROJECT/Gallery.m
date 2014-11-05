@@ -87,7 +87,7 @@ CFShareCircleView *shareCircleView;
     hud.labelText = @"Loading";
     [hud show:YES];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
+    PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

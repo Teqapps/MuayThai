@@ -28,6 +28,8 @@
     PFObject *installid;
      PFQuery * installquery;
          NSArray * installarray;
+    UIButton *gallary_button;
+    PFImageView *gallary_image;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedcontroller;

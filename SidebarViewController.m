@@ -138,15 +138,15 @@
 
          self.tableview.backgroundColor = [UIColor clearColor];
 self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    menuItems = @[@"title", @"新消息",@"紋身歷史" ,@"紋身注意事項",@"找紋身師傅",@"關於我們"];
+    menuItems = @[@"title", @"新消息",@"泰拳歷史" ,@"泰拳小知識",@"找拳館",@"關於我們"];
     list =[[NSMutableArray alloc]init];
     
     [list addObject:[NSString stringWithFormat:@"title"]];
     
     [list addObject:[NSString stringWithFormat:@"新消息"]];
-    [list addObject:[NSString stringWithFormat:@"紋身歷史"]];
-    [list addObject:[NSString stringWithFormat:@"紋身注意事項"]];
-    [list addObject:[NSString stringWithFormat:@"找紋身師傅"]];
+    [list addObject:[NSString stringWithFormat:@"泰拳歷史"]];
+    [list addObject:[NSString stringWithFormat:@"泰拳小知識"]];
+    [list addObject:[NSString stringWithFormat:@"找拳館"]];
     [list addObject:[NSString stringWithFormat:@"關於我們"]];
    ;
 }
@@ -211,7 +211,7 @@ self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
                    cell.imageView.image=[UIImage imageNamed:@"m-icon-favorite.png"];
-            cell.textLabel.text=@"紋身歷史";
+            cell.textLabel.text=@"泰拳歷史";
             
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
@@ -222,7 +222,7 @@ self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
           
-            cell.textLabel.text=@"紋身注意事項";
+            cell.textLabel.text=@"泰拳小知識";
              cell.imageView.image=[UIImage imageNamed:@"m-icon-tnc.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
@@ -234,7 +234,7 @@ self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             //cell.imageView.image =[UIImage imageNamed:@"master_icon.png"];
-            cell.textLabel.text=@"找紋身師傅";
+            cell.textLabel.text=@"找拳館";
              cell.imageView.image=[UIImage imageNamed:@"m-icon-search.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }

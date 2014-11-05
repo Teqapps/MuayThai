@@ -343,21 +343,22 @@
         tattoomasterCell.object_id = [selectobject objectForKey:@"object"];
         tattoomasterCell.muay_id = [selectobject objectForKey:@"muay_id"];
         tattoomasterCell.name = [selectobject objectForKey:@"name"];
-        tattoomasterCell.gender=[selectobject objectForKey:@"gender"];
         tattoomasterCell.person_incharge=[selectobject objectForKey:@"person_incharge"];
-        tattoomasterCell.tel = [selectobject objectForKey:@"Tel"];
+        tattoomasterCell.gender=[selectobject objectForKey:@"gender"];
+        tattoomasterCell.imageFile=[selectobject objectForKey:@"image"];
+        tattoomasterCell.tel = [selectobject objectForKey:@"tel"];
         tattoomasterCell.fax = [selectobject objectForKey:@"fax"];
-        tattoomasterCell.address = [selectobject objectForKey:@"Address"];
-        tattoomasterCell.latitude = [selectobject objectForKey:@"Latitude"];
-        tattoomasterCell.longitude = [selectobject objectForKey:@"Longitude"];
-        tattoomasterCell.email = [selectobject objectForKey:@"Email"];
-        tattoomasterCell.website = [selectobject objectForKey:@"Website"];
+        tattoomasterCell.address = [selectobject objectForKey:@"address"];
+        tattoomasterCell.latitude = [selectobject objectForKey:@"latitude"];
+        tattoomasterCell.longitude = [selectobject objectForKey:@"longitude"];
+        tattoomasterCell.email = [selectobject objectForKey:@"email"];
+        tattoomasterCell.website = [selectobject objectForKey:@"website"];
+        tattoomasterCell.desc = [selectobject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
         tattoomasterCell.promotion=[selectobject objectForKey:@"promotion"];
         tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[selectobject objectForKey:@"bookmark"];
         tattoomasterCell.view = [selectobject objectForKey:@"view"];
-
         tattoomasterCell.object_id = selectobject.objectId;
         
         mapVC.tattoomasterCell = tattoomasterCell;
@@ -410,22 +411,24 @@
         TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
    
         tattoomasterCell.object_id = [object objectForKey:@"object"];
-         tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
-         tattoomasterCell.name = [object objectForKey:@"name"];
-         tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
+        tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
+        tattoomasterCell.name = [object objectForKey:@"name"];
+        tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
         tattoomasterCell.gender=[object objectForKey:@"gender"];
-        tattoomasterCell.tel = [object objectForKey:@"Tel"];
+        tattoomasterCell.imageFile=[object objectForKey:@"image"];
+        tattoomasterCell.tel = [object objectForKey:@"tel"];
         tattoomasterCell.fax = [object objectForKey:@"fax"];
-        tattoomasterCell.address = [object objectForKey:@"Address"];
-        tattoomasterCell.latitude = [object objectForKey:@"Latitude"];
-        tattoomasterCell.longitude = [object objectForKey:@"Longitude"];
-        tattoomasterCell.email = [object objectForKey:@"Email"];
-        tattoomasterCell.website = [object objectForKey:@"Website"];
+        tattoomasterCell.address = [object objectForKey:@"address"];
+        tattoomasterCell.latitude = [object objectForKey:@"latitude"];
+        tattoomasterCell.longitude = [object objectForKey:@"longitude"];
+        tattoomasterCell.email = [object objectForKey:@"email"];
+        tattoomasterCell.website = [object objectForKey:@"website"];
+        tattoomasterCell.desc = [object objectForKey:@"desc"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
         tattoomasterCell.promotion=[object objectForKey:@"promotion"];
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
-         tattoomasterCell.view = [object objectForKey:@"view"];
+        tattoomasterCell.view = [object objectForKey:@"view"];
         tattoomasterCell.object_id = object.objectId;
       
         

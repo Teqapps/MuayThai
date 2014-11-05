@@ -357,6 +357,25 @@
     {
         fav.image = [UIImage imageNamed:favstring];
     }
+    
+    gallary_image = (PFImageView*)[cell viewWithTag:161];
+    gallary_button = (UIButton*)[cell viewWithTag:162];
+
+    
+    if ([[imageObject objectForKey:@"gallary_displayallow"]isEqualToValue:[NSNumber numberWithBool:YES]]) {
+        NSLog(@"%@",self.tattoomasterCell.muay_id);
+        gallary_image.image=[UIImage imageNamed:@"icon-gallery.png"];
+        
+    }
+    else
+    {
+        gallary_image.image = [UIImage imageNamed:@"icon-gallery_nophoto.png"];
+        ;
+        gallary_button.enabled=NO;
+        NSLog(@"%@",self.tattoomasterCell.muay_id);
+        
+    }
+
     return cell;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -370,18 +389,23 @@
         tattoomasterCell.muay_id = [imageObject objectForKey:@"muay_id"];
         tattoomasterCell.name = [imageObject objectForKey:@"name"];
         tattoomasterCell.person_incharge=[imageObject objectForKey:@"person_incharge"];
-        tattoomasterCell.tel = [imageObject objectForKey:@"Tel"];
+        tattoomasterCell.gender=[imageObject objectForKey:@"gender"];
+        tattoomasterCell.imageFile =[imageObject objectForKey:@"image"];
+        tattoomasterCell.tel = [imageObject objectForKey:@"tel"];
         tattoomasterCell.fax = [imageObject objectForKey:@"fax"];
-        tattoomasterCell.address = [imageObject objectForKey:@"Address"];
-        tattoomasterCell.latitude = [imageObject objectForKey:@"Latitude"];
-        tattoomasterCell.longitude = [imageObject objectForKey:@"Longitude"];
-        tattoomasterCell.email = [imageObject objectForKey:@"Email"];
-        tattoomasterCell.website = [imageObject objectForKey:@"Website"];
+        tattoomasterCell.address = [imageObject objectForKey:@"address"];
+        tattoomasterCell.latitude = [imageObject objectForKey:@"latitude"];
+        tattoomasterCell.longitude = [imageObject objectForKey:@"longitude"];
+        tattoomasterCell.email = [imageObject objectForKey:@"email"];
+        tattoomasterCell.website = [imageObject objectForKey:@"website"];
+        tattoomasterCell.desc = [imageObject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [imageObject objectForKey:@"image"];
         tattoomasterCell.promotion=[imageObject objectForKey:@"promotion"];
         tattoomasterCell.favorites = [imageObject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[imageObject objectForKey:@"bookmark"];
         tattoomasterCell.view = [imageObject objectForKey:@"view"];
+        tattoomasterCell.object_id = imageObject.objectId;
+
         destViewController.tattoomasterCell = tattoomasterCell;
         
     }
@@ -400,18 +424,23 @@
         tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
         tattoomasterCell.name = [object objectForKey:@"name"];
         tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
-        tattoomasterCell.tel = [object objectForKey:@"Tel"];
+        tattoomasterCell.gender=[object objectForKey:@"gender"];
+        tattoomasterCell.imageFile =[object objectForKey:@"image"];
+        tattoomasterCell.tel = [object objectForKey:@"tel"];
         tattoomasterCell.fax = [object objectForKey:@"fax"];
-        tattoomasterCell.address = [object objectForKey:@"Address"];
-        tattoomasterCell.latitude = [object objectForKey:@"Latitude"];
-        tattoomasterCell.longitude = [object objectForKey:@"Longitude"];
-        tattoomasterCell.email = [object objectForKey:@"Email"];
-        tattoomasterCell.website = [object objectForKey:@"Website"];
+        tattoomasterCell.address = [object objectForKey:@"address"];
+        tattoomasterCell.latitude = [object objectForKey:@"latitude"];
+        tattoomasterCell.longitude = [object objectForKey:@"longitude"];
+        tattoomasterCell.email = [object objectForKey:@"email"];
+        tattoomasterCell.website = [object objectForKey:@"website"];
+        tattoomasterCell.desc = [object objectForKey:@"desc"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
         tattoomasterCell.promotion=[object objectForKey:@"promotion"];
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
         tattoomasterCell.view = [object objectForKey:@"view"];
+        tattoomasterCell.object_id = object.objectId;
+
         destViewController.tattoomasterCell = tattoomasterCell;
         
         
