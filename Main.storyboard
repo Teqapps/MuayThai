@@ -37,7 +37,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" id="BQQ-Tc-ck7">
-                                                    <rect key="frame" x="14" y="0.0" width="275" height="169"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="169"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="mG9-wW-cGq">
@@ -430,7 +430,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0037872779190000001" green="0.0037872779190000001" blue="0.0037872779190000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="6FB62E5E-F64C-4797-AFCD-A27EC0D75CAA" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="8A636C22-ECA3-4157-BD9B-D75191345A18" colorSpace="pattern"/>
                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1367,7 +1367,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6FB62E5E-F64C-4797-AFCD-A27EC0D75CAA" width="320" height="460">
+        <image name="8A636C22-ECA3-4157-BD9B-D75191345A18" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -11280,6 +11280,6 @@ AAAAAAAAAAAJCvs
     <inferredMetricsTieBreakers>
         <segue reference="jzI-7Q-TeA"/>
         <segue reference="QTr-PV-D3h"/>
-        <segue reference="gqv-Kk-pRo"/>
+        <segue reference="sqL-XN-2Gv"/>
     </inferredMetricsTieBreakers>
 </document>
