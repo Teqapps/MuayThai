@@ -13,6 +13,8 @@
 #import "MBProgressHUD.h"
 #import "Tattoo_Detail_ViewController.h"
 #import "TattooMasterCell.h"
+#import "detail_news_ViewController.h"
+//#import "news_detail_ViewController.h"
 @interface MainViewController ()
 
 {
@@ -216,15 +218,15 @@
     PFObject *imageObject = [news_array objectAtIndex:indexPath.row];
     PFFile *thumbnail = [imageObject objectForKey:@"image"];
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
-    CGSize itemSize = CGSizeMake(70, 70);
-    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-    thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-    thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
+ //  CGSize itemSize = CGSizeMake(70, 70);
+   // UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+  //  CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+  //  thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
+  //  thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
     thumbnailImageView.layer.borderWidth=2.0;
-    thumbnailImageView.layer.masksToBounds = YES;
+  //  thumbnailImageView.layer.masksToBounds = YES;
     thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
-    [thumbnailImageView.image drawInRect:imageRect];
+ //   [thumbnailImageView.image drawInRect:imageRect];
     thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -237,11 +239,12 @@
     UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
     nameLabel.text = [imageObject objectForKey:@"name"];
     
-    UITextView *news = (UITextView*) [cell viewWithTag:155];
+    UILabel *news = (UILabel*) [cell viewWithTag:155];
       
     news.text = [imageObject objectForKey:@"news"];
-       news.textColor =[UIColor colorWithRed:247.0/255.0
-                                        green:247.0/255.0 blue:249/255.0 alpha:1.0];
+        news.textColor =[UIColor colorWithRed:234.0/255.0
+                                        green:192.0/255.0 blue:94/255.0 alpha:1.0];
+
        // news.textColor =[UIColor grayColor];
     }
     
@@ -441,7 +444,48 @@
         [object saveInBackground];
 
         }
+    if ([segue.identifier isEqualToString:@"gonewdetail"]) {
+        NSIndexPath *indexPath = [self.main_tableview indexPathForCell:sender];
+        
+        detail_news_ViewController *destViewController = segue.destinationViewController;
+        
+        PFObject *object = [news_array objectAtIndex:indexPath.row];
+        TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
+        
+        tattoomasterCell.object_id = [object objectForKey:@"object"];
+        tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
+        tattoomasterCell.name = [object objectForKey:@"name"];
+        tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
+        tattoomasterCell.gender=[object objectForKey:@"gender"];
+        tattoomasterCell.imageFile=[object objectForKey:@"image"];
+        tattoomasterCell.tel = [object objectForKey:@"tel"];
+        tattoomasterCell.fax = [object objectForKey:@"fax"];
+        tattoomasterCell.address = [object objectForKey:@"address"];
+        tattoomasterCell.latitude = [object objectForKey:@"latitude"];
+        tattoomasterCell.longitude = [object objectForKey:@"longitude"];
+        tattoomasterCell.email = [object objectForKey:@"email"];
+        tattoomasterCell.website = [object objectForKey:@"website"];
+        tattoomasterCell.desc = [object objectForKey:@"desc"];
+        tattoomasterCell.imageFile = [object objectForKey:@"image"];
+        tattoomasterCell.promotion=[object objectForKey:@"promotion"];
+        tattoomasterCell.favorites = [object objectForKey:@"favorites"];
+        tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
+        tattoomasterCell.view = [object objectForKey:@"view"];
+        tattoomasterCell.news = [object objectForKey:@"news"];
+          tattoomasterCell.news_view = [object objectForKey:@"news_view"];
+        tattoomasterCell.object_id = object.objectId;
+        
+        destViewController.tattoomasterCell = tattoomasterCell;
+        //  NSInteger myInteger = [tattoomasterCell.view integerValue];
+        //object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
+        //[object saveInBackground];
+        //NSLog(@"%@",object[@"view"]);
+        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"news_view"];
+        [object saveInBackground];
+        
     }
+
+        }
 
 
 

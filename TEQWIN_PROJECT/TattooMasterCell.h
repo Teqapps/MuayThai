@@ -32,7 +32,7 @@
 @property (nonatomic, strong) NSArray *bookmark; // preparation time
 
 @property (nonatomic, strong) NSArray *view; // name of recipe
-
+@property (nonatomic, strong) NSArray *news_view; // name of recipe
 
 @property (nonatomic, strong) UIImage *img; // image of recipe
 
