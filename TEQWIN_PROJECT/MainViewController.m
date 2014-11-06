@@ -242,8 +242,8 @@
     UILabel *news = (UILabel*) [cell viewWithTag:155];
       
     news.text = [imageObject objectForKey:@"news"];
-        news.textColor =[UIColor colorWithRed:234.0/255.0
-                                        green:192.0/255.0 blue:94/255.0 alpha:1.0];
+        news.textColor =[UIColor colorWithRed:0/255.0
+                                        green:0/255.0 blue:20/255.0 alpha:1.0];
 
        // news.textColor =[UIColor grayColor];
     }
