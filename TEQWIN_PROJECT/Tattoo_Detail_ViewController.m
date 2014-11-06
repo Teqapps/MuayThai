@@ -47,7 +47,7 @@
 {
     [super viewDidLoad];
   
-    
+    self.tableView.bounces=NO;
     if (self.tattoomasterCell.view ==nil) {
         self.view_count.text = @"1";
     }
@@ -117,7 +117,7 @@
     self.profileimage.clipsToBounds = YES;
     [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
      [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-    _tableView.bounces=YES;
+    _tableView.bounces=NO;
   
     //self.test_images.image=self.tattoomasterCell.img;
 	//

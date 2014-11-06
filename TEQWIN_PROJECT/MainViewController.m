@@ -124,6 +124,7 @@
         if (!error) {
             
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
+             self.page.numberOfPages = imageFilesArray.count;
            [_image_collection reloadData];
          //   NSLog(@"%@",imageFilesArray);
             [hud hide:YES];
@@ -242,8 +243,8 @@
     UILabel *news = (UILabel*) [cell viewWithTag:155];
       
     news.text = [imageObject objectForKey:@"news"];
-        news.textColor =[UIColor colorWithRed:0/255.0
-                                        green:0/255.0 blue:20/255.0 alpha:1.0];
+        news.textColor =[UIColor colorWithRed:196/255.0
+                                        green:160/255.0 blue:81/255.0 alpha:1.0];
 
        // news.textColor =[UIColor grayColor];
     }
@@ -270,7 +271,11 @@
       return cell;
 }
 
-
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat pageWidth = self.image_collection.frame.size.width;
+    self.page.currentPage = self.image_collection.contentOffset.x / pageWidth;
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;

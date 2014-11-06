@@ -70,7 +70,7 @@
     [ self.textview_4 sizeToFit];
     [self.textview_4 setScrollEnabled:YES];
 
-    _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+      _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
@@ -135,7 +135,7 @@
     [ self.textview_4 sizeToFit];
     [self.textview_4 setScrollEnabled:YES];
     
-    _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
+       _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
