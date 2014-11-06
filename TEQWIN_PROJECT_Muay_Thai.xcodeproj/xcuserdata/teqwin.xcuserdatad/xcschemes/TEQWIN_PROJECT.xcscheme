@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42193F8C1985FE08007E3C52"
-               BuildableName = "TEQWIN_PROJECT.app"
+               BuildableName = "TEQWIN_PROJECT_Muay_Thai.app"
                BlueprintName = "TEQWIN_PROJECT_Muay_Thai"
                ReferencedContainer = "container:TEQWIN_PROJECT_Muay_Thai.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42193FAD1985FE08007E3C52"
-               BuildableName = "TEQWIN_PROJECTTests.xctest"
+               BuildableName = "TEQWIN_PROJECT_Muay_ThaiTests.xctest"
                BlueprintName = "TEQWIN_PROJECT_Muay_ThaiTests"
                ReferencedContainer = "container:TEQWIN_PROJECT_Muay_Thai.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42193F8C1985FE08007E3C52"
-            BuildableName = "TEQWIN_PROJECT.app"
+            BuildableName = "TEQWIN_PROJECT_Muay_Thai.app"
             BlueprintName = "TEQWIN_PROJECT_Muay_Thai"
             ReferencedContainer = "container:TEQWIN_PROJECT_Muay_Thai.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42193F8C1985FE08007E3C52"
-            BuildableName = "TEQWIN_PROJECT.app"
+            BuildableName = "TEQWIN_PROJECT_Muay_Thai.app"
             BlueprintName = "TEQWIN_PROJECT_Muay_Thai"
             ReferencedContainer = "container:TEQWIN_PROJECT_Muay_Thai.xcodeproj">
          </BuildableReference>
@@ -92,7 +92,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42193F8C1985FE08007E3C52"
-            BuildableName = "TEQWIN_PROJECT.app"
+            BuildableName = "TEQWIN_PROJECT_Muay_Thai.app"
             BlueprintName = "TEQWIN_PROJECT_Muay_Thai"
             ReferencedContainer = "container:TEQWIN_PROJECT_Muay_Thai.xcodeproj">
          </BuildableReference>
