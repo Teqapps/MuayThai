@@ -70,7 +70,7 @@
      self.description_textview.layer.borderWidth=1.0f;
     self.description_textview.layer.borderColor =[[UIColor grayColor] CGColor];
   //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    self.view.backgroundColor =[UIColor blackColor];
+    self.view.backgroundColor =[UIColor whiteColor];
     CGRect frame =  self.description_textview.frame;
     frame.size.height =  self.description_textview.contentSize.height;
     self.description_textview.frame = frame;
@@ -116,7 +116,7 @@
     self.profileimage.file=self.tattoomasterCell.imageFile;
    // self.profileimage.frame = CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)
 ;
-    self.profileimage.frame =CGRectMake(self.profileimage.frame.origin.x, self.profileimage.frame.origin.x, self.profileimage.frame.size.width, self.profileimage.frame.size.height);
+    self.profileimage.frame =CGRectMake(self.profileimage.frame.origin.x, self.profileimage.frame.origin.x,320, self.profileimage.frame.size.height);
 
    self.profileimage.contentMode=UIViewContentModeScaleAspectFit;
   // self.profileimage.layer.cornerRadius =self.profileimage.frame.size.width / 2;
