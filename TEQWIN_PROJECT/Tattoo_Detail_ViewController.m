@@ -47,6 +47,10 @@
 {
     [super viewDidLoad];
   
+    self.detail_name.numberOfLines = 3;
+   self.detail_name.font = [UIFont fontWithName:@"Helvetica-bold" size:17.0];
+    self.detail_name.textColor =[UIColor whiteColor];
+    self.detail_name.text=self.tattoomasterCell.name;
     self.tableView.bounces=NO;
     if (self.tattoomasterCell.view ==nil) {
         self.view_count.text = @"1";
@@ -110,13 +114,17 @@
     self.master_name.text=self.tattoomasterCell.name;
     NSLog(@"dddd%@",self.tattoomasterCell.name);
     self.profileimage.file=self.tattoomasterCell.imageFile;
-  //self.profileimage.frame = CGRectMake(62, 81, 100, 100);
+   // self.profileimage.frame = CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)
+;
+    self.profileimage.frame =CGRectMake(self.profileimage.frame.origin.x, self.profileimage.frame.origin.x, self.profileimage.frame.size.width, self.profileimage.frame.size.height);
+
+   self.profileimage.contentMode=UIViewContentModeScaleAspectFit;
   // self.profileimage.layer.cornerRadius =self.profileimage.frame.size.width / 2;
-    self.profileimage.layer.borderWidth = 3.0f;
+    self.profileimage.layer.borderWidth = 0.0f;
     self.profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
     self.profileimage.clipsToBounds = YES;
-    [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-     [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+   // [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+   //  [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
     _tableView.bounces=NO;
   
     //self.test_images.image=self.tattoomasterCell.img;
@@ -890,6 +898,8 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oooops!" message:@"失敗" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
+
+
 - (IBAction)showsearch:(id)sender {
     [_detailsearchbar becomeFirstResponder];}
 @end
