@@ -28,16 +28,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>db-7l559zioujqsxae</string>
-				<string>fb618305734957150</string>
+				<string>fb1486813928266030</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>FacebookAppID</key>
-	<string>618305734957150</string>
+	<string>1486813928266030</string>
 	<key>FacebookDisplayName</key>
-	<string>TATTOO</string>
+	<string>Muay</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

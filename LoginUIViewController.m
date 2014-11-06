@@ -106,8 +106,8 @@
         
         [bookmarkquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
-                imageFilesArray = [[NSArray alloc] initWithArray:objects];
-                self.bookmarks_count.text=[NSString stringWithFormat:@"%lu",(unsigned long)imageFilesArray.count];
+                countarray = [[NSArray alloc] initWithArray:objects];
+                self.bookmarks_count.text=[NSString stringWithFormat:@"%lu",(unsigned long)countarray.count];
                 
             }
         }];
@@ -120,8 +120,8 @@
         
         [likequery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
-                imageFilesArray = [[NSArray alloc] initWithArray:objects];
-                self.liked_count.text=[NSString stringWithFormat:@"%lu",(unsigned long)imageFilesArray.count];
+                countarray = [[NSArray alloc] initWithArray:objects];
+                self.liked_count.text=[NSString stringWithFormat:@"%lu",(unsigned long)countarray.count];
                 
                 
             }
