@@ -153,7 +153,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     // scroll search bar out of sight
-    self.screenName =@"detail page";
+  //  self.screenName =@"detail page";
 
 
 }

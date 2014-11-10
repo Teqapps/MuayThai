@@ -8,6 +8,7 @@
 
 #import "historyViewController.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 @interface historyViewController ()
 
 @end
@@ -27,6 +28,8 @@
 {
      self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     [super viewDidLoad];
+    NSDictionary *dimensions = @{ @"Notice":@"Muay_History"};
+    [PFAnalytics trackEvent:@"show_History" dimensions:dimensions];
    _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
