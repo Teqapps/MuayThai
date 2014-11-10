@@ -17,7 +17,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     sleep(2);
-       // Optional: automatically send uncaught exceptions to Google Analytics.
+ 
+          // Optional: automatically send uncaught exceptions to Google Analytics.
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     
     // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
@@ -44,7 +45,9 @@
     
     [currentInstallation saveInBackground];
 
-    // If you would like all objects to be private by default, remove this line.
+
+
+    
 
 
 

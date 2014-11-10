@@ -46,7 +46,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
+    NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
+    [PFAnalytics trackEvent:@"showmaster" dimensions:dimensions];
+
     self.detail_name.numberOfLines = 3;
    self.detail_name.font = [UIFont fontWithName:@"Helvetica-bold" size:17.0];
     self.detail_name.textColor =[UIColor whiteColor];

@@ -15,6 +15,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MBProgressHUD.h"
 #import "Gallery.h"
+#import <Parse/Parse.h>
+
 @interface TattooMaster_ViewController ()<UISearchDisplayDelegate, UISearchBarDelegate>
 {
     int lastClickedRow;
@@ -55,7 +57,7 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
-    
+   
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
         newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
@@ -243,7 +245,7 @@
     if (tableView == self.tableView) {
         
         selectobject = [self.objects  objectAtIndex:indexPath.row];
-        NSLog(@"%@",[selectobject objectForKey:@"muay_id"]);
+          NSLog(@"%@",[selectobject objectForKey:@"muay_id"]);
     } else {
         //NSLog(@"how many in search results");
         //NSLog(@"%@", self.searchResults.count);
@@ -450,7 +452,8 @@
         
         [alert show];
         
-        NSLog(@"請登入")
+        NSLog(@"請登入");
+
         ; }
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
