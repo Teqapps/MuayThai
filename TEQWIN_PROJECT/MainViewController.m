@@ -70,7 +70,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.screenName = @"Main";
+  //  self.screenName = @"Main";
     [self queryParseMethod];
     [self queryParseMethod_news];
     searchquery = [PFQuery queryWithClassName:@"muay_member"];
@@ -445,6 +445,9 @@
         //object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
         //[object saveInBackground];
         //NSLog(@"%@",object[@"view"]);
+        NSDictionary *dimensions = @{ @"name":[object objectForKey:@"name"]};
+        [PFAnalytics trackEvent:@"showmaster" dimensions:dimensions];
+
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
         [object saveInBackground];
 
