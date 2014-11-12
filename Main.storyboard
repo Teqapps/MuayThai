@@ -463,7 +463,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xO9-7B-uIw" customClass="PFImageView">
-                                                <rect key="frame" x="20" y="20" width="320" height="171"/>
+                                                <rect key="frame" x="20" y="20" width="320" height="174"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="5N4-M1-ZIK">
@@ -578,7 +578,7 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="sectionIndexTrackingBackgroundColor" patternImage="E34687BA-4960-47CA-AE7D-4F8706ADFE8A" colorSpace="pattern"/>
+                                                <color key="sectionIndexTrackingBackgroundColor" patternImage="AFF1D224-B779-49D6-A750-4113D3B57559" colorSpace="pattern"/>
                                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1411,7 +1411,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E34687BA-4960-47CA-AE7D-4F8706ADFE8A" width="320" height="460">
+        <image name="AFF1D224-B779-49D6-A750-4113D3B57559" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
