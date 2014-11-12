@@ -32,7 +32,6 @@
 
 - (IBAction)showsearch:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *test_images;
-
 @property (weak, nonatomic) IBOutlet UILabel *detail_name;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *imagesCollection;
