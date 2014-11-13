@@ -89,6 +89,7 @@
 		4266572019A6F2DC001D94B5 /* comment_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4266571D19A6F2DC001D94B5 /* comment_icon.png */; };
 		4266572119A6F2DC001D94B5 /* like_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4266571E19A6F2DC001D94B5 /* like_icon.png */; };
 		4266572419A6F3BF001D94B5 /* share_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4266572319A6F3BF001D94B5 /* share_icon.png */; };
+		4268646A1A1459530043582C /* news_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426864691A1459520043582C /* news_ViewController.m */; };
 		426ED39319B9AF560024E817 /* TattooMasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426ED39219B9AF560024E817 /* TattooMasterCell.m */; };
 		426ED39B19BD88990024E817 /* Tattoo_Detail_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426ED39A19BD88990024E817 /* Tattoo_Detail_ViewController.m */; };
 		426ED3D219C02C740024E817 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426ED3D119C02C740024E817 /* Main.storyboard */; };
@@ -362,6 +363,8 @@
 		4266571D19A6F2DC001D94B5 /* comment_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment_icon.png; sourceTree = "<group>"; };
 		4266571E19A6F2DC001D94B5 /* like_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_icon.png; sourceTree = "<group>"; };
 		4266572319A6F3BF001D94B5 /* share_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_icon.png; sourceTree = "<group>"; };
+		426864681A1459520043582C /* news_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news_ViewController.h; sourceTree = "<group>"; };
+		426864691A1459520043582C /* news_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news_ViewController.m; sourceTree = "<group>"; };
 		426ED39119B9AF560024E817 /* TattooMasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TattooMasterCell.h; sourceTree = "<group>"; };
 		426ED39219B9AF560024E817 /* TattooMasterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TattooMasterCell.m; sourceTree = "<group>"; };
 		426ED39A19BD88990024E817 /* Tattoo_Detail_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tattoo_Detail_ViewController.m; sourceTree = "<group>"; };
@@ -602,6 +605,8 @@
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
+				426864681A1459520043582C /* news_ViewController.h */,
+				426864691A1459520043582C /* news_ViewController.m */,
 				42DB2C4F1A0A0951002BAF1B /* detail_news_ViewController.h */,
 				42DB2C501A0A0951002BAF1B /* detail_news_ViewController.m */,
 				426ED3E619C049EE0024E817 /* MBProgressHUB */,
@@ -1390,6 +1395,7 @@
 				42193FA11985FE08007E3C52 /* AppDelegate.m in Sources */,
 				42A4917D19E2370300E4D65E /* historyViewController.m in Sources */,
 				42193FD619860291007E3C52 /* TattooMaster_ViewController.m in Sources */,
+				4268646A1A1459530043582C /* news_ViewController.m in Sources */,
 				427D342D199DA73400814463 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				427D3430199DA73400814463 /* AFXMLRequestOperation.m in Sources */,
 				427D342F199DA73400814463 /* AFURLConnectionOperation.m in Sources */,

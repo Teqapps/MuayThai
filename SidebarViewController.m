@@ -144,10 +144,10 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    menuItems = @[@"title", @"新消息",@"泰拳歷史" ,@"泰拳小知識",@"找拳館",@"關於我們"];
+    menuItems = @[@"主頁", @"新消息",@"泰拳歷史" ,@"泰拳小知識",@"找拳館",@"關於我們"];
     list =[[NSMutableArray alloc]init];
     
-    [list addObject:[NSString stringWithFormat:@"title"]];
+    [list addObject:[NSString stringWithFormat:@"主頁"]];
     
     [list addObject:[NSString stringWithFormat:@"新消息"]];
     [list addObject:[NSString stringWithFormat:@"泰拳歷史"]];
