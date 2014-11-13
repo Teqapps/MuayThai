@@ -297,6 +297,10 @@
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
+             cell.parseImage.layer.cornerRadius = cell.parseImage.frame.size.width / 2;
+           cell.parseImage.layer.borderWidth = 0.0f;
+            cell.parseImage.layer.borderColor = [UIColor whiteColor].CGColor;
+             cell.parseImage.clipsToBounds = YES;
             cell.parseImage.image = [UIImage imageWithData:data];
             [cell.loadingSpinner stopAnimating];
             cell.loadingSpinner.hidden = YES;
