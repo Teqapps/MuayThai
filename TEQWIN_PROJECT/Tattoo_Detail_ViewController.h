@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "Tattoo_Master_Info.h"
+
 #import <MessageUI/MessageUI.h>
 #import "TattooMasterCell.h"
 //#import "GAITrackedViewController.h"
@@ -50,7 +50,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *view_count;
 
 
-@property (strong, nonatomic) Tattoo_Master_Info *selectedTattoo_Master;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *count_like;
 

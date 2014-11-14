@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 #import "ImageExampleCell.h"
-#import "Tattoo_Master_Info.h"
+
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
@@ -19,9 +19,9 @@
 
 {
      int lastClickedRow;
-    HomeModel *_homeModel;
+
     NSArray *_feedItems;
-    Tattoo_Master_Info *_selected_tattoo_master;
+
    
 }
 @property (nonatomic, strong) UISearchDisplayController *searchController;

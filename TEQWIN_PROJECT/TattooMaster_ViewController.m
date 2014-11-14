@@ -6,8 +6,8 @@
 //
 #import "LoginUIViewController.h"
 #import "ImageExampleCell.h"
-#import "HomeModel.h"
-#import "Tattoo_Master_Info.h"
+
+
 #import "TattooMaster_ViewController.h"
 #import "Master_Map_ViewController.h"
 #import "Tattoo_Detail_ViewController.h"
