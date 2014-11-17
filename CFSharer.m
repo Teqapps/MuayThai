@@ -23,7 +23,9 @@
 }
 
 
-
++ (CFSharer *)wechat {
+    return [[CFSharer alloc] initWithName:@"wechat" imageName:@"wechat.png"];
+}
 + (CFSharer *)photoLibrary {
     return [[CFSharer alloc] initWithName:@"Photos" imageName:@"photo_library.png"];
 }
