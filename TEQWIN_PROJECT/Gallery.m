@@ -35,8 +35,6 @@ CFShareCircleView *shareCircleView;
     
     NSLog(@"%@",self.tattoomasterCell);
     [self queryParseMethod];
-    NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
-    [PFAnalytics trackEvent:@"showgallery" dimensions:dimensions];
     self.master_image.file=self.tattoomasterCell.imageFile;
     
     self.master_image.layer.cornerRadius =self.master_image.frame.size.width / 2;
@@ -89,7 +87,7 @@ CFShareCircleView *shareCircleView;
     hud.labelText = @"Loading";
     [hud show:YES];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"photo"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

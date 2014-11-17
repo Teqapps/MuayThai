@@ -6,22 +6,20 @@
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 #import "ImageExampleCell.h"
-
+#import "Tattoo_Master_Info.h"
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
 #import "Tattoo_Detail_ViewController.h"
 #import "TattooMasterCell.h"
-#import "detail_news_ViewController.h"
-//#import "news_detail_ViewController.h"
 @interface MainViewController ()
 
 {
      int lastClickedRow;
-
+    HomeModel *_homeModel;
     NSArray *_feedItems;
-
+    Tattoo_Master_Info *_selected_tattoo_master;
    
 }
 @property (nonatomic, strong) UISearchDisplayController *searchController;
@@ -70,7 +68,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-  //  self.screenName = @"Main";
+    self.screenName = @"Main";
     [self queryParseMethod];
     [self queryParseMethod_news];
     searchquery = [PFQuery queryWithClassName:@"muay_member"];
@@ -124,7 +122,6 @@
         if (!error) {
             
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
-             self.page.numberOfPages = imageFilesArray.count;
            [_image_collection reloadData];
          //   NSLog(@"%@",imageFilesArray);
             [hud hide:YES];
@@ -219,15 +216,15 @@
     PFObject *imageObject = [news_array objectAtIndex:indexPath.row];
     PFFile *thumbnail = [imageObject objectForKey:@"image"];
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
- //  CGSize itemSize = CGSizeMake(70, 70);
-   // UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-  //  CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-  //  thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-  //  thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
+    CGSize itemSize = CGSizeMake(70, 70);
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
+    thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
     thumbnailImageView.layer.borderWidth=2.0;
-  //  thumbnailImageView.layer.masksToBounds = YES;
+    thumbnailImageView.layer.masksToBounds = YES;
     thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
- //   [thumbnailImageView.image drawInRect:imageRect];
+    [thumbnailImageView.image drawInRect:imageRect];
     thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -240,12 +237,11 @@
     UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
     nameLabel.text = [imageObject objectForKey:@"name"];
     
-    UILabel *news = (UILabel*) [cell viewWithTag:155];
+    UITextView *news = (UITextView*) [cell viewWithTag:155];
       
     news.text = [imageObject objectForKey:@"news"];
-        news.textColor =[UIColor colorWithRed:196/255.0
-                                        green:160/255.0 blue:81/255.0 alpha:1.0];
-
+       news.textColor =[UIColor colorWithRed:247.0/255.0
+                                        green:247.0/255.0 blue:249/255.0 alpha:1.0];
        // news.textColor =[UIColor grayColor];
     }
     
@@ -271,11 +267,7 @@
       return cell;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    CGFloat pageWidth = self.image_collection.frame.size.width;
-    self.page.currentPage = self.image_collection.contentOffset.x / pageWidth;
-}
+
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -351,22 +343,21 @@
         tattoomasterCell.object_id = [selectobject objectForKey:@"object"];
         tattoomasterCell.muay_id = [selectobject objectForKey:@"muay_id"];
         tattoomasterCell.name = [selectobject objectForKey:@"name"];
-        tattoomasterCell.person_incharge=[selectobject objectForKey:@"person_incharge"];
         tattoomasterCell.gender=[selectobject objectForKey:@"gender"];
-        tattoomasterCell.imageFile=[selectobject objectForKey:@"image"];
-        tattoomasterCell.tel = [selectobject objectForKey:@"tel"];
+        tattoomasterCell.person_incharge=[selectobject objectForKey:@"person_incharge"];
+        tattoomasterCell.tel = [selectobject objectForKey:@"Tel"];
         tattoomasterCell.fax = [selectobject objectForKey:@"fax"];
-        tattoomasterCell.address = [selectobject objectForKey:@"address"];
-        tattoomasterCell.latitude = [selectobject objectForKey:@"latitude"];
-        tattoomasterCell.longitude = [selectobject objectForKey:@"longitude"];
-        tattoomasterCell.email = [selectobject objectForKey:@"email"];
-        tattoomasterCell.website = [selectobject objectForKey:@"website"];
-        tattoomasterCell.desc = [selectobject objectForKey:@"desc"];
+        tattoomasterCell.address = [selectobject objectForKey:@"Address"];
+        tattoomasterCell.latitude = [selectobject objectForKey:@"Latitude"];
+        tattoomasterCell.longitude = [selectobject objectForKey:@"Longitude"];
+        tattoomasterCell.email = [selectobject objectForKey:@"Email"];
+        tattoomasterCell.website = [selectobject objectForKey:@"Website"];
         tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
         tattoomasterCell.promotion=[selectobject objectForKey:@"promotion"];
         tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[selectobject objectForKey:@"bookmark"];
         tattoomasterCell.view = [selectobject objectForKey:@"view"];
+
         tattoomasterCell.object_id = selectobject.objectId;
         
         mapVC.tattoomasterCell = tattoomasterCell;
@@ -419,24 +410,22 @@
         TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
    
         tattoomasterCell.object_id = [object objectForKey:@"object"];
-        tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
-        tattoomasterCell.name = [object objectForKey:@"name"];
-        tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
+         tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
+         tattoomasterCell.name = [object objectForKey:@"name"];
+         tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
         tattoomasterCell.gender=[object objectForKey:@"gender"];
-        tattoomasterCell.imageFile=[object objectForKey:@"image"];
-        tattoomasterCell.tel = [object objectForKey:@"tel"];
+        tattoomasterCell.tel = [object objectForKey:@"Tel"];
         tattoomasterCell.fax = [object objectForKey:@"fax"];
-        tattoomasterCell.address = [object objectForKey:@"address"];
-        tattoomasterCell.latitude = [object objectForKey:@"latitude"];
-        tattoomasterCell.longitude = [object objectForKey:@"longitude"];
-        tattoomasterCell.email = [object objectForKey:@"email"];
-        tattoomasterCell.website = [object objectForKey:@"website"];
-        tattoomasterCell.desc = [object objectForKey:@"desc"];
+        tattoomasterCell.address = [object objectForKey:@"Address"];
+        tattoomasterCell.latitude = [object objectForKey:@"Latitude"];
+        tattoomasterCell.longitude = [object objectForKey:@"Longitude"];
+        tattoomasterCell.email = [object objectForKey:@"Email"];
+        tattoomasterCell.website = [object objectForKey:@"Website"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
         tattoomasterCell.promotion=[object objectForKey:@"promotion"];
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
-        tattoomasterCell.view = [object objectForKey:@"view"];
+         tattoomasterCell.view = [object objectForKey:@"view"];
         tattoomasterCell.object_id = object.objectId;
       
         
@@ -445,55 +434,11 @@
         //object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
         //[object saveInBackground];
         //NSLog(@"%@",object[@"view"]);
-        NSDictionary *dimensions = @{ @"name":[object objectForKey:@"name"]};
-        [PFAnalytics trackEvent:@"showmaster" dimensions:dimensions];
-
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
         [object saveInBackground];
 
         }
-    if ([segue.identifier isEqualToString:@"gonewdetail"]) {
-        NSIndexPath *indexPath = [self.main_tableview indexPathForCell:sender];
-        
-        detail_news_ViewController *destViewController = segue.destinationViewController;
-        
-        PFObject *object = [news_array objectAtIndex:indexPath.row];
-        TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
-        
-        tattoomasterCell.object_id = [object objectForKey:@"object"];
-        tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
-        tattoomasterCell.name = [object objectForKey:@"name"];
-        tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
-        tattoomasterCell.gender=[object objectForKey:@"gender"];
-        tattoomasterCell.imageFile=[object objectForKey:@"image"];
-        tattoomasterCell.tel = [object objectForKey:@"tel"];
-        tattoomasterCell.fax = [object objectForKey:@"fax"];
-        tattoomasterCell.address = [object objectForKey:@"address"];
-        tattoomasterCell.latitude = [object objectForKey:@"latitude"];
-        tattoomasterCell.longitude = [object objectForKey:@"longitude"];
-        tattoomasterCell.email = [object objectForKey:@"email"];
-        tattoomasterCell.website = [object objectForKey:@"website"];
-        tattoomasterCell.desc = [object objectForKey:@"desc"];
-        tattoomasterCell.imageFile = [object objectForKey:@"image"];
-        tattoomasterCell.promotion=[object objectForKey:@"promotion"];
-        tattoomasterCell.favorites = [object objectForKey:@"favorites"];
-        tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
-        tattoomasterCell.view = [object objectForKey:@"view"];
-        tattoomasterCell.news = [object objectForKey:@"news"];
-          tattoomasterCell.news_view = [object objectForKey:@"news_view"];
-        tattoomasterCell.object_id = object.objectId;
-        
-        destViewController.tattoomasterCell = tattoomasterCell;
-        //  NSInteger myInteger = [tattoomasterCell.view integerValue];
-        //object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
-        //[object saveInBackground];
-        //NSLog(@"%@",object[@"view"]);
-        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"news_view"];
-        [object saveInBackground];
-        
     }
-
-        }
 
 
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Tattoo_Master_Info.h"
 #import "Tattoo_Detail_ViewController.h"
 #import <MapKit/MapKit.h>
 #import "TattooMasterCell.h"

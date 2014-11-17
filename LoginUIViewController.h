@@ -24,9 +24,6 @@
     NSString *str;
     NSMutableArray *list;
     PFImageView *sex_statues;
-    PFImageView *gallary_image;
-     UIButton *gallary_button;
-    NSArray * countarray;
 }
 @property (nonatomic, assign) BOOL isclicked;
 @property (weak, nonatomic) IBOutlet UILabel *like;

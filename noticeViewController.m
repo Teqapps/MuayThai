@@ -8,7 +8,6 @@
 
 #import "noticeViewController.h"
 #import "SWRevealViewController.h"
-#import <Parse/Parse.h>
 @interface noticeViewController ()
 
 @end
@@ -29,11 +28,9 @@
     
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     [super viewDidLoad];
-    NSDictionary *dimensions = @{ @"Notice":@"Muay_Notice"};
-    [PFAnalytics trackEvent:@"show_Notice" dimensions:dimensions];
-
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.textview_1.text=@"我們可以參考BMI(Body Mass Index，身體質量指數) 來看看自己是否過胖成年人的BMI在18.5到24之間都算健康。但當女士們見到漂亮的衣服或是夏天穿起比堅尼時，都總是覺得自己不夠完美。所以即使BMI值是在健康的範圍內，還是有將近一半的人覺得自己太胖，所以減肥變成一種全民運動，尤其是女性，永遠覺得自己太胖，恨不得自己的BMI只有17。 其實不管體重或BMI都只是參考數字，如果妳對自己的體重不滿意，我們提議你用正確的方法減重，令身型更苗條又很健康。BMI公式以自己的體重(KG)÷身高(CM}的平方所得出的結果就是BMI值";
+    self.textview_1.text=@"第一、刺青之後的三到五個小時之內，用溫水來清洗身體，把表面多餘的顏料或者是滲出的血液擦去，請記住，這一個步驟十分重要，如果時間過早，則會容易讓皮膚下層的顏料淡化，如果時間過長，滲出的血液不容易擦掉，而且以後每天要注意清洗，保持皮膚的乾淨和清潔，這樣會讓刺青的顏色起到很好的保護。";
     self.textview_1.layer.cornerRadius=8.0f;
     self.textview_1.layer.borderWidth=2.0;
     self.textview_1.layer.borderColor =[[UIColor grayColor] CGColor];
@@ -73,14 +70,14 @@
     [ self.textview_4 sizeToFit];
     [self.textview_4 setScrollEnabled:YES];
 
-      _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+    _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     // Do any additional setup after loading the view.
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
- 
+    self.title =@"紋身注意事項";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -138,14 +135,14 @@
     [ self.textview_4 sizeToFit];
     [self.textview_4 setScrollEnabled:YES];
     
-       _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+    _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     // Do any additional setup after loading the view.
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    //self.title =@"紋身注意事項";
+    self.title =@"紋身注意事項";
 
    }
 
