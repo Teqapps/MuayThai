@@ -301,7 +301,7 @@
     // Configure the cell
     
     if (tableView == self.tableView) {
-        
+      
         UIActivityIndicatorView *loadingSpinner = (UIActivityIndicatorView*) [cell viewWithTag:110];
         loadingSpinner.hidden= NO;
         [loadingSpinner startAnimating];
@@ -350,7 +350,7 @@
             
       //      sex_statues.image = [UIImage imageNamed:@"icon-sex-f.png"];
       //  }
-
+ 
         heart_statues = (PFImageView*)[cell viewWithTag:107];
         if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
             
