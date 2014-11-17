@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "Tattoo_Master_Info.h"
+
 #import "TattooMasterCell.h"
 @interface Map_ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mymap;

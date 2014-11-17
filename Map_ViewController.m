@@ -8,7 +8,7 @@
 
 #import "SWRevealViewController.h"
 #import "Map_ViewController.h"
-#import "Tattoo_Master_Info.h"
+
 #import "Tattoo_Detail_ViewController.h"
 #import "Master_Map_ViewController.h"
 @interface Map_ViewController ()

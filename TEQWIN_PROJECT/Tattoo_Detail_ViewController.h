@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "Tattoo_Master_Info.h"
+
 #import <MessageUI/MessageUI.h>
 #import "TattooMasterCell.h"
-#import "GAITrackedViewController.h"
-@interface Tattoo_Detail_ViewController : GAITrackedViewController<MFMailComposeViewControllerDelegate,UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate >
+//#import "GAITrackedViewController.h"
+@interface Tattoo_Detail_ViewController : UIViewController<MFMailComposeViewControllerDelegate,UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate >
 
 {
     PFObject *imageObject;
@@ -28,8 +28,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *noimage;
 @property IBOutlet UISearchBar *detailsearchbar;
+
+
 - (IBAction)showsearch:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *test_images;
+@property (weak, nonatomic) IBOutlet UILabel *detail_name;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *imagesCollection;
 
@@ -47,7 +50,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *view_count;
 
 
-@property (strong, nonatomic) Tattoo_Master_Info *selectedTattoo_Master;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *count_like;
 

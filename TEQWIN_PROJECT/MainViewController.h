@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HomeModel.h"
+
 #import <Parse/Parse.h>
 #import "TattooMasterCell.h"
-#import "GAITrackedViewController.h"
+//#import "GAITrackedViewController.h"
 @protocol passNames <NSObject>
 
 
 @end
-@interface MainViewController : GAITrackedViewController <HomeModelProtocol>
+@interface MainViewController : UIViewController 
 {
      PFObject *selectobject;
     NSArray *news_array;
@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIPageControl *page;
 
 @property (nonatomic, strong) TattooMasterCell *tattoomasterCell;
 @property (weak, nonatomic) IBOutlet PFImageView *main_image;
