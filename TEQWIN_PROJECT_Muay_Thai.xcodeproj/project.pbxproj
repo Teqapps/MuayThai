@@ -229,6 +229,7 @@
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
 		42630058199071F3007B8C8F /* Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map_ViewController.m; path = ../Map_ViewController.m; sourceTree = "<group>"; };
+		4265871E1A1B463D002C0E93 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		426864681A1459520043582C /* news_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news_ViewController.h; sourceTree = "<group>"; };
 		426864691A1459520043582C /* news_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news_ViewController.m; sourceTree = "<group>"; };
 		426ED39119B9AF560024E817 /* TattooMasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TattooMasterCell.h; sourceTree = "<group>"; };
@@ -438,6 +439,7 @@
 		42193F8F1985FE08007E3C52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4265871E1A1B463D002C0E93 /* iAd.framework */,
 				42223ED819B5615400F0D058 /* libz.1.1.3.dylib */,
 				42223ED619B5613300F0D058 /* Accounts.framework */,
 				42223ED419B5612B00F0D058 /* AdSupport.framework */,

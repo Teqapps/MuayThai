@@ -49,13 +49,13 @@
 
     
 
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 
 
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"background.jpg"]
                                      //  forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:30.0/255.0 alpha:1.0]];
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-     
+    
      //  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.755 green:0.655 blue:0.0 alpha:1]];
         NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
@@ -63,7 +63,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
-                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+                                                           [UIFont fontWithName:@"TimesNewRomanPS-ItalicMT" size:21.0], NSFontAttributeName, nil]];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
        

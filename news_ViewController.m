@@ -23,6 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+           [self queryParseMethod_news];
     self.title = @"新消息";
     //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];
@@ -37,7 +38,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];}
 - (void)viewWillAppear:(BOOL)animated {
     // self.screenName = @"Main";
-        [self queryParseMethod_news];
+ 
   
     
     // self.page.numberOfPages = [imageFilesArray count];
@@ -53,7 +54,7 @@
     [query whereKey:@"news_approve" equalTo:[NSNumber numberWithBool:YES]];
     
     
-    [query orderByDescending:@"news"];
+    [query orderByDescending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             news_array = [[NSArray alloc] initWithArray:objects];

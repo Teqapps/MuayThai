@@ -36,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self queryParseMethod];
+    [self queryParseMethod_news];
 
     // scroll search bar out of sight
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -53,7 +55,7 @@
    // PFObject *object = [imageFilesArray objectAtIndex:randomImgNumber];
 
     
-    self.title = @"新消息";
+    self.title = @"主頁";
 //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];
     // Change button color
@@ -71,9 +73,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   //  self.screenName = @"Main";
-    [self queryParseMethod];
-    [self queryParseMethod_news];
-    searchquery = [PFQuery queryWithClassName:@"muay_member"];
+        searchquery = [PFQuery queryWithClassName:@"muay_member"];
     //[query whereKey:@"Name" containsString:searchTerm];
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
    // NSLog(@"%@",[PFInstallation currentInstallation].objectId);
