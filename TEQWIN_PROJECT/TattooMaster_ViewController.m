@@ -586,7 +586,7 @@
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
         TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
         //tattoomasterCell.clickindexpath =[self.tableView indexPathForRowAtPoint:correctedPoint];
-        tattoomasterCell.clickindexpath =0;
+        tattoomasterCell.clickindexpath =nil;
         
         tattoomasterCell.object_id = [object objectForKey:@"object"];
         tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
