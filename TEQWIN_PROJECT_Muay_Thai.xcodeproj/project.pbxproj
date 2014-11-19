@@ -46,6 +46,12 @@
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
+		4265874E1A1C8EA9002C0E93 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4265874C1A1C8EA9002C0E93 /* twitter.png */; };
+		4265874F1A1C8EA9002C0E93 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4265874D1A1C8EA9002C0E93 /* twitter@2x.png */; };
+		426587521A1C8EBA002C0E93 /* sina-weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 426587501A1C8EBA002C0E93 /* sina-weibo.png */; };
+		426587531A1C8EBA002C0E93 /* sina-weibo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 426587511A1C8EBA002C0E93 /* sina-weibo@2x.png */; };
+		426587591A1C8F6B002C0E93 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 426587561A1C8F6B002C0E93 /* Line.m */; };
+		4265875A1A1C8F6B002C0E93 /* LKLineActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 426587581A1C8F6B002C0E93 /* LKLineActivity.m */; };
 		4268646A1A1459530043582C /* news_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426864691A1459520043582C /* news_ViewController.m */; };
 		426ED39319B9AF560024E817 /* TattooMasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426ED39219B9AF560024E817 /* TattooMasterCell.m */; };
 		426ED39B19BD88990024E817 /* Tattoo_Detail_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426ED39A19BD88990024E817 /* Tattoo_Detail_ViewController.m */; };
@@ -70,8 +76,6 @@
 		427D34AC199E076400814463 /* photo_library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 427D3498199E076400814463 /* photo_library@2x.png */; };
 		427D34AD199E076400814463 /* pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = 427D3499199E076400814463 /* pinterest.png */; };
 		427D34AE199E076400814463 /* pinterest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 427D349A199E076400814463 /* pinterest@2x.png */; };
-		427D34AF199E076400814463 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 427D349B199E076400814463 /* twitter.png */; };
-		427D34B0199E076400814463 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 427D349C199E076400814463 /* twitter@2x.png */; };
 		427D34B5199E077F00814463 /* CFShareCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D34B2199E077F00814463 /* CFShareCircleView.m */; };
 		427D34B6199E077F00814463 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D34B4199E077F00814463 /* CFSharer.m */; };
 		427D3B2F19A32B9E00814463 /* LoginUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D3B2E19A32B9E00814463 /* LoginUIViewController.m */; };
@@ -230,6 +234,14 @@
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
 		42630058199071F3007B8C8F /* Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map_ViewController.m; path = ../Map_ViewController.m; sourceTree = "<group>"; };
 		4265871E1A1B463D002C0E93 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		4265874C1A1C8EA9002C0E93 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = ../../ListingMobileiOS/twitter.png; sourceTree = "<group>"; };
+		4265874D1A1C8EA9002C0E93 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "../../ListingMobileiOS/twitter@2x.png"; sourceTree = "<group>"; };
+		426587501A1C8EBA002C0E93 /* sina-weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sina-weibo.png"; path = "../../ListingMobileiOS/sina-weibo.png"; sourceTree = "<group>"; };
+		426587511A1C8EBA002C0E93 /* sina-weibo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sina-weibo@2x.png"; path = "../../ListingMobileiOS/sina-weibo@2x.png"; sourceTree = "<group>"; };
+		426587551A1C8F6B002C0E93 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		426587561A1C8F6B002C0E93 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		426587571A1C8F6B002C0E93 /* LKLineActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKLineActivity.h; sourceTree = "<group>"; };
+		426587581A1C8F6B002C0E93 /* LKLineActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKLineActivity.m; sourceTree = "<group>"; };
 		426864681A1459520043582C /* news_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news_ViewController.h; sourceTree = "<group>"; };
 		426864691A1459520043582C /* news_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news_ViewController.m; sourceTree = "<group>"; };
 		426ED39119B9AF560024E817 /* TattooMasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TattooMasterCell.h; sourceTree = "<group>"; };
@@ -258,8 +270,6 @@
 		427D3498199E076400814463 /* photo_library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_library@2x.png"; sourceTree = "<group>"; };
 		427D3499199E076400814463 /* pinterest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinterest.png; sourceTree = "<group>"; };
 		427D349A199E076400814463 /* pinterest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinterest@2x.png"; sourceTree = "<group>"; };
-		427D349B199E076400814463 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		427D349C199E076400814463 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		427D34B1199E077F00814463 /* CFShareCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFShareCircleView.h; sourceTree = "<group>"; };
 		427D34B2199E077F00814463 /* CFShareCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFShareCircleView.m; sourceTree = "<group>"; };
 		427D34B3199E077F00814463 /* CFSharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSharer.h; sourceTree = "<group>"; };
@@ -470,6 +480,7 @@
 		42193F961985FE08007E3C52 /* TEQWIN_PROJECT */ = {
 			isa = PBXGroup;
 			children = (
+				426587541A1C8F62002C0E93 /* LINE */,
 				42A95FDE1A032F1F002C0508 /* photo_lastest */,
 				42630028198B3A72007B8C8F /* photo */,
 				42193FD7198608E0007E3C52 /* Tattoo Master */,
@@ -608,6 +619,17 @@
 			name = "Sidebar-icon";
 			sourceTree = "<group>";
 		};
+		426587541A1C8F62002C0E93 /* LINE */ = {
+			isa = PBXGroup;
+			children = (
+				426587551A1C8F6B002C0E93 /* Line.h */,
+				426587561A1C8F6B002C0E93 /* Line.m */,
+				426587571A1C8F6B002C0E93 /* LKLineActivity.h */,
+				426587581A1C8F6B002C0E93 /* LKLineActivity.m */,
+			);
+			name = LINE;
+			sourceTree = "<group>";
+		};
 		426ED3E619C049EE0024E817 /* MBProgressHUB */ = {
 			isa = PBXGroup;
 			children = (
@@ -643,6 +665,10 @@
 		427D3488199E074A00814463 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				4265874C1A1C8EA9002C0E93 /* twitter.png */,
+				426587501A1C8EBA002C0E93 /* sina-weibo.png */,
+				426587511A1C8EBA002C0E93 /* sina-weibo@2x.png */,
+				4265874D1A1C8EA9002C0E93 /* twitter@2x.png */,
 				420E2F6319FA3C1A00667E6C /* lineicon.png */,
 				42CB3DE41A19D71B00BB10DC /* wechat@2x.png */,
 				42CB3DE21A19D71800BB10DC /* wechat.png */,
@@ -667,8 +693,6 @@
 				427D3498199E076400814463 /* photo_library@2x.png */,
 				427D3499199E076400814463 /* pinterest.png */,
 				427D349A199E076400814463 /* pinterest@2x.png */,
-				427D349B199E076400814463 /* twitter.png */,
-				427D349C199E076400814463 /* twitter@2x.png */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -852,12 +876,14 @@
 				42A960001A032F41002C0508 /* icon-like.png in Resources */,
 				427D349E199E076400814463 /* close@2x.png in Resources */,
 				427D34A0199E076400814463 /* dropbox@2x.png in Resources */,
+				4265874F1A1C8EA9002C0E93 /* twitter@2x.png in Resources */,
 				42A9600C1A032F41002C0508 /* m-icon-search.png in Resources */,
 				428E7C561A0086A900CA2C14 /* ICON.png in Resources */,
 				42A4913E19D506A700E4D65E /* Facebook.png in Resources */,
 				420E2F6119F9EC3F00667E6C /* whatsapp.png in Resources */,
 				427D349F199E076400814463 /* dropbox.png in Resources */,
 				427D34A2199E076400814463 /* evernote@2x.png in Resources */,
+				426587531A1C8EBA002C0E93 /* sina-weibo@2x.png in Resources */,
 				42A960051A032F41002C0508 /* icon-share.png in Resources */,
 				42DB2C3F1A09DA74002BAF1B /* bmi.gif in Resources */,
 				42A95FF81A032F41002C0508 /* bg-login.png in Resources */,
@@ -882,7 +908,6 @@
 				427D34A8199E076400814463 /* mail@2x.png in Resources */,
 				42A960041A032F41002C0508 /* icon-sex-m.png in Resources */,
 				42A4914119D506A700E4D65E /* Logo.png in Resources */,
-				427D34AF199E076400814463 /* twitter.png in Resources */,
 				42D3D5DA19F7481800B01A97 /* FACEBOOK.JPG in Resources */,
 				42A95FFD1A032F41002C0508 /* icon-favorite.png in Resources */,
 				42DB2C5A1A0B1C89002BAF1B /* muay_banner.png in Resources */,
@@ -924,8 +949,8 @@
 				427D34AA199E076400814463 /* more@2x.png in Resources */,
 				427D34AD199E076400814463 /* pinterest.png in Resources */,
 				42A95FFA1A032F41002C0508 /* button-facebook-login.png in Resources */,
-				427D34B0199E076400814463 /* twitter@2x.png in Resources */,
 				42A960021A032F41002C0508 /* icon-search.png in Resources */,
+				4265874E1A1C8EA9002C0E93 /* twitter.png in Resources */,
 				427D34A5199E076400814463 /* google_drive.png in Resources */,
 				42A4913D19D506A700E4D65E /* ExitDown.png in Resources */,
 				42A95FFF1A032F41002C0508 /* icon-gallery.png in Resources */,
@@ -934,6 +959,7 @@
 				42A4914919D5082800E4D65E /* facebook@2x.png in Resources */,
 				42A960181A0378E9002C0508 /* bg-login拷貝.png in Resources */,
 				42A4914019D506A700E4D65E /* LoginFieldBG.png in Resources */,
+				426587521A1C8EBA002C0E93 /* sina-weibo.png in Resources */,
 				42A9600E1A032F41002C0508 /* menu-logo.png in Resources */,
 				42DB2C3D1A09DA12002BAF1B /* muay_notice.png in Resources */,
 				427D34A6199E076400814463 /* google_drive@2x.png in Resources */,
@@ -958,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4265875A1A1C8F6B002C0E93 /* LKLineActivity.m in Sources */,
 				42223EDE19B5677F00F0D058 /* MyLogInViewController.m in Sources */,
 				42193FA71985FE08007E3C52 /* ViewController.m in Sources */,
 				420E2F7819FE225900667E6C /* aboutus_map.m in Sources */,
@@ -983,6 +1010,7 @@
 				42EA3D6619C827600051057C /* Gallery.m in Sources */,
 				42EA3D6319C8273F0051057C /* GalleryCell.m in Sources */,
 				421940921987380F007E3C52 /* Master_Map_ViewController.m in Sources */,
+				426587591A1C8F6B002C0E93 /* Line.m in Sources */,
 				42193F9D1985FE08007E3C52 /* main.m in Sources */,
 				42A0095C19EF5E05003DCD0D /* Search_TableViewController.m in Sources */,
 				427D34B6199E077F00814463 /* CFSharer.m in Sources */,

@@ -5,7 +5,8 @@
 //  Created by Teqwin on 16/9/14.
 //  Copyright (c) 2014年 Teqwin. All rights reserved.
 #import "MBProgressHUD.h"
-
+#import "Line.h"
+#import "LKLineActivity.h"
 #import "GalleryCell.h"
 #import "Gallery.h"
 #import "Tattoo_Detail_ViewController.h"
@@ -14,6 +15,10 @@
 #import "CFShareCircleView.h"
 #import <Social/Social.h>
 #import <FacebookSDK/FacebookSDK.h>
+typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
+    LKLineActivityImageSharingDirectType,
+    LKLineActivityImageSharingActivityType
+};
 @interface Gallery ()<UIScrollViewDelegate,CFShareCircleViewDelegate>
 {
     
@@ -23,10 +28,17 @@ CFShareCircleView *shareCircleView;
     UIImageView *fullImageView;
      int lastClickedRow;
 }
-
+@property (nonatomic, assign) LKLineActivityImageSharingType imageSharingType;
 @end
 
 @implementation Gallery
++ (UIPasteboard *)pasteboard {
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+        return [UIPasteboard generalPasteboard];
+    } else {
+        return [UIPasteboard pasteboardWithName:@"jp.naver.linecamera.pasteboard" create:YES];
+    }
+}
 @synthesize tableView;
 - (void)viewDidLoad
 {
@@ -56,7 +68,15 @@ CFShareCircleView *shareCircleView;
     shareCircleView.delegate = self;
     [self.navigationController.view addSubview:shareCircleView];
     }
-
+- (BOOL)checkIfLineInstalled {
+    BOOL isInstalled = [Line isLineInstalled];
+    
+    if (!isInstalled) {
+        [[[UIAlertView alloc] initWithTitle:@"Line is not installed." message:@"Please download Line from App Store, and try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+    return isInstalled;
+}
 - (void)viewDidAppear:(BOOL)animated
 {
     
@@ -277,7 +297,7 @@ NSLog(@"%@", imageFilesArray);
 
 
 - (void)shareCircleView:(CFShareCircleView *)aShareCircleView didSelectSharer:(CFSharer *)sharer{
-   
+    
     if ([sharer.name isEqual:@"Facebook"]) {
         
         // Check if the Facebook app is installed and we can present the share dialog
@@ -305,13 +325,13 @@ NSLog(@"%@", imageFilesArray);
             // FALLBACK: publish just a link using the Feed dialog
             
             // Put together the dialog parameters
-           // NSString *picURLstring =
+            // NSString *picURLstring =
             //[NSString stringWithFormat:@"http://files.parsetfss.com/c6afcb1f-6a07-4487-8d0d-8406c9b9f69c/tfss-0366ca1a-894e-45c2-b43b-f45b82d10f6a-gallery_02_5.jpg"] ;
-
+            
             NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                            self.tattoomasterCell.name, @"name",
                                            @"TEQWIN SOLUTION", @"caption",
-                                          image_desc, @"description",
+                                           image_desc, @"description",
                                            shareimageFile.url, @"link",
                                            shareimageFile.url,@"picture",
                                            nil];
@@ -397,78 +417,42 @@ NSLog(@"%@", imageFilesArray);
         }
         
     }
-     if ([sharer.name isEqual:@"more"]) {
+    if ([sharer.name isEqual:@"more"]) {
         
-       
-         NSString *textToShare = self.tattoomasterCell.name;
-         
-         
+        
+        NSString *textToShare = self.tattoomasterCell.name;
+        
+        
         // imageToShare = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",@"http://files.parsetfss.com/c6afcb1f-6a07-4487-8d0d-8406c9b9f69c/tfss-d8fda74a-c9ff-436b-ab3e-a3b3d5c3e9d9-davee_05.jpg"]]]];
-       //  imageToShare =[UIImage imageNamed:@"twitter.png"];
-         NSURL *urlToShare = [NSURL URLWithString:@""];
-         
-         NSArray *activityItems = @[image_desc, imageToShare, urlToShare];
-       
-
-         UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
-     ;
-
-         
-         [self presentViewController:activityVC animated:TRUE completion:nil];
-     }
-    if ([sharer.name isEqual:@"wechat"]) {
+        //  imageToShare =[UIImage imageNamed:@"twitter.png"];
+        NSURL *urlToShare = [NSURL URLWithString:@""];
         
-        if ([[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"wechat://app"]]){
-            
-            UIImage     * iconImage = imageToShare;
-            NSString    * savePath  = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/wechatTmp.wai"];
-            
-            [UIImageJPEGRepresentation(iconImage, 1.0) writeToFile:savePath atomically:YES];
-            
-            _documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:savePath]];
-            _documentInteractionController.UTI = @"net.wechat.image";
-            _documentInteractionController.delegate = self;
-            
-            [_documentInteractionController presentOpenInMenuFromRect:CGRectMake(0, 0, 0, 0) inView:self.view animated: YES];
-            
-            
-        } else {
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wecaht not installed." message:@"Your device has no Wechat installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-        }
+        NSArray *activityItems = @[image_desc, imageToShare, urlToShare];
+        
+        
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+        ;
+        
+        
+        [self presentViewController:activityVC animated:TRUE completion:nil];
     }
-
+    
+    
     if ([sharer.name isEqual:@"line"]) {
-        if ([[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"line://app"]]){
-            
-            UIImage     * iconImage = imageToShare;
-            NSString    * savePath  = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/lineTmp.wai"];
-            
-            [UIImageJPEGRepresentation(iconImage, 1.0) writeToFile:savePath atomically:YES];
-            
-            _documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:savePath]];
-            _documentInteractionController.UTI = @"net.line.image";
-            _documentInteractionController.delegate = self;
-            
-            [_documentInteractionController presentOpenInMenuFromRect:CGRectMake(0, 0, 0, 0) inView:self.view animated: YES];
-            
-            
-        } else {
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Line not installed." message:@"Your device has no Line installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
+        NSLog(@"clicked line");
+        NSURL *appURL = [NSURL URLWithString:@"line://msg/image/http://www.molotang.com/wp-content/uploads/2014/11/IMG_1036.jpg)"];
+        
+        if ([[UIApplication sharedApplication] canOpenURL: appURL]) {
+            [[UIApplication sharedApplication] openURL: appURL];
         }
-       // NSLog(@"clicked line");
-       // NSURL *appURL = [NSURL URLWithString:@"line://msg/text/IamHappyMan:)"];
-       // if ([[UIApplication sharedApplication] canOpenURL: appURL]) {
-       //     [[UIApplication sharedApplication] openURL: appURL];
-       // }
-       // else { //如果使用者沒有安裝，連結到App Store
-        //    NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id443904275"];
-        //    [[UIApplication sharedApplication] openURL:itunesURL];
-        //        NSLog(@"no line");
-       // }
+        else { //如果使用者沒有安裝，連結到App Store
+            NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id443904275"];
+            [[UIApplication sharedApplication] openURL:itunesURL];
+            NSLog(@"no line");
+        }
     }
     if ([sharer.name isEqual:@"Whatsapp"]) {
+        
         if ([[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"whatsapp://app"]]){
             
             UIImage     * iconImage = imageToShare;
@@ -486,35 +470,107 @@ NSLog(@"%@", imageFilesArray);
         } else {
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
+        }}
+    if ([sharer.name isEqual:@"sina_weibo"]) {
+        NSLog(@"sina");
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo]) {
+            
+            // 建立對應社群網站的ComposeViewController
+            SLComposeViewController *mySocialComposeView = [[SLComposeViewController alloc] init];
+            mySocialComposeView = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            
+            // 插入文字
+            [mySocialComposeView setInitialText:[NSString stringWithFormat:@"%@", image_desc]];
+            
+            // 插入網址
+            // NSURL *myURL = [[NSURL alloc] initWithString:@"http://cg2010studio.wordpress.com/"];
+            // [mySocialComposeView addURL: myURL];
+            
+            // 插入圖片
+            
+            [mySocialComposeView addImage:imageToShare];
+            
+            
+            // 呼叫建立的SocialComposeView
+            [self presentViewController:mySocialComposeView animated:YES completion:^{
+                NSLog(@"成功呼叫 SocialComposeView");
+            }];
+            
+            // 訊息成功送出與否的之後處理
+            [mySocialComposeView setCompletionHandler:^(SLComposeViewControllerResult result){
+                switch (result) {
+                    case SLComposeViewControllerResultCancelled:
+                        NSLog(@"取消送出");
+                        break;
+                    case SLComposeViewControllerResultDone:
+                        NSLog(@"完成送出");
+                        break;
+                    default:
+                        NSLog(@"其他例外");
+                        break;
+                }
+            }];
         }
-       // NSURL *whatsappURL = [NSURL URLWithString:@"whatsapp://send?text=Hello%2C%20World!"];
-       // if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
-       //     [[UIApplication sharedApplication] openURL: whatsappURL];
-       // }
-        //else { //如果使用者沒有安裝，連結到App Store
-        //    NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id310633997"];
-       //     [[UIApplication sharedApplication] openURL:itunesURL];
-       //     NSLog(@"no whatsapp");
-       // }}
+        else {
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"請先在系統設定中登入新浪微博帳號。" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+            [av show];
+        }
         
-        
-        
-        // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,     NSUserDomainMask, YES);
-        //NSString *documentsDirectory = [paths objectAtIndex:0];
-        
-       // NSString *getImagePath = [documentsDirectory stringByAppendingPathComponent:@"savedImage.png"]; //here i am fetched image path from document directory and convert it in to URL and use bellow
-        
-        
-       // NSURL *imageFileURL =[NSURL fileURLWithPath:shareimageFile.url];
-        //NSLog(@"imag %@",imageFileURL);
-        
-       // self.documentationInteractionController.delegate = self;
-        //self.documentationInteractionController.UTI = @"net.whatsapp.image";
-        //self.documentationInteractionController = [self setupControllerWithURL:imageFileURL usingDelegate:self];
-        //[self.documentationInteractionController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
-    //}
     }
-}
+    if ([sharer.name isEqual:@"twitter"]) {
+        NSLog(@"twitter");
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            
+            // 建立對應社群網站的ComposeViewController
+            SLComposeViewController *mySocialComposeView = [[SLComposeViewController alloc] init];
+            mySocialComposeView = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            
+            // 插入文字
+            [mySocialComposeView setInitialText:image_desc];
+            
+            // 插入網址
+            // NSURL *myURL = [[NSURL alloc] initWithString:@"http://cg2010studio.wordpress.com/"];
+            // [mySocialComposeView addURL: myURL];
+            
+            // 插入圖片
+            
+            [mySocialComposeView addImage:imageToShare];
+            
+            
+            // 呼叫建立的SocialComposeView
+            [self presentViewController:mySocialComposeView animated:YES completion:^{
+                NSLog(@"成功呼叫 SocialComposeView");
+            }];
+            
+            // 訊息成功送出與否的之後處理
+            [mySocialComposeView setCompletionHandler:^(SLComposeViewControllerResult result){
+                switch (result) {
+                    case SLComposeViewControllerResultCancelled:
+                        NSLog(@"取消送出");
+                        break;
+                    case SLComposeViewControllerResultDone:
+                        NSLog(@"完成送出");
+                        break;
+                    default:
+                        NSLog(@"其他例外");
+                        break;
+                }
+            }];
+        }
+        else {
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"請先在系統設定中登入Twitter帳號。" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+            [av show];
+        }
+        
+    }
+    if ([sharer.name isEqual:@"line"]) {
+        if ([self checkIfLineInstalled]) {
+            UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+            controller.delegate = self;
+            self.imageSharingType = LKLineActivityImageSharingDirectType;
+            [self presentViewController:controller animated:YES completion:nil];
+        }
+    }}
 
 - (UIDocumentInteractionController *) setupControllerWithURL: (NSURL*) fileURL
                                                usingDelegate: (id ) interactionDelegate {

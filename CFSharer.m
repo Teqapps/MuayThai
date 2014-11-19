@@ -19,13 +19,11 @@
         _name = name;
         _image = [UIImage imageNamed:imageName];
     }
-    return self;    
+    return self;
 }
 
 
-+ (CFSharer *)wechat {
-    return [[CFSharer alloc] initWithName:@"wechat" imageName:@"wechat.png"];
-}
+
 + (CFSharer *)photoLibrary {
     return [[CFSharer alloc] initWithName:@"Photos" imageName:@"photo_library.png"];
 }
@@ -44,6 +42,9 @@
 + (CFSharer *)line {
     return [[CFSharer alloc] initWithName:@"line" imageName:@"lineicon.png"];
 }
++ (CFSharer *)wechat {
+    return [[CFSharer alloc] initWithName:@"wechat" imageName:@"wechat.png"];
+}
 
 + (CFSharer *)googleDrive {
     return [[CFSharer alloc] initWithName:@"Google Drive" imageName:@"google_drive.png"];
@@ -58,5 +59,7 @@
 + (CFSharer *)twitter {
     return [[CFSharer alloc] initWithName:@"twitter" imageName:@"twitter.png"];
 }
-
++ (CFSharer *)sina_weibo {
+    return [[CFSharer alloc] initWithName:@"sina_weibo" imageName:@"sina-weibo.png"];
+}
 @end
