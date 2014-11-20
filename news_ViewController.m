@@ -24,6 +24,9 @@
 {
     [super viewDidLoad];
            [self queryParseMethod_news];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
     self.title = @"新消息";
     //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];

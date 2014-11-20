@@ -36,6 +36,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
     [self queryParseMethod];
     [self queryParseMethod_news];
 
@@ -494,6 +497,7 @@
     }
 
         }
+
 
 
 

@@ -25,6 +25,7 @@
  
 }
 
+- (IBAction)fblike:(id)sender;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIPageControl *page;

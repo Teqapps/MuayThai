@@ -17,6 +17,7 @@
     PFObject *imageObject;
     PFFile *imageFile ;
     UILabel *image_desc;
+    UITextView * test;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

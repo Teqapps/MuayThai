@@ -47,7 +47,6 @@
 
 
 
-    
 
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 

@@ -200,14 +200,25 @@ NSLog(@"%@", imageFilesArray);
 //按圖第一下放大至fullscreen
 -(void)actionTap:(UITapGestureRecognizer *)sender{
     NSLog(@"按一下返回");
-    
     CGPoint location = [sender locationInView:self.tableView];
     NSIndexPath *indexPath  = [self.tableView indexPathForRowAtPoint:location];
     
     UITableViewCell *cell = (UITableViewCell *)[self.tableView  cellForRowAtIndexPath:indexPath];
+    PFObject *descobject = [imageFilesArray objectAtIndex:indexPath.row];
     
     
     UIImageView *imageView=(UIImageView *)[cell.contentView viewWithTag:9999];
+    
+    test =[[UITextView alloc] initWithFrame:CGRectMake(0,  self.view.frame.size.height-44, 320,400)];
+    // [test setBackgroundColor:[UIColor clearColor]];
+    test.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];;
+    test.textColor=[UIColor whiteColor];
+    test.text= [descobject objectForKey:@"image_desc"];
+    CGRect frame =  test.frame;
+    frame.size.height =  test.contentSize.height;
+    test.frame = frame;
+    test.editable=NO;
+    [ test sizeToFit];
     
     
     frame_first=CGRectMake(cell.frame.origin.x+imageView.frame.origin.x, cell.frame.origin.y+imageView.frame.origin.y-self.tableView.contentOffset.y, imageView.frame.size.width, imageView.frame.size.height);
@@ -223,14 +234,17 @@ NSLog(@"%@", imageFilesArray);
         fullImageView.image=imageView.image;
         
         [self.view.window addSubview:fullImageView];
+        [self.view.window addSubview:test];
+       
         
-        
-        
+        test.frame=frame_first;
         fullImageView.frame=frame_first;
         [UIView animateWithDuration:0.5 animations:^{
             
             fullImageView.frame=CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height);
             
+            test.frame=CGRectMake(0, self.view.frame.size.height-44, 320,test.contentSize.height);
+            ;
             
         } completion:^(BOOL finished) {
             
@@ -247,16 +261,16 @@ NSLog(@"%@", imageFilesArray);
     [UIView animateWithDuration:0.5 animations:^{
         
         fullImageView.frame=frame_first;
-        
+        test.frame=frame_first;
     } completion:^(BOOL finished) {
-        
         [fullImageView removeFromSuperview];
-        
+        [test removeFromSuperview];
     }];
     
     [UIApplication sharedApplication].statusBarHidden=NO;
     
 }
+
 
 
 
