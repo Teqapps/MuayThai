@@ -178,6 +178,11 @@ NSLog(@"%@", imageFilesArray);
     [cell.loadingSpinner startAnimating];
       cell.image.image = [UIImage imageNamed:@"loading.png"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+     
+       
+        cell.image.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+
         cell.image.layer.borderWidth=1.0;
          cell.image.layer.masksToBounds = YES;
        // cell.image.layer.borderColor=[[UIColor colorWithRed:176.0/255.0

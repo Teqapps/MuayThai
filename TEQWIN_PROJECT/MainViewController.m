@@ -237,6 +237,8 @@
     thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
     
     thumbnailImageView.file = thumbnail;
+
+
     [thumbnailImageView loadInBackground];
     
     
@@ -305,28 +307,32 @@
     cell.loadingSpinner.hidden = NO;
     [cell.loadingSpinner startAnimating];
 
-   // CGSize itemSize = CGSizeMake(70, 70);
-   // UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-    //CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-    //cell.thumbnail.layer.backgroundColor=[[UIColor clearColor] CGColor];
-   // cell.thumbnail.layer.cornerRadius= cell.thumbnail.frame.size.width/2;
-    //cell.thumbnail.layer.borderWidth=2.0;
-   // cell.thumbnail.layer.masksToBounds = YES;
-   // cell.thumbnail.layer.borderColor=[[UIColor whiteColor] CGColor];
-   // [ cell.thumbnail.image drawInRect:imageRect];
-   // cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
-   // UIGraphicsEndImageContext();
+    CGSize itemSize = CGSizeMake(50, 50);
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    cell.thumbnail.layer.backgroundColor=[[UIColor clearColor] CGColor];
+    cell.thumbnail.layer.cornerRadius= cell.thumbnail.frame.size.width/2;
+    cell.thumbnail.layer.borderWidth=0.0;
+    cell.thumbnail.layer.masksToBounds = YES;
+    cell.thumbnail.layer.borderColor=[[UIColor whiteColor] CGColor];
+    
+    [ cell.thumbnail.image drawInRect:imageRect];
+    cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
     cell.thumbnail.image = [UIImage imageNamed:@"placeholder.jpg"];
     
     cell.thumbnail.file = avstar;
+    cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     [ cell.thumbnail loadInBackground];
   
   
 
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            
+            cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
             cell.parseImage.image = [UIImage imageWithData:data];
             [cell.loadingSpinner stopAnimating];
             cell.loadingSpinner.hidden = YES;

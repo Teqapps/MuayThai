@@ -116,8 +116,7 @@
     }];
 
     
-    NSLog(@"ssssss%d",installarray.count);
-}
+   }
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
@@ -336,7 +335,7 @@
         
         count=[object objectForKey:@"favorites"];
         UILabel *count_like = (UILabel*) [cell viewWithTag:105];
-        count_like.text = [NSString stringWithFormat:@"%d",count.count];
+        count_like.text = [NSString stringWithFormat:@"%lu",(unsigned long)count.count];
         
         UILabel *master_desc = (UILabel*) [cell viewWithTag:187];
         master_desc.text = [object objectForKey:@"desc"];

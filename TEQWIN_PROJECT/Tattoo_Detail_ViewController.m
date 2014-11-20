@@ -139,7 +139,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     list =[[NSMutableArray alloc]init];
-    [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.name]];
+
     [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.person_incharge]];
     [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.tel]];
     [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.fax]];
@@ -299,14 +299,16 @@
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-             cell.parseImage.layer.cornerRadius = cell.parseImage.frame.size.width / 2;
-           cell.parseImage.layer.borderWidth = 0.0f;
-            cell.parseImage.layer.borderColor = [UIColor whiteColor].CGColor;
-             cell.parseImage.clipsToBounds = YES;
+            CGSize itemSize = CGSizeMake(50, 50);
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+            [ cell.parseImage.image drawInRect:imageRect];
+            cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
             cell.parseImage.image = [UIImage imageWithData:data];
             [cell.loadingSpinner stopAnimating];
             cell.loadingSpinner.hidden = YES;
-            [ cell.parseImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
+      
 
         }
     }];
@@ -369,22 +371,9 @@
 
     switch (indexPath.row) {
             
+
             
         case 0:
-            
-        {
-            cell.detailTextLabel.textColor =[UIColor whiteColor];
-            [cell.detailTextLabel setNumberOfLines:5];
-            cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-            cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-bold" size:15];
-            [cell.textLabel setNumberOfLines:2];
-            cell.textLabel.text = @"拳館：";
-            
-        }
-            
-            break;
-            
-        case 1:
             
         {
             cell.detailTextLabel.textColor =[UIColor whiteColor];
@@ -396,7 +385,7 @@
         }
             
             break;
-        case 2:
+        case 1:
             
         {
             
@@ -410,7 +399,7 @@
             
             break;
             
-        case 3:
+        case 2:
             
         {
            
@@ -424,7 +413,7 @@
         }
             break;
 
-        case 4:
+        case 3:
             
         {
             [cell.detailTextLabel setNumberOfLines:7];
@@ -438,7 +427,7 @@
         }
             
             break;
-        case 5:
+        case 4:
             
         {
             [cell.detailTextLabel setNumberOfLines:5];
@@ -450,7 +439,7 @@
         }
             
             break;
-        case 6:
+        case 5:
             
         {
             [cell.detailTextLabel setNumberOfLines:5];
@@ -572,7 +561,7 @@
      if (tableView == self.tableView) {
     
     switch (indexPath.row) {
-        case 2:
+        case 1:
         {
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"撥號"
@@ -590,14 +579,14 @@
             break;
             
 
-               case 4:{
+               case 3:{
             Map_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Map_ViewController"];
             [self.navigationController pushViewController:mapVC animated:YES];
             mapVC.tattoomasterCell=_tattoomasterCell;
            // NSLog(@"axaxax%@%@",self.tattoomasterCell.latitude,self.tattoomasterCell.longitude);
         }
             break;
-        case 6:{
+        case 5:{
           //  NSLog(@"axaxax%@",self.tattoomasterCell.website);
             
             NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
@@ -605,7 +594,7 @@
         
         }
             break;
-        case 5:
+        case 4:
             //Create the MailComposeViewController
             
         {
