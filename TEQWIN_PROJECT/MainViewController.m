@@ -324,7 +324,7 @@
     
     cell.thumbnail.file = avstar;
     cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+   // UIGraphicsEndImageContext();
     [ cell.thumbnail loadInBackground];
   
   
@@ -332,7 +332,7 @@
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
+      //      UIGraphicsEndImageContext();
             cell.parseImage.image = [UIImage imageWithData:data];
             [cell.loadingSpinner stopAnimating];
             cell.loadingSpinner.hidden = YES;
