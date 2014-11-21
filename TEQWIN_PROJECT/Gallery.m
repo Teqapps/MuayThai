@@ -391,7 +391,7 @@ CFShareCircleView *shareCircleView;
             mySocialComposeView = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
             
             // 插入文字
-            [mySocialComposeView setInitialText:self.tattoomasterCell.name];
+            [mySocialComposeView setInitialText:[NSString stringWithFormat:@"%@",image_desc]];
             
             // 插入網址
             // NSURL *myURL = [[NSURL alloc] initWithString:@"http://cg2010studio.wordpress.com/"];
@@ -399,9 +399,9 @@ CFShareCircleView *shareCircleView;
             
             // 插入圖片
             
-            NSString *picURLstring = [NSString stringWithFormat:@"https://localhost:443/phpMyAdmin/fyp_php/gallery_0%@_%d.jpg",[self.tattoomasterCell valueForKey:@"master_id"],lastClickedRow+1] ;
+        //    NSString *picURLstring = [NSString stringWithFormat:@"https://localhost:443/phpMyAdmin/fyp_php/gallery_0%@_%d.jpg",[self.tattoomasterCell valueForKey:@"master_id"],lastClickedRow+1] ;
             
-            NSURL *picURL = [NSURL URLWithString:picURLstring] ;
+            NSURL *picURL = [NSURL URLWithString:  shareimageFile.url] ;
             
             UIImage *Slide = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:picURL]];
             

@@ -435,9 +435,10 @@
         case 5:
             
         {
+            
             [cell.detailTextLabel setNumberOfLines:5];
             cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-            cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-bold" size:15];
+            cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-bold" size:14];
             cell.detailTextLabel.textColor=[UIColor whiteColor];
             cell.textLabel.text = @"網址：";
             //cell.accessoryType=UITableViewCellAccessoryDetailButton;

@@ -67,7 +67,10 @@
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    
+    //  self.screenName = @"Main";
+    searchquery = [PFQuery queryWithClassName:@"muay_member"];
+    //[query whereKey:@"Name" containsString:searchTerm];
+    searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
    }
@@ -317,12 +320,12 @@
     
     [ cell.thumbnail.image drawInRect:imageRect];
     cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    UIGraphicsEndImageContext() ;
     
-    cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
+   // cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
     
     cell.thumbnail.file = avstar;
-    cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
+ 
    // UIGraphicsEndImageContext();
     [ cell.thumbnail loadInBackground];
   
@@ -331,6 +334,7 @@
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext() ;
       //      UIGraphicsEndImageContext();
             cell.parseImage.image = [UIImage imageWithData:data];
             [cell.loadingSpinner stopAnimating];
