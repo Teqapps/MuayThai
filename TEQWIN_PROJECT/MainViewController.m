@@ -317,14 +317,10 @@
     cell.thumbnail.layer.borderColor=[[UIColor whiteColor] CGColor];
     
     [ cell.thumbnail.image drawInRect:imageRect];
-    cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    cell.thumbnail.image = [UIImage imageNamed:@"placeholder.jpg"];
-    
-    cell.thumbnail.file = avstar;
     cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    cell.thumbnail.file = avstar;
+   
     [ cell.thumbnail loadInBackground];
   
   

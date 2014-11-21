@@ -551,11 +551,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEQWIN_PROJECT/MainViewController.m"
-            timestampString = "438162972.814125"
+            timestampString = "438249184.806699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -567,11 +567,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEQWIN_PROJECT/MainViewController.m"
-            timestampString = "438162972.814125"
+            timestampString = "438249184.806699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
             landmarkName = "@implementation MainViewController"
             landmarkType = "3">
          </BreakpointContent>
