@@ -44,7 +44,8 @@ CFShareCircleView *shareCircleView;
 {
     [super viewDidLoad];
     
-
+    
+    NSLog(@"%@",self.tattoomasterCell);
     [self queryParseMethod];
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"showgallery" dimensions:dimensions];
@@ -102,7 +103,7 @@ CFShareCircleView *shareCircleView;
     return UIStatusBarStyleLightContent;
 }
 - (void)queryParseMethod {
-
+    NSLog(@"start query");
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
@@ -156,7 +157,7 @@ CFShareCircleView *shareCircleView;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+NSLog(@"%@", imageFilesArray);
 }
 - (void) noimage {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"對不起" message:@"沒有照片" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -203,7 +204,7 @@ CFShareCircleView *shareCircleView;
 
 //按圖第一下放大至fullscreen
 -(void)actionTap:(UITapGestureRecognizer *)sender{
-   
+    NSLog(@"按一下返回");
     CGPoint location = [sender locationInView:self.tableView];
     NSIndexPath *indexPath  = [self.tableView indexPathForRowAtPoint:location];
     
@@ -225,7 +226,7 @@ CFShareCircleView *shareCircleView;
     [ test sizeToFit];
     
     
-    frame_first=CGRectMake(cell.frame.origin.x+imageView.frame.origin.x, cell.frame.origin.y+self.view.frame.size.height, imageView.frame.size.width, imageView.frame.size.height);
+    frame_first=CGRectMake(cell.frame.origin.x+imageView.frame.origin.x, cell.frame.origin.y+imageView.frame.origin.y-self.tableView.contentOffset.y, imageView.frame.size.width, imageView.frame.size.height);
     
     fullImageView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
     fullImageView.backgroundColor=[UIColor blackColor];
@@ -457,32 +458,19 @@ CFShareCircleView *shareCircleView;
     
     
     if ([sharer.name isEqual:@"line"]) {
-        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"line://"]]) {
-            // do somethin
-            UIPasteboard *pasteboard = [UIPasteboard pasteboardWithUniqueName];
-            NSString *pasteboardName = pasteboard.name;
-            NSURL *imageURL = [NSURL URLWithString:imageFile.url];
-            [pasteboard setData:UIImagePNGRepresentation([UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]]) forPasteboardType:@"public.png"];
-            
-            NSString *contentType = @"image";
-            NSString *contentKey = (__bridge_transfer NSString*)CFURLCreateStringByAddingPercentEscapes(NULL,
-                                                                                                        (CFStringRef)pasteboardName,
-                                                                                                        NULL,
-                                                                                                        CFSTR(":/?=,!$&'()*+;[]@#"),
-                                                                                                        CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-            
-            NSString *urlString = [NSString stringWithFormat:@"line://msg/%@/%@",
-                                   contentType, contentKey];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+        NSLog(@"clicked line");
+        NSURL *appURL = [NSURL URLWithString:@"line://msg/image/http://www.molotang.com/wp-content/uploads/2014/11/IMG_1036.jpg)"];
+        
+        if ([[UIApplication sharedApplication] canOpenURL: appURL]) {
+            [[UIApplication sharedApplication] openURL: appURL];
         }
-        else{
+        else { //如果使用者沒有安裝，連結到App Store
             NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id443904275"];
             [[UIApplication sharedApplication] openURL:itunesURL];
+            NSLog(@"no line");
         }
     }
-    
-    
-        if ([sharer.name isEqual:@"Whatsapp"]) {
+    if ([sharer.name isEqual:@"Whatsapp"]) {
         
         if ([[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"whatsapp://app"]]){
             
@@ -499,12 +487,11 @@ CFShareCircleView *shareCircleView;
             
             
         } else {
-            NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id310633997"];
-            [[UIApplication sharedApplication] openURL:itunesURL];
-
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
         }}
     if ([sharer.name isEqual:@"sina_weibo"]) {
-       
+        NSLog(@"sina");
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo]) {
             
             // 建立對應社群網站的ComposeViewController
@@ -525,20 +512,20 @@ CFShareCircleView *shareCircleView;
             
             // 呼叫建立的SocialComposeView
             [self presentViewController:mySocialComposeView animated:YES completion:^{
-        
+                NSLog(@"成功呼叫 SocialComposeView");
             }];
             
             // 訊息成功送出與否的之後處理
             [mySocialComposeView setCompletionHandler:^(SLComposeViewControllerResult result){
                 switch (result) {
                     case SLComposeViewControllerResultCancelled:
-                   
+                        NSLog(@"取消送出");
                         break;
                     case SLComposeViewControllerResultDone:
-                    
+                        NSLog(@"完成送出");
                         break;
                     default:
-                 
+                        NSLog(@"其他例外");
                         break;
                 }
             }];
@@ -550,7 +537,7 @@ CFShareCircleView *shareCircleView;
         
     }
     if ([sharer.name isEqual:@"twitter"]) {
-   
+        NSLog(@"twitter");
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
             
             // 建立對應社群網站的ComposeViewController
@@ -571,20 +558,20 @@ CFShareCircleView *shareCircleView;
             
             // 呼叫建立的SocialComposeView
             [self presentViewController:mySocialComposeView animated:YES completion:^{
-       
+                NSLog(@"成功呼叫 SocialComposeView");
             }];
             
             // 訊息成功送出與否的之後處理
             [mySocialComposeView setCompletionHandler:^(SLComposeViewControllerResult result){
                 switch (result) {
                     case SLComposeViewControllerResultCancelled:
-                        
+                        NSLog(@"取消送出");
                         break;
                     case SLComposeViewControllerResultDone:
-                  
+                        NSLog(@"完成送出");
                         break;
                     default:
-                 
+                        NSLog(@"其他例外");
                         break;
                 }
             }];
