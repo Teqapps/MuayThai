@@ -132,7 +132,7 @@
                                        self.profile_image.clipsToBounds = YES;
 
                                    } else {
-                                       NSLog(@"Failed to load profile photo.");
+                               
                                    }
                                }];
     }

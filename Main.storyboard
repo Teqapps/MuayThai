@@ -40,7 +40,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-Tc-ck7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TwitterDown.png" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-Tc-ck7">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
@@ -598,7 +598,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="4E2701B8-86DD-4E8C-9E34-FB0F94E5FB3A" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="D618C45E-48CB-4362-9524-C122645C4B32" colorSpace="pattern"/>
                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1594,7 +1594,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4E2701B8-86DD-4E8C-9E34-FB0F94E5FB3A" width="320" height="460">
+        <image name="D618C45E-48CB-4362-9524-C122645C4B32" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -11482,6 +11482,7 @@ AAAAAAAAAAAJCvs
 </mutableData>
         </image>
         <image name="ICON.png" width="128" height="128"/>
+        <image name="TwitterDown.png" width="240" height="80"/>
         <image name="background.jpg" width="960" height="540"/>
         <image name="background3.jpg" width="800" height="500"/>
         <image name="bar.png" width="632" height="31"/>
@@ -11506,13 +11507,13 @@ AAAAAAAAAAAJCvs
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Jan-aP-9Jn"/>
         <segue reference="nCF-OP-zd7"/>
-        <segue reference="PPs-fJ-uhp"/>
-        <segue reference="aaL-oi-ElB"/>
         <segue reference="P6S-Sj-tUl"/>
-        <segue reference="cXc-Cg-QFH"/>
         <segue reference="QTr-PV-D3h"/>
+        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="aaL-oi-ElB"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="Jan-aP-9Jn"/>
         <segue reference="DyC-w1-YQe"/>
         <segue reference="gqv-Kk-pRo"/>
     </inferredMetricsTieBreakers>

@@ -79,7 +79,7 @@
         searchquery = [PFQuery queryWithClassName:@"muay_member"];
     //[query whereKey:@"Name" containsString:searchTerm];
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
-   // NSLog(@"%@",[PFInstallation currentInstallation].objectId);
+
 }
 -(void)itemsDownloaded:(NSArray *)items
 {
@@ -106,7 +106,7 @@
         if (!error) {
             news_array = [[NSArray alloc] initWithArray:objects];
             [_main_tableview reloadData];
-            //   NSLog(@"%@",imageFilesArray);
+            
             [hud hide:YES];
         }
     }];
@@ -121,7 +121,7 @@
     
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query whereKey:@"promotion_approve" equalTo:[NSNumber numberWithBool:YES]];
-    [query orderByAscending:@"updatedAt"];
+    
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -129,7 +129,7 @@
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
              self.page.numberOfPages = imageFilesArray.count;
            [_image_collection reloadData];
-         //   NSLog(@"%@",imageFilesArray);
+
             [hud hide:YES];
 
         }
@@ -165,8 +165,7 @@
     return [news_array count];
         
     } else {
-        //NSLog(@"how many in search results");
-        //NSLog(@"%@", self.searchResults.count);
+
         return self.searchResults.count;
         
     }
@@ -320,7 +319,7 @@
     cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    cell.thumbnail.image = [UIImage imageNamed:@"placeholder.jpg"];
+    cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
     
     cell.thumbnail.file = avstar;
     cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
@@ -347,13 +346,11 @@
     if (tableView == self.main_tableview) {
         
         selectobject = [news_array  objectAtIndex:indexPath.row];
-        NSLog(@"%@",[selectobject objectForKey:@"muay_id"]);
-    } else {
-        //NSLog(@"how many in search results");
-        //NSLog(@"%@", self.searchResults.count);
+           } else {
+ 
         
         selectobject = [_searchResults  objectAtIndex:indexPath.row];
-        NSLog(@"%@",[selectobject objectForKey:@"muay_id"]);
+       
         Tattoo_Detail_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Tattoo_Detail_ViewController"];
         [self.navigationController pushViewController:mapVC animated:YES];
         TattooMasterCell * tattoomasterCell = [[TattooMasterCell alloc] init];
@@ -379,43 +376,11 @@
         tattoomasterCell.object_id = selectobject.objectId;
         
         mapVC.tattoomasterCell = tattoomasterCell;
-       // NSLog(@"%@",tattoomasterCell.master_id);
+    
     }
     
     
 }
-
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
- //   PFObject* selectobject = [imageFilesArray  objectAtIndex:indexPath.row];
- //   NSLog(@"%@",[selectobject objectForKey:@"Master_id"]);
- //   Tattoo_Detail_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Tattoo_Detail_ViewController"];
- //   [self.navigationController pushViewController:mapVC animated:YES];
- //   TattooMasterCell * tattoomasterCell = [[TattooMasterCell alloc] init];
-//    tattoomasterCell.object_id = [selectobject objectForKey:@"object"];
- //   tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
-  //  tattoomasterCell.bookmark = [selectobject objectForKey:@"bookmark"];
- //   tattoomasterCell.name = [selectobject objectForKey:@"Name"];
- //   tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
- //   tattoomasterCell.gender = [selectobject objectForKey:@"Gender"];
- //   tattoomasterCell.tel = [selectobject objectForKey:@"Tel"];
- //   tattoomasterCell.email = [selectobject objectForKey:@"Email"];
-  //  tattoomasterCell.address = [selectobject objectForKey:@"Address"];
-  //  tattoomasterCell.latitude = [selectobject objectForKey:@"Latitude"];
-  //  tattoomasterCell.longitude = [selectobject objectForKey:@"Longitude"];
-  //  tattoomasterCell.website = [selectobject objectForKey:@"Website"];
-  //  tattoomasterCell.personage = [selectobject objectForKey:@"Personage"];
-  //  tattoomasterCell.master_id = [selectobject objectForKey:@"Master_id"];
-  //  tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
-  //  tattoomasterCell.gallery_m1 = [selectobject objectForKey:@"Gallery_M1"];
-  //  tattoomasterCell.object_id = selectobject.objectId;
-    
-  //  mapVC.tattoomasterCell = tattoomasterCell;
-   // NSLog(@"%@",tattoomasterCell.master_id);
-//}
-
-
-
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -450,11 +415,7 @@
       
         
         destViewController.tattoomasterCell = tattoomasterCell;
-      //  NSInteger myInteger = [tattoomasterCell.view integerValue];
-        //object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
-        //[object saveInBackground];
-        //NSLog(@"%@",object[@"view"]);
-        NSDictionary *dimensions = @{ @"name":[object objectForKey:@"name"]};
+             NSDictionary *dimensions = @{ @"name":[object objectForKey:@"name"]};
         [PFAnalytics trackEvent:@"showmaster" dimensions:dimensions];
 
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
@@ -493,10 +454,7 @@
         tattoomasterCell.object_id = object.objectId;
         
         destViewController.tattoomasterCell = tattoomasterCell;
-        //  NSInteger myInteger = [tattoomasterCell.view integerValue];
-        //object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
-        //[object saveInBackground];
-        //NSLog(@"%@",object[@"view"]);
+    
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"news_view"];
         [object saveInBackground];
         

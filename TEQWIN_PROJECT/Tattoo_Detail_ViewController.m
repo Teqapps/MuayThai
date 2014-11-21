@@ -116,7 +116,7 @@
             self.fav_image.image =[UIImage imageNamed:@"icon-like.png"];
         }
     self.master_name.text=self.tattoomasterCell.name;
-    NSLog(@"dddd%@",self.tattoomasterCell.name);
+
     self.profileimage.file=self.tattoomasterCell.imageFile;
    // self.profileimage.frame = CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)
 ;
@@ -195,8 +195,7 @@
         return [list count];
         
     } else {
-        //NSLog(@"how many in search results");
-        //NSLog(@"%@", self.searchResults.count);
+
         return self.searchResults.count;
         
     }
@@ -211,7 +210,7 @@
     //[query whereKey:@"Name" containsString:searchTerm];
     query.cachePolicy=kPFCachePolicyCacheElseNetwork;
     NSArray *results  = [query findObjects];
-    NSLog(@"%d",results.count);
+
     
     [self.searchResults addObjectsFromArray:results];
     
@@ -236,7 +235,7 @@
     return YES;
 }
 - (void)queryParseMethod {
-    NSLog(@"start query");
+
     
     PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
@@ -253,7 +252,7 @@
 }
 
 - (void)queryParseMethod_image{
-    NSLog(@"start query_image");
+
    
     PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
@@ -317,13 +316,7 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-  //    Gallery * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Gallery"];
-// [self.navigationController pushViewController:mapVC animated:YES];
- //    mapVC.tattoomasterCell=_tattoomasterCell;
 
-  //   [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
-  //  NSLog(@"反反反反%@",[imageFilesArray_image objectAtIndex:indexPath.row]);
-     NSLog(@"反反反反%d",indexPath.row);
 }
 //按圖第一下放大至fullscreen
 ////按圖第二下縮回原型
@@ -498,8 +491,7 @@
 {
     if (action == @selector(copy:))
         [UIPasteboard generalPasteboard].string = [list objectAtIndex:indexPath.row];
-    NSLog(@"COPY  %@",[UIPasteboard generalPasteboard].string);
-}
+  }
 
 
 
@@ -583,11 +575,11 @@
             Map_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Map_ViewController"];
             [self.navigationController pushViewController:mapVC animated:YES];
             mapVC.tattoomasterCell=_tattoomasterCell;
-           // NSLog(@"axaxax%@%@",self.tattoomasterCell.latitude,self.tattoomasterCell.longitude);
+           
         }
             break;
         case 5:{
-          //  NSLog(@"axaxax%@",self.tattoomasterCell.website);
+     
             
             NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
             [[UIApplication sharedApplication] openURL:url];
@@ -629,12 +621,9 @@
             //make alert box and phonecall function
            }}
      else {
-         //NSLog(@"how many in search results");
-         //NSLog(@"%@", self.searchResults.count);
          
         PFObject* selectobject = [_searchResults  objectAtIndex:indexPath.row];
-         NSLog(@"%@",[selectobject objectForKey:@"muay_id"]);
-         Tattoo_Detail_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Tattoo_Detail_ViewController"];
+                Tattoo_Detail_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Tattoo_Detail_ViewController"];
          [self.navigationController pushViewController:mapVC animated:YES];
          TattooMasterCell * tattoomasterCell = [[TattooMasterCell alloc] init];
          tattoomasterCell.object_id = [selectobject objectForKey:@"object"];
@@ -659,8 +648,7 @@
          tattoomasterCell.object_id = selectobject.objectId;
          
          mapVC.tattoomasterCell = tattoomasterCell;
-        // NSLog(@"%@",tattoomasterCell.master_id);
-     }
+            }
 
 }
 //- (IBAction)getDirectionButtonPressed:(id)sender {
@@ -679,21 +667,20 @@
 {
     switch (result) {
         case MFMailComposeResultCancelled:
-            NSLog(@"Mail Cancelled");
+           
             break;
             
         case MFMailComposeResultSaved:
             
-            NSLog(@"Mail Saved");
+       
             break;
             
         case MFMailComposeResultSent:
-            NSLog(@"Mail Sent");
-            break;
+                       break;
             
         case MFMailComposeResultFailed:
             
-            NSLog(@"Mail Failed");
+    
             break;
             
         default:
@@ -748,8 +735,7 @@
         if ([segue.destinationViewController isKindOfClass:[Gallery class]]){
             self.tattoomasterCell.clickindexpath = [self.imagesCollection indexPathForCell:sender];
             Gallery *receiver = (Gallery*)segue.destinationViewController;
-            NSLog(@"ha%d",self.tattoomasterCell.clickindexpath.row);
-            receiver.tattoomasterCell=_tattoomasterCell;
+                       receiver.tattoomasterCell=_tattoomasterCell;
             
             [self.tableView deselectRowAtIndexPath:self.tattoomasterCell.clickindexpath animated:NO];
         }
@@ -769,15 +755,13 @@
           imageObject = [imageFilesArray objectAtIndex:indexPath.row];
     lastClickedRow = indexPath.row;
     object = [imageFilesArray objectAtIndex:indexPath.row];
-          NSLog(@"%@",imageFilesArray);
           
           
           if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
               
               [self dislike];
               
-              NSLog(@"disliked");
-                self.fav_image.image =[UIImage imageNamed:@"icon-like.png"];
+                         self.fav_image.image =[UIImage imageNamed:@"icon-like.png"];
 
           }
           
@@ -786,8 +770,7 @@
               
               [self likeImage];
               
-              NSLog(@"liked");
-  self.fav_image.image =[UIImage imageNamed:@"icon-liked.png"];
+            self.fav_image.image =[UIImage imageNamed:@"icon-liked.png"];
 
                         }
       }
@@ -800,8 +783,6 @@
           //然后这里设定关联，此处把indexPath关联到alert上
           
           [alert show];
-
-          NSLog(@"請登入")
           ; }
     [self.tableView reloadData];
 }
@@ -818,14 +799,13 @@
         imageObject = [imageFilesArray objectAtIndex:indexPath.row];
         lastClickedRow = indexPath.row;
         object = [imageFilesArray objectAtIndex:indexPath.row];
-        NSLog(@"%@",imageFilesArray);
+
         
         
         if ([[object objectForKey:@"bookmark"]containsObject:[PFUser currentUser].objectId]) {
             
             [self nobookmark];
-            
-            NSLog(@"disliked");
+
             self.bookmark_image.image =[UIImage imageNamed:@"icon-favorite.png"];
             
         }
@@ -835,7 +815,7 @@
             
             [self bookmark];
             
-            NSLog(@"liked");
+
             self.bookmark_image.image =[UIImage imageNamed:@"icon-favorited.png"];
             
         }
@@ -850,7 +830,7 @@
         
         [alert show];
 
-        NSLog(@"請登入")
+      
         ; }
     [self.tableView reloadData];
 }

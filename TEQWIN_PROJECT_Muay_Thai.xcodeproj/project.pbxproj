@@ -43,6 +43,8 @@
 		42223ED919B5615400F0D058 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42223ED819B5615400F0D058 /* libz.1.1.3.dylib */; };
 		42223EDE19B5677F00F0D058 /* MyLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42223EDB19B5677F00F0D058 /* MyLogInViewController.m */; };
 		42223EDF19B5677F00F0D058 /* MySignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42223EDD19B5677F00F0D058 /* MySignUpViewController.m */; };
+		422278B71A1F237800AA7915 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 422278B51A1F237800AA7915 /* menu.png */; };
+		422278B81A1F237800AA7915 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 422278B61A1F237800AA7915 /* menu@2x.png */; };
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
@@ -229,6 +231,8 @@
 		42223EDB19B5677F00F0D058 /* MyLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogInViewController.m; sourceTree = "<group>"; };
 		42223EDC19B5677F00F0D058 /* MySignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignUpViewController.h; sourceTree = "<group>"; };
 		42223EDD19B5677F00F0D058 /* MySignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignUpViewController.m; sourceTree = "<group>"; };
+		422278B51A1F237800AA7915 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		422278B61A1F237800AA7915 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		42317A6819B709FC00C54F54 /* teqwin_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqwin_logo.png; sourceTree = "<group>"; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
@@ -739,6 +743,8 @@
 			isa = PBXGroup;
 			children = (
 				42DB2C5F1A0B224D002BAF1B /* muay_menu.png */,
+				422278B51A1F237800AA7915 /* menu.png */,
+				422278B61A1F237800AA7915 /* menu@2x.png */,
 				42DB2C591A0B1C89002BAF1B /* muay_banner.png */,
 				42DB2C551A0B18B5002BAF1B /* muay_eq.png */,
 				42DB2C401A09DBD0002BAF1B /* icon-gallery_nophoto.png */,
@@ -942,6 +948,7 @@
 				428E7C581A0087A900CA2C14 /* background@2x.jpg in Resources */,
 				42A4914F19D508E900E4D65E /* twitter@2x.png in Resources */,
 				427D34A4199E076400814463 /* facebook@2x.png in Resources */,
+				422278B81A1F237800AA7915 /* menu@2x.png in Resources */,
 				42A4914519D506A700E4D65E /* SignUpFieldBG.png in Resources */,
 				42A4913B19D506A700E4D65E /* Default@2x.png in Resources */,
 				428E7C531A00865000CA2C14 /* ICON@2x.png in Resources */,
@@ -963,6 +970,7 @@
 				42A9600E1A032F41002C0508 /* menu-logo.png in Resources */,
 				42DB2C3D1A09DA12002BAF1B /* muay_notice.png in Resources */,
 				427D34A6199E076400814463 /* google_drive@2x.png in Resources */,
+				422278B71A1F237800AA7915 /* menu.png in Resources */,
 				42DB2C3B1A09D7FF002BAF1B /* muay_history.jpg in Resources */,
 				427D349D199E076400814463 /* close.png in Resources */,
 				42EA4ECE19CAE1B20051057C /* Facebook-icon.png in Resources */,
