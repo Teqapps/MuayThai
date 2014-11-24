@@ -19,7 +19,9 @@
     NSArray *menuItems;
 }
 @synthesize tableview;
-
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
@@ -141,7 +143,7 @@
 
 - (void)viewDidLoad
 {
-
+ 
     self.tableview.backgroundColor = [UIColor clearColor];
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"muay_menu.png"] drawInRect:self.view.bounds];
@@ -162,7 +164,6 @@
     [list addObject:[NSString stringWithFormat:@"關於我們"]];
    ;
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -297,5 +298,6 @@
 
 
 
+    
 
-@end
+   @end
