@@ -267,7 +267,7 @@
             imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
             
             self.noimage.text=@"";
-            [query orderByAscending:@"createdAt"];
+           // [query orderByAscending:@"createdAt"];
             
 
             [_imagesCollection reloadData];
@@ -303,7 +303,7 @@
             CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
             [ cell.parseImage.image drawInRect:imageRect];
             cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
-      
+            UIGraphicsEndImageContext() ;
             cell.parseImage.image = [UIImage imageWithData:data];
             [cell.loadingSpinner stopAnimating];
             cell.loadingSpinner.hidden = YES;
