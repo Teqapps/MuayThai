@@ -320,7 +320,7 @@
     
     [ cell.thumbnail.image drawInRect:imageRect];
     cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext() ;
+    //UIGraphicsEndImageContext() ;
     
    // cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
     
