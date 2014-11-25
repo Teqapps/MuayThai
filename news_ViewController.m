@@ -41,7 +41,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];}
 - (void)viewWillAppear:(BOOL)animated {
     // self.screenName = @"Main";
- 
+  [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
   
     
     // self.page.numberOfPages = [imageFilesArray count];

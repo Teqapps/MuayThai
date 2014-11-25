@@ -97,7 +97,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     self.view.backgroundColor=[UIColor grayColor];
     [super viewWillAppear:animated];
-    
+     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if ([PFUser currentUser]) {
         PFQuery *bookmarkquery = [PFQuery queryWithClassName:@"muay_member"];
         

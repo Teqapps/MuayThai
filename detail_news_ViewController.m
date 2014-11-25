@@ -7,7 +7,7 @@
 //
 
 #import "detail_news_ViewController.h"
-
+#import "SWRevealViewController.h"
 @interface detail_news_ViewController ()
 
 @end
@@ -56,7 +56,13 @@
     self.profile_image.clipsToBounds = YES;
 
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    // self.screenName = @"Main";
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    
+    // self.page.numberOfPages = [imageFilesArray count];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -80,6 +80,7 @@ CFShareCircleView *shareCircleView;
 {
     
     [super viewDidAppear:animated];
+     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if (self.tattoomasterCell.clickindexpath!=nil) {
         NSIndexPath *indexPat = [NSIndexPath indexPathForRow:self.tattoomasterCell.clickindexpath.row inSection:0];
         [self.tableView scrollToRowAtIndexPath:indexPat atScrollPosition:UITableViewScrollPositionMiddle animated:YES   ];}
@@ -175,7 +176,7 @@ CFShareCircleView *shareCircleView;
     
     cell.loadingSpinner.hidden = NO;
     [cell.loadingSpinner startAnimating];
-      cell.image.image = [UIImage imageNamed:@"loading.png"];
+      cell.image.image = [UIImage imageNamed:@"image_icon.png"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
      
        

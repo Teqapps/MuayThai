@@ -82,7 +82,7 @@
         searchquery = [PFQuery queryWithClassName:@"muay_member"];
     //[query whereKey:@"Name" containsString:searchTerm];
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
-
+ [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 -(void)itemsDownloaded:(NSArray *)items
 {
@@ -297,7 +297,8 @@
     
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
- 
+    cell.parseImage.image=[UIImage imageNamed:@"main_background.png"];
+    cell.thumbnail.image=[UIImage imageNamed:@"image_icon.png"];
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
       PFFile *avstar = [imageObject objectForKey:@"image"];
     
@@ -312,15 +313,16 @@
     CGSize itemSize = CGSizeMake(50, 50);
     UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
     CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    /*
     cell.thumbnail.layer.backgroundColor=[[UIColor clearColor] CGColor];
     cell.thumbnail.layer.cornerRadius= cell.thumbnail.frame.size.width/2;
     cell.thumbnail.layer.borderWidth=0.0;
     cell.thumbnail.layer.masksToBounds = YES;
     cell.thumbnail.layer.borderColor=[[UIColor whiteColor] CGColor];
-    
+    */
     [ cell.thumbnail.image drawInRect:imageRect];
     cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
-    //UIGraphicsEndImageContext() ;
+    UIGraphicsEndImageContext() ;
     
    // cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
     

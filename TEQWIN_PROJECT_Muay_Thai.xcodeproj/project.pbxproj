@@ -46,6 +46,7 @@
 		422278B71A1F237800AA7915 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 422278B51A1F237800AA7915 /* menu.png */; };
 		422278B81A1F237800AA7915 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 422278B61A1F237800AA7915 /* menu@2x.png */; };
 		422278BA1A1F281900AA7915 /* main_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 422278B91A1F281900AA7915 /* main_background.png */; };
+		422278C21A24623F00AA7915 /* image_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 422278C11A24623F00AA7915 /* image_icon.png */; };
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
@@ -235,6 +236,7 @@
 		422278B51A1F237800AA7915 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		422278B61A1F237800AA7915 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		422278B91A1F281900AA7915 /* main_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_background.png; sourceTree = "<group>"; };
+		422278C11A24623F00AA7915 /* image_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_icon.png; sourceTree = "<group>"; };
 		42317A6819B709FC00C54F54 /* teqwin_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqwin_logo.png; sourceTree = "<group>"; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 				42A9601F1A038034002C0508 /* icon-favorited.png */,
 				42A95FE41A032F41002C0508 /* icon-favorite.png */,
 				42A95FE61A032F41002C0508 /* icon-gallery.png */,
+				422278C11A24623F00AA7915 /* image_icon.png */,
 				42A960211A038F88002C0508 /* icon-gallery_down.png */,
 				42A95FE71A032F41002C0508 /* icon-like.png */,
 				42A95FE91A032F41002C0508 /* icon-search.png */,
@@ -932,6 +935,7 @@
 				42A4914319D506A700E4D65E /* SignUp.png in Resources */,
 				42CB3DE51A19D71B00BB10DC /* wechat@2x.png in Resources */,
 				42A4914419D506A700E4D65E /* SignUpDown.png in Resources */,
+				422278C21A24623F00AA7915 /* image_icon.png in Resources */,
 				42DB2C601A0B224D002BAF1B /* muay_menu.png in Resources */,
 				42A960161A036E31002C0508 /* icon-liked.png in Resources */,
 				42A960241A07151A002C0508 /* bar.png in Resources */,

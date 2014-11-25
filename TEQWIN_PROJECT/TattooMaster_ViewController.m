@@ -93,7 +93,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
    //[self refreshTable:nil];
-    NSLog(@"%@",[PFInstallation currentInstallation].objectId);
+     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     // scroll search bar out of sight
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
@@ -321,7 +321,7 @@
         UIGraphicsEndImageContext();
         
         //
-        thumbnailImageView.image = [UIImage imageNamed:@"ICON.PNG"];
+        thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
         thumbnailImageView.file = thumbnail;
         [thumbnailImageView loadInBackground];
         [loadingSpinner stopAnimating];

@@ -156,7 +156,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     // scroll search bar out of sight
   //  self.screenName =@"detail page";
-
+ [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
 
@@ -289,7 +289,7 @@
     
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    
+    cell.parseImage.image =[UIImage imageNamed:@"image_icon.png"];
    imageObject = [imageFilesArray_image objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
     
@@ -298,7 +298,7 @@
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            CGSize itemSize = CGSizeMake(50, 50);
+            CGSize itemSize = CGSizeMake(20, 20);
             UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
             CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
             [ cell.parseImage.image drawInRect:imageRect];
