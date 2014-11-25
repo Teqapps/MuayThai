@@ -217,7 +217,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    //query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
     
     
@@ -225,9 +225,9 @@
     
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
-    /*    if ([self.objects count] == 0) {
+       if ([self.objects count] == 0) {
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-     }*/
+       }
     
     [query orderByAscending:@"createdAt"];
     

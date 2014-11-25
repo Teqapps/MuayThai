@@ -111,8 +111,11 @@ CFShareCircleView *shareCircleView;
 
     PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        }
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
             if (imageFilesArray.count==0) {

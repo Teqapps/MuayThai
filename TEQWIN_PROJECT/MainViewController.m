@@ -99,13 +99,16 @@
     hud.labelText = @"Loading";
     [hud show:YES];
     PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+   // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     // [query whereKey:@"news" equalTo:self.tattoomasterCell.master_id];
     [query whereKey:@"news_approve" equalTo:[NSNumber numberWithBool:YES]];
 
 
     [query orderByDescending:@"news"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        }
         if (!error) {
             news_array = [[NSArray alloc] initWithArray:objects];
             [_main_tableview reloadData];
@@ -122,11 +125,14 @@
     [hud show:YES];
     PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
     
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+   // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query whereKey:@"promotion_approve" equalTo:[NSNumber numberWithBool:YES]];
     
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        }
         if (!error) {
             
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
