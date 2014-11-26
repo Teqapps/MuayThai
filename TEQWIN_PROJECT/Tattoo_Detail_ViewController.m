@@ -259,17 +259,15 @@
    
     PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-   // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if ([objects count] == 0) {
+        if (objects.count ==0) {
+            self.noimage.text = @"noimage";
             query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+            
         }
         if (!error) {
-            if (objects.count ==0) {
-                self.noimage.text = @"noimage";
-            }
-            else{
+        
             imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
             
             self.noimage.text=@"";
@@ -278,7 +276,7 @@
 
             [_imagesCollection reloadData];
             }}
-    }];
+    ];
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

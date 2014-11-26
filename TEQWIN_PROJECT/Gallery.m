@@ -43,9 +43,9 @@ CFShareCircleView *shareCircleView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+      [self queryParseMethod];
 
-    [self queryParseMethod];
+    
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"showgallery" dimensions:dimensions];
     self.master_image.file=self.tattoomasterCell.imageFile;
@@ -80,6 +80,7 @@ CFShareCircleView *shareCircleView;
 {
     
     [super viewDidAppear:animated];
+
      [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if (self.tattoomasterCell.clickindexpath!=nil) {
         NSIndexPath *indexPat = [NSIndexPath indexPathForRow:self.tattoomasterCell.clickindexpath.row inSection:0];
@@ -111,16 +112,16 @@ CFShareCircleView *shareCircleView;
 
     PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-   //  query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count==0) {
+            
+
+        }
+
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
-            if (imageFilesArray.count==0) {
-                 query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-                
-                
-            }
-                        [tableView reloadData];
+                                   [tableView reloadData];
             [hud hide:YES];
         
             
