@@ -45,7 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.profileimage.image=[UIImage imageNamed:@"main_background.png"];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
@@ -259,24 +259,23 @@
    
     PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-    
+     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (objects.count ==0) {
-            self.noimage.text = @"noimage";
-            query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-            
-        }
         if (!error) {
-        
-            imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
-            
-            self.noimage.text=@"";
-           // [query orderByAscending:@"createdAt"];
-            
-
-            [_imagesCollection reloadData];
+            if (objects.count ==0) {
+                
+                self.noimage.text = @"noimage";
+            }
+            else{
+                imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
+                
+                self.noimage.text=@"";
+                [query orderByAscending:@"createdAt"];
+                
+                
+                [_imagesCollection reloadData];
             }}
-    ];
+    }];
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
