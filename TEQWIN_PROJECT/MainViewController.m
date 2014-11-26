@@ -39,9 +39,7 @@
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
-    [self queryParseMethod];
-    [self queryParseMethod_news];
-
+   
     // scroll search bar out of sight
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -78,6 +76,9 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self queryParseMethod];
+    [self queryParseMethod_news];
+
   //  self.screenName = @"Main";
         searchquery = [PFQuery queryWithClassName:@"muay_member"];
     //[query whereKey:@"Name" containsString:searchTerm];

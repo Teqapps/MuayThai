@@ -62,7 +62,7 @@
                                                             <color key="textColor" red="0.63236365078449464" green="0.85612309644670048" blue="0.85612309644670048" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" tag="167" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-YN-HeB" customClass="PFImageView">
+                                                        <imageView userInteractionEnabled="NO" tag="167" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-YN-HeB" customClass="PFImageView">
                                                             <rect key="frame" x="10" y="11" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
@@ -96,14 +96,14 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="H1s-QY-cp0"/>
                                 </connections>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_eq.png" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
-                                <rect key="frame" x="0.0" y="210" width="320" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
+                                <rect key="frame" x="0.0" y="212" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
-                                <rect key="frame" x="253" y="200" width="39" height="37"/>
+                                <rect key="frame" x="251" y="205" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
@@ -173,6 +173,10 @@
                                     <segue destination="e2j-PC-NFL" kind="push" id="P6S-Sj-tUl"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BAR1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-u5-ybq">
+                                <rect key="frame" x="130" y="212" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -341,7 +345,7 @@
                                 <rect key="frame" x="0.0" y="108" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-JJ-k59">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_banner4.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-JJ-k59">
                                         <rect key="frame" x="41" y="4" width="178" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -603,7 +607,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="E33C3241-E9C4-4FEC-AF44-ECFCCF99F05D" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="AA885E9F-28A4-43F5-B14D-E47E64DA2005" colorSpace="pattern"/>
                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1531,7 +1535,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMj-RP-6Yf" customClass="PFImageView">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMj-RP-6Yf" customClass="PFImageView">
                                                     <rect key="frame" x="5" y="31" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1599,7 +1603,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E33C3241-E9C4-4FEC-AF44-ECFCCF99F05D" width="320" height="460">
+        <image name="AA885E9F-28A4-43F5-B14D-E47E64DA2005" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -11486,6 +11490,7 @@ CQq/AAkKxAAJCswACQrPAAkK1AAJCtwACQrfAAkK8QAJCvQACQr5AAAAAAAABAEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAJCvs
 </mutableData>
         </image>
+        <image name="BAR1.png" width="527" height="284"/>
         <image name="ICON.png" width="128" height="128"/>
         <image name="background.jpg" width="960" height="540"/>
         <image name="background3.jpg" width="800" height="500"/>
@@ -11498,8 +11503,7 @@ AAAAAAAAAAAJCvs
         <image name="icon-share.png" width="104" height="104"/>
         <image name="main_background.png" width="300" height="156"/>
         <image name="menu.png" width="28" height="20"/>
-        <image name="muay_banner.png" width="950" height="269"/>
-        <image name="muay_eq.png" width="640" height="50"/>
+        <image name="muay_banner4.png" width="950" height="269"/>
         <image name="muay_history.jpg" width="261" height="151"/>
         <image name="muay_notice.png" width="998" height="626"/>
         <image name="navigationicon.png" width="512" height="512"/>
@@ -11511,14 +11515,14 @@ AAAAAAAAAAAJCvs
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Jan-aP-9Jn"/>
-        <segue reference="nCF-OP-zd7"/>
-        <segue reference="cXc-Cg-QFH"/>
         <segue reference="DyC-w1-YQe"/>
-        <segue reference="aaL-oi-ElB"/>
+        <segue reference="nCF-OP-zd7"/>
         <segue reference="QTr-PV-D3h"/>
-        <segue reference="P6S-Sj-tUl"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="PPs-fJ-uhp"/>
+        <segue reference="P6S-Sj-tUl"/>
+        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="Jan-aP-9Jn"/>
         <segue reference="sqL-XN-2Gv"/>
     </inferredMetricsTieBreakers>
 </document>

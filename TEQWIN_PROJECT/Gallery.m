@@ -600,7 +600,7 @@ CFShareCircleView *shareCircleView;
         }
         
     }
-    if ([sharer.name isEqual:@"line"]) {
+ /*   if ([sharer.name isEqual:@"line"]) {
         if ([self checkIfLineInstalled]) {
             UIImagePickerController *controller = [[UIImagePickerController alloc] init];
             controller.delegate = self;
@@ -608,7 +608,8 @@ CFShareCircleView *shareCircleView;
             [self presentViewController:controller animated:YES completion:nil];
         }
     }}
-
+*/
+}
 - (UIDocumentInteractionController *) setupControllerWithURL: (NSURL*) fileURL
                                                usingDelegate: (id ) interactionDelegate {
 

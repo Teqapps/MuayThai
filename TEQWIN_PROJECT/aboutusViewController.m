@@ -67,7 +67,7 @@
 
        intro_list =[[NSMutableArray alloc]init];
     [intro_list addObject:[NSString stringWithFormat:@"TEQWIN SOLUTION LIMITED"]];
-    NSLog(@"%@",list );
+    //NSLog(@"%@",list );
 
 }
 - (CGFloat)layoutManager:(NSLayoutManager *)layoutManager lineSpacingAfterGlyphAtIndex:(NSUInteger)glyphIndex withProposedLineFragmentRect:(CGRect)rect
