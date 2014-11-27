@@ -200,7 +200,7 @@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             
-            cell.imageView.image =[UIImage imageNamed:@"m-icon-home.png"];
+            cell.imageView.image =[UIImage imageNamed:@"menu_home.png"];
             cell.textLabel.text=@"主頁";
             
             [cell.textLabel setTextColor:[UIColor whiteColor]];
@@ -213,7 +213,7 @@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             
-                   cell.imageView.image=[UIImage imageNamed:@"m-icon-news.png"];
+                   cell.imageView.image=[UIImage imageNamed:@"menu_news.png"];
             cell.textLabel.text=@"新消息";
            
             [cell.textLabel setTextColor:[UIColor whiteColor]];
@@ -223,7 +223,7 @@
         {   cell.textLabel.font=[cell.textLabel.font fontWithSize:12];
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
-                   cell.imageView.image=[UIImage imageNamed:@"m-icon-favorite.png"];
+                   cell.imageView.image=[UIImage imageNamed:@"menu_history.png"];
             cell.textLabel.text=@"泰拳歷史";
             
             [cell.textLabel setTextColor:[UIColor whiteColor]];
@@ -236,7 +236,7 @@
             [cell.textLabel setFont:font];
           
             cell.textLabel.text=@"泰拳小知識";
-             cell.imageView.image=[UIImage imageNamed:@"m-icon-tnc.png"];
+             cell.imageView.image=[UIImage imageNamed:@"menu_knowledge.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
             break;
@@ -248,7 +248,7 @@
             [cell.textLabel setFont:font];
             //cell.imageView.image =[UIImage imageNamed:@"master_icon.png"];
             cell.textLabel.text=@"找拳館";
-             cell.imageView.image=[UIImage imageNamed:@"m-icon-search.png"];
+             cell.imageView.image=[UIImage imageNamed:@"menu_branches.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
             break;
@@ -260,7 +260,7 @@
             [cell.textLabel setFont:font];
             //cell.imageView.image =[UIImage imageNamed:@"master_icon.png"];
             cell.textLabel.text=@"關於我們";
-             cell.imageView.image=[UIImage imageNamed:@"m-icon-about.png"];
+             cell.imageView.image=[UIImage imageNamed:@"menu_about.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
             break;
