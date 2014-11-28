@@ -77,7 +77,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self queryParseMethod];
-    [self queryParseMethod_news];
+   
 
   //  self.screenName = @"Main";
         searchquery = [PFQuery queryWithClassName:@"muay_member"];
@@ -94,30 +94,7 @@
     
     
 }
-- (void)queryParseMethod_news {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate   ;
-    hud.labelText = @"Loading";
-    [hud show:YES];
-    PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
-   // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    // [query whereKey:@"news" equalTo:self.tattoomasterCell.master_id];
-    [query whereKey:@"news_approve" equalTo:[NSNumber numberWithBool:YES]];
 
-
-    [query orderByDescending:@"news"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if ([objects count] == 0) {
-            query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-        }
-        if (!error) {
-            news_array = [[NSArray alloc] initWithArray:objects];
-            [_main_tableview reloadData];
-            
-            [hud hide:YES];
-        }
-    }];
-}
 
 - (void)queryParseMethod {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

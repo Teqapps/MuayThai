@@ -455,11 +455,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginUIViewController.m"
-            timestampString = "438775620.167875"
+            timestampString = "438831567.426121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -535,11 +535,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEQWIN_PROJECT/MainViewController.m"
-            timestampString = "438679061.822777"
+            timestampString = "438833830.498861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
