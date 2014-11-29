@@ -388,7 +388,7 @@
     gallary_button = (UIButton*)[cell viewWithTag:162];
     if ([[object objectForKey:@"gallary_displayallow"]isEqualToValue:[NSNumber numberWithBool:YES]]) {
         //   NSLog(@"%@",self.tattoomasterCell.master_id);
-        gallary_image.image=[UIImage imageNamed:@"photo_yes_1.png"];
+        gallary_image.image=[UIImage imageNamed:@"photo_on.png.png"];
         
     }
     else
