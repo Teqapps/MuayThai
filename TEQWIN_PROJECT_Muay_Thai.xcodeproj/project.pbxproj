@@ -72,6 +72,9 @@
 		4222798F1A2853ED00AA7915 /* main_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4222798E1A2853ED00AA7915 /* main_background.png */; };
 		422279931A28560900AA7915 /* main_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 422279921A28560900AA7915 /* main_bar.jpg */; };
 		422279971A28662000AA7915 /* home_braches_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279961A28662000AA7915 /* home_braches_1.png */; };
+		422279A71A2C1A5600AA7915 /* muay_app_icon_1_76.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279A41A2C1A5600AA7915 /* muay_app_icon_1_76.png */; };
+		422279A81A2C1A5600AA7915 /* muay_app_icon_1_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279A51A2C1A5600AA7915 /* muay_app_icon_1_120.png */; };
+		422279A91A2C1A5600AA7915 /* muay_app_icon_1_152.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279A61A2C1A5600AA7915 /* muay_app_icon_1_152.png */; };
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
@@ -271,6 +274,9 @@
 		4222798E1A2853ED00AA7915 /* main_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_background.png; sourceTree = "<group>"; };
 		422279921A28560900AA7915 /* main_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_bar.jpg; sourceTree = "<group>"; };
 		422279961A28662000AA7915 /* home_braches_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_braches_1.png; sourceTree = "<group>"; };
+		422279A41A2C1A5600AA7915 /* muay_app_icon_1_76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muay_app_icon_1_76.png; sourceTree = "<group>"; };
+		422279A51A2C1A5600AA7915 /* muay_app_icon_1_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muay_app_icon_1_120.png; sourceTree = "<group>"; };
+		422279A61A2C1A5600AA7915 /* muay_app_icon_1_152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muay_app_icon_1_152.png; sourceTree = "<group>"; };
 		42317A6819B709FC00C54F54 /* teqwin_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqwin_logo.png; sourceTree = "<group>"; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
@@ -764,6 +770,9 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				422279A41A2C1A5600AA7915 /* muay_app_icon_1_76.png */,
+				422279A51A2C1A5600AA7915 /* muay_app_icon_1_120.png */,
+				422279A61A2C1A5600AA7915 /* muay_app_icon_1_152.png */,
 				422279961A28662000AA7915 /* home_braches_1.png */,
 				4222798A1A284F1000AA7915 /* muay_splash_screen.png */,
 				4222798B1A284F1000AA7915 /* muay_splash_screen@2x.png */,
@@ -908,6 +917,7 @@
 			files = (
 				428E7C5E1A008B5900CA2C14 /* loading@2x.png in Resources */,
 				4219409E198789DB007E3C52 /* ICON.png in Resources */,
+				422279A71A2C1A5600AA7915 /* muay_app_icon_1_76.png in Resources */,
 				42A4914D19D5087C00E4D65E /* FACEBOOK.JPG in Resources */,
 				420E2F6519FA3C1A00667E6C /* lineicon.png in Resources */,
 				422279431A28246200AA7915 /* photo_on.png in Resources */,
@@ -936,6 +946,7 @@
 				42A4913A19D506A700E4D65E /* Default.png in Resources */,
 				42A4915119D5090000E4D65E /* Facebook-icon.png in Resources */,
 				427D34AB199E076400814463 /* photo_library.png in Resources */,
+				422279A91A2C1A5600AA7915 /* muay_app_icon_1_152.png in Resources */,
 				42CB3DE31A19D71800BB10DC /* wechat.png in Resources */,
 				422278E81A25B19D00AA7915 /* muay_banner4.png in Resources */,
 				42A95FDC1A02335C002C0508 /* teqapps_logo_ai_G.png in Resources */,
@@ -957,6 +968,7 @@
 				420E2F6619FA3C1A00667E6C /* lineicon@2x.png in Resources */,
 				422279151A27165F00AA7915 /* home_allert.png in Resources */,
 				42A4914719D506A700E4D65E /* TwitterDown.png in Resources */,
+				422279A81A2C1A5600AA7915 /* muay_app_icon_1_120.png in Resources */,
 				42A9601C1A037D06002C0508 /* button-facebook-login_down.png in Resources */,
 				422279141A27165F00AA7915 /* female.png in Resources */,
 				42A4918219E2374F00E4D65E /* tattoo_1.jpg in Resources */,
@@ -1181,9 +1193,9 @@
 		42193FC01985FE08007E3C52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iOS Distribution: Teqwin Solutions Limited";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1200,6 +1212,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
+				PROVISIONING_PROFILE = "6e9e15c6-9cd6-45d5-af21-d1af4ba98aa4";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
@@ -1209,9 +1222,9 @@
 		42193FC11985FE08007E3C52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iOS Distribution: Teqwin Solutions Limited";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1228,6 +1241,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
+				PROVISIONING_PROFILE = "6e9e15c6-9cd6-45d5-af21-d1af4ba98aa4";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
