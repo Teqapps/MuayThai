@@ -67,8 +67,6 @@
 		422279431A28246200AA7915 /* photo_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279421A28246200AA7915 /* photo_on.png */; };
 		422279451A2824BC00AA7915 /* muay_login_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 422279441A2824BC00AA7915 /* muay_login_bg.jpg */; };
 		422279471A282A8C00AA7915 /* muay_login_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279461A282A8C00AA7915 /* muay_login_bg_2.png */; };
-		4222798C1A284F1000AA7915 /* muay_splash_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4222798A1A284F1000AA7915 /* muay_splash_screen.png */; };
-		4222798D1A284F1000AA7915 /* muay_splash_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4222798B1A284F1000AA7915 /* muay_splash_screen@2x.png */; };
 		4222798F1A2853ED00AA7915 /* main_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4222798E1A2853ED00AA7915 /* main_background.png */; };
 		422279931A28560900AA7915 /* main_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 422279921A28560900AA7915 /* main_bar.jpg */; };
 		422279971A28662000AA7915 /* home_braches_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279961A28662000AA7915 /* home_braches_1.png */; };
@@ -994,7 +992,6 @@
 				428E7C581A0087A900CA2C14 /* background@2x.jpg in Resources */,
 				42A4914F19D508E900E4D65E /* twitter@2x.png in Resources */,
 				422279191A27165F00AA7915 /* home_news.png in Resources */,
-				4222798C1A284F1000AA7915 /* muay_splash_screen.png in Resources */,
 				427D34A4199E076400814463 /* facebook@2x.png in Resources */,
 				422278B81A1F237800AA7915 /* menu@2x.png in Resources */,
 				42A4914519D506A700E4D65E /* SignUpFieldBG.png in Resources */,
@@ -1016,7 +1013,6 @@
 				42A4914019D506A700E4D65E /* LoginFieldBG.png in Resources */,
 				426587521A1C8EBA002C0E93 /* sina-weibo.png in Resources */,
 				4222791B1A27165F00AA7915 /* male.png in Resources */,
-				4222798D1A284F1000AA7915 /* muay_splash_screen@2x.png in Resources */,
 				42DB2C3D1A09DA12002BAF1B /* muay_notice.png in Resources */,
 				422278EC1A25CE9B00AA7915 /* BAR1.png in Resources */,
 				427D34A6199E076400814463 /* google_drive@2x.png in Resources */,
@@ -1208,7 +1204,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
-				PROVISIONING_PROFILE = "c33c7954-68b0-425d-b73a-20455022f53c";
+				PROVISIONING_PROFILE = "6e9e15c6-9cd6-45d5-af21-d1af4ba98aa4";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
@@ -1237,7 +1233,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
-				PROVISIONING_PROFILE = "c33c7954-68b0-425d-b73a-20455022f53c";
+				PROVISIONING_PROFILE = "6e9e15c6-9cd6-45d5-af21-d1af4ba98aa4";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
