@@ -114,8 +114,6 @@
 		428E7C531A00865000CA2C14 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C511A00865000CA2C14 /* ICON@2x.png */; };
 		428E7C561A0086A900CA2C14 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C551A0086A900CA2C14 /* ICON.png */; };
 		428E7C581A0087A900CA2C14 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C571A0087A900CA2C14 /* background@2x.jpg */; };
-		428E7C5D1A008B5900CA2C14 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C5B1A008B5900CA2C14 /* loading.png */; };
-		428E7C5E1A008B5900CA2C14 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C5C1A008B5900CA2C14 /* loading@2x.png */; };
 		429F00EE19AC7128008F0B31 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429F00ED19AC7128008F0B31 /* FacebookSDK.framework */; };
 		42A0095C19EF5E05003DCD0D /* Search_TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A0095B19EF5E05003DCD0D /* Search_TableViewController.m */; };
 		42A4844619A47AA20079EAA0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A4844519A47AA20079EAA0 /* Social.framework */; };
@@ -915,7 +913,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				428E7C5E1A008B5900CA2C14 /* loading@2x.png in Resources */,
 				4219409E198789DB007E3C52 /* ICON.png in Resources */,
 				422279A71A2C1A5600AA7915 /* muay_app_icon_1_76.png in Resources */,
 				42A4914D19D5087C00E4D65E /* FACEBOOK.JPG in Resources */,
@@ -990,7 +987,6 @@
 				422279971A28662000AA7915 /* home_braches_1.png in Resources */,
 				420E2F6219F9EC3F00667E6C /* whatsapp@2X.png in Resources */,
 				42A4918419E2375200E4D65E /* tattoo_2.jpg in Resources */,
-				428E7C5D1A008B5900CA2C14 /* loading.png in Resources */,
 				427D34AC199E076400814463 /* photo_library@2x.png in Resources */,
 				42A960141A036C22002C0508 /* icon-menu.png in Resources */,
 				427D34AE199E076400814463 /* pinterest@2x.png in Resources */,
@@ -1212,7 +1208,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
-				PROVISIONING_PROFILE = "6e9e15c6-9cd6-45d5-af21-d1af4ba98aa4";
+				PROVISIONING_PROFILE = "c33c7954-68b0-425d-b73a-20455022f53c";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
@@ -1241,7 +1237,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
-				PROVISIONING_PROFILE = "6e9e15c6-9cd6-45d5-af21-d1af4ba98aa4";
+				PROVISIONING_PROFILE = "c33c7954-68b0-425d-b73a-20455022f53c";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
