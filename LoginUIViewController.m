@@ -376,7 +376,7 @@
     if ([[imageObject objectForKey:@"gallary_displayallow"]isEqualToValue:[NSNumber numberWithBool:YES]]) {
         NSLog(@"%@",self.tattoomasterCell.muay_id);
         gallary_image.image=[UIImage imageNamed:@"photo_on.png"];
-        
+        gallary_button.enabled=YES;
     }
     else
     {

@@ -140,6 +140,7 @@
 		42A4918219E2374F00E4D65E /* tattoo_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A4918119E2374F00E4D65E /* tattoo_1.jpg */; };
 		42A4918419E2375200E4D65E /* tattoo_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A4918319E2375200E4D65E /* tattoo_2.jpg */; };
 		42A4918619E2375500E4D65E /* tattoo_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A4918519E2375500E4D65E /* tattoo_3.jpg */; };
+		42A59D871A3EB76A0098DE92 /* icon-likeded.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A59D861A3EB76A0098DE92 /* icon-likeded.png */; };
 		42A95FDC1A02335C002C0508 /* teqapps_logo_ai_G.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A95FDB1A02335C002C0508 /* teqapps_logo_ai_G.png */; };
 		42A95FFA1A032F41002C0508 /* button-facebook-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A95FE11A032F41002C0508 /* button-facebook-login.png */; };
 		42A95FFD1A032F41002C0508 /* icon-favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A95FE41A032F41002C0508 /* icon-favorite.png */; };
@@ -150,7 +151,6 @@
 		42A960041A032F41002C0508 /* icon-sex-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A95FEB1A032F41002C0508 /* icon-sex-m.png */; };
 		42A960051A032F41002C0508 /* icon-share.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A95FEC1A032F41002C0508 /* icon-share.png */; };
 		42A960141A036C22002C0508 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A960131A036C22002C0508 /* icon-menu.png */; };
-		42A960161A036E31002C0508 /* icon-liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A960151A036E31002C0508 /* icon-liked.png */; };
 		42A9601C1A037D06002C0508 /* button-facebook-login_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A9601B1A037D06002C0508 /* button-facebook-login_down.png */; };
 		42A960201A038034002C0508 /* icon-favorited.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A9601F1A038034002C0508 /* icon-favorited.png */; };
 		42A960221A038F88002C0508 /* icon-gallery_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A960211A038F88002C0508 /* icon-gallery_down.png */; };
@@ -359,6 +359,7 @@
 		42A4918119E2374F00E4D65E /* tattoo_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tattoo_1.jpg; sourceTree = "<group>"; };
 		42A4918319E2375200E4D65E /* tattoo_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tattoo_2.jpg; sourceTree = "<group>"; };
 		42A4918519E2375500E4D65E /* tattoo_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tattoo_3.jpg; sourceTree = "<group>"; };
+		42A59D861A3EB76A0098DE92 /* icon-likeded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-likeded.png"; sourceTree = "<group>"; };
 		42A95FDB1A02335C002C0508 /* teqapps_logo_ai_G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqapps_logo_ai_G.png; sourceTree = "<group>"; };
 		42A95FE11A032F41002C0508 /* button-facebook-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-facebook-login.png"; sourceTree = "<group>"; };
 		42A95FE41A032F41002C0508 /* icon-favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-favorite.png"; sourceTree = "<group>"; };
@@ -369,7 +370,6 @@
 		42A95FEB1A032F41002C0508 /* icon-sex-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-sex-m.png"; sourceTree = "<group>"; };
 		42A95FEC1A032F41002C0508 /* icon-share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-share.png"; sourceTree = "<group>"; };
 		42A960131A036C22002C0508 /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu.png"; sourceTree = "<group>"; };
-		42A960151A036E31002C0508 /* icon-liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-liked.png"; sourceTree = "<group>"; };
 		42A9601B1A037D06002C0508 /* button-facebook-login_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-facebook-login_down.png"; path = "../button-facebook-login_down.png"; sourceTree = "<group>"; };
 		42A9601F1A038034002C0508 /* icon-favorited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-favorited.png"; sourceTree = "<group>"; };
 		42A960211A038F88002C0508 /* icon-gallery_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-gallery_down.png"; sourceTree = "<group>"; };
@@ -770,6 +770,7 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				42A59D861A3EB76A0098DE92 /* icon-likeded.png */,
 				422279A41A2C1A5600AA7915 /* muay_app_icon_1_76.png */,
 				422279A51A2C1A5600AA7915 /* muay_app_icon_1_120.png */,
 				422279A61A2C1A5600AA7915 /* muay_app_icon_1_152.png */,
@@ -813,7 +814,6 @@
 				42A960211A038F88002C0508 /* icon-gallery_down.png */,
 				42A95FE71A032F41002C0508 /* icon-like.png */,
 				42A95FE91A032F41002C0508 /* icon-search.png */,
-				42A960151A036E31002C0508 /* icon-liked.png */,
 				42A95FEA1A032F41002C0508 /* icon-sex-f.png */,
 				42A95FEB1A032F41002C0508 /* icon-sex-m.png */,
 				42A95FEC1A032F41002C0508 /* icon-share.png */,
@@ -981,11 +981,11 @@
 				42A4914419D506A700E4D65E /* SignUpDown.png in Resources */,
 				422278C21A24623F00AA7915 /* image_icon.png in Resources */,
 				42DB2C601A0B224D002BAF1B /* muay_menu.png in Resources */,
-				42A960161A036E31002C0508 /* icon-liked.png in Resources */,
 				4222791C1A27165F00AA7915 /* menu_about.png in Resources */,
 				422279221A27165F00AA7915 /* photo.png in Resources */,
 				42A4913F19D506A700E4D65E /* FacebookDown.png in Resources */,
 				42A4917819D56DE600E4D65E /* loading_image.gif in Resources */,
+				42A59D871A3EB76A0098DE92 /* icon-likeded.png in Resources */,
 				422279971A28662000AA7915 /* home_braches_1.png in Resources */,
 				420E2F6219F9EC3F00667E6C /* whatsapp@2X.png in Resources */,
 				42A4918419E2375200E4D65E /* tattoo_2.jpg in Resources */,
@@ -1189,6 +1189,7 @@
 		42193FC01985FE08007E3C52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iOS Distribution: Teqwin Solutions Limited";
@@ -1199,7 +1200,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TEQWIN_PROJECT/TEQWIN_PROJECT_Muay_Thai-Prefix.pch";
 				INFOPLIST_FILE = "TEQWIN_PROJECT/TEQWIN_PROJECT_Muay_Thai-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1218,6 +1219,7 @@
 		42193FC11985FE08007E3C52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iOS Distribution: Teqwin Solutions Limited";
@@ -1228,7 +1230,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TEQWIN_PROJECT/TEQWIN_PROJECT_Muay_Thai-Prefix.pch";
 				INFOPLIST_FILE = "TEQWIN_PROJECT/TEQWIN_PROJECT_Muay_Thai-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -36,12 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                    message:@"需要登入嗎？"
-                                                   delegate:self
-                                          cancelButtonTitle:@"否"
-                                          otherButtonTitles:@"是",nil];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+      UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
      
     self.navigationItem.backBarButtonItem = backButton;
    
@@ -78,16 +73,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
    }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *button = [alertView buttonTitleAtIndex:buttonIndex];
-    if([button isEqualToString:@"是"])
-    {
-        LoginUIViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginUIViewController"];
-        [self.navigationController pushViewController:mapVC animated:YES];
-    }
-    
-}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [self queryParseMethod];
@@ -171,6 +157,7 @@
         
     }
 }
+
 -(void)filterResults:(NSString *)searchTerm scope:(NSString*)scope
 {
 

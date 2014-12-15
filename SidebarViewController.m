@@ -29,7 +29,7 @@
        // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
       //  UIGraphicsEndImageContext()    ;
         self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-        self.profile_image.layer.borderWidth = 3.0f;
+        self.profile_image.layer.borderWidth = 0.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
         self.profile_image.clipsToBounds = YES;
 
@@ -92,7 +92,7 @@
       //  self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
    // UIGraphicsEndImageContext();
         self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-        self.profile_image.layer.borderWidth = 3.0f;
+        self.profile_image.layer.borderWidth = 0.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
         self.profile_image.clipsToBounds = YES;
 
@@ -129,7 +129,7 @@
                                        
                                        // Add a nice corner radius to the image
                                        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-                                       self.profile_image.layer.borderWidth = 3.0f;
+                                       self.profile_image.layer.borderWidth = 0.0f;
                                        self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
                                        self.profile_image.clipsToBounds = YES;
 

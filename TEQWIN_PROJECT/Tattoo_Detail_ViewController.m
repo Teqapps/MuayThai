@@ -122,7 +122,7 @@
 ;
     self.profileimage.frame =CGRectMake(self.profileimage.frame.origin.x, self.profileimage.frame.origin.x,320, self.profileimage.frame.size.height);
 
-   self.profileimage.contentMode=UIViewContentModeScaleAspectFit;
+
   // self.profileimage.layer.cornerRadius =self.profileimage.frame.size.width / 2;
     self.profileimage.layer.borderWidth = 0.0f;
     self.profileimage.layer.borderColor = [UIColor whiteColor].CGColor;

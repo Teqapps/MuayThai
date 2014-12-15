@@ -322,7 +322,7 @@ CFShareCircleView *shareCircleView;
 - (void)shareCircleView:(CFShareCircleView *)aShareCircleView didSelectSharer:(CFSharer *)sharer{
     
     if ([sharer.name isEqual:@"Facebook"]) {
-        
+        NSLog(@"%@",shareimageFile.url  ) ;
         // Check if the Facebook app is installed and we can present the share dialog
         FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
         params.link = [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];

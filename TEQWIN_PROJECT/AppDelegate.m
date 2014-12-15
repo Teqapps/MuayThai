@@ -22,13 +22,9 @@ LoginUIViewController *viewController ;
 {
     sleep(2);
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                    message:@"需要登入嗎？"
-                                                   delegate:self
-                                          cancelButtonTitle:@"否"
-                                          otherButtonTitles:@"是",nil];
+
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    [alert show];
+
  
     
     
@@ -83,19 +79,13 @@ LoginUIViewController *viewController ;
                                                            [UIFont fontWithName:@"TimesNewRomanPS-ItalicMT" size:21.0], NSFontAttributeName, nil]];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-       
+    
     return YES;
 }
 
 
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    // Store the deviceToken in the current Installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
-}
+
+
 // Facebook oauth callback
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return [PFFacebookUtils handleOpenURL:url];
