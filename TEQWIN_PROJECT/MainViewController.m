@@ -36,6 +36,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+        //然后这里设定关联，此处把indexPath关联到alert上
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"需要登入嗎？"
+                                                       delegate:self
+                                              cancelButtonTitle:@"否"
+                                              otherButtonTitles:@"是",nil];
+        
+        [alert show];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else   {
+        
+        // app already launched
+    }
+
       UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
      
     self.navigationItem.backBarButtonItem = backButton;
@@ -94,7 +112,17 @@
     
     
 }
-
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *button = [alertView buttonTitleAtIndex:buttonIndex];
+    if([button isEqualToString:@"是"])
+    {
+        LoginUIViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginUIViewController"];
+        [self.navigationController pushViewController:mapVC animated:YES];
+        
+        
+    }
+}
 
 - (void)queryParseMethod {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
