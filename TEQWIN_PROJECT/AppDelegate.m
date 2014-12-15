@@ -10,14 +10,32 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 #import "AppDelegate.h"
+#import "SidebarViewController.h"
+#import "MainViewController.h"
 #import "LoginUIViewController.h"
+#import "news_ViewController.h"
 //#import "GAI.h"
 @implementation AppDelegate
-
+UINavigationController *navigation;
+LoginUIViewController *viewController ;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     sleep(2);
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message:@"需要登入嗎？"
+                                                   delegate:self
+                                          cancelButtonTitle:@"否"
+                                          otherButtonTitles:@"是",nil];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    [alert show];
  
+    
+    
+    //然后这里设定关联，此处把indexPath关联到alert上
+    
+   
+
           // Optional: automatically send uncaught exceptions to Google Analytics.
   //  [GAI sharedInstance].trackUncaughtExceptions = YES;
     
@@ -68,6 +86,7 @@
        
     return YES;
 }
+
 
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken

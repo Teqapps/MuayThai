@@ -353,10 +353,10 @@
             
             sex_statues.image = [UIImage imageNamed:@"icon-sex-f.png"];
         }
-
+    
     UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
     nameLabel.text = [imageObject objectForKey:@"name"];
-    
+    nameLabel.numberOfLines =3;
     UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
     prepTimeLabel.text = [imageObject objectForKey:@"gender"];
     
