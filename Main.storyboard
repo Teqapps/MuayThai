@@ -27,7 +27,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
                                 <rect key="frame" x="0.0" y="44" width="320" height="166"/>
                                 <color key="backgroundColor" red="0.047058828179999998" green="0.066666670139999995" blue="0.13333334029999999" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fs1-KR-jyM">
@@ -93,7 +93,7 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="nHf-Kp-G9m"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-3p-J7n">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-3p-J7n">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <color key="barTintColor" red="0.0" green="0.13035345294946935" blue="0.2662991751269036" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -101,7 +101,7 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="H1s-QY-cp0"/>
                                 </connections>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_bar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="main_bar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
                                 <rect key="frame" x="0.0" y="212" width="320" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -109,7 +109,7 @@
                                     <rect key="frame" x="0.0" y="288" width="320" height="30"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
                                 <rect key="frame" x="125" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="oHl-kG-pQu"/>
@@ -136,7 +136,7 @@
                                     <segue destination="488-73-Amk" kind="show" id="PPs-fJ-uhp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
                                 <rect key="frame" x="223" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="dFe-SQ-VGE"/>
@@ -162,7 +162,7 @@
                                     <segue destination="oJ1-Dk-Y59" kind="show" id="aaL-oi-ElB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
                                 <rect key="frame" x="24" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="E6I-KZ-6VE"/>
@@ -189,7 +189,7 @@
                                     <segue destination="v9q-E4-sEi" kind="show" id="DyC-w1-YQe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
                                 <rect key="frame" x="125" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Jy7-Sc-Bfl"/>
@@ -215,7 +215,7 @@
                                     <segue destination="03e-be-abg" kind="show" id="cXc-Cg-QFH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
                                 <rect key="frame" x="220" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="jJX-G4-2cw"/>
@@ -241,7 +241,7 @@
                                     <segue destination="HL8-vW-K61" kind="show" id="ZAO-5P-2Zd"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BAR1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-u5-ybq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BAR1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-u5-ybq">
                                 <rect key="frame" x="130" y="212" width="61" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kfa-P8-yAz"/>
@@ -261,7 +261,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="70" fixedFrame="YES" image="home_history.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-Fd-5RA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="70" ambiguous="YES" misplaced="YES" image="home_history.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-Fd-5RA">
                                 <rect key="frame" x="24" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="80X-t2-Xaz"/>
@@ -281,7 +281,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_allert.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-qq-gjc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_allert.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-qq-gjc">
                                 <rect key="frame" x="125" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="PcA-Tx-KmW"/>
@@ -301,7 +301,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_braches_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-o8-ynQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_braches_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-o8-ynQ">
                                 <rect key="frame" x="125" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="8uP-yb-gac"/>
@@ -321,7 +321,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_profiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="U05-j5-rzs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_profiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="U05-j5-rzs">
                                 <rect key="frame" x="223" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="FUa-v1-a8D"/>
@@ -341,7 +341,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_match.png" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Ml-WZ6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_match.png" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Ml-WZ6">
                                 <rect key="frame" x="220" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8Zm-sI-T9P"/>
@@ -361,7 +361,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
                                 <rect key="frame" x="24" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="YT9-nB-86e"/>
@@ -387,7 +387,7 @@
                                     <segue destination="jvV-M6-ADg" kind="show" id="Jan-aP-9Jn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_news.png" translatesAutoresizingMaskIntoConstraints="NO" id="dKg-MP-pBf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_news.png" translatesAutoresizingMaskIntoConstraints="NO" id="dKg-MP-pBf">
                                 <rect key="frame" x="24" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="3NX-ZK-h54"/>
@@ -407,7 +407,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
                                 <rect key="frame" x="251" y="205" width="39" height="37"/>
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="253" y="203" width="40" height="37"/>
@@ -467,11 +467,11 @@
                                 <exclude reference="TTr-TB-TFI"/>
                                 <exclude reference="Zir-C7-17r"/>
                                 <exclude reference="uaq-ii-ueV"/>
+                                <exclude reference="pAG-M5-0WA"/>
+                                <exclude reference="xjU-uO-Wrt"/>
                                 <exclude reference="2tg-JM-79b"/>
                                 <exclude reference="R8Z-wP-fZ9"/>
                                 <exclude reference="NAB-D5-7sh"/>
-                                <exclude reference="pAG-M5-0WA"/>
-                                <exclude reference="xjU-uO-Wrt"/>
                                 <exclude reference="Ij6-Xa-Gfh"/>
                                 <exclude reference="hfx-r8-mRU"/>
                                 <exclude reference="RsD-uD-YeV"/>
@@ -495,7 +495,6 @@
                                 <include reference="UBh-Fd-5RA"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=compact-widthClass=compact"/>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="UBh-Fd-5RA"/>
@@ -513,11 +512,11 @@
                                 <exclude reference="TTr-TB-TFI"/>
                                 <exclude reference="Zir-C7-17r"/>
                                 <include reference="uaq-ii-ueV"/>
+                                <include reference="pAG-M5-0WA"/>
+                                <include reference="xjU-uO-Wrt"/>
                                 <include reference="2tg-JM-79b"/>
                                 <include reference="R8Z-wP-fZ9"/>
                                 <include reference="NAB-D5-7sh"/>
-                                <include reference="pAG-M5-0WA"/>
-                                <include reference="xjU-uO-Wrt"/>
                                 <include reference="Ij6-Xa-Gfh"/>
                                 <include reference="hfx-r8-mRU"/>
                                 <include reference="RsD-uD-YeV"/>
@@ -982,7 +981,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="C93C8BD8-AEDC-40DB-BEDF-620B886189B9" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="29C8DCF9-1B91-40A8-A411-B8BAEE9F2565" colorSpace="pattern"/>
                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2211,6 +2210,9 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="117" width="320" height="570"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="VgR-xX-yMY" id="xcO-Jk-jHL"/>
                                     <outlet property="delegate" destination="VgR-xX-yMY" id="CWy-AS-hka"/>
@@ -2263,8 +2265,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BAR1.png" width="527" height="284"/>
-        <image name="C93C8BD8-AEDC-40DB-BEDF-620B886189B9" width="320" height="460">
+        <image name="29C8DCF9-1B91-40A8-A411-B8BAEE9F2565" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -12151,6 +12152,7 @@ CQq/AAkKxAAJCswACQrPAAkK1AAJCtwACQrfAAkK8QAJCvQACQr5AAAAAAAABAEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAJCvs
 </mutableData>
         </image>
+        <image name="BAR1.png" width="527" height="284"/>
         <image name="ICON.png" width="128" height="128"/>
         <image name="background.jpg" width="960" height="540"/>
         <image name="background3.jpg" width="800" height="500"/>
