@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import <MessageUI/MessageUI.h>
 #import "TattooMasterCell.h"
 //#import "GAITrackedViewController.h"

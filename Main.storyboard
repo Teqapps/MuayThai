@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8N-o8-WTY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8N-o8-WTY">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -334,7 +333,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
-                                <rect key="frame" x="0.0" y="77" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="77" width="320" height="76"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_banner4.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-JJ-k59">
                                         <rect key="frame" x="8" y="8" width="211" height="68"/>
@@ -615,7 +614,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="853EF833-60F9-4999-900B-79B6FBE3E403" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="D81AAE08-43B8-4DE4-8A0D-BB74A42BB01E" colorSpace="pattern"/>
                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1884,7 +1883,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="853EF833-60F9-4999-900B-79B6FBE3E403" width="320" height="460">
+        <image name="BAR1.png" width="527" height="284"/>
+        <image name="D81AAE08-43B8-4DE4-8A0D-BB74A42BB01E" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -11771,7 +11771,6 @@ CQq/AAkKxAAJCswACQrPAAkK1AAJCtwACQrfAAkK8QAJCvQACQr5AAAAAAAABAEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAJCvs
 </mutableData>
         </image>
-        <image name="BAR1.png" width="527" height="284"/>
         <image name="ICON.png" width="128" height="128"/>
         <image name="background.jpg" width="960" height="540"/>
         <image name="background3.jpg" width="800" height="500"/>
@@ -11805,15 +11804,15 @@ AAAAAAAAAAAJCvs
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="njj-2d-hlP"/>
-        <segue reference="MsR-o8-LCf"/>
+        <segue reference="DyC-w1-YQe"/>
         <segue reference="nCF-OP-zd7"/>
-        <segue reference="NNn-nc-gd0"/>
-        <segue reference="J3U-K8-EAV"/>
-        <segue reference="sRd-Tq-qBz"/>
-        <segue reference="GKR-Sh-PFv"/>
+        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="QTr-PV-D3h"/>
-        <segue reference="sqL-XN-2Gv"/>
         <segue reference="efc-B0-k9H"/>
+        <segue reference="sqL-XN-2Gv"/>
     </inferredMetricsTieBreakers>
 </document>

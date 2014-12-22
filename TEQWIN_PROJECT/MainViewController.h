@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "TattooMasterCell.h"
 //#import "GAITrackedViewController.h"
 @protocol passNames <NSObject>
