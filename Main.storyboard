@@ -26,11 +26,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
-                                <rect key="frame" x="0.0" y="44" width="320" height="166"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
+                                <rect key="frame" x="0.0" y="44" width="320" height="220"/>
                                 <color key="backgroundColor" red="0.047058828179999998" green="0.066666670139999995" blue="0.13333334029999999" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fs1-KR-jyM">
-                                    <size key="itemSize" width="295" height="169"/>
+                                    <size key="itemSize" width="320" height="218"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -40,11 +40,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="218"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-Tc-ck7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mG9-wW-cGq">
                                                     <rect key="frame" x="150" y="75" width="20" height="20"/>
@@ -54,24 +54,24 @@
                                                     <rect key="frame" x="150" y="92.5" width="20" height="20"/>
                                                 </activityIndicatorView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-eE-h3d">
-                                                    <rect key="frame" x="0.0" y="102" width="320" height="61"/>
+                                                    <rect key="frame" x="0.0" y="99" width="320" height="78"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" tag="167" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-YN-HeB" customClass="PFImageView">
+                                                            <rect key="frame" x="13" y="14" width="50" height="50"/>
+                                                        </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="166" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="C26-wH-e3N">
-                                                            <rect key="frame" x="76" y="11" width="178" height="50"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" red="0.63236365078449464" green="0.85612309644670048" blue="0.85612309644670048" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="84" y="0.0" width="178" height="70"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <color key="textColor" red="1" green="0.98760842338778243" blue="0.96873947349690903" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" tag="167" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-YN-HeB" customClass="PFImageView">
-                                                            <rect key="frame" x="10" y="11" width="50" height="50"/>
-                                                        </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23000000000000001" colorSpace="calibratedRGB"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <size key="customSize" width="320" height="169"/>
+                                        <size key="customSize" width="320" height="218"/>
                                         <connections>
                                             <outlet property="loadingSpinner" destination="mG9-wW-cGq" id="gWb-cL-gEp"/>
                                             <outlet property="name" destination="C26-wH-e3N" id="SDL-ii-39h"/>
@@ -94,28 +94,25 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="H1s-QY-cp0"/>
                                 </connections>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_bar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
-                                <rect key="frame" x="0.0" y="212" width="320" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="main_bar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
+                                <rect key="frame" x="0.0" y="265" width="320" height="15"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
-                                <rect key="frame" x="251" y="205" width="39" height="37"/>
-                            </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
-                                <rect key="frame" x="24" y="260" width="70" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
+                                <rect key="frame" x="24" y="299" width="70" height="70"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="新消息">
+                                <state key="normal" title="new">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="jvV-M6-ADg" kind="push" id="Jan-aP-9Jn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
-                                <rect key="frame" x="125" y="260" width="70" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
+                                <rect key="frame" x="125" y="299" width="70" height="70"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="搵師父">
+                                <state key="normal" title="club">
                                     <color key="titleColor" red="0.99419019669999997" green="0.99419019669999997" blue="0.99419019669999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -123,9 +120,9 @@
                                     <segue destination="488-73-Amk" kind="push" id="PPs-fJ-uhp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
-                                <rect key="frame" x="223" y="260" width="70" height="70"/>
-                                <state key="normal" title="個人檔案">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
+                                <rect key="frame" x="223" y="299" width="70" height="70"/>
+                                <state key="normal" title="match">
                                     <color key="titleColor" red="0.99419019669999997" green="0.99419019669999997" blue="0.99419019669999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -133,8 +130,8 @@
                                     <segue destination="oJ1-Dk-Y59" kind="push" id="aaL-oi-ElB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
-                                <rect key="frame" x="24" y="338" width="70" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
+                                <rect key="frame" x="24" y="394" width="70" height="70"/>
                                 <state key="normal" title="HISTORY">
                                     <color key="titleColor" red="0.99419019669999997" green="0.99419019669999997" blue="0.99419019669999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,18 +140,8 @@
                                     <segue destination="v9q-E4-sEi" kind="push" id="DyC-w1-YQe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
-                                <rect key="frame" x="125" y="338" width="70" height="70"/>
-                                <state key="normal" title="紋身注意事項">
-                                    <color key="titleColor" red="0.99419019669999997" green="0.99419019669999997" blue="0.99419019669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="03e-be-abg" kind="push" id="cXc-Cg-QFH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
-                                <rect key="frame" x="220" y="338" width="70" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
+                                <rect key="frame" x="223" y="394" width="70" height="70"/>
                                 <state key="normal" title="聯絡我們">
                                     <color key="titleColor" red="0.99419019669999997" green="0.99419019669999997" blue="0.99419019669999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,29 +150,38 @@
                                     <segue destination="HL8-vW-K61" kind="push" id="ZAO-5P-2Zd"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BAR1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-u5-ybq">
-                                <rect key="frame" x="130" y="212" width="61" height="30"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_news.png" translatesAutoresizingMaskIntoConstraints="NO" id="dKg-MP-pBf">
-                                <rect key="frame" x="24" y="260" width="70" height="70"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_history.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-Fd-5RA">
-                                <rect key="frame" x="24" y="338" width="70" height="70"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_allert.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-qq-gjc">
-                                <rect key="frame" x="125" y="338" width="70" height="70"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_braches_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-o8-ynQ">
-                                <rect key="frame" x="125" y="260" width="70" height="70"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_profiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="U05-j5-rzs">
-                                <rect key="frame" x="223" y="260" width="70" height="70"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_match.png" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Ml-WZ6">
-                                <rect key="frame" x="220" y="338" width="70" height="70"/>
-                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
+                                <rect key="frame" x="259" y="254" width="39" height="37"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
+                                <rect key="frame" x="125" y="394" width="70" height="70"/>
+                                <state key="normal" title="紋身注意事項">
+                                    <color key="titleColor" red="0.99419019669999997" green="0.99419019669999997" blue="0.99419019669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="03e-be-abg" kind="push" id="cXc-Cg-QFH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9jK-2R-WiK" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="299" id="3x8-ZR-IjC"/>
+                            <constraint firstItem="26g-MD-hmA" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="265" id="7kd-6p-dzV"/>
+                            <constraint firstItem="dqG-5o-BYB" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="299" id="D5R-Pf-fEG"/>
+                            <constraint firstItem="1HA-mE-MRo" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="44" id="DdV-oa-FeE"/>
+                            <constraint firstItem="koL-Pz-z6H" firstAttribute="top" secondItem="dqG-5o-BYB" secondAttribute="bottom" constant="135" id="GvZ-5B-6mw"/>
+                            <constraint firstItem="koL-Pz-z6H" firstAttribute="top" secondItem="rRf-l6-RYc" secondAttribute="bottom" constant="40" id="ONn-gT-buS"/>
+                            <constraint firstItem="e1L-JA-jjf" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="299" id="SD1-2X-NBs"/>
+                            <constraint firstItem="koL-Pz-z6H" firstAttribute="top" secondItem="e1L-JA-jjf" secondAttribute="bottom" constant="135" id="V4J-2p-prA"/>
+                            <constraint firstItem="koL-Pz-z6H" firstAttribute="top" secondItem="GHA-bh-Eaa" secondAttribute="bottom" constant="40" id="VEL-54-KDN"/>
+                            <constraint firstItem="rRf-l6-RYc" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="394" id="eSf-Qs-dWc"/>
+                            <constraint firstItem="koL-Pz-z6H" firstAttribute="top" secondItem="K9f-cd-8pA" secondAttribute="bottom" constant="40" id="jjx-oQ-GGi"/>
+                            <constraint firstItem="koL-Pz-z6H" firstAttribute="top" secondItem="9jK-2R-WiK" secondAttribute="bottom" constant="135" id="okk-pD-itG"/>
+                            <constraint firstItem="K9f-cd-8pA" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="394" id="tmy-WX-yma"/>
+                            <constraint firstItem="GHA-bh-Eaa" firstAttribute="top" secondItem="4VJ-Vm-Vwh" secondAttribute="bottom" constant="394" id="vfP-jl-agL"/>
+                            <constraint firstItem="koL-Pz-z6H" firstAttribute="top" secondItem="26g-MD-hmA" secondAttribute="bottom" constant="224" id="yNv-EU-emp"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Title" id="Eia-BN-GnY">
@@ -221,7 +217,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="373" y="717"/>
+            <point key="canvasLocation" x="373" y="715"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="PIX-3s-mzZ">
@@ -614,7 +610,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="D81AAE08-43B8-4DE4-8A0D-BB74A42BB01E" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="D48A9E6F-4246-4933-B627-BC199BECD211" colorSpace="pattern"/>
                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1883,8 +1879,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BAR1.png" width="527" height="284"/>
-        <image name="D81AAE08-43B8-4DE4-8A0D-BB74A42BB01E" width="320" height="460">
+        <image name="D48A9E6F-4246-4933-B627-BC199BECD211" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -11775,12 +11770,6 @@ AAAAAAAAAAAJCvs
         <image name="background.jpg" width="960" height="540"/>
         <image name="background3.jpg" width="800" height="500"/>
         <image name="bar.png" width="632" height="31"/>
-        <image name="home_allert.png" width="192" height="192"/>
-        <image name="home_braches_1.png" width="190" height="190"/>
-        <image name="home_history.png" width="192" height="192"/>
-        <image name="home_match.png" width="192" height="192"/>
-        <image name="home_news.png" width="192" height="192"/>
-        <image name="home_profiles.png" width="192" height="192"/>
         <image name="home_win.png" width="164" height="100"/>
         <image name="icon-favorite.png" width="72" height="72"/>
         <image name="icon-like.png" width="52" height="57"/>
@@ -11805,7 +11794,7 @@ AAAAAAAAAAAJCvs
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="DyC-w1-YQe"/>
-        <segue reference="nCF-OP-zd7"/>
+        <segue reference="6Hf-gE-6OJ"/>
         <segue reference="cXc-Cg-QFH"/>
         <segue reference="Jan-aP-9Jn"/>
         <segue reference="ZAO-5P-2Zd"/>
