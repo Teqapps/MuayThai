@@ -51,6 +51,13 @@ LoginUIViewController *viewController ;
         [PFTwitterUtils initializeWithConsumerKey:@"your_twitter_consumer_key" consumerSecret:@"your_twitter_consumer_secret"];
 
 
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    PFACL *defaultACL = [PFACL ACL];
+    [defaultACL setPublicReadAccess:YES];
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    
+    [currentInstallation saveInBackground];
 
 
 
