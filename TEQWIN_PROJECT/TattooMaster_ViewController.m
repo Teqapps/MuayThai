@@ -572,7 +572,7 @@
       //  object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
       //  [object saveInBackground];
       //  NSLog(@"%@",object[@"view"]);
-        
+       
         
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
         [object saveInBackground];

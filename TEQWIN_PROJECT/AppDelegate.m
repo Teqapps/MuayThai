@@ -25,8 +25,7 @@ LoginUIViewController *viewController ;
    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
 
- 
-    
+
     
     //然后这里设定关联，此处把indexPath关联到alert上
     
@@ -48,13 +47,11 @@ LoginUIViewController *viewController ;
     [Parse setApplicationId:@"Edo4mqMRpZRho3V0KMhNU3L56qFh9TOQ1SfwMx6o"
                   clientKey:@"a1pOFTR9QQrDIZcYo6TaCi4z49wlPqxNDDS71mHv"];
     [PFFacebookUtils initializeFacebook];
-        [PFTwitterUtils initializeWithConsumerKey:@"your_twitter_consumer_key" consumerSecret:@"your_twitter_consumer_secret"];
-
-   
-
-
-
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    // Override point for customization after application launch.
+    //-- Set Notification
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation saveInBackground];
 
 
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"background.jpg"]
@@ -71,8 +68,19 @@ LoginUIViewController *viewController ;
                                                            [UIFont fontWithName:@"TimesNewRomanPS-ItalicMT" size:21.0], NSFontAttributeName, nil]];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    return YES;
+   // NSLog(@"hehe%@",[PFInstallation currentInstallation].installationId  );
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
+
+       return YES;
 }
 
 - (void)application:(UIApplication *)application
@@ -83,8 +91,13 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     currentInstallation.channels = @[ @"global" ];
     [currentInstallation saveInBackground];
     NSLog(@"%@",currentInstallation);
+
+
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
 
 // Facebook oauth callback
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {

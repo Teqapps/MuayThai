@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+         if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         //然后这里设定关联，此处把indexPath关联到alert上
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"需要登入嗎？"
@@ -63,7 +63,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.image_collection setCollectionViewLayout:flowLayout];
     
-    flowLayout.itemSize = CGSizeMake(320, [[UIScreen mainScreen] bounds].size.height/2.81);
+    flowLayout.itemSize = CGSizeMake(320,180);
     NSLog(@"hehe%f",[[UIScreen mainScreen] bounds].size.height/2.81);
     [flowLayout setMinimumLineSpacing:0.0f];
 
@@ -323,7 +323,7 @@
     cell.loadingSpinner.hidden = NO;
     [cell.loadingSpinner startAnimating];
 
-    CGSize itemSize = CGSizeMake(50, 50);
+    CGSize itemSize = CGSizeMake(40, 40);
     UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
     CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
     /*
