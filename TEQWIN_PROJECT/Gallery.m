@@ -322,12 +322,34 @@ CFShareCircleView *shareCircleView;
 - (void)shareCircleView:(CFShareCircleView *)aShareCircleView didSelectSharer:(CFSharer *)sharer{
     
     if ([sharer.name isEqual:@"Facebook"]) {
-       
+        NSLog(@"%@",shareimageFile.url  ) ;
+        // Check if the Facebook app is installed and we can present the share dialog
+        FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+        params.link = [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];
+        
+        // If the Facebook app is installed and we can present the share dialog
+        if ([FBDialogs canPresentShareDialogWithParams:params]) {
+            
+            // Present share dialog
+            [FBDialogs presentShareDialogWithLink:params.link
+                                          handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                              if(error) {
+                                                  // An error occurred, we need to handle the error
+                                                  // See: https://developers.facebook.com/docs/ios/errors
+                                                  NSLog(@"Error publishing story: %@", error.description);
+                                              } else {
+                                                  // Success
+                                                  NSLog(@"result %@", results);
+                                              }
+                                          }];
+            
+            // If the Facebook app is NOT installed and we can't present the share dialog
+        } else {
             // FALLBACK: publish just a link using the Feed dialog
             
             // Put together the dialog parameters
-        //     NSString *picURLstring =
-          //  [NSString stringWithFormat:@"http://files.parsetfss.com/c6afcb1f-6a07-4487-8d0d-8406c9b9f69c/tfss-0366ca1a-894e-45c2-b43b-f45b82d10f6a-gallery_02_5.jpg"] ;
+            // NSString *picURLstring =
+            //[NSString stringWithFormat:@"http://files.parsetfss.com/c6afcb1f-6a07-4487-8d0d-8406c9b9f69c/tfss-0366ca1a-894e-45c2-b43b-f45b82d10f6a-gallery_02_5.jpg"] ;
             
             NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                            self.tattoomasterCell.name, @"name",
@@ -364,7 +386,7 @@ CFShareCircleView *shareCircleView;
                                                               }
                                                           }
                                                       }];
-        }
+        }}
     if ([sharer.name isEqual:@"Twitter"]) {
         // 判斷社群網站的服務是否可用
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {

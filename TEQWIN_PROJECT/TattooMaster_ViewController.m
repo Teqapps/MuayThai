@@ -229,7 +229,7 @@
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
        }
     
-     [query orderByAscending:@"muay_id"];
+    [query orderByAscending:@"createdAt"];
     
     return query;
    

@@ -32,8 +32,8 @@
     
     [self.logInView.facebookButton setImage:nil forState:UIControlStateNormal];
     [self.logInView.facebookButton setImage:nil forState:UIControlStateHighlighted];
-   // [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"button-facebook-login_down.png"] forState:UIControlStateHighlighted];
-  //  [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"button-facebook-login.png"] forState:UIControlStateNormal];
+    [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"button-facebook-login_down.png"] forState:UIControlStateHighlighted];
+    [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"button-facebook-login.png"] forState:UIControlStateNormal];
     [self.logInView.facebookButton setTitle:@"" forState:UIControlStateNormal];
     [self.logInView.facebookButton setTitle:@"" forState:UIControlStateHighlighted];
     
@@ -69,7 +69,7 @@
     
     // Set frame for elements
     // [self.logInView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 600.0f)];
-    [self.logInView.passwordForgottenButton setFrame:CGRectMake(23.0f, 330.0f, 300.0f, 110.0f)];
+    [self.logInView.passwordForgottenButton setFrame:CGRectMake(33.0f, 140.0f, 30.0f, 110.0f)];
     [self.logInView.dismissButton setFrame:CGRectMake(260.0f, 30.0f, 40.0f, 40.0f)];
     [self.logInView.logo setFrame:CGRectMake(30.0f, 80.0f, 250.0f, 58.5f)];
     [self.logInView.facebookButton setFrame:CGRectMake(0.0f, 330.0f, 320.0f, 40.0f)];

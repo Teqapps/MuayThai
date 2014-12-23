@@ -26,11 +26,10 @@
 #import "LoginUIViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
 #import "MyLogInViewController.h"
 #import "MySignUpViewController.h"
 #import "MainViewController.h"
-#import  <ParseFacebookUtils/PFFacebookUtils.h>
+
 @interface LoginUIViewController ()
 
 {

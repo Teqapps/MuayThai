@@ -6,7 +6,6 @@
 //  Copyright (c) 2014年 Teqwin. All rights reserved.
 //
 #import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
 #import <UIKit/UIKit.h>
 #import "MatchCell.h"
 @interface PopupViewController : UIViewController

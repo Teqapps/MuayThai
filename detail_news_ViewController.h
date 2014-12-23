@@ -7,7 +7,6 @@
 //
 
 #import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
 #import <UIKit/UIKit.h>
 #import "TattooMasterCell.h"
 @interface detail_news_ViewController : UIViewController

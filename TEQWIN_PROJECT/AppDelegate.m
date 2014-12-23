@@ -5,10 +5,10 @@
 //  Created by Teqwin on 28/7/14.
 //  Copyright (c) 2014年 ___FULLUSERNAME___. All rights reserved.
 //
-#import <ParseFacebookUtils/PFFacebookUtils.h>
+
+
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
 #import "AppDelegate.h"
 #import "SidebarViewController.h"
 #import "MainViewController.h"
@@ -22,7 +22,7 @@ LoginUIViewController *viewController ;
 {
     sleep(2);
 
-   
+
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
 
  
@@ -50,7 +50,8 @@ LoginUIViewController *viewController ;
     [PFFacebookUtils initializeFacebook];
         [PFTwitterUtils initializeWithConsumerKey:@"your_twitter_consumer_key" consumerSecret:@"your_twitter_consumer_secret"];
 
-   
+
+
 
 
 
@@ -75,15 +76,7 @@ LoginUIViewController *viewController ;
     return YES;
 }
 
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    currentInstallation.channels = @[ @"global" ];
-    [currentInstallation saveInBackground];
-    NSLog(@"%@",currentInstallation);
-}
+
 
 
 // Facebook oauth callback
