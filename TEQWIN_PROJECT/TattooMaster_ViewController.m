@@ -571,10 +571,9 @@
       //  NSInteger myInteger = [tattoomasterCell.view integerValue];
       //  object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
       //  [object saveInBackground];
-        NSLog(@"%@",object[@"view"]);
+      //  NSLog(@"%@",object[@"view"]);
         
-        NSLog(@"%@",[PFInstallation currentInstallation]);
-         NSLog(@"%@",[PFInstallation currentInstallation].objectId);
+        
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
         [object saveInBackground];
     }
