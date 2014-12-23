@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F8N-o8-WTY">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="koL-Pz-z6H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uCU-64-UEv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-hY-Gyw">
@@ -35,12 +36,12 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="H1s-QY-cp0"/>
                                 </connections>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_bar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="main_bar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="26g-MD-hmA">
                                 <rect key="frame" x="0.0" y="212" width="320" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
                                 <rect key="frame" x="251" y="205" width="39" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="g96-on-Jpi"/>
@@ -59,7 +60,7 @@
                                     </mask>
                                 </variation>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
                                 <rect key="frame" x="24" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="9Mn-AT-149"/>
@@ -86,7 +87,7 @@
                                     <segue destination="jvV-M6-ADg" kind="show" id="Jan-aP-9Jn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
                                 <rect key="frame" x="125" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="GmQ-Dj-xf8"/>
@@ -113,7 +114,7 @@
                                     <segue destination="488-73-Amk" kind="show" id="PPs-fJ-uhp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
                                 <rect key="frame" x="223" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="ncH-az-Pr6"/>
@@ -139,7 +140,7 @@
                                     <segue destination="oJ1-Dk-Y59" kind="show" id="aaL-oi-ElB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
                                 <rect key="frame" x="24" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="1Qt-CW-2j2"/>
@@ -165,7 +166,7 @@
                                     <segue destination="v9q-E4-sEi" kind="show" id="DyC-w1-YQe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
                                 <rect key="frame" x="125" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="B2L-l7-2Ou"/>
@@ -191,7 +192,7 @@
                                     <segue destination="03e-be-abg" kind="show" id="cXc-Cg-QFH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
                                 <rect key="frame" x="220" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="LZg-ek-ghz"/>
@@ -217,7 +218,7 @@
                                     <segue destination="HL8-vW-K61" kind="show" id="ZAO-5P-2Zd"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BAR1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-u5-ybq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BAR1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-u5-ybq">
                                 <rect key="frame" x="130" y="212" width="61" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="61" id="EKc-mR-S38"/>
@@ -236,7 +237,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_news.png" translatesAutoresizingMaskIntoConstraints="NO" id="dKg-MP-pBf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_news.png" translatesAutoresizingMaskIntoConstraints="NO" id="dKg-MP-pBf">
                                 <rect key="frame" x="24" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="7so-7R-POH"/>
@@ -255,7 +256,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_allert.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-qq-gjc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_allert.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-qq-gjc">
                                 <rect key="frame" x="125" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="eLe-4u-uBb"/>
@@ -274,7 +275,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_braches_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-o8-ynQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_braches_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-o8-ynQ">
                                 <rect key="frame" x="125" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="77k-yo-30y"/>
@@ -293,7 +294,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_profiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="U05-j5-rzs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_profiles.png" translatesAutoresizingMaskIntoConstraints="NO" id="U05-j5-rzs">
                                 <rect key="frame" x="223" y="260" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="65N-oa-00t"/>
@@ -313,7 +314,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_match.png" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Ml-WZ6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_match.png" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Ml-WZ6">
                                 <rect key="frame" x="220" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="bYr-Ab-Blg"/>
@@ -332,7 +333,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
                                 <rect key="frame" x="0.0" y="44" width="320" height="166"/>
                                 <color key="backgroundColor" red="0.047058828179999998" green="0.066666670139999995" blue="0.13333334029999999" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fs1-KR-jyM">
@@ -356,7 +357,7 @@
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qWo-fw-QI6">
                                                     <rect key="frame" x="150" y="92.5" width="20" height="20"/>
                                                 </activityIndicatorView>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-eE-h3d">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-eE-h3d">
                                                     <rect key="frame" x="0.0" y="102" width="320" height="61"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" tag="167" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-YN-HeB" customClass="PFImageView">
@@ -390,7 +391,7 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-Tc-ck7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="main_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-Tc-ck7">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="169" id="cAS-mg-ifv"/>
@@ -444,7 +445,7 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="nHf-Kp-G9m"/>
                                 </connections>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_history.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-Fd-5RA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_history.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-Fd-5RA">
                                 <rect key="frame" x="24" y="338" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="7pw-78-4XN"/>
@@ -505,19 +506,19 @@
                                 <exclude reference="FTi-EQ-CmL"/>
                                 <exclude reference="Mle-Nn-GOo"/>
                                 <exclude reference="kBZ-Jd-BGV"/>
+                                <exclude reference="Ikq-F9-Cc0"/>
                                 <exclude reference="7Kj-7z-eSA"/>
                                 <exclude reference="8Bv-cA-Bes"/>
-                                <exclude reference="Ikq-F9-Cc0"/>
                                 <exclude reference="pou-oX-e0k"/>
+                                <exclude reference="qZI-ag-lYK"/>
+                                <exclude reference="tLF-4f-Edl"/>
                                 <exclude reference="957-cg-XLj"/>
                                 <exclude reference="Aly-Fy-wx4"/>
                                 <exclude reference="p4l-hV-paa"/>
-                                <exclude reference="qZI-ag-lYK"/>
-                                <exclude reference="tLF-4f-Edl"/>
-                                <exclude reference="P9F-AR-t7q"/>
                                 <exclude reference="flc-kR-DdP"/>
-                                <exclude reference="aJD-OQ-Sh3"/>
+                                <exclude reference="P9F-AR-t7q"/>
                                 <exclude reference="UyH-d7-YtT"/>
+                                <exclude reference="aJD-OQ-Sh3"/>
                                 <exclude reference="6jb-RE-zCE"/>
                                 <exclude reference="71x-Wa-nwq"/>
                                 <exclude reference="EuK-EV-c0a"/>
@@ -541,19 +542,19 @@
                                 <include reference="FTi-EQ-CmL"/>
                                 <include reference="Mle-Nn-GOo"/>
                                 <include reference="kBZ-Jd-BGV"/>
+                                <include reference="Ikq-F9-Cc0"/>
                                 <include reference="7Kj-7z-eSA"/>
                                 <include reference="8Bv-cA-Bes"/>
-                                <include reference="Ikq-F9-Cc0"/>
                                 <include reference="pou-oX-e0k"/>
+                                <include reference="qZI-ag-lYK"/>
+                                <include reference="tLF-4f-Edl"/>
                                 <include reference="957-cg-XLj"/>
                                 <include reference="Aly-Fy-wx4"/>
                                 <include reference="p4l-hV-paa"/>
-                                <include reference="qZI-ag-lYK"/>
-                                <include reference="tLF-4f-Edl"/>
-                                <include reference="P9F-AR-t7q"/>
                                 <include reference="flc-kR-DdP"/>
-                                <include reference="aJD-OQ-Sh3"/>
+                                <include reference="P9F-AR-t7q"/>
                                 <include reference="UyH-d7-YtT"/>
+                                <include reference="aJD-OQ-Sh3"/>
                                 <include reference="6jb-RE-zCE"/>
                                 <include reference="71x-Wa-nwq"/>
                                 <include reference="EuK-EV-c0a"/>
@@ -714,7 +715,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37F-Mw-uAb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
                                 <rect key="frame" x="0.0" y="77" width="320" height="76"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_banner4.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-JJ-k59">
@@ -722,6 +723,9 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.386698921319797" green="0.386698921319797" blue="0.386698921319797" alpha="0.28000000000000003" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="77" width="0.0" height="80"/>
+                                </variation>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C71-P1-jXa">
                                 <rect key="frame" x="113" y="36" width="158" height="30"/>
@@ -959,7 +963,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="62" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EkM-0f-ipe">
@@ -1002,7 +1006,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="5D43142E-5FA6-4A8F-944B-BF229EF00DCA" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="7F1E471E-E318-4A93-9EEB-8F2185DF1B2B" colorSpace="pattern"/>
                                 <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1144,7 +1148,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="TattooMaster_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="488-73-Amk" customClass="TattooMaster_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="195" sectionHeaderHeight="22" sectionFooterHeight="22" id="YXb-hL-ggL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1354,11 +1358,11 @@
                         <viewControllerLayoutGuide type="bottom" id="PxZ-Pw-f0c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qh5-Ud-sCW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-pu-x9V">
-                                <rect key="frame" x="8" y="14" width="304" height="470"/>
+                                <rect key="frame" x="8" y="14" width="304" height="382"/>
                                 <color key="backgroundColor" red="0.031372550870000002" green="0.0078431377190000002" blue="0.0078431377190000002" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <string key="text">泰拳練習注意事項
 
@@ -1421,11 +1425,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wJh-3V-tA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KxI-lV-Gw9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNV-Ln-XxK">
-                                <rect key="frame" x="0.0" y="158" width="320" height="346"/>
+                                <rect key="frame" x="0.0" y="158" width="320" height="258"/>
                                 <color key="backgroundColor" red="0.031372550874948502" green="0.0078431377187371254" blue="0.0078431377187371254" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <string key="text">在史前時代，當人類還處於原始的生存條件下，為了維持自身的安全，以及來自大自然的強大壓力都迫使人類你爭我奪，相互鬥爭。 起初為生命，家庭和整個部落而鬥，他們最初是利和簡單武器例如籐杖和棍棒等，後來又擴展到用嘴巴，手和腳去咬，抓和踢等等。 後來，人類慢慢進展傾向於團體式的生活，群體之中，注定要有一個人來承擔領導者的職責，這必須是一個富有技巧，具有超人的力量，超出群體中其他人的優良品質的男人，以幫助群體戰勝來自自群體外的敵人。領導人是由選舉產生，他們會用與生俱來的武器如拳頭，肘和腳等來戰鬥，而”古泰拳”亦因此應運而生。 在戰時，泰拳就己經在軍中被用以訓練士兵，提高士兵的戰鬥力，在戰時，泰拳的操練有助於泰國士兵與敵人交鋒得到勝利，而在和平時期，士兵們操練泰拳的主要目的是鍛鍊身體，以備戰時之需。</string>
                                 <color key="textColor" red="0.87450980392156863" green="0.70588235294117641" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1949,7 +1953,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Match_ViewController" title="Match_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HL8-vW-K61" customClass="Match_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="202" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Yp-wJ-o2H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.72708608699999999" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
@@ -2110,7 +2114,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IGa-dw-KvG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c6u-eQ-9C8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" tag="111" contentMode="scaleToFill" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ix6-9m-MBu">
@@ -2118,7 +2122,7 @@
                                 <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbs-mH-pZ8">
-                                <rect key="frame" x="0.0" y="411" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="323" width="320" height="30"/>
                                 <state key="normal" title="按這裏跳過此頁">
                                     <color key="titleColor" red="0.86117130470000003" green="0.71184990879999999" blue="0.27511975360000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2295,7 +2299,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5D43142E-5FA6-4A8F-944B-BF229EF00DCA" width="320" height="460">
+        <image name="7F1E471E-E318-4A93-9EEB-8F2185DF1B2B" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -12211,15 +12215,15 @@ AAAAAAAAAAAJCvs
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="cXc-Cg-QFH"/>
         <segue reference="nCF-OP-zd7"/>
         <segue reference="DyC-w1-YQe"/>
-        <segue reference="cXc-Cg-QFH"/>
-        <segue reference="aaL-oi-ElB"/>
-        <segue reference="PPs-fJ-uhp"/>
         <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="Jan-aP-9Jn"/>
         <segue reference="QTr-PV-D3h"/>
-        <segue reference="tPv-nD-LkF"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="efc-B0-k9H"/>
+        <segue reference="tPv-nD-LkF"/>
     </inferredMetricsTieBreakers>
 </document>
