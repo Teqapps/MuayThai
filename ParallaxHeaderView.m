@@ -14,8 +14,8 @@
 
 @interface ParallaxHeaderView ()
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
-@property (weak, nonatomic) IBOutlet PFImageView *imageView;
-@property (nonatomic) IBOutlet PFImageView *bluredImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) IBOutlet UIImageView *bluredImageView;
 @end
 
 #define kDefaultHeaderFrame CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
@@ -26,7 +26,7 @@ static CGFloat kLabelPaddingDist = 8.0f;
 
 @implementation ParallaxHeaderView
 
-+ (id)parallaxHeaderViewWithImage:(PFImageView *)image forSize:(CGSize)headerSize;
++ (id)parallaxHeaderViewWithImage:(UIImage *)image forSize:(CGSize)headerSize;
 {
     ParallaxHeaderView *headerView = [[ParallaxHeaderView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];
     headerView.headerImage = image;
@@ -80,7 +80,7 @@ static CGFloat kLabelPaddingDist = 8.0f;
 {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     self.imageScrollView = scrollView;
-    PFImageView *imageView = [[PFImageView alloc] initWithFrame:scrollView.bounds];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:scrollView.bounds];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.image = self.headerImage;
@@ -101,7 +101,7 @@ static CGFloat kLabelPaddingDist = 8.0f;
     self.headerTitleLabel = headerLabel;
     [self.imageScrollView addSubview:self.headerTitleLabel];
     
-    self.bluredImageView = [[PFImageView alloc] initWithFrame:self.imageView.frame];
+    self.bluredImageView = [[UIImageView alloc] initWithFrame:self.imageView.frame];
     self.bluredImageView.autoresizingMask = self.imageView.autoresizingMask;
     self.bluredImageView.alpha = 0.0f;
     [self.imageScrollView addSubview:self.bluredImageView];
@@ -111,14 +111,14 @@ static CGFloat kLabelPaddingDist = 8.0f;
     [self refreshBlurViewForNewImage];
 }
 
-- (void)setHeaderImage:(PFImageView *)headerImage
+- (void)setHeaderImage:(UIImage *)headerImage
 {
     _headerImage = headerImage;
     self.imageView.image = headerImage;
     [self refreshBlurViewForNewImage];
 }
 
-- (PFImageView *)screenShotOfView:(UIView *)view
+- (UIImage *)screenShotOfView:(UIView *)view
 {
     UIGraphicsBeginImageContextWithOptions(kDefaultHeaderFrame.size, YES, 0.0);
     [self drawViewHierarchyInRect:kDefaultHeaderFrame afterScreenUpdates:YES];

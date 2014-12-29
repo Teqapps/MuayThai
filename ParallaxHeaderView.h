@@ -14,7 +14,7 @@
 @property (nonatomic) IBOutlet UILabel *headerTitleLabel;
 @property (nonatomic) PFImageView *headerImage;
 
-+ (id)parallaxHeaderViewWithImage:(PFImageView *)image forSize:(CGSize)headerSize;
++ (id)parallaxHeaderViewWithImage:(UIImage *)image forSize:(CGSize)headerSize;
 + (id)parallaxHeaderViewWithCGSize:(CGSize)headerSize;
 - (void)layoutHeaderViewForScrollViewOffset:(CGPoint)offset;
 @end
