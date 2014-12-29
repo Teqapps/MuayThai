@@ -38,8 +38,6 @@
 		4219409819875527007E3C52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4219409719875527007E3C52 /* CoreLocation.framework */; };
 		4219409E198789DB007E3C52 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 4219409D198789DB007E3C52 /* ICON.png */; };
 		421940A019878A7B007E3C52 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4219409F19878A7B007E3C52 /* background.jpg */; };
-		421BB04B1A510E8300B8D1B1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 421BB0461A510E8300B8D1B1 /* UIImage+ImageEffects.m */; };
-		421BB04C1A510E8300B8D1B1 /* StoryCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421BB0481A510E8300B8D1B1 /* StoryCommentCell.m */; };
 		42223ED519B5612B00F0D058 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42223ED419B5612B00F0D058 /* AdSupport.framework */; };
 		42223ED719B5613300F0D058 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42223ED619B5613300F0D058 /* Accounts.framework */; };
 		42223ED919B5615400F0D058 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42223ED819B5615400F0D058 /* libz.1.1.3.dylib */; };
@@ -79,7 +77,6 @@
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		42322EA51A4136F100A6BA67 /* FACEBOOK.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */; };
 		42322EA71A41373800A6BA67 /* fb.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 42322EA61A41373800A6BA67 /* fb.PNG */; };
-		424706FD1A5130E300E23A99 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 424706FC1A5130E300E23A99 /* ParallaxHeaderView.m */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
 		4265874E1A1C8EA9002C0E93 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4265874C1A1C8EA9002C0E93 /* twitter.png */; };
@@ -275,10 +272,6 @@
 		4219409719875527007E3C52 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4219409D198789DB007E3C52 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
 		4219409F19878A7B007E3C52 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		421BB0451A510E8300B8D1B1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		421BB0461A510E8300B8D1B1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		421BB0471A510E8300B8D1B1 /* StoryCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCommentCell.h; sourceTree = "<group>"; };
-		421BB0481A510E8300B8D1B1 /* StoryCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCommentCell.m; sourceTree = "<group>"; };
 		42223ED419B5612B00F0D058 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		42223ED619B5613300F0D058 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		42223ED819B5615400F0D058 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
@@ -322,8 +315,6 @@
 		42317A6819B709FC00C54F54 /* teqwin_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqwin_logo.png; sourceTree = "<group>"; };
 		42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FACEBOOK.PNG; sourceTree = "<group>"; };
 		42322EA61A41373800A6BA67 /* fb.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.PNG; sourceTree = "<group>"; };
-		424706FB1A5130E300E23A99 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
-		424706FC1A5130E300E23A99 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
 		42630058199071F3007B8C8F /* Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map_ViewController.m; path = ../Map_ViewController.m; sourceTree = "<group>"; };
@@ -541,7 +532,6 @@
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
-				421BB0441A510E6D00B8D1B1 /* parallax */,
 				42996DEF1A43FFE200385FE0 /* Match_Image */,
 				42996DEE1A43FFCE00385FE0 /* Match */,
 				42193FC81985FE42007E3C52 /* SWRevealViewController.m */,
@@ -681,19 +671,6 @@
 				420E2F7A19FE246200667E6C /* aboutus_map_detail.m */,
 			);
 			name = "Tattoo Master";
-			sourceTree = "<group>";
-		};
-		421BB0441A510E6D00B8D1B1 /* parallax */ = {
-			isa = PBXGroup;
-			children = (
-				424706FB1A5130E300E23A99 /* ParallaxHeaderView.h */,
-				424706FC1A5130E300E23A99 /* ParallaxHeaderView.m */,
-				421BB0451A510E8300B8D1B1 /* UIImage+ImageEffects.h */,
-				421BB0461A510E8300B8D1B1 /* UIImage+ImageEffects.m */,
-				421BB0471A510E8300B8D1B1 /* StoryCommentCell.h */,
-				421BB0481A510E8300B8D1B1 /* StoryCommentCell.m */,
-			);
-			name = parallax;
 			sourceTree = "<group>";
 		};
 		42223EE219B569ED00F0D058 /* asset */ = {
@@ -1256,7 +1233,6 @@
 				42630059199071F3007B8C8F /* Map_ViewController.m in Sources */,
 				420E2F6F19FDFB8900667E6C /* aboutusViewController.m in Sources */,
 				42223EDF19B5677F00F0D058 /* MySignUpViewController.m in Sources */,
-				421BB04B1A510E8300B8D1B1 /* UIImage+ImageEffects.m in Sources */,
 				420E2F7B19FE246200667E6C /* aboutus_map_detail.m in Sources */,
 				426ED39B19BD88990024E817 /* Tattoo_Detail_ViewController.m in Sources */,
 				42193FCA1985FE42007E3C52 /* SWRevealViewController.m in Sources */,
@@ -1264,7 +1240,6 @@
 				42EA3D6619C827600051057C /* Gallery.m in Sources */,
 				42EA3D6319C8273F0051057C /* GalleryCell.m in Sources */,
 				421940921987380F007E3C52 /* Master_Map_ViewController.m in Sources */,
-				424706FD1A5130E300E23A99 /* ParallaxHeaderView.m in Sources */,
 				426587591A1C8F6B002C0E93 /* Line.m in Sources */,
 				42996E1D1A4400B100385FE0 /* MatchCell.m in Sources */,
 				42996E1E1A4400B100385FE0 /* PopupViewController.m in Sources */,
@@ -1272,7 +1247,6 @@
 				42A0095C19EF5E05003DCD0D /* Search_TableViewController.m in Sources */,
 				427D34B6199E077F00814463 /* CFSharer.m in Sources */,
 				42193FC91985FE42007E3C52 /* SidebarViewController.m in Sources */,
-				421BB04C1A510E8300B8D1B1 /* StoryCommentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

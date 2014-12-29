@@ -12,7 +12,7 @@
 #import "SWRevealViewController.h"
 #import "TattooMaster_ViewController.h"
 #import "Master_Map_ViewController.h"
-#import "ParallaxHeaderView.h"
+
 #import "Map_ViewController.h"
 #import "LoginUIViewController.h"
 @import CoreData;
@@ -32,6 +32,8 @@
 
 
 
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -43,27 +45,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    _profileimage.file =self.tattoomasterCell.imageFile;
-    _profileimage.layer.cornerRadius =_profileimage.frame.size.width / 2;
-    _profileimage.layer.borderWidth = 0.0f;
-    _profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
-    _profileimage.clipsToBounds = YES;
-    _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
-        _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
-  _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
-     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
-     _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
-     _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
-    // Create ParallaxHeaderView with specified size, and set it as uitableView Header, that's it
-    self.view.backgroundColor =[UIColor blackColor];
-    self.scrollView.contentSize = self.scrollView.frame.size;
+    //self.scrollView.contentSize = self.view.frame.size;
     // then set frame to be the size of the view's frame
-    self.scrollView.frame = self.scrollView.frame;
-    [self.scrollView setScrollEnabled:YES];
-
-  //  self.profileimage.image=[UIImage imageNamed:@"main_background.png"];
-    
+   // self.scrollView.frame = self.view.frame;
+    self.profileimage.image=[UIImage imageNamed:@"main_background.png"];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
@@ -81,16 +66,23 @@
     self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count];
     }
    //self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count    ]   ;
-     //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    self.view.backgroundColor =[UIColor blackColor];
-  //  self.description_textview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-   
+    self.description_textview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    if (self.tattoomasterCell.desc ==nil) {
+        self.description_textview.text = @"沒有簡介";
+    }
+    else{
+    self.description_textview.text=self.tattoomasterCell.desc;
+    }
+     self.description_textview.layer.cornerRadius=8.0f;
+     self.description_textview.layer.borderWidth=1.0f;
+    self.description_textview.layer.borderColor =[[UIColor grayColor] CGColor];
+  //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    self.view.backgroundColor =[UIColor whiteColor];
+    CGRect frame =  self.description_textview.frame;
+    frame.size.height =  self.description_textview.contentSize.height;
+    self.description_textview.frame = frame;
+[ self.description_textview sizeToFit];
     [self.description_textview setScrollEnabled:YES ];
-    // self.description_textview.text =self.tattoomasterCell.desc;
-     self.description_textview.text =@"111";
-    [self.description_textview sizeToFit];
-    [self.description_textview setScrollEnabled:NO];
-    self.view.backgroundColor =[UIColor blackColor];
     [self queryParseMethod];
     [self queryParseMethod_image];
    
@@ -128,9 +120,16 @@
         }
     self.master_name.text=self.tattoomasterCell.name;
 
-  
+    self.profileimage.file=self.tattoomasterCell.imageFile;
+   // self.profileimage.frame = CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)
+;
+    self.profileimage.frame =CGRectMake(self.profileimage.frame.origin.x, self.profileimage.frame.origin.x,320, self.profileimage.frame.size.height);
 
 
+  // self.profileimage.layer.cornerRadius =self.profileimage.frame.size.width / 2;
+    self.profileimage.layer.borderWidth = 0.0f;
+    self.profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.profileimage.clipsToBounds = YES;
    // [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
    //  [ self.profileimage setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
     _tableView.bounces=NO;
@@ -251,8 +250,15 @@
         }
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
-        
-            }
+            for (PFObject *object in objects) {
+                
+                _profileimage.file =[object objectForKey:@"image"];
+                [_profileimage.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    _profileimage.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    _profileimage.image = [UIImage imageWithData:data];
+                }];
+            }}
     }];
     
     
