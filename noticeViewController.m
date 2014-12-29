@@ -31,7 +31,7 @@
     [super viewDidLoad];
     NSDictionary *dimensions = @{ @"Notice":@"Muay_Notice"};
     [PFAnalytics trackEvent:@"show_Notice" dimensions:dimensions];
-
+  self.title=@"紋身注意事項";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.textview_1.text=@"我們可以參考BMI(Body Mass Index，身體質量指數) 來看看自己是否過胖成年人的BMI在18.5到24之間都算健康。但當女士們見到漂亮的衣服或是夏天穿起比堅尼時，都總是覺得自己不夠完美。所以即使BMI值是在健康的範圍內，還是有將近一半的人覺得自己太胖，所以減肥變成一種全民運動，尤其是女性，永遠覺得自己太胖，恨不得自己的BMI只有17。 其實不管體重或BMI都只是參考數字，如果妳對自己的體重不滿意，我們提議你用正確的方法減重，令身型更苗條又很健康。BMI公式以自己的體重(KG)÷身高(CM}的平方所得出的結果就是BMI值";
     self.textview_1.layer.cornerRadius=8.0f;

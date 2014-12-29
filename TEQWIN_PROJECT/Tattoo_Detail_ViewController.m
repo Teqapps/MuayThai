@@ -45,6 +45,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //self.scrollView.contentSize = self.view.frame.size;
+    // then set frame to be the size of the view's frame
+   // self.scrollView.frame = self.view.frame;
     self.profileimage.image=[UIImage imageNamed:@"main_background.png"];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
@@ -267,6 +270,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+     [query orderByAscending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (objects.count ==0) {
@@ -277,7 +281,7 @@
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
                 
                 self.noimage.text=@"";
-                [query orderByAscending:@"createdAt"];
+               
                 
                 
                 [_imagesCollection reloadData];

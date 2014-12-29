@@ -437,11 +437,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEQWIN_PROJECT/Tattoo_Detail_ViewController.m"
-            timestampString = "438683307.931844"
+            timestampString = "441509130.02209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "780"
-            endingLineNumber = "780"
+            startingLineNumber = "784"
+            endingLineNumber = "784"
             landmarkName = "-favButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -469,11 +469,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEQWIN_PROJECT/Tattoo_Detail_ViewController.m"
-            timestampString = "438683307.931844"
+            timestampString = "441509130.02209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "@implementation Tattoo_Detail_ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -501,11 +501,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEQWIN_PROJECT/Tattoo_Detail_ViewController.m"
-            timestampString = "438147937.225998"
+            timestampString = "441509130.02209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -517,11 +517,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEQWIN_PROJECT/Tattoo_Detail_ViewController.m"
-            timestampString = "438147937.225998"
+            timestampString = "441509130.02209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>

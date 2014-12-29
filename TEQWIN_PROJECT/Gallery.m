@@ -114,7 +114,7 @@ CFShareCircleView *shareCircleView;
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
 
          query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    
+        [query orderByAscending:@"createdAt"];
    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -127,7 +127,7 @@ CFShareCircleView *shareCircleView;
             [hud hide:YES];
             
             
-            [query orderByAscending:@"createdAt"];
+        
             
         }
         

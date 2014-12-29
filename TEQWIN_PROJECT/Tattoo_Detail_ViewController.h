@@ -27,6 +27,7 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *noimage;
 @property IBOutlet UISearchBar *detailsearchbar;
 

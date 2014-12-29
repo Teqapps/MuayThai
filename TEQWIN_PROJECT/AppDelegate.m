@@ -66,7 +66,7 @@ LoginUIViewController *viewController ;
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"TimesNewRomanPS-ItalicMT" size:21.0], NSFontAttributeName, nil]];
-    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
    // NSLog(@"hehe%@",[PFInstallation currentInstallation].installationId  );
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
@@ -79,7 +79,10 @@ LoginUIViewController *viewController ;
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
          (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     }
+    
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
        return YES;
 }
 
@@ -99,19 +102,26 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     [PFPush handlePush:userInfo];
 }
 
-// Facebook oauth callback
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [PFFacebookUtils handleOpenURL:url];
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [PFFacebookUtils handleOpenURL:url];
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Handle an interruption during the authorization flow, such as the user clicking the home button.
-    [FBSession.activeSession handleDidBecomeActive];
+    /*
+     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     */
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    /*
+     Called when the application is about to terminate.
+     Save data if appropriate.
+     See also applicationDidEnterBackground:.
+     */
+    [[PFFacebookUtils session] close];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

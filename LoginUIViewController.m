@@ -195,7 +195,7 @@
             
         } else {
             // If user is linked to neither, let's use their username for the Welcome label.
-            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"歡迎 %@", nil), [PFUser currentUser].username];
+            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"%@", nil), [PFUser currentUser].username];
             
         }
       
