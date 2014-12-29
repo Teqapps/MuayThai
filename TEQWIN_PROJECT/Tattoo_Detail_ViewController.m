@@ -12,7 +12,7 @@
 #import "SWRevealViewController.h"
 #import "TattooMaster_ViewController.h"
 #import "Master_Map_ViewController.h"
-
+#import "ParallaxHeaderView.h"
 #import "Map_ViewController.h"
 #import "LoginUIViewController.h"
 @import CoreData;
@@ -45,6 +45,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Create ParallaxHeaderView with specified size, and set it as uitableView Header, that's it
+    ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithCGSize:CGSizeMake(320, 300)];
+   // headerView.headerTitleLabel.text = self.story[@"story"];
+    headerView.headerImage.file = self.tattoomasterCell.imageFile;
+    
+    [self.tableView setTableHeaderView:headerView];
+
     //self.scrollView.contentSize = self.view.frame.size;
     // then set frame to be the size of the view's frame
    // self.scrollView.frame = self.view.frame;
