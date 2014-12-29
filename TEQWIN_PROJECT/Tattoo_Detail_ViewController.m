@@ -45,9 +45,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.scrollView.contentSize = self.view.frame.size;
+    self.scrollView.contentSize = self.view.frame.size;
     // then set frame to be the size of the view's frame
-   // self.scrollView.frame = self.view.frame;
+    self.scrollView.frame = self.view.frame;
     self.profileimage.image=[UIImage imageNamed:@"main_background.png"];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;

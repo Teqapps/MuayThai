@@ -131,13 +131,13 @@
     [hud show:YES];
     PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
     
-   // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+  query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query whereKey:@"promotion_approve" equalTo:[NSNumber numberWithBool:YES]];
     
      [query orderByAscending:@"muay_id"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] == 0) {
-            query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+          
         }
         if (!error) {
             
