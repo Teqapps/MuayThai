@@ -574,8 +574,8 @@
       //  NSLog(@"%@",object[@"view"]);
        
         
-    [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
-    [object saveInBackground];
+        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
+        [object saveInBackground];
     }
     if ([segue.identifier isEqualToString:@"GOGALLERY_button"]) {
         UIButton *button = sender;
