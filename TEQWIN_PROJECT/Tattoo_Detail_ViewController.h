@@ -46,6 +46,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *description_textview;
 
 
+
+
 @property (weak, nonatomic) IBOutlet UILabel *master_name;
 
 @property (weak, nonatomic) IBOutlet UIImageView *sexy_image;

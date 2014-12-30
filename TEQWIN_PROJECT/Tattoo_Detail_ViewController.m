@@ -50,11 +50,11 @@
     //1000 is height. Same as the height of the View
     [self.scrollView setContentSize:CGSizeMake(320, 1000)];
     self.description_textview.text=self.tattoomasterCell.desc;
-    CGRect frame =  self.description_textview.frame;
-    frame.size.height =  self.description_textview.contentSize.height;
-     self.description_textview.frame = frame;
-    
-    
+    CGFloat fixedWidth =  self.description_textview.frame.size.width;
+    CGSize newSize = [ self.description_textview sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
+    CGRect newFrame =  self.description_textview.frame;
+    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
+     self.description_textview.frame = newFrame;
     
     _profileimage.file =self.tattoomasterCell.imageFile;
     _profileimage.layer.cornerRadius =_profileimage.frame.size.width / 2;
@@ -107,7 +107,7 @@
     [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(70, 70);
     self.title =self.tattoomasterCell.name;
-    self.count_like.text =[NSString stringWithFormat:@"%d likes",self.tattoomasterCell.favorites.count    ]   ;
+    self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
         
         

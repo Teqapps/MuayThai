@@ -86,6 +86,7 @@
 		426587591A1C8F6B002C0E93 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 426587561A1C8F6B002C0E93 /* Line.m */; };
 		4265875A1A1C8F6B002C0E93 /* LKLineActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 426587581A1C8F6B002C0E93 /* LKLineActivity.m */; };
 		4268646A1A1459530043582C /* news_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426864691A1459520043582C /* news_ViewController.m */; };
+		426D15991A525195002D2C2D /* cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 426D15981A525195002D2C2D /* cover.jpg */; };
 		426ED39319B9AF560024E817 /* TattooMasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426ED39219B9AF560024E817 /* TattooMasterCell.m */; };
 		426ED39B19BD88990024E817 /* Tattoo_Detail_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426ED39A19BD88990024E817 /* Tattoo_Detail_ViewController.m */; };
 		426ED3D219C02C740024E817 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426ED3D119C02C740024E817 /* Main.storyboard */; };
@@ -329,6 +330,7 @@
 		426587581A1C8F6B002C0E93 /* LKLineActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKLineActivity.m; sourceTree = "<group>"; };
 		426864681A1459520043582C /* news_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news_ViewController.h; sourceTree = "<group>"; };
 		426864691A1459520043582C /* news_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news_ViewController.m; sourceTree = "<group>"; };
+		426D15981A525195002D2C2D /* cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover.jpg; sourceTree = "<group>"; };
 		426ED39119B9AF560024E817 /* TattooMasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TattooMasterCell.h; sourceTree = "<group>"; };
 		426ED39219B9AF560024E817 /* TattooMasterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TattooMasterCell.m; sourceTree = "<group>"; };
 		426ED39A19BD88990024E817 /* Tattoo_Detail_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tattoo_Detail_ViewController.m; sourceTree = "<group>"; };
@@ -897,6 +899,7 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				426D15981A525195002D2C2D /* cover.jpg */,
 				42996E311A442AAD00385FE0 /* login-button-small-pressed.png */,
 				42996E321A442AAD00385FE0 /* login-button-small.png */,
 				42996E2F1A44076500385FE0 /* login.png */,
@@ -1082,6 +1085,7 @@
 				4222798F1A2853ED00AA7915 /* main_background.png in Resources */,
 				42996E341A442AAD00385FE0 /* login-button-small.png in Resources */,
 				42996E261A4400D400385FE0 /* dismiss_off.png in Resources */,
+				426D15991A525195002D2C2D /* cover.jpg in Resources */,
 				427D34A9199E076400814463 /* more.png in Resources */,
 				42996E0C1A4400A500385FE0 /* test_bg2.png in Resources */,
 				42996E281A4400D400385FE0 /* empty.png in Resources */,
