@@ -50,8 +50,15 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *sexy_image;
 @property (weak, nonatomic) IBOutlet UILabel *view_count;
+@property (weak, nonatomic) IBOutlet UILabel *lblincharge;
+@property (weak, nonatomic) IBOutlet UILabel *lbltel;
+@property (weak, nonatomic) IBOutlet UILabel *lblfax;
+@property (weak, nonatomic) IBOutlet UILabel *lbladdress;
+@property (weak, nonatomic) IBOutlet UILabel *lblemail;
+@property (weak, nonatomic) IBOutlet UILabel *lblweb;
 
 
+@property (weak, nonatomic) IBOutlet UIView *out_view;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *count_like;
