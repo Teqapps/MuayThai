@@ -12,7 +12,7 @@
 @interface ImageExampleCell : UICollectionViewCell
 
 
-@property (weak, nonatomic) IBOutlet  UIImageView*parseImage;
+@property (weak, nonatomic) IBOutlet  PFImageView*parseImage;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 

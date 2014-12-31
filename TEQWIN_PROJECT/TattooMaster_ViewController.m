@@ -217,7 +217,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    //query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
     
     
@@ -226,8 +226,7 @@
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
        if ([self.objects count] == 0) {
-     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-       }
+           }
     
      [query orderByAscending:@"muay_id"];
     
@@ -271,7 +270,7 @@
         tattoomasterCell.website = [selectobject objectForKey:@"website"];
         tattoomasterCell.desc = [selectobject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
-        tattoomasterCell.promotion=[selectobject objectForKey:@"promotion"];
+     tattoomasterCell.promotion_image=[selectobject objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[selectobject objectForKey:@"bookmark"];
         tattoomasterCell.view = [selectobject objectForKey:@"view"];
@@ -338,8 +337,13 @@
         count_like.text = [NSString stringWithFormat:@"%lu",(unsigned long)count.count];
         
         UILabel *master_desc = (UILabel*) [cell viewWithTag:187];
+        if ([[object objectForKey:@"desc"] isEqual:@""]  ) {
+            master_desc.text= @"沒有簡介";
+        }
+       
+        else{
         master_desc.text = [object objectForKey:@"desc"];
-        
+        }
      //   sex_statues = (PFImageView*)[cell viewWithTag:177];
       //  if ([[object objectForKey:@"gender"]isEqualToString:@"男"]) {
 
@@ -562,7 +566,7 @@
         tattoomasterCell.website = [object objectForKey:@"website"];
         tattoomasterCell.desc = [object objectForKey:@"desc"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
-        tattoomasterCell.promotion=[object objectForKey:@"promotion"];
+         tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
         tattoomasterCell.view = [object objectForKey:@"view"];
@@ -604,7 +608,8 @@
         tattoomasterCell.website = [object objectForKey:@"website"];
         tattoomasterCell.desc = [object objectForKey:@"desc"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
-        tattoomasterCell.promotion=[object objectForKey:@"promotion"];
+        tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
+      
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
         tattoomasterCell.view = [object objectForKey:@"view"];

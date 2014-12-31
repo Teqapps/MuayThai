@@ -413,7 +413,7 @@
         tattoomasterCell.website = [imageObject objectForKey:@"website"];
         tattoomasterCell.desc = [imageObject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [imageObject objectForKey:@"image"];
-        tattoomasterCell.promotion=[imageObject objectForKey:@"promotion"];
+         tattoomasterCell.promotion_image=[imageObject objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [imageObject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[imageObject objectForKey:@"bookmark"];
         tattoomasterCell.view = [imageObject objectForKey:@"view"];
@@ -448,7 +448,7 @@
         tattoomasterCell.website = [object objectForKey:@"website"];
         tattoomasterCell.desc = [object objectForKey:@"desc"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
-        tattoomasterCell.promotion=[object objectForKey:@"promotion"];
+        tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
         tattoomasterCell.view = [object objectForKey:@"view"];
@@ -568,11 +568,11 @@
     [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"] animated:YES];
     
 }
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
     // Remove the row from data model
-    [self unlikeImage];
-}
+  //  [self unlikeImage];
+//}
 
 - (IBAction)Fav:(id)sender {
     UIButton *button = sender;

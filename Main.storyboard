@@ -53,7 +53,7 @@
                                                         <rect key="frame" x="150" y="81" width="20" height="20"/>
                                                     </variation>
                                                 </activityIndicatorView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-Tc-ck7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-Tc-ck7" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="0.0" y="8" width="320" height="123"/>
@@ -710,6 +710,83 @@
                                                     <rect key="frame" x="114" y="332" width="188" height="21"/>
                                                 </variation>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xu6-u4-Oj5" customClass="PFImageView">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="JUp-Zs-a9C"/>
+                                                    <constraint firstAttribute="height" constant="198" id="v62-J7-Egl"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="JUp-Zs-a9C"/>
+                                                        <exclude reference="v62-J7-Egl"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="JUp-Zs-a9C"/>
+                                                        <include reference="v62-J7-Egl"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4EC-QU-gdh">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="145" y="310" width="167" height="21"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="btn_tel:" destination="zCD-pb-qjH" eventType="touchUpInside" id="9lV-7C-nXO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxA-cw-GDd">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="145" y="352" width="167" height="21"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="btn_address:" destination="zCD-pb-qjH" eventType="touchUpInside" id="kmO-tB-Pz4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcP-oe-nGp">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="145" y="375" width="167" height="21"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="btn_email:" destination="zCD-pb-qjH" eventType="touchUpInside" id="rN8-6U-Xod"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reB-O2-uXm">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="145" y="397" width="167" height="21"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="btn_web:" destination="zCD-pb-qjH" eventType="touchUpInside" id="282-37-lz0"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="簡介" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qra-uh-bBL">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="426" width="320" height="128"/>
+                                                </variation>
+                                            </textView>
                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UMV-Jl-8QL">
                                                 <rect key="frame" x="0.0" y="177" width="320" height="83"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -753,38 +830,13 @@
                                                     </collectionViewCell>
                                                 </cells>
                                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="8" y="206" width="312" height="83"/>
+                                                    <rect key="frame" x="8" y="199" width="312" height="83"/>
                                                 </variation>
                                                 <connections>
                                                     <outlet property="dataSource" destination="zCD-pb-qjH" id="GHx-jX-OOK"/>
                                                     <outlet property="delegate" destination="zCD-pb-qjH" id="ihh-Y6-nEu"/>
                                                 </connections>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Li-La-B6B">
-                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="120" y="219" width="100" height="38"/>
-                                                </variation>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68Z-hU-DuA">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="19" y="426" width="283" height="128"/>
-                                                </variation>
-                                            </textView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xu6-u4-Oj5">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
-                                                </variation>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-Ra-a2G">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <subviews>
@@ -885,10 +937,11 @@
                                                 <exclude reference="IUy-AC-UFg"/>
                                                 <exclude reference="tg0-cX-enX"/>
                                                 <exclude reference="uN8-FU-BY9"/>
+                                                <exclude reference="4EC-QU-gdh"/>
+                                                <exclude reference="DxA-cw-GDd"/>
+                                                <exclude reference="OcP-oe-nGp"/>
+                                                <exclude reference="reB-O2-uXm"/>
                                                 <exclude reference="UMV-Jl-8QL"/>
-                                                <exclude reference="0Li-La-B6B"/>
-                                                <exclude reference="68Z-hU-DuA"/>
-                                                <exclude reference="Xu6-u4-Oj5"/>
                                                 <exclude reference="IK8-Ra-a2G"/>
                                             </mask>
                                         </variation>
@@ -902,24 +955,37 @@
                                                 <include reference="IUy-AC-UFg"/>
                                                 <include reference="tg0-cX-enX"/>
                                                 <include reference="uN8-FU-BY9"/>
-                                                <include reference="UMV-Jl-8QL"/>
-                                                <include reference="0Li-La-B6B"/>
-                                                <include reference="68Z-hU-DuA"/>
                                                 <include reference="Xu6-u4-Oj5"/>
+                                                <include reference="4EC-QU-gdh"/>
+                                                <include reference="DxA-cw-GDd"/>
+                                                <include reference="OcP-oe-nGp"/>
+                                                <include reference="reB-O2-uXm"/>
+                                                <include reference="UMV-Jl-8QL"/>
                                                 <include reference="IK8-Ra-a2G"/>
                                             </mask>
                                         </variation>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Li-La-B6B">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="110" y="454" width="100" height="38"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="Krn-6Z-j5f"/>
+                                        <exclude reference="0Li-La-B6B"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="-240" width="320" height="1176"/>
+                                    <rect key="frame" x="0.0" y="-240" width="320" height="807"/>
                                     <mask key="subviews">
                                         <include reference="Krn-6Z-j5f"/>
+                                        <include reference="0Li-La-B6B"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -941,12 +1007,11 @@
                         <nil key="title"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="1000"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bookmark_image" destination="hl1-rI-ooM" id="FVr-cl-9hA"/>
                         <outlet property="count_like" destination="6bU-06-jSm" id="ItJ-rv-IRb"/>
-                        <outlet property="description_textview" destination="68Z-hU-DuA" id="ufG-5p-xxl"/>
+                        <outlet property="desc" destination="qra-uh-bBL" id="Nrg-nP-HPa"/>
                         <outlet property="fav_image" destination="Rkz-Da-eZR" id="AGJ-kD-AkR"/>
                         <outlet property="imagesCollection" destination="UMV-Jl-8QL" id="ZZG-iu-Bvr"/>
                         <outlet property="lbladdress" destination="82n-1q-icx" id="Uxr-xb-llT"/>
@@ -958,6 +1023,7 @@
                         <outlet property="noimage" destination="0Li-La-B6B" id="T8f-ur-Zc3"/>
                         <outlet property="out_view" destination="Krn-6Z-j5f" id="Q6l-yS-Qbx"/>
                         <outlet property="profileimage" destination="OH9-7V-qjo" id="LUi-Nf-uhl"/>
+                        <outlet property="promot_image" destination="Xu6-u4-Oj5" id="Psv-cf-og9"/>
                         <outlet property="scrollView" destination="dJa-0c-YWn" id="t7d-JK-8Uc"/>
                         <outlet property="searchDisplayController" destination="Fi5-5w-pUQ" id="Pie-Vz-A1a"/>
                         <outlet property="view_count" destination="zQW-06-VMi" id="D3j-JU-8wC"/>
@@ -1039,12 +1105,12 @@
             <objects>
                 <tableViewController storyboardIdentifier="TattooMaster_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="488-73-Amk" customClass="TattooMaster_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="195" sectionHeaderHeight="22" sectionFooterHeight="22" id="YXb-hL-ggL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" text="" id="lah-7H-DfT">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="1"/>
                             <textInputTraits key="textInputTraits"/>
@@ -1146,11 +1212,11 @@
                         <viewControllerLayoutGuide type="bottom" id="U69-aj-vFe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X9O-9Y-fev">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="936"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="294" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-Ec-Qh1">
-                                <rect key="frame" x="0.0" y="46" width="320" height="458"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="890"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="parallaxCell" rowHeight="294" id="qni-f1-GMN" customClass="GalleryCell">
@@ -1202,7 +1268,7 @@
                                 </prototypes>
                                 <sections/>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="46" width="320" height="890"/>
+                                    <rect key="frame" x="0.0" y="46" width="320" height="458"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="46" width="320" height="210"/>
@@ -1255,11 +1321,11 @@
                         <viewControllerLayoutGuide type="bottom" id="PxZ-Pw-f0c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qh5-Ud-sCW">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-pu-x9V">
-                                <rect key="frame" x="8" y="14" width="304" height="502"/>
+                                <rect key="frame" x="8" y="14" width="304" height="470"/>
                                 <color key="backgroundColor" red="0.031372550870000002" green="0.0078431377190000002" blue="0.0078431377190000002" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <string key="text">泰拳練習注意事項
 
@@ -1292,7 +1358,7 @@
                                     <rect key="frame" x="8" y="14" width="304" height="470"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="8" y="14" width="304" height="702"/>
+                                    <rect key="frame" x="8" y="14" width="304" height="470"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="8" y="14" width="304" height="222"/>
@@ -1328,11 +1394,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wJh-3V-tA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KxI-lV-Gw9">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNV-Ln-XxK">
-                                <rect key="frame" x="0.0" y="158" width="320" height="378"/>
+                                <rect key="frame" x="0.0" y="158" width="320" height="346"/>
                                 <color key="backgroundColor" red="0.031372550874948502" green="0.0078431377187371254" blue="0.0078431377187371254" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <string key="text">在史前時代，當人類還處於原始的生存條件下，為了維持自身的安全，以及來自大自然的強大壓力都迫使人類你爭我奪，相互鬥爭。 起初為生命，家庭和整個部落而鬥，他們最初是利和簡單武器例如籐杖和棍棒等，後來又擴展到用嘴巴，手和腳去咬，抓和踢等等。 後來，人類慢慢進展傾向於團體式的生活，群體之中，注定要有一個人來承擔領導者的職責，這必須是一個富有技巧，具有超人的力量，超出群體中其他人的優良品質的男人，以幫助群體戰勝來自自群體外的敵人。領導人是由選舉產生，他們會用與生俱來的武器如拳頭，肘和腳等來戰鬥，而”古泰拳”亦因此應運而生。 在戰時，泰拳就己經在軍中被用以訓練士兵，提高士兵的戰鬥力，在戰時，泰拳的操練有助於泰國士兵與敵人交鋒得到勝利，而在和平時期，士兵們操練泰拳的主要目的是鍛鍊身體，以備戰時之需。</string>
                                 <color key="textColor" red="0.87450980392156863" green="0.70588235294117641" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1345,7 +1411,7 @@
                                     <rect key="frame" x="0.0" y="158" width="320" height="346"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="158" width="320" height="578"/>
+                                    <rect key="frame" x="0.0" y="158" width="320" height="346"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="158" width="320" height="98"/>
@@ -2234,7 +2300,6 @@
         <image name="MainBG.png" width="640" height="900"/>
         <image name="background.jpg" width="960" height="540"/>
         <image name="bar.png" width="632" height="31"/>
-        <image name="cover.jpg" width="960" height="385"/>
         <image name="home_allert.png" width="192" height="192"/>
         <image name="home_braches_1.png" width="190" height="190"/>
         <image name="home_history.png" width="192" height="192"/>
@@ -2257,15 +2322,15 @@
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NNn-nc-gd0"/>
-        <segue reference="J3U-K8-EAV"/>
-        <segue reference="I2d-H1-dOC"/>
-        <segue reference="MsR-o8-LCf"/>
-        <segue reference="njj-2d-hlP"/>
         <segue reference="nCF-OP-zd7"/>
-        <segue reference="imN-Ia-XWJ"/>
+        <segue reference="aaL-oi-ElB"/>
+        <segue reference="DyC-w1-YQe"/>
+        <segue reference="QTr-PV-D3h"/>
+        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="ZAO-5P-2Zd"/>
         <segue reference="Kb2-fp-xV0"/>
-        <segue reference="j6T-Je-WW5"/>
         <segue reference="efc-B0-k9H"/>
     </inferredMetricsTieBreakers>
 </document>

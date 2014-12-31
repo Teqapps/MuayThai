@@ -258,12 +258,15 @@ CFShareCircleView *shareCircleView;
         } completion:^(BOOL finished) {
             
             [UIApplication sharedApplication].statusBarHidden=YES;
-            
+        
+
         }];
         
     }
     
 }
+
+
 ////按圖第二下縮回原型
 -(void)actionTap2:(UITapGestureRecognizer *)sender{
     

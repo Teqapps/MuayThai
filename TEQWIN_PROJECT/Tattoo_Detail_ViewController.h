@@ -43,7 +43,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
 - (IBAction)bookmarkbtn:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UITextView *description_textview;
+@property (weak, nonatomic) IBOutlet UITextView *desc;
 
 
 
@@ -59,6 +59,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblemail;
 @property (weak, nonatomic) IBOutlet UILabel *lblweb;
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @property (weak, nonatomic) IBOutlet UIView *out_view;
 
@@ -72,8 +73,12 @@
 @property (nonatomic, assign) BOOL isFav;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSString *venueId;
+- (IBAction)btn_tel:(id)sender;
+- (IBAction)btn_address:(id)sender;
+- (IBAction)btn_email:(id)sender;
+- (IBAction)btn_web:(id)sender;
 
-
+@property (weak, nonatomic) IBOutlet PFImageView *promot_image;
 @property (weak, nonatomic) IBOutlet PFImageView *profileimage;
 
 @property (nonatomic, strong) TattooMasterCell *tattoomasterCell;

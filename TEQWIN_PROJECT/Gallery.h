@@ -18,6 +18,7 @@
     PFFile *imageFile ;
     UILabel *image_desc;
     UITextView * test;
+    UIPinchGestureRecognizer *twoFingerPinch;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
