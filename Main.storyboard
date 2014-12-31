@@ -641,7 +641,7 @@
                         <viewControllerLayoutGuide type="bottom" id="csu-Li-ADV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1KL-2f-3L6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="936"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJa-0c-YWn">
@@ -710,7 +710,7 @@
                                                     <rect key="frame" x="114" y="332" width="188" height="21"/>
                                                 </variation>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xu6-u4-Oj5" customClass="PFImageView">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xu6-u4-Oj5" customClass="PFImageView">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="320" id="JUp-Zs-a9C"/>
@@ -777,7 +777,7 @@
                                                     <action selector="btn_web:" destination="zCD-pb-qjH" eventType="touchUpInside" id="282-37-lz0"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="簡介" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qra-uh-bBL">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="簡介" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qra-uh-bBL">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -928,7 +928,7 @@
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="0.0" y="126" width="320" height="72"/>
+                                                    <rect key="frame" x="0.0" y="128" width="320" height="72"/>
                                                     <mask key="subviews">
                                                         <include reference="U0q-kY-gki"/>
                                                         <include reference="YW0-qx-lpI"/>
@@ -953,6 +953,7 @@
                                                 <exclude reference="IUy-AC-UFg"/>
                                                 <exclude reference="tg0-cX-enX"/>
                                                 <exclude reference="uN8-FU-BY9"/>
+                                                <exclude reference="Xu6-u4-Oj5"/>
                                                 <exclude reference="4EC-QU-gdh"/>
                                                 <exclude reference="DxA-cw-GDd"/>
                                                 <exclude reference="OcP-oe-nGp"/>
@@ -1228,11 +1229,11 @@
                         <viewControllerLayoutGuide type="bottom" id="U69-aj-vFe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X9O-9Y-fev">
-                        <rect key="frame" x="0.0" y="64" width="320" height="936"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="294" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-Ec-Qh1">
-                                <rect key="frame" x="0.0" y="46" width="320" height="890"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="458"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="parallaxCell" rowHeight="294" id="qni-f1-GMN" customClass="GalleryCell">

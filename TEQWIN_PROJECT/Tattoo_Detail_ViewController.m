@@ -277,7 +277,7 @@
             for (PFObject *object in imageFilesArray) {
                 PFFile *imageFile = [object objectForKey:@"promotion_image"];
                 if (imageFile==nil) {
-                    self.promot_image.image=[UIImage imageNamed:@"muay_banner4.png" ];
+                    self.promot_image.image=[UIImage imageNamed:@"muay_banner6.png" ];
                 }
                 else{
                 self.promot_image.image = UIGraphicsGetImageFromCurrentImageContext();

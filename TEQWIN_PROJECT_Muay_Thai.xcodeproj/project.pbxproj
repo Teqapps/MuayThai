@@ -114,6 +114,8 @@
 		427D34B6199E077F00814463 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D34B4199E077F00814463 /* CFSharer.m */; };
 		427D3B2F19A32B9E00814463 /* LoginUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D3B2E19A32B9E00814463 /* LoginUIViewController.m */; };
 		427F76441A53AC5100D08FCF /* straight.png in Resources */ = {isa = PBXBuildFile; fileRef = 427F76431A53AC5100D08FCF /* straight.png */; };
+		427F76461A53D8D500D08FCF /* muay_banner5.png in Resources */ = {isa = PBXBuildFile; fileRef = 427F76451A53D8D500D08FCF /* muay_banner5.png */; };
+		427F76481A53D9C200D08FCF /* muay_banner6.png in Resources */ = {isa = PBXBuildFile; fileRef = 427F76471A53D9C200D08FCF /* muay_banner6.png */; };
 		4282CA021A47CFDA00661365 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4282C9FD1A47CFDA00661365 /* Bolts.framework */; };
 		4282CA031A47CFDA00661365 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4282C9FE1A47CFDA00661365 /* Parse.framework */; };
 		4282CA041A47CFDA00661365 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4282C9FF1A47CFDA00661365 /* ParseCrashReporting.framework */; };
@@ -366,6 +368,8 @@
 		427D3B2D19A32B9E00814463 /* LoginUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUIViewController.h; sourceTree = "<group>"; };
 		427D3B2E19A32B9E00814463 /* LoginUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUIViewController.m; sourceTree = "<group>"; };
 		427F76431A53AC5100D08FCF /* straight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = straight.png; sourceTree = "<group>"; };
+		427F76451A53D8D500D08FCF /* muay_banner5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muay_banner5.png; sourceTree = "<group>"; };
+		427F76471A53D9C200D08FCF /* muay_banner6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muay_banner6.png; sourceTree = "<group>"; };
 		4282C9FD1A47CFDA00661365 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		4282C9FE1A47CFDA00661365 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		4282C9FF1A47CFDA00661365 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -917,6 +921,8 @@
 				42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */,
 				42322EA61A41373800A6BA67 /* fb.PNG */,
 				42A59D861A3EB76A0098DE92 /* icon-likeded.png */,
+				427F76471A53D9C200D08FCF /* muay_banner6.png */,
+				427F76451A53D8D500D08FCF /* muay_banner5.png */,
 				422279A41A2C1A5600AA7915 /* muay_app_icon_1_76.png */,
 				422279A51A2C1A5600AA7915 /* muay_app_icon_1_120.png */,
 				422279A61A2C1A5600AA7915 /* muay_app_icon_1_152.png */,
@@ -1063,6 +1069,7 @@
 			files = (
 				4219409E198789DB007E3C52 /* ICON.png in Resources */,
 				422279A71A2C1A5600AA7915 /* muay_app_icon_1_76.png in Resources */,
+				427F76481A53D9C200D08FCF /* muay_banner6.png in Resources */,
 				420E2F6519FA3C1A00667E6C /* lineicon.png in Resources */,
 				42996E081A4400A500385FE0 /* footer_matches_2.png in Resources */,
 				422279431A28246200AA7915 /* photo_on.png in Resources */,
@@ -1126,6 +1133,7 @@
 				422279A81A2C1A5600AA7915 /* muay_app_icon_1_120.png in Resources */,
 				42A9601C1A037D06002C0508 /* button-facebook-login_down.png in Resources */,
 				42996E001A4400A500385FE0 /* home_win.png in Resources */,
+				427F76461A53D8D500D08FCF /* muay_banner5.png in Resources */,
 				422279141A27165F00AA7915 /* female.png in Resources */,
 				42996E0D1A4400A500385FE0 /* test-bg.png in Resources */,
 				42A4918219E2374F00E4D65E /* tattoo_1.jpg in Resources */,
