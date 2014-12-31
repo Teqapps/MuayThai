@@ -62,7 +62,7 @@
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-eE-h3d">
                                                     <rect key="frame" x="0.0" y="102" width="320" height="61"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" tag="167" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-YN-HeB" customClass="PFImageView">
+                                                        <imageView userInteractionEnabled="NO" tag="167" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-YN-HeB" customClass="PFImageView">
                                                             <rect key="frame" x="10" y="11" width="50" height="50"/>
                                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                                 <rect key="frame" x="10" y="-7.5" width="35" height="35"/>
@@ -900,6 +900,18 @@
                                                             <rect key="frame" x="255" y="8" width="40" height="40"/>
                                                         </variation>
                                                     </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="straight.png" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-KP-XSx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="94" y="8" width="10" height="52"/>
+                                                        </variation>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="straight.png" translatesAutoresizingMaskIntoConstraints="NO" id="HtK-HD-91d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="216" y="8" width="10" height="52"/>
+                                                        </variation>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.60999999999999999" colorSpace="calibratedRGB"/>
                                                 <variation key="default">
@@ -911,6 +923,8 @@
                                                         <exclude reference="6bU-06-jSm"/>
                                                         <exclude reference="zQW-06-VMi"/>
                                                         <exclude reference="6QC-qG-aLU"/>
+                                                        <exclude reference="a0J-KP-XSx"/>
+                                                        <exclude reference="HtK-HD-91d"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
@@ -923,6 +937,8 @@
                                                         <include reference="6bU-06-jSm"/>
                                                         <include reference="zQW-06-VMi"/>
                                                         <include reference="6QC-qG-aLU"/>
+                                                        <include reference="a0J-KP-XSx"/>
+                                                        <include reference="HtK-HD-91d"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2318,6 +2334,7 @@
         <image name="navigationicon.png" width="512" height="512"/>
         <image name="photo.png" width="60" height="60"/>
         <image name="share.png" width="100" height="100"/>
+        <image name="straight.png" width="23" height="42"/>
         <image name="view.png" width="512" height="512"/>
         <image name="vs.png" width="124" height="186"/>
     </resources>
