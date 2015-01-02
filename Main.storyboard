@@ -21,7 +21,7 @@
                         <viewControllerLayoutGuide type="bottom" id="koL-Pz-z6H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uCU-64-UEv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-hY-Gyw">
@@ -29,8 +29,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
-                                <rect key="frame" x="0.0" y="44" width="320" height="166"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
                                 <color key="backgroundColor" red="0.047058828179999998" green="0.066666670139999995" blue="0.13333334029999999" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fs1-KR-jyM">
                                     <size key="itemSize" width="320" height="186"/>
@@ -101,7 +100,7 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="nHf-Kp-G9m"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-3p-J7n">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-3p-J7n">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="DpZ-YD-5T5"/>
@@ -125,7 +124,7 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="H1s-QY-cp0"/>
                                 </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-5o-BYB">
                                 <rect key="frame" x="24" y="260" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.75239927029999998" green="0.75239927029999998" blue="0.75239927029999998" alpha="0.01" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -152,7 +151,7 @@
                                     <segue destination="jvV-M6-ADg" kind="show" id="Jan-aP-9Jn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-2R-WiK">
                                 <rect key="frame" x="125" y="260" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.75239927029999998" green="0.75239927029999998" blue="0.75239927029999998" alpha="0.01" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -180,7 +179,7 @@
                                     <segue destination="488-73-Amk" kind="show" id="PPs-fJ-uhp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-JA-jjf">
                                 <rect key="frame" x="223" y="260" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.75239927029999998" green="0.75239927029999998" blue="0.75239927029999998" alpha="0.01" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -207,7 +206,7 @@
                                     <segue destination="oJ1-Dk-Y59" kind="show" id="aaL-oi-ElB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-l6-RYc">
                                 <rect key="frame" x="24" y="338" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.75239927029999998" green="0.75239927029999998" blue="0.75239927029999998" alpha="0.01" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -234,7 +233,7 @@
                                     <segue destination="v9q-E4-sEi" kind="show" id="DyC-w1-YQe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-bh-Eaa">
                                 <rect key="frame" x="125" y="338" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.75239927029999998" green="0.75239927029999998" blue="0.75239927029999998" alpha="0.01" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -261,7 +260,7 @@
                                     <segue destination="03e-be-abg" kind="show" id="cXc-Cg-QFH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-cd-8pA">
                                 <rect key="frame" x="220" y="338" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.75239927029999998" green="0.75239927029999998" blue="0.75239927029999998" alpha="0.01" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -288,7 +287,7 @@
                                     <segue destination="HL8-vW-K61" kind="show" id="ZAO-5P-2Zd"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-un-LhW">
                                 <rect key="frame" x="251" y="205" width="39" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="FWc-nd-NKj"/>
@@ -359,17 +358,12 @@
                                 <exclude reference="ani-zg-8aM"/>
                                 <exclude reference="nKF-O5-OPI"/>
                                 <exclude reference="tJL-9x-D87"/>
-                                <exclude reference="9v5-eq-Yss"/>
-                                <exclude reference="S4Y-Kh-GSQ"/>
-                                <exclude reference="5se-a2-3D7"/>
-                                <exclude reference="6P5-3X-GaN"/>
-                                <exclude reference="HlE-q0-cgY"/>
-                                <exclude reference="Y53-GX-Op0"/>
-                                <exclude reference="bQo-sR-o3z"/>
                                 <exclude reference="Q0u-Sl-RZP"/>
                                 <exclude reference="qBo-9c-54c"/>
                                 <exclude reference="QMN-0a-wEj"/>
                                 <exclude reference="jcE-WO-UuT"/>
+                                <exclude reference="9v5-eq-Yss"/>
+                                <exclude reference="S4Y-Kh-GSQ"/>
                                 <exclude reference="01Z-Q3-Itv"/>
                                 <exclude reference="ay6-oN-ZRm"/>
                                 <exclude reference="uBH-YH-v6c"/>
@@ -380,6 +374,11 @@
                                 <exclude reference="B6d-5X-wtS"/>
                                 <exclude reference="Isj-nB-kHn"/>
                                 <exclude reference="nju-17-5h4"/>
+                                <exclude reference="5se-a2-3D7"/>
+                                <exclude reference="6P5-3X-GaN"/>
+                                <exclude reference="HlE-q0-cgY"/>
+                                <exclude reference="Y53-GX-Op0"/>
+                                <exclude reference="bQo-sR-o3z"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -396,17 +395,12 @@
                                 <include reference="ani-zg-8aM"/>
                                 <include reference="nKF-O5-OPI"/>
                                 <include reference="tJL-9x-D87"/>
-                                <include reference="9v5-eq-Yss"/>
-                                <include reference="S4Y-Kh-GSQ"/>
-                                <include reference="5se-a2-3D7"/>
-                                <include reference="6P5-3X-GaN"/>
-                                <include reference="HlE-q0-cgY"/>
-                                <include reference="Y53-GX-Op0"/>
-                                <include reference="bQo-sR-o3z"/>
                                 <include reference="Q0u-Sl-RZP"/>
                                 <include reference="qBo-9c-54c"/>
                                 <include reference="QMN-0a-wEj"/>
                                 <include reference="jcE-WO-UuT"/>
+                                <include reference="9v5-eq-Yss"/>
+                                <include reference="S4Y-Kh-GSQ"/>
                                 <include reference="01Z-Q3-Itv"/>
                                 <include reference="ay6-oN-ZRm"/>
                                 <include reference="uBH-YH-v6c"/>
@@ -417,6 +411,11 @@
                                 <include reference="B6d-5X-wtS"/>
                                 <include reference="Isj-nB-kHn"/>
                                 <include reference="nju-17-5h4"/>
+                                <include reference="5se-a2-3D7"/>
+                                <include reference="6P5-3X-GaN"/>
+                                <include reference="HlE-q0-cgY"/>
+                                <include reference="Y53-GX-Op0"/>
+                                <include reference="bQo-sR-o3z"/>
                             </mask>
                         </variation>
                     </view>
@@ -491,7 +490,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.386698921319797" green="0.386698921319797" blue="0.386698921319797" alpha="0.28000000000000003" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="90" width="320" height="70"/>
                                 </variation>
                             </view>
@@ -924,8 +923,7 @@
                                                         <exclude reference="RHj-As-s3W"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="CCK-Ef-ufi"/>
                                                         <include reference="RHj-As-s3W"/>
@@ -1190,7 +1188,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="110" y="454" width="100" height="38"/>
+                                            <rect key="frame" x="110" y="392" width="100" height="38"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -1324,7 +1322,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="TattooMaster_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="488-73-Amk" customClass="TattooMaster_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="195" sectionHeaderHeight="22" sectionFooterHeight="22" id="YXb-hL-ggL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1540,11 +1538,11 @@
                         <viewControllerLayoutGuide type="bottom" id="PxZ-Pw-f0c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qh5-Ud-sCW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-pu-x9V">
-                                <rect key="frame" x="8" y="14" width="304" height="470"/>
+                                <rect key="frame" x="8" y="14" width="304" height="382"/>
                                 <color key="backgroundColor" red="0.031372550870000002" green="0.0078431377190000002" blue="0.0078431377190000002" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <string key="text">泰拳練習注意事項
 
@@ -1613,11 +1611,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wJh-3V-tA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KxI-lV-Gw9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNV-Ln-XxK">
-                                <rect key="frame" x="0.0" y="158" width="320" height="346"/>
+                                <rect key="frame" x="0.0" y="158" width="320" height="258"/>
                                 <color key="backgroundColor" red="0.031372550874948502" green="0.0078431377187371254" blue="0.0078431377187371254" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <string key="text">在史前時代，當人類還處於原始的生存條件下，為了維持自身的安全，以及來自大自然的強大壓力都迫使人類你爭我奪，相互鬥爭。 起初為生命，家庭和整個部落而鬥，他們最初是利和簡單武器例如籐杖和棍棒等，後來又擴展到用嘴巴，手和腳去咬，抓和踢等等。 後來，人類慢慢進展傾向於團體式的生活，群體之中，注定要有一個人來承擔領導者的職責，這必須是一個富有技巧，具有超人的力量，超出群體中其他人的優良品質的男人，以幫助群體戰勝來自自群體外的敵人。領導人是由選舉產生，他們會用與生俱來的武器如拳頭，肘和腳等來戰鬥，而”古泰拳”亦因此應運而生。 在戰時，泰拳就己經在軍中被用以訓練士兵，提高士兵的戰鬥力，在戰時，泰拳的操練有助於泰國士兵與敵人交鋒得到勝利，而在和平時期，士兵們操練泰拳的主要目的是鍛鍊身體，以備戰時之需。</string>
                                 <color key="textColor" red="0.87450980392156863" green="0.70588235294117641" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2158,7 +2156,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="Match_ViewController" title="Match_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HL8-vW-K61" customClass="Match_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="202" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Yp-wJ-o2H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.72708608699999999" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
