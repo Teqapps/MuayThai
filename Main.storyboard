@@ -710,7 +710,7 @@
                                                     <rect key="frame" x="114" y="332" width="188" height="21"/>
                                                 </variation>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xu6-u4-Oj5" customClass="PFImageView">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xu6-u4-Oj5" customClass="PFImageView">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="320" id="JUp-Zs-a9C"/>
@@ -722,7 +722,8 @@
                                                         <exclude reference="v62-J7-Egl"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
+                                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
                                                     <mask key="constraints">
                                                         <include reference="JUp-Zs-a9C"/>
                                                         <include reference="v62-J7-Egl"/>
@@ -777,7 +778,7 @@
                                                     <action selector="btn_web:" destination="zCD-pb-qjH" eventType="touchUpInside" id="282-37-lz0"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="簡介" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qra-uh-bBL">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="簡介" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qra-uh-bBL">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -928,7 +929,7 @@
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="0.0" y="128" width="320" height="72"/>
+                                                    <rect key="frame" x="0.0" y="126" width="320" height="72"/>
                                                     <mask key="subviews">
                                                         <include reference="U0q-kY-gki"/>
                                                         <include reference="YW0-qx-lpI"/>
@@ -953,7 +954,6 @@
                                                 <exclude reference="IUy-AC-UFg"/>
                                                 <exclude reference="tg0-cX-enX"/>
                                                 <exclude reference="uN8-FU-BY9"/>
-                                                <exclude reference="Xu6-u4-Oj5"/>
                                                 <exclude reference="4EC-QU-gdh"/>
                                                 <exclude reference="DxA-cw-GDd"/>
                                                 <exclude reference="OcP-oe-nGp"/>
