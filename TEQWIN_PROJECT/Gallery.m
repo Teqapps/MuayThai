@@ -301,6 +301,9 @@ CFShareCircleView *shareCircleView;
     
    shareimageFile = [imageObject objectForKey:@"image"];
     image_desc =[imageObject objectForKey:@"image_desc"];
+ 
+    
+    
     [shareimageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
            imageToShare = [UIImage imageWithData:data];
  
@@ -325,7 +328,8 @@ CFShareCircleView *shareCircleView;
 - (void)shareCircleView:(CFShareCircleView *)aShareCircleView didSelectSharer:(CFSharer *)sharer{
     
     if ([sharer.name isEqual:@"Facebook"]) {
-       
+      
+        
             // FALLBACK: publish just a link using the Feed dialog
             
             // Put together the dialog parameters

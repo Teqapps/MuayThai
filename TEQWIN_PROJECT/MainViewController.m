@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self queryParseMethod_1];
+ //   [self queryParseMethod_1];
     UIImage *home_news = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_newsTap = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_news setImage:home_news forState:UIControlStateNormal];
@@ -136,6 +136,7 @@
         }
         else
         {
+            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下載最新版本"
                                                             message:@"需要前往App Store嗎？"
                                                            delegate:self
