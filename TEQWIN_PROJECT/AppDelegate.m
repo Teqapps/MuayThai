@@ -20,7 +20,7 @@ UINavigationController *navigation;
 LoginUIViewController *viewController ;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    sleep(2);
+    sleep(0);
 
    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];

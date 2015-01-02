@@ -80,11 +80,40 @@
     _profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
     _profileimage.clipsToBounds = YES;
     _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
-    _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
+      _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
+    if ([self.tattoomasterCell.tel isEqual:@""]) {
+       
+    }
+    else
+    {
+         _lbltel.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+    }
     _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
+    if ([self.tattoomasterCell.address isEqual:@""]) {
+        
+    }
+    else
+    {
+        _lbladdress.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+    }
+
          _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
+    if ([self.tattoomasterCell.email  isEqual:@""]) {
+        
+    }
+    else
+    {
+        _lblemail.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+    }
        _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
+    if ([self.tattoomasterCell.website isEqual:@""]) {
+        
+    }
+    else
+    {
+        _lblweb.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+    }
     // Create ParallaxHeaderView with specified size, and set it as uitableView Header, that's it
     self.view.backgroundColor =[UIColor blackColor];
 

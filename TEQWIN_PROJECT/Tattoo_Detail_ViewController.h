@@ -81,5 +81,6 @@
 @property (weak, nonatomic) IBOutlet PFImageView *promot_image;
 @property (weak, nonatomic) IBOutlet PFImageView *profileimage;
 
+
 @property (nonatomic, strong) TattooMasterCell *tattoomasterCell;
 @end

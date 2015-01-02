@@ -288,8 +288,12 @@
     }
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView.backgroundColor = [UIColor clearColor];
-    
+  
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     //cell.backgroundColor =[UIColor clearColor];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor =  [[UIColor colorWithRed:85.0/256.0 green:85.0/256.0 blue:85.0/256.0 alpha:1 ]colorWithAlphaComponent:0.5f];
+    [cell setSelectedBackgroundView:bgColorView];
     return cell;
 }
 

@@ -208,6 +208,7 @@
 		42AD1ED819B42C4800277278 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD1ED719B42C4800277278 /* libsqlite3.0.dylib */; };
 		42AD1EDC19B42E1200277278 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD1EDB19B42E1200277278 /* Parse.framework */; };
 		42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */; };
+		42B2CE631A564C38006EF790 /* home_news_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B2CE621A564C38006EF790 /* home_news_off.png */; };
 		42CB3DE31A19D71800BB10DC /* wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CB3DE21A19D71800BB10DC /* wechat.png */; };
 		42CB3DE51A19D71B00BB10DC /* wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CB3DE41A19D71B00BB10DC /* wechat@2x.png */; };
 		42DB2C3B1A09D7FF002BAF1B /* muay_history.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */; };
@@ -473,6 +474,7 @@
 		42AD1EDB19B42E1200277278 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		42AF211819EBC6D000FC3BEC /* ImageExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageExampleCell.h; sourceTree = "<group>"; };
 		42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageExampleCell.m; sourceTree = "<group>"; };
+		42B2CE621A564C38006EF790 /* home_news_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_news_off.png; sourceTree = "<group>"; };
 		42CB3DE21A19D71800BB10DC /* wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat.png; sourceTree = "<group>"; };
 		42CB3DE41A19D71B00BB10DC /* wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wechat@2x.png"; sourceTree = "<group>"; };
 		42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = muay_history.jpg; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				42B2CE621A564C38006EF790 /* home_news_off.png */,
 				427F76431A53AC5100D08FCF /* straight.png */,
 				426D15981A525195002D2C2D /* cover.jpg */,
 				42996E311A442AAD00385FE0 /* login-button-small-pressed.png */,
@@ -1102,6 +1105,7 @@
 				42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */,
 				422279931A28560900AA7915 /* main_bar.jpg in Resources */,
 				422279451A2824BC00AA7915 /* muay_login_bg.jpg in Resources */,
+				42B2CE631A564C38006EF790 /* home_news_off.png in Resources */,
 				42193FA91985FE08007E3C52 /* Images.xcassets in Resources */,
 				42A4913A19D506A700E4D65E /* Default.png in Resources */,
 				42A4915119D5090000E4D65E /* Facebook-icon.png in Resources */,
