@@ -217,16 +217,15 @@
     
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
+      [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
+    
+    
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
-    
-    
-    
+
     
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
-       if ([self.objects count] == 0) {
-           }
+    
     
      [query orderByAscending:@"muay_id"];
     

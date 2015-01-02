@@ -36,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self queryParseMethod_1];
     UIImage *home_news = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_newsTap = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_news setImage:home_news forState:UIControlStateNormal];
@@ -125,6 +126,24 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
    }
 
+- (void)queryParseMethod_1 {
+    PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    [query whereKey:@"muay_id" equalTo:@"1"];
+    [query whereKey:@"update_allert" equalTo:[NSNumber numberWithBool:YES]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下載最新版本"
+                                                            message:@"需要前往App Store嗎？"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  otherButtonTitles:@"前往",nil];
+            
+            [alert show];
+        }}];}
 
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -156,6 +175,14 @@
         
         
     }
+    if([button isEqualToString:@"前往"])
+    {
+        NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id946793334"];
+        [[UIApplication sharedApplication] openURL:itunesURL];
+        
+        
+    }
+
 }
 
 - (void)queryParseMethod {
