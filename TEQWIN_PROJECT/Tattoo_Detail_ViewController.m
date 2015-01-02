@@ -65,13 +65,13 @@
     
     CGSize maxSize = CGSizeMake(320, 410);
     CGRect labrect = [lorum boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_desc.font} context:Nil];
-    [self.scrollView setContentSize:CGSizeMake(320, 568+labrect.size.height+280)];
+    [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+[UIScreen mainScreen].bounds.size.height-100)];
     NSLog(@"1%f",[UIScreen mainScreen].bounds.size.height);
     NSLog(@"2%f",labrect.size.height);
     _desc.text = lorum;
     //for use UITextView you should comment the line under
     //_desc.numberOfLines = 0;
-    _desc.frame = CGRectMake(0, 426, 320, labrect.size.height+15);
+    _desc.frame = CGRectMake(0, 355, 320, labrect.size.height+15);
     
     
    
