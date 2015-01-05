@@ -48,7 +48,7 @@
  @abstract Initializes with a class name of the <PFObject> that will be associated with this table.
 
  @param style The UITableViewStyle for the table
- @param className The class name of the instances of <PFObject> that this tab		le will display.
+ @param className The class name of the instances of <PFObject> that this table will display.
 
  @returns An initialized `PFQueryTableViewController` object or `nil` if the object couldn't be created.
  */
