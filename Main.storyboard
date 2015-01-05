@@ -479,7 +479,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
                                 <rect key="frame" x="0.0" y="77" width="320" height="76"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_banner4.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-JJ-k59">
@@ -493,7 +493,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="90" width="320" height="70"/>
                                 </variation>
                             </view>
@@ -929,8 +929,7 @@
                                                         <exclude reference="RHj-As-s3W"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="CCK-Ef-ufi"/>
                                                         <include reference="RHj-As-s3W"/>
@@ -1327,19 +1326,6 @@
         <!--Title-->
         <scene sceneID="uPb-CU-JX0">
             <objects>
-                <searchDisplayController id="pXD-Oh-nt9"/>
-                <searchDisplayController id="kOl-Fg-W8I"/>
-                <searchDisplayController id="KBc-O3-GG6"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yRJ-sT-dD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Uy1-Y9-FLw">
-                    <connections>
-                        <outlet property="delegate" destination="488-73-Amk" id="kBz-4Y-E0F"/>
-                        <outlet property="searchBar" destination="lah-7H-DfT" id="SlS-qF-mJE"/>
-                        <outlet property="searchContentsController" destination="488-73-Amk" id="y9V-Tc-1p4"/>
-                        <outlet property="searchResultsDataSource" destination="488-73-Amk" id="PvQ-i1-udx"/>
-                        <outlet property="searchResultsDelegate" destination="488-73-Amk" id="j4N-ZY-Ra3"/>
-                    </connections>
-                </searchDisplayController>
                 <tableViewController storyboardIdentifier="TattooMaster_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="488-73-Amk" customClass="TattooMaster_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="195" sectionHeaderHeight="22" sectionFooterHeight="22" id="YXb-hL-ggL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1428,6 +1414,19 @@
                         <outlet property="table_view" destination="YXb-hL-ggL" id="WGS-w7-EG3"/>
                     </connections>
                 </tableViewController>
+                <searchDisplayController id="pXD-Oh-nt9"/>
+                <searchDisplayController id="kOl-Fg-W8I"/>
+                <searchDisplayController id="KBc-O3-GG6"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRJ-sT-dD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Uy1-Y9-FLw">
+                    <connections>
+                        <outlet property="delegate" destination="488-73-Amk" id="kBz-4Y-E0F"/>
+                        <outlet property="searchBar" destination="lah-7H-DfT" id="SlS-qF-mJE"/>
+                        <outlet property="searchContentsController" destination="488-73-Amk" id="y9V-Tc-1p4"/>
+                        <outlet property="searchResultsDataSource" destination="488-73-Amk" id="PvQ-i1-udx"/>
+                        <outlet property="searchResultsDelegate" destination="488-73-Amk" id="j4N-ZY-Ra3"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="304.5" y="-28.5"/>
         </scene>
@@ -1552,7 +1551,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PxZ-Pw-f0c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qh5-Ud-sCW">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muayhsitory_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="WdS-Ba-RJJ">
@@ -1590,8 +1589,7 @@
                                         <exclude reference="pfg-lT-3Cd"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="41" y="335" width="239" height="127"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="Vsw-NM-K3N"/>
                                         <include reference="eaG-sH-wne"/>
@@ -1601,7 +1599,7 @@
                                 </variation>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-pu-x9V">
-                                <rect key="frame" x="8" y="14" width="304" height="502"/>
+                                <rect key="frame" x="8" y="14" width="304" height="382"/>
                                 <color key="backgroundColor" red="0.031372550870000002" green="0.0078431377190000002" blue="0.0078431377190000002" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="325" id="4wq-q5-mAh"/>
@@ -1756,14 +1754,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wJh-3V-tA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KxI-lV-Gw9">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muayhsitory_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-7y-uZK">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="736"/>
-                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MuayThai_history.png" translatesAutoresizingMaskIntoConstraints="NO" id="iAt-7v-Gmz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1777,8 +1772,7 @@
                                         <exclude reference="naz-zD-HaL"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="41" y="335" width="239" height="127"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="hEq-Ft-WHa"/>
                                         <include reference="naz-zD-HaL"/>
@@ -2417,13 +2411,13 @@
             <objects>
                 <tableViewController storyboardIdentifier="Match_ViewController" title="Match_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HL8-vW-K61" customClass="Match_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="202" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Yp-wJ-o2H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.72708608699999999" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" opaque="NO" contentMode="redraw" barStyle="blackTranslucent" id="3mH-BC-o34">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <textInputTraits key="textInputTraits"/>
