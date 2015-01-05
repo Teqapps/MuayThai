@@ -77,6 +77,7 @@
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		42322EA51A4136F100A6BA67 /* FACEBOOK.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */; };
 		42322EA71A41373800A6BA67 /* fb.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 42322EA61A41373800A6BA67 /* fb.PNG */; };
+		424215E11A5A927F00291FB4 /* MuayThai_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 424215E01A5A927F00291FB4 /* MuayThai_history.png */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
 		4265874E1A1C8EA9002C0E93 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4265874C1A1C8EA9002C0E93 /* twitter.png */; };
@@ -321,6 +322,7 @@
 		42317A6819B709FC00C54F54 /* teqwin_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqwin_logo.png; sourceTree = "<group>"; };
 		42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FACEBOOK.PNG; sourceTree = "<group>"; };
 		42322EA61A41373800A6BA67 /* fb.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.PNG; sourceTree = "<group>"; };
+		424215E01A5A927F00291FB4 /* MuayThai_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MuayThai_history.png; sourceTree = "<group>"; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
 		42630058199071F3007B8C8F /* Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map_ViewController.m; path = ../Map_ViewController.m; sourceTree = "<group>"; };
@@ -909,6 +911,7 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				424215E01A5A927F00291FB4 /* MuayThai_history.png */,
 				4297D6411A5A6B3A0085E6F2 /* muayhsitory_background.png */,
 				42B2CE621A564C38006EF790 /* home_news_off.png */,
 				427F76431A53AC5100D08FCF /* straight.png */,
@@ -1145,6 +1148,7 @@
 				42996E0D1A4400A500385FE0 /* test-bg.png in Resources */,
 				42A4918219E2374F00E4D65E /* tattoo_1.jpg in Resources */,
 				42A960031A032F41002C0508 /* icon-sex-f.png in Resources */,
+				424215E11A5A927F00291FB4 /* MuayThai_history.png in Resources */,
 				427D34A7199E076400814463 /* mail.png in Resources */,
 				42A960201A038034002C0508 /* icon-favorited.png in Resources */,
 				42193F9B1985FE08007E3C52 /* InfoPlist.strings in Resources */,
