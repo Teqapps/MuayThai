@@ -201,13 +201,7 @@ CFShareCircleView *shareCircleView;
     [ cell.image addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
     image_desc = (UILabel*) [cell viewWithTag:199];
     image_desc.text = [imageObject objectForKey:@"image_desc"];
-    if ([imageObject objectForKey:@"image_desc"] ==nil ||[[imageObject objectForKey:@"image_desc"]  isEqual:@""] ) {
-        image_desc.text = @"　　";
-    }
-    else{
-        image_desc.text= [imageObject objectForKey:@"image_desc"];
-    }
-
+    
         return cell;
 }
 
@@ -306,8 +300,6 @@ CFShareCircleView *shareCircleView;
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
     
    shareimageFile = [imageObject objectForKey:@"image"];
-   
-
     image_desc =[imageObject objectForKey:@"image_desc"];
  
     
