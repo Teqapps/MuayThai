@@ -29,7 +29,7 @@
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"show_detai_news" dimensions:dimensions];
     
-    _news_detail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    _news_detail.backgroundColor = [[UIColor blackColor ]colorWithAlphaComponent:0.5f];
     _news_detail.layer.cornerRadius=8.0f;
     _news_detail.layer.borderWidth=1.0f;
     _news_detail.layer.borderColor =[[UIColor grayColor] CGColor];
@@ -54,7 +54,7 @@
     self.profile_image.layer.borderWidth = 0.0f;
     self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
     self.profile_image.clipsToBounds = YES;
-
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     // self.screenName = @"Main";
@@ -70,14 +70,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

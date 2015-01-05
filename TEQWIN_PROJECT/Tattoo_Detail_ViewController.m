@@ -46,15 +46,15 @@
     NSLog(@"%@",self.tattoomasterCell.promotion_image);
     NSLog(@"%@",self.tattoomasterCell.imageFile);
     //These two steps are important
- //   self.promot_image.frame=CGRectMake(0, 0, 320, 198   );
-       self.profileimage.file=self.tattoomasterCell.imageFile;
+    //   self.promot_image.frame=CGRectMake(0, 0, 320, 198   );
+    self.profileimage.file=self.tattoomasterCell.imageFile;
     //320 is width
     //1000 is height. Same as the height of the View
-      if ([self.tattoomasterCell.desc isEqual:@""]) {
+    if ([self.tattoomasterCell.desc isEqual:@""]||self.tattoomasterCell.desc ==nil) {
         self.tattoomasterCell.desc =@"沒有簡介";
     }
     self.automaticallyAdjustsScrollViewInsets = NO;
-   // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
     
     NSString *lorum =self.tattoomasterCell.desc;
@@ -71,7 +71,7 @@
     else
     {
         [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+labrect.size.height+100)];
-    
+        
     }
     NSLog(@"1%f",[UIScreen mainScreen].bounds.size.height);
     NSLog(@"2%f",labrect.size.height);
@@ -81,19 +81,19 @@
     _desc.frame = CGRectMake(0, 355, 320, labrect.size.height+15);
     
     
-   
+    
     _profileimage.layer.cornerRadius =_profileimage.frame.size.width / 2;
     _profileimage.layer.borderWidth = 0.0f;
     _profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
     _profileimage.clipsToBounds = YES;
     _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
-      _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
+    _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
     if ([self.tattoomasterCell.tel isEqual:@""]) {
-       
+        
     }
     else
     {
-         _lbltel.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lbltel.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
     }
     _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
@@ -104,8 +104,8 @@
     {
         _lbladdress.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
     }
-
-         _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
+    
+    _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
     if ([self.tattoomasterCell.email  isEqual:@""]) {
         
     }
@@ -113,7 +113,7 @@
     {
         _lblemail.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
     }
-       _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
+    _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
     if ([self.tattoomasterCell.website isEqual:@""]) {
         
     }
@@ -123,7 +123,7 @@
     }
     // Create ParallaxHeaderView with specified size, and set it as uitableView Header, that's it
     self.view.backgroundColor =[UIColor blackColor];
-
+    
     
     //  self.profileimage.image=[UIImage imageNamed:@"main_background.png"];
     
@@ -218,7 +218,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-  
+    
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
 }
@@ -301,12 +301,12 @@
     
     
     PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
-     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] == 0) {
-           
+            
         }
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
@@ -316,20 +316,20 @@
                     self.promot_image.image=[UIImage imageNamed:@"muay_banner6.png" ];
                 }
                 else{
-                self.promot_image.image = UIGraphicsGetImageFromCurrentImageContext();
-                UIGraphicsEndImageContext() ;
-                
-                // cell.parseImage.image = [UIImage imageNamed:@"background.jpg"];
-                
-                self.promot_image.file = imageFile;
-                
-                // UIGraphicsEndImageContext();
-                [self.promot_image loadInBackground];
+                    self.promot_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext() ;
+                    
+                    // cell.parseImage.image = [UIImage imageNamed:@"background.jpg"];
+                    
+                    self.promot_image.file = imageFile;
+                    
+                    // UIGraphicsEndImageContext();
+                    [self.promot_image loadInBackground];
                 }
             }}
         
-             }];
-        
+    }];
+    
     
 }
 
@@ -348,14 +348,14 @@
             }
             else{
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
-              
-                    
+                
+                
                 self.noimage.text=@"";
                 
                 
                 
                 [_imagesCollection reloadData];
-                }}
+            }}
     }];
     
 }
@@ -726,7 +726,7 @@
         tattoomasterCell.website = [selectobject objectForKey:@"website"];
         tattoomasterCell.desc = [selectobject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
-     tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
+        tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[selectobject objectForKey:@"bookmark"];
         tattoomasterCell.view = [selectobject objectForKey:@"view"];
@@ -979,14 +979,14 @@
         
     }
     else{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"撥號"
-                                                    message:@"確定要撥號嗎？"
-                                                   delegate:self
-                                          cancelButtonTitle:@"否"
-                                          otherButtonTitles:@"是",nil];
-    //然后这里设定关联，此处把indexPath关联到alert上
-    
-    [alert show];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"撥號"
+                                                        message:@"確定要撥號嗎？"
+                                                       delegate:self
+                                              cancelButtonTitle:@"否"
+                                              otherButtonTitles:@"是",nil];
+        //然后这里设定关联，此处把indexPath关联到alert上
+        
+        [alert show];
     }
 }
 
@@ -996,9 +996,9 @@
         
     }
     else{
-    Map_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Map_ViewController"];
-    [self.navigationController pushViewController:mapVC animated:YES];
-    mapVC.tattoomasterCell=_tattoomasterCell;
+        Map_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Map_ViewController"];
+        [self.navigationController pushViewController:mapVC animated:YES];
+        mapVC.tattoomasterCell=_tattoomasterCell;
     }
 }
 
@@ -1009,45 +1009,45 @@
         
     }
     else{
-    {
-        MFMailComposeViewController *Composer = [[MFMailComposeViewController alloc]init];
-        
-        Composer.mailComposeDelegate = self;
-        // email Subject
-        [Composer setSubject:self.tattoomasterCell.name];
-        //email body
-        // [Composer setMessageBody:self.selectedTattoo_Master.name isHTML:NO];
-        //recipient
-        [Composer setToRecipients:[NSArray arrayWithObjects:self.tattoomasterCell.email, nil]];            //get the filePath resource
-        
-        // NSString *filePath = [[NSBundle mainBundle]pathForResource:@"ive" ofType:@"png"];
-        
-        //Read the file using NSData
-        
-        //   NSData *fileData = [NSData dataWithContentsOfFile:filePath];
-        
-        // NSString *mimeType = @"image/png";
-        
-        //Add attachement
-        
-        //  [Composer addAttachmentData:fileData mimeType:mimeType fileName:filePath];
-        
-        //Present it on the screen
-        
-        [self presentViewController:Composer animated:YES completion:nil];
-    }
+        {
+            MFMailComposeViewController *Composer = [[MFMailComposeViewController alloc]init];
+            
+            Composer.mailComposeDelegate = self;
+            // email Subject
+            [Composer setSubject:self.tattoomasterCell.name];
+            //email body
+            // [Composer setMessageBody:self.selectedTattoo_Master.name isHTML:NO];
+            //recipient
+            [Composer setToRecipients:[NSArray arrayWithObjects:self.tattoomasterCell.email, nil]];            //get the filePath resource
+            
+            // NSString *filePath = [[NSBundle mainBundle]pathForResource:@"ive" ofType:@"png"];
+            
+            //Read the file using NSData
+            
+            //   NSData *fileData = [NSData dataWithContentsOfFile:filePath];
+            
+            // NSString *mimeType = @"image/png";
+            
+            //Add attachement
+            
+            //  [Composer addAttachmentData:fileData mimeType:mimeType fileName:filePath];
+            
+            //Present it on the screen
+            
+            [self presentViewController:Composer animated:YES completion:nil];
+        }
     }
 }
 
 - (IBAction)btn_web:(id)sender {
     if ([self.tattoomasterCell.website  isEqual:@""]) {
-       [sender setEnabled:NO];
+        [sender setEnabled:NO];
         
     }
     else{
- //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
-
+        //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
+        
     }
 }
 @end

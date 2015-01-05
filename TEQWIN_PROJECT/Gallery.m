@@ -23,10 +23,10 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
 {
     
     TattooMasterCell *tattoomasterCell;
-CFShareCircleView *shareCircleView;
+    CFShareCircleView *shareCircleView;
     CGRect frame_first;
     UIImageView *fullImageView;
-     int lastClickedRow;
+    int lastClickedRow;
 }
 @property (nonatomic, assign) LKLineActivityImageSharingType imageSharingType;
 @end
@@ -43,8 +43,8 @@ CFShareCircleView *shareCircleView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-      [self queryParseMethod];
-
+    [self queryParseMethod];
+    
     
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"showgallery" dimensions:dimensions];
@@ -54,8 +54,8 @@ CFShareCircleView *shareCircleView;
     self.master_image.layer.borderWidth = 1.0f;
     self.master_image.layer.borderColor = [UIColor whiteColor].CGColor;
     self.master_image.clipsToBounds = YES;
-   
-
+    
+    
     self.master_name.text=self.tattoomasterCell.name    ;
     self.title=@"作品庫";
     self.tableView.bounces=NO;
@@ -66,7 +66,7 @@ CFShareCircleView *shareCircleView;
     shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.frame];
     shareCircleView.delegate = self;
     [self.navigationController.view addSubview:shareCircleView];
-    }
+}
 - (BOOL)checkIfLineInstalled {
     BOOL isInstalled = [Line isLineInstalled];
     
@@ -80,8 +80,8 @@ CFShareCircleView *shareCircleView;
 {
     
     [super viewDidAppear:animated];
-
-     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if (self.tattoomasterCell.clickindexpath!=nil) {
         NSIndexPath *indexPat = [NSIndexPath indexPathForRow:self.tattoomasterCell.clickindexpath.row inSection:0];
         [self.tableView scrollToRowAtIndexPath:indexPat atScrollPosition:UITableViewScrollPositionMiddle animated:YES   ];}
@@ -104,18 +104,18 @@ CFShareCircleView *shareCircleView;
     return UIStatusBarStyleLightContent;
 }
 - (void)queryParseMethod {
-
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
     [hud show:YES];
-
+    
     PFQuery *query = [PFQuery queryWithClassName:@"photo"];
     [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-
-         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-        [query orderByAscending:@"createdAt"];
-   
+    
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [query orderByAscending:@"createdAt"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
@@ -127,7 +127,7 @@ CFShareCircleView *shareCircleView;
             [hud hide:YES];
             
             
-        
+            
             
         }
         
@@ -139,14 +139,14 @@ CFShareCircleView *shareCircleView;
 //{
 //    NSString *button = [alertView buttonTitleAtIndex:buttonIndex];
 //    if([button isEqualToString:@"OK"])
-        
+
 //    {
 //        Tattoo_Detail_ViewController *galleryVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Tattoo_Detail_ViewController"];
 //        [self.navigationController pushViewController:galleryVC animated:YES];
 //        galleryVC.tattoomasterCell=_tattoomasterCell;
 //        ;
 
-        
+
 //    }}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -161,7 +161,7 @@ CFShareCircleView *shareCircleView;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
 }
 - (void) noimage {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"對不起" message:@"沒有照片" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -170,45 +170,51 @@ CFShareCircleView *shareCircleView;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
- 
+    
     static NSString *CellIdentifier = @"parallaxCell";
     GalleryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  
+    
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
     
     imageFile = [imageObject objectForKey:@"image"];
     
     cell.loadingSpinner.hidden = NO;
     [cell.loadingSpinner startAnimating];
-      cell.image.image = [UIImage imageNamed:@"image_icon.png"];
+    cell.image.image = [UIImage imageNamed:@"image_icon.png"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-     
-       
+        
+        
         cell.image.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-
+        
         cell.image.layer.borderWidth=1.0;
-         cell.image.layer.masksToBounds = YES;
-       // cell.image.layer.borderColor=[[UIColor colorWithRed:176.0/255.0
-                                    //                 green:147.0/255.0 blue:78/255.0 alpha:1.0]CGColor];
+        cell.image.layer.masksToBounds = YES;
+        // cell.image.layer.borderColor=[[UIColor colorWithRed:176.0/255.0
+        //                 green:147.0/255.0 blue:78/255.0 alpha:1.0]CGColor];
         cell.image.layer.borderColor=[[UIColor grayColor]CGColor];
-            cell.image.image = [UIImage imageWithData:data];
+        cell.image.image = [UIImage imageWithData:data];
         [cell.loadingSpinner stopAnimating];
         cell.loadingSpinner.hidden = YES;
     }];
-     cell.image.tag=9999;
+    cell.image.tag=9999;
     cell.image.userInteractionEnabled=YES;
     [ cell.image addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
     image_desc = (UILabel*) [cell viewWithTag:199];
     image_desc.text = [imageObject objectForKey:@"image_desc"];
+    if ([imageObject objectForKey:@"image_desc"] ==nil ||[[imageObject objectForKey:@"image_desc"]  isEqual:@""] ) {
+        image_desc.text = @"　　";
+    }
+    else{
+        image_desc.text= [imageObject objectForKey:@"image_desc"];
+    }
     
-        return cell;
+    return cell;
 }
 
 
 //按圖第一下放大至fullscreen
 -(void)actionTap:(UITapGestureRecognizer *)sender{
-   
+    
     CGPoint location = [sender locationInView:self.tableView];
     NSIndexPath *indexPath  = [self.tableView indexPathForRowAtPoint:location];
     
@@ -244,7 +250,7 @@ CFShareCircleView *shareCircleView;
         
         [self.view.window addSubview:fullImageView];
         [self.view.window addSubview:test];
-       
+        
         
         test.frame=frame_first;
         fullImageView.frame=frame_first;
@@ -258,8 +264,8 @@ CFShareCircleView *shareCircleView;
         } completion:^(BOOL finished) {
             
             [UIApplication sharedApplication].statusBarHidden=YES;
-        
-
+            
+            
         }];
         
     }
@@ -288,10 +294,10 @@ CFShareCircleView *shareCircleView;
 
 
 - (IBAction)btn_share:(id)sender {
-   // MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-   // hud.mode = MBProgressHUDModeIndeterminate;
-   // hud.labelText = @"Loading";
-  
+    // MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    // hud.mode = MBProgressHUDModeIndeterminate;
+    // hud.labelText = @"Loading";
+    
     UIButton *button = sender;
     CGPoint correctedPoint =
     [button convertPoint:button.bounds.origin toView:self.tableView];
@@ -299,23 +305,25 @@ CFShareCircleView *shareCircleView;
     
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
     
-   shareimageFile = [imageObject objectForKey:@"image"];
+    shareimageFile = [imageObject objectForKey:@"image"];
+    
+    
     image_desc =[imageObject objectForKey:@"image_desc"];
- 
+    
     
     
     [shareimageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-           imageToShare = [UIImage imageWithData:data];
- 
+        imageToShare = [UIImage imageWithData:data];
+        
     }];
     lastClickedRow = indexPath.row;
-   
-
-
-  
+    
+    
+    
+    
     [shareCircleView show];
     
-
+    
 }
 
 - (IBAction)like:(id)sender {
@@ -328,50 +336,50 @@ CFShareCircleView *shareCircleView;
 - (void)shareCircleView:(CFShareCircleView *)aShareCircleView didSelectSharer:(CFSharer *)sharer{
     
     if ([sharer.name isEqual:@"Facebook"]) {
-      
         
-            // FALLBACK: publish just a link using the Feed dialog
-            
-            // Put together the dialog parameters
+        
+        // FALLBACK: publish just a link using the Feed dialog
+        
+        // Put together the dialog parameters
         //     NSString *picURLstring =
-          //  [NSString stringWithFormat:@"http://files.parsetfss.com/c6afcb1f-6a07-4487-8d0d-8406c9b9f69c/tfss-0366ca1a-894e-45c2-b43b-f45b82d10f6a-gallery_02_5.jpg"] ;
-            
-            NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                           self.tattoomasterCell.name, @"name",
-                                           @"TEQWIN SOLUTION", @"caption",
-                                           image_desc, @"description",
-                                           shareimageFile.url, @"link",
-                                           shareimageFile.url,@"picture",
-                                           nil];
-            // Show the feed dialog
-            [FBWebDialogs presentFeedDialogModallyWithSession:nil
-                                                   parameters:params
-                                                      handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
-                                                          if (error) {
-                                                              // An error occurred, we need to handle the error
-                                                              // See: https://developers.facebook.com/docs/ios/errors
-                                                              NSLog(@"Error publishing story: %@", error.description);
+        //  [NSString stringWithFormat:@"http://files.parsetfss.com/c6afcb1f-6a07-4487-8d0d-8406c9b9f69c/tfss-0366ca1a-894e-45c2-b43b-f45b82d10f6a-gallery_02_5.jpg"] ;
+        
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       self.tattoomasterCell.name, @"name",
+                                       @"TEQWIN SOLUTION", @"caption",
+                                       image_desc, @"description",
+                                       shareimageFile.url, @"link",
+                                       shareimageFile.url,@"picture",
+                                       nil];
+        // Show the feed dialog
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:params
+                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                      if (error) {
+                                                          // An error occurred, we need to handle the error
+                                                          // See: https://developers.facebook.com/docs/ios/errors
+                                                          NSLog(@"Error publishing story: %@", error.description);
+                                                      } else {
+                                                          if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // User canceled.
+                                                              NSLog(@"User cancelled.");
                                                           } else {
-                                                              if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // Handle the publish feed callback
+                                                              NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                              
+                                                              if (![urlParams valueForKey:@"post_id"]) {
                                                                   // User canceled.
                                                                   NSLog(@"User cancelled.");
-                                                              } else {
-                                                                  // Handle the publish feed callback
-                                                                  NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
                                                                   
-                                                                  if (![urlParams valueForKey:@"post_id"]) {
-                                                                      // User canceled.
-                                                                      NSLog(@"User cancelled.");
-                                                                      
-                                                                  } else {
-                                                                      // User clicked the Share button
-                                                                      NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
-                                                                      NSLog(@"result %@", result);
-                                                                  }
+                                                              } else {
+                                                                  // User clicked the Share button
+                                                                  NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                                  NSLog(@"result %@", result);
                                                               }
                                                           }
-                                                      }];
-        }
+                                                      }
+                                                  }];
+    }
     if ([sharer.name isEqual:@"Twitter"]) {
         // 判斷社群網站的服務是否可用
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
@@ -389,7 +397,7 @@ CFShareCircleView *shareCircleView;
             
             // 插入圖片
             
-        //    NSString *picURLstring = [NSString stringWithFormat:@"https://localhost:443/phpMyAdmin/fyp_php/gallery_0%@_%d.jpg",[self.tattoomasterCell valueForKey:@"master_id"],lastClickedRow+1] ;
+            //    NSString *picURLstring = [NSString stringWithFormat:@"https://localhost:443/phpMyAdmin/fyp_php/gallery_0%@_%d.jpg",[self.tattoomasterCell valueForKey:@"master_id"],lastClickedRow+1] ;
             
             NSURL *picURL = [NSURL URLWithString:  shareimageFile.url] ;
             
@@ -472,7 +480,7 @@ CFShareCircleView *shareCircleView;
     }
     
     
-        if ([sharer.name isEqual:@"Whatsapp"]) {
+    if ([sharer.name isEqual:@"Whatsapp"]) {
         
         if ([[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"whatsapp://app"]]){
             
@@ -491,10 +499,10 @@ CFShareCircleView *shareCircleView;
         } else {
             NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id310633997"];
             [[UIApplication sharedApplication] openURL:itunesURL];
-
+            
         }}
     if ([sharer.name isEqual:@"sina_weibo"]) {
-       
+        
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo]) {
             
             // 建立對應社群網站的ComposeViewController
@@ -515,20 +523,20 @@ CFShareCircleView *shareCircleView;
             
             // 呼叫建立的SocialComposeView
             [self presentViewController:mySocialComposeView animated:YES completion:^{
-        
+                
             }];
             
             // 訊息成功送出與否的之後處理
             [mySocialComposeView setCompletionHandler:^(SLComposeViewControllerResult result){
                 switch (result) {
                     case SLComposeViewControllerResultCancelled:
-                   
+                        
                         break;
                     case SLComposeViewControllerResultDone:
-                    
+                        
                         break;
                     default:
-                 
+                        
                         break;
                 }
             }];
@@ -540,7 +548,7 @@ CFShareCircleView *shareCircleView;
         
     }
     if ([sharer.name isEqual:@"twitter"]) {
-   
+        
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
             
             // 建立對應社群網站的ComposeViewController
@@ -561,7 +569,7 @@ CFShareCircleView *shareCircleView;
             
             // 呼叫建立的SocialComposeView
             [self presentViewController:mySocialComposeView animated:YES completion:^{
-       
+                
             }];
             
             // 訊息成功送出與否的之後處理
@@ -571,10 +579,10 @@ CFShareCircleView *shareCircleView;
                         
                         break;
                     case SLComposeViewControllerResultDone:
-                  
+                        
                         break;
                     default:
-                 
+                        
                         break;
                 }
             }];
@@ -585,19 +593,19 @@ CFShareCircleView *shareCircleView;
         }
         
     }
- /*   if ([sharer.name isEqual:@"line"]) {
-        if ([self checkIfLineInstalled]) {
-            UIImagePickerController *controller = [[UIImagePickerController alloc] init];
-            controller.delegate = self;
-            self.imageSharingType = LKLineActivityImageSharingDirectType;
-            [self presentViewController:controller animated:YES completion:nil];
-        }
-    }}
-*/
+    /*   if ([sharer.name isEqual:@"line"]) {
+     if ([self checkIfLineInstalled]) {
+     UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+     controller.delegate = self;
+     self.imageSharingType = LKLineActivityImageSharingDirectType;
+     [self presentViewController:controller animated:YES completion:nil];
+     }
+     }}
+     */
 }
 - (UIDocumentInteractionController *) setupControllerWithURL: (NSURL*) fileURL
                                                usingDelegate: (id ) interactionDelegate {
-
+    
     self.documentationInteractionController =
     
     [UIDocumentInteractionController interactionControllerWithURL: fileURL];
