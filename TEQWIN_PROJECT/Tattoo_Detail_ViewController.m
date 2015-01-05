@@ -56,7 +56,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
    // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
-    
     NSString *lorum =self.tattoomasterCell.desc;
     self.desc.layer.cornerRadius=8.0f;
     self.desc.layer.borderWidth=0.0;
@@ -65,12 +64,21 @@
     
     CGSize maxSize = CGSizeMake(320, 410);
     CGRect labrect = [lorum boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_desc.font} context:Nil];
-       NSLog(@"1%f",[UIScreen mainScreen].bounds.size.height);
+    if ([UIScreen mainScreen].bounds.size.height ==480) {
+        [self.scrollView setContentSize:CGSizeMake(320, 580+labrect.size.height+200)];
+    }
+    else
+    {
+        [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+labrect.size.height+100)];
+        
+    }
+    NSLog(@"1%f",[UIScreen mainScreen].bounds.size.height);
     NSLog(@"2%f",labrect.size.height);
     _desc.text = lorum;
     //for use UITextView you should comment the line under
     //_desc.numberOfLines = 0;
     _desc.frame = CGRectMake(0, 355, 320, labrect.size.height+15);
+
     
     
    

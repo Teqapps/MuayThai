@@ -48,7 +48,7 @@
         
         // Whether the built-in pagination is enabled
         self.paginationEnabled = NO;
-            self.loadingViewEnabled=YES ;
+        
         // The number of objects to show per page
         //self.objectsPerPage = 10;
     }
