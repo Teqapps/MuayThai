@@ -29,7 +29,7 @@
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"show_detai_news" dimensions:dimensions];
     
-    _news_detail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    _news_detail.backgroundColor = [[UIColor blackColor ]colorWithAlphaComponent:0.5f];
     _news_detail.layer.cornerRadius=8.0f;
     _news_detail.layer.borderWidth=1.0f;
     _news_detail.layer.borderColor =[[UIColor grayColor] CGColor];
