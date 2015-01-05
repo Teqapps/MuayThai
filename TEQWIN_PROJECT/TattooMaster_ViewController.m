@@ -376,7 +376,7 @@
         count_like.text = [NSString stringWithFormat:@"%lu",(unsigned long)count.count];
         
         UILabel *master_desc = (UILabel*) [cell viewWithTag:187];
-        if ([[object objectForKey:@"desc"] isEqual:@""] || [object objectForKey:@"desc"]==nil ) {
+        if ([[object objectForKey:@"desc"] isEqual:@""]  ) {
             master_desc.text= @"沒有簡介";
         }
         

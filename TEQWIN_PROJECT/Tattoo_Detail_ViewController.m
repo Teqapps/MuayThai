@@ -50,7 +50,7 @@
        self.profileimage.file=self.tattoomasterCell.imageFile;
     //320 is width
     //1000 is height. Same as the height of the View
-      if ([self.tattoomasterCell.desc isEqual:@""]||self.tattoomasterCell.desc ==nil) {
+      if ([self.tattoomasterCell.desc isEqual:@""]) {
         self.tattoomasterCell.desc =@"沒有簡介";
     }
     self.automaticallyAdjustsScrollViewInsets = NO;

@@ -23,15 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self queryParseMethod_news];
-    UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    
-    // Add image view on top of table view
-    [self.main_tableview addSubview:imageView];
-    
-    // Set the background view of the table view
-    self.main_tableview.backgroundView = imageView;
+           [self queryParseMethod_news];
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
@@ -49,8 +41,8 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];}
 - (void)viewWillAppear:(BOOL)animated {
     // self.screenName = @"Main";
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
+  [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+  
     
     // self.page.numberOfPages = [imageFilesArray count];
 }
@@ -97,8 +89,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return [news_array count];
-    
+        return [news_array count];
+        
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -145,12 +137,11 @@
                                         green:192.0/255.0 blue:94/255.0 alpha:1.0];
         // news.textColor =[UIColor grayColor];
     }
-    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+
     if ([segue.identifier isEqualToString:@"gonewdetail"]) {
         NSIndexPath *indexPath = [self.main_tableview indexPathForCell:sender];
         
