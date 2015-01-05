@@ -48,7 +48,7 @@
         
         // Whether the built-in pagination is enabled
         self.paginationEnabled = NO;
-        
+            self.loadingViewEnabled=YES ;
         // The number of objects to show per page
         //self.objectsPerPage = 10;
     }
@@ -57,7 +57,16 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
+    [self stylePFLoadingViewTheHardWay];
+    UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
+    // Add image view on top of table view
+    [self.table_view addSubview:imageView];
+    
+    // Set the background view of the table view
+    self.table_view.backgroundView = imageView;
+
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     CGRect newBounds = self.tableView.bounds;
@@ -90,6 +99,37 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+}
+- (void)stylePFLoadingViewTheHardWay
+{
+    UIColor *labelTextColor = [UIColor whiteColor];
+    UIColor *labelShadowColor = [UIColor darkGrayColor];
+    UIActivityIndicatorViewStyle activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    
+    // go through all of the subviews until you find a PFLoadingView subclass
+    for (UIView *subview in self.view.subviews)
+    {
+        if ([subview class] == NSClassFromString(@"PFLoadingView"))
+        {
+            // find the loading label and loading activity indicator inside the PFLoadingView subviews
+            for (UIView *loadingViewSubview in subview.subviews) {
+                if ([loadingViewSubview isKindOfClass:[UILabel class]])
+                {
+                    UILabel *label = (UILabel *)loadingViewSubview;
+                    {
+                        label.textColor = labelTextColor;
+                        label.shadowColor = labelShadowColor;
+                    }
+                }
+                
+                if ([loadingViewSubview isKindOfClass:[UIActivityIndicatorView class]])
+                {
+                    UIActivityIndicatorView *activityIndicatorView = (UIActivityIndicatorView *)loadingViewSubview;
+                    activityIndicatorView.activityIndicatorViewStyle = activityIndicatorViewStyle;
+                }
+            }
+        }
+    }
 }
 - (void)viewWillAppear:(BOOL)animated {
    //[self refreshTable:nil];
@@ -214,9 +254,9 @@
 
 
 - (PFQuery *)queryForTable{
-    
+
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
+        [self stylePFLoadingViewTheHardWay];
       [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
     
     
@@ -231,7 +271,7 @@
     
     return query;
    
-
+    [self stylePFLoadingViewTheHardWay];
 }
 
 
