@@ -209,6 +209,8 @@
 		42AD1EDC19B42E1200277278 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD1EDB19B42E1200277278 /* Parse.framework */; };
 		42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */; };
 		42B2CE631A564C38006EF790 /* home_news_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B2CE621A564C38006EF790 /* home_news_off.png */; };
+		42C7796E1A5A22F100CC48DB /* muayhsitory_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C7796D1A5A22F100CC48DB /* muayhsitory_background.png */; };
+		42C779701A5A25F200CC48DB /* MuayThai_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C7796F1A5A25F200CC48DB /* MuayThai_history.png */; };
 		42CB3DE31A19D71800BB10DC /* wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CB3DE21A19D71800BB10DC /* wechat.png */; };
 		42CB3DE51A19D71B00BB10DC /* wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CB3DE41A19D71B00BB10DC /* wechat@2x.png */; };
 		42DB2C3B1A09D7FF002BAF1B /* muay_history.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */; };
@@ -475,6 +477,8 @@
 		42AF211819EBC6D000FC3BEC /* ImageExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageExampleCell.h; sourceTree = "<group>"; };
 		42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageExampleCell.m; sourceTree = "<group>"; };
 		42B2CE621A564C38006EF790 /* home_news_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_news_off.png; sourceTree = "<group>"; };
+		42C7796D1A5A22F100CC48DB /* muayhsitory_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muayhsitory_background.png; sourceTree = "<group>"; };
+		42C7796F1A5A25F200CC48DB /* MuayThai_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MuayThai_history.png; sourceTree = "<group>"; };
 		42CB3DE21A19D71800BB10DC /* wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat.png; sourceTree = "<group>"; };
 		42CB3DE41A19D71B00BB10DC /* wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wechat@2x.png"; sourceTree = "<group>"; };
 		42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = muay_history.jpg; sourceTree = "<group>"; };
@@ -907,6 +911,8 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				42C7796F1A5A25F200CC48DB /* MuayThai_history.png */,
+				42C7796D1A5A22F100CC48DB /* muayhsitory_background.png */,
 				42B2CE621A564C38006EF790 /* home_news_off.png */,
 				427F76431A53AC5100D08FCF /* straight.png */,
 				426D15981A525195002D2C2D /* cover.jpg */,
@@ -1142,6 +1148,7 @@
 				42996E0D1A4400A500385FE0 /* test-bg.png in Resources */,
 				42A4918219E2374F00E4D65E /* tattoo_1.jpg in Resources */,
 				42A960031A032F41002C0508 /* icon-sex-f.png in Resources */,
+				42C779701A5A25F200CC48DB /* MuayThai_history.png in Resources */,
 				427D34A7199E076400814463 /* mail.png in Resources */,
 				42A960201A038034002C0508 /* icon-favorited.png in Resources */,
 				42193F9B1985FE08007E3C52 /* InfoPlist.strings in Resources */,
@@ -1176,6 +1183,7 @@
 				427D34A4199E076400814463 /* facebook@2x.png in Resources */,
 				42996E051A4400A500385FE0 /* match_app_icon_1_120.png in Resources */,
 				422278B81A1F237800AA7915 /* menu@2x.png in Resources */,
+				42C7796E1A5A22F100CC48DB /* muayhsitory_background.png in Resources */,
 				42996E331A442AAD00385FE0 /* login-button-small-pressed.png in Resources */,
 				42996E091A4400A500385FE0 /* footer_menu_bg_2.png in Resources */,
 				42996E0E1A4400A500385FE0 /* test_bg.png in Resources */,
