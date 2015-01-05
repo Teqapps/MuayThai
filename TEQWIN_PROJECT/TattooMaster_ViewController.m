@@ -57,7 +57,7 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
-    
+    [self stylePFLoadingViewTheHardWay];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     CGRect newBounds = self.tableView.bounds;
@@ -117,6 +117,38 @@
 
     
    }
+- (void)stylePFLoadingViewTheHardWay
+{
+    UIColor *labelTextColor = [UIColor whiteColor];
+    UIColor *labelShadowColor = [UIColor darkGrayColor];
+    UIActivityIndicatorViewStyle activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    
+    // go through all of the subviews until you find a PFLoadingView subclass
+    for (UIView *subview in self.view.subviews)
+    {
+        if ([subview class] == NSClassFromString(@"PFLoadingView"))
+        {
+            // find the loading label and loading activity indicator inside the PFLoadingView subviews
+            for (UIView *loadingViewSubview in subview.subviews) {
+                if ([loadingViewSubview isKindOfClass:[UILabel class]])
+                {
+                    UILabel *label = (UILabel *)loadingViewSubview;
+                    {
+                        label.textColor = labelTextColor;
+                        label.shadowColor = labelShadowColor;
+                    }
+                }
+                
+                if ([loadingViewSubview isKindOfClass:[UIActivityIndicatorView class]])
+                {
+                    UIActivityIndicatorView *activityIndicatorView = (UIActivityIndicatorView *)loadingViewSubview;
+                    activityIndicatorView.activityIndicatorViewStyle = activityIndicatorViewStyle;
+                }
+            }
+        }
+    }
+}
+
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
