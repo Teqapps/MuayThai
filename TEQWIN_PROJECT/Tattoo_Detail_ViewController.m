@@ -56,6 +56,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
    // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
+    
     NSString *lorum =self.tattoomasterCell.desc;
     self.desc.layer.cornerRadius=8.0f;
     self.desc.layer.borderWidth=0.0;
@@ -70,7 +71,7 @@
     else
     {
         [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+labrect.size.height+100)];
-        
+    
     }
     NSLog(@"1%f",[UIScreen mainScreen].bounds.size.height);
     NSLog(@"2%f",labrect.size.height);
@@ -78,7 +79,6 @@
     //for use UITextView you should comment the line under
     //_desc.numberOfLines = 0;
     _desc.frame = CGRectMake(0, 355, 320, labrect.size.height+15);
-
     
     
    
