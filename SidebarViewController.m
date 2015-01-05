@@ -243,7 +243,7 @@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             
-            cell.textLabel.text=@"泰拳小知識";
+            cell.textLabel.text=@"泰拳注意事項";
             cell.imageView.image=[UIImage imageNamed:@"menu_knowledge.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }

@@ -24,7 +24,15 @@
 {
     [super viewDidLoad];
            [self queryParseMethod_news];
+    UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
+    // Add image view on top of table view
+    [self.main_tableview addSubview:imageView];
+    
+    // Set the background view of the table view
+    self.main_tableview.backgroundView = imageView;
+
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     self.title = @"新消息";

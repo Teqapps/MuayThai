@@ -58,6 +58,15 @@
 {
     [super viewDidLoad];
     [self stylePFLoadingViewTheHardWay];
+    UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    // Add image view on top of table view
+    [self.table_view addSubview:imageView];
+    
+    // Set the background view of the table view
+    self.table_view.backgroundView = imageView;
+
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     CGRect newBounds = self.tableView.bounds;
@@ -91,32 +100,6 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
 }
-- (void)viewWillAppear:(BOOL)animated {
-   //[self refreshTable:nil];
-     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    // scroll search bar out of sight
-    CGRect newBounds = self.tableView.bounds;
-    if (self.tableView.bounds.origin.y < 44) {
-        newBounds.origin.y = newBounds.origin.y;
-        self.tableView.bounds = newBounds;
-    }
-    searchquery = [PFQuery queryWithClassName:@"muay_member"];
-    //[query whereKey:@"Name" containsString:searchTerm];
-    
-    searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
-    //
-    installquery = [PFQuery queryWithClassName:@"Installation"];
-    
-    installquery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    [installquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            installarray = [[NSArray alloc] initWithArray:objects];
-            
-        }
-    }];
-
-    
-   }
 - (void)stylePFLoadingViewTheHardWay
 {
     UIColor *labelTextColor = [UIColor whiteColor];
@@ -148,7 +131,32 @@
         }
     }
 }
+- (void)viewWillAppear:(BOOL)animated {
+   //[self refreshTable:nil];
+     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    // scroll search bar out of sight
+    CGRect newBounds = self.tableView.bounds;
+    if (self.tableView.bounds.origin.y < 44) {
+        newBounds.origin.y = newBounds.origin.y;
+        self.tableView.bounds = newBounds;
+    }
+    searchquery = [PFQuery queryWithClassName:@"muay_member"];
+    //[query whereKey:@"Name" containsString:searchTerm];
+    
+    searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
+    //
+    installquery = [PFQuery queryWithClassName:@"Installation"];
+    
+    installquery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [installquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            installarray = [[NSArray alloc] initWithArray:objects];
+            
+        }
+    }];
 
+    
+   }
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
@@ -246,9 +254,9 @@
 
 
 - (PFQuery *)queryForTable{
-    
+
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
+        [self stylePFLoadingViewTheHardWay];
       [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
     
     
@@ -263,7 +271,7 @@
     
     return query;
    
-
+    [self stylePFLoadingViewTheHardWay];
 }
 
 
