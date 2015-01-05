@@ -57,7 +57,7 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
-    [self stylePFLoadingViewTheHardWay];
+   
     UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
@@ -256,7 +256,7 @@
 - (PFQuery *)queryForTable{
 
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-        [self stylePFLoadingViewTheHardWay];
+    
       [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
     
     
@@ -271,7 +271,7 @@
     
     return query;
    
-    [self stylePFLoadingViewTheHardWay];
+  
 }
 
 
