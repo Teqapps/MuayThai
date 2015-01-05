@@ -26,29 +26,36 @@
 
 - (void)viewDidLoad
 {
-     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     [super viewDidLoad];
     NSDictionary *dimensions = @{ @"Notice":@"Muay_History"};
     [PFAnalytics trackEvent:@"show_History" dimensions:dimensions];
-   _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
-    
+    _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     // Do any additional setup after loading the view.
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    self.title=@"紋身歷史";
-    self.textview_1.text=@"刺青，又稱文身或紋身，指用有墨的針刺入皮膚底層而在皮膚上書畫出圖案或詞彙。商務印書館《現代漢語詞典》中对「紋身」的解釋為：“在人體上繪成或刺成帶顏色的花紋或圖形”。\n中國古代開始就有關於刺青的記載，《越絕書·外傳本事》記載：「越王句踐，東垂海濱，夷狄文身。」《墨子·公孟》：「越王句踐，剪髮文身。」《左傳·哀公七年》則指出：「太伯……仲雍嗣之，斷髮文身，裸以為飾。」---剪頭髮和紋身，不穿衣服當成裝飾。先秦時代以來黥刑就是在犯人臉上刺字.在中國古代典籍中，就曾出現文身、鏤身、紮青、點青、雕青等文字，其他還有用刺青來作警示的例子如岳飛之母刺字的故事.但慢慢刺青已演變成個人裝飾的一種，例如在《四大奇書》之一《水滸傳》中，至少就有三個滿身刺青的重要角色：花和尚魯智深、九紋龍史進與浪子燕青。此外，還有族群文身的，東漢楊孚《異物志》就記載著廣西的文身族群：「雕題國，畫其面及身，刻其肌而青之，或若錦衣，或若魚鱗」。至今包括臺灣泰雅族和賽夏族之內，世界許多地方的原住民，都有在面部刺青的傳統，在許多文化中，刺青還是一種社會階級與地位的象徵。古埃及更利用刺青來畫分社會地位，英國維多利亞女王時代的婦女流行在唇部紋上紅色，類似現代的紋唇、紋眉等永久性彩妝的美容方式。";
+    self.title=@"泰拳歷史";
+    self.textview_1.text=@"在史前時代，當人類還處於原始的生存條件下，為了維持自身的安全，以及來自大自然的強大壓力都迫使人類你爭我奪，相互鬥爭。 起初為生命，家庭和整個部落而鬥，他們最初是利和簡單武器例如籐杖和棍棒等，後來又擴展到用嘴巴，手和腳去咬，抓和踢等等。 後來，人類慢慢進展傾向於團體式的生活，群體之中，注定要有一個人來承擔領導者的職責，這必須是一個富有技巧，具有超人的力量，超出群體中其他人的優良品質的男人，以幫助群體戰勝來自自群體外的敵人。領導人是由選舉產生，他們會用與生俱來的武器如拳頭，肘和腳等來戰鬥，而”古泰拳”亦因此應運而生。 在戰時，泰拳就己經在軍中被用以訓練士兵，提高士兵的戰鬥力，在戰時，泰拳的操練有助於泰國士兵與敵人交鋒得到勝利，而在和平時期，士兵們操練泰拳的主要目的是鍛鍊身體，以備戰時之需。";
     self.textview_1.layer.cornerRadius=8.0f;
     self.textview_1.layer.borderWidth=2.0;
     self.textview_1.layer.borderColor =[[UIColor colorWithRed:150.0/255.0
                                                         green:150.0/255.0
                                                          blue:150.0/255.0
                                                         alpha:1.0] CGColor];
-  
+    
+    self.textview_1.layer.cornerRadius=8.0f;
+    self.textview_1.layer.borderWidth=1.0;
+    //for use labrect with UITextView you set the font of UITextView:
+    //label.font = [UIFont systemFontOfSize:17];
+    
+    
+    
+    
     [self.textview_1 setUserInteractionEnabled:YES];
-   [self.textview_1 setScrollEnabled:YES];
-
+    [self.textview_1 setScrollEnabled:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,15 +65,15 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)sidebarButton:(id)sender {
 }
