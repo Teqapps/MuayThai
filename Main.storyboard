@@ -83,7 +83,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="117" width="320" height="76.5"/>
+                                                        <rect key="frame" x="0.0" y="117" width="320" height="77"/>
                                                     </variation>
                                                 </view>
                                             </subviews>
@@ -493,7 +493,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="90" width="320" height="70"/>
                                 </variation>
                             </view>
@@ -929,7 +929,8 @@
                                                         <exclude reference="RHj-As-s3W"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
+                                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                                     <mask key="constraints">
                                                         <include reference="CCK-Ef-ufi"/>
                                                         <include reference="RHj-As-s3W"/>
@@ -1326,6 +1327,19 @@
         <!--Title-->
         <scene sceneID="uPb-CU-JX0">
             <objects>
+                <searchDisplayController id="pXD-Oh-nt9"/>
+                <searchDisplayController id="kOl-Fg-W8I"/>
+                <searchDisplayController id="KBc-O3-GG6"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRJ-sT-dD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Uy1-Y9-FLw">
+                    <connections>
+                        <outlet property="delegate" destination="488-73-Amk" id="kBz-4Y-E0F"/>
+                        <outlet property="searchBar" destination="lah-7H-DfT" id="SlS-qF-mJE"/>
+                        <outlet property="searchContentsController" destination="488-73-Amk" id="y9V-Tc-1p4"/>
+                        <outlet property="searchResultsDataSource" destination="488-73-Amk" id="PvQ-i1-udx"/>
+                        <outlet property="searchResultsDelegate" destination="488-73-Amk" id="j4N-ZY-Ra3"/>
+                    </connections>
+                </searchDisplayController>
                 <tableViewController storyboardIdentifier="TattooMaster_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="488-73-Amk" customClass="TattooMaster_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="195" sectionHeaderHeight="22" sectionFooterHeight="22" id="YXb-hL-ggL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1379,6 +1393,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.56950853710000005" green="0.78307423860000003" blue="0.78307423860000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="203" y="71" width="54" height="27"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -1411,21 +1428,8 @@
                         <outlet property="table_view" destination="YXb-hL-ggL" id="WGS-w7-EG3"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yRJ-sT-dD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="pXD-Oh-nt9"/>
-                <searchDisplayController id="kOl-Fg-W8I"/>
-                <searchDisplayController id="KBc-O3-GG6"/>
-                <searchDisplayController id="Uy1-Y9-FLw">
-                    <connections>
-                        <outlet property="delegate" destination="488-73-Amk" id="kBz-4Y-E0F"/>
-                        <outlet property="searchBar" destination="lah-7H-DfT" id="SlS-qF-mJE"/>
-                        <outlet property="searchContentsController" destination="488-73-Amk" id="y9V-Tc-1p4"/>
-                        <outlet property="searchResultsDataSource" destination="488-73-Amk" id="PvQ-i1-udx"/>
-                        <outlet property="searchResultsDelegate" destination="488-73-Amk" id="j4N-ZY-Ra3"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="166.875" y="-44.366197183098592"/>
+            <point key="canvasLocation" x="304.5" y="-28.5"/>
         </scene>
         <!--Gallery-->
         <scene sceneID="Gdt-n3-lqK">
@@ -1457,6 +1461,9 @@
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2UC-sq-uGK">
                                                     <rect key="frame" x="150" y="95.5" width="20" height="20"/>
                                                     <color key="color" red="0.1058782762" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="150" y="96" width="20" height="20"/>
+                                                    </variation>
                                                 </activityIndicatorView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vt-l0-AS3">
                                                     <rect key="frame" x="256" y="216" width="50" height="50"/>
@@ -1560,8 +1567,7 @@
                                         <exclude reference="f1c-H7-eVC"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="320" width="320" height="416"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="1eE-lc-jBs"/>
                                         <include reference="f1c-H7-eVC"/>
@@ -1584,7 +1590,8 @@
                                         <exclude reference="pfg-lT-3Cd"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="41" y="335" width="239" height="127"/>
                                     <mask key="constraints">
                                         <exclude reference="Vsw-NM-K3N"/>
                                         <include reference="eaG-sH-wne"/>
@@ -1640,7 +1647,8 @@
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="8" y="14" width="304" height="470"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="8" y="470" width="304" height="258"/>
                                     <mask key="constraints">
                                         <exclude reference="4wq-q5-mAh"/>
                                         <include reference="Pxw-Xs-ugT"/>
@@ -1753,6 +1761,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muayhsitory_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-7y-uZK">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="736"/>
+                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MuayThai_history.png" translatesAutoresizingMaskIntoConstraints="NO" id="iAt-7v-Gmz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1766,7 +1777,8 @@
                                         <exclude reference="naz-zD-HaL"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="41" y="335" width="239" height="127"/>
                                     <mask key="constraints">
                                         <include reference="hEq-Ft-WHa"/>
                                         <include reference="naz-zD-HaL"/>
@@ -1803,7 +1815,8 @@
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="158" width="320" height="346"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="9" y="470" width="303" height="258"/>
                                     <mask key="constraints">
                                         <include reference="2Ml-N2-GcF"/>
                                         <exclude reference="PRe-B4-SAS"/>
@@ -1842,6 +1855,9 @@
                                 <exclude reference="iAt-7v-Gmz"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="19c-lb-5qd"/>
+                                <exclude reference="mGn-VU-ymg"/>
+                                <exclude reference="q6O-e9-ezu"/>
                                 <exclude reference="IWr-yn-PzU"/>
                                 <exclude reference="NU9-qp-7NO"/>
                                 <exclude reference="fos-8j-hI6"/>
@@ -1854,9 +1870,6 @@
                                 <exclude reference="cAw-PU-SSP"/>
                                 <exclude reference="gLT-mv-ZP5"/>
                                 <exclude reference="yoG-Nj-Idu"/>
-                                <exclude reference="19c-lb-5qd"/>
-                                <exclude reference="mGn-VU-ymg"/>
-                                <exclude reference="q6O-e9-ezu"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1865,6 +1878,9 @@
                                 <include reference="iAt-7v-Gmz"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="19c-lb-5qd"/>
+                                <include reference="mGn-VU-ymg"/>
+                                <include reference="q6O-e9-ezu"/>
                                 <include reference="IWr-yn-PzU"/>
                                 <include reference="NU9-qp-7NO"/>
                                 <include reference="fos-8j-hI6"/>
@@ -1877,9 +1893,6 @@
                                 <exclude reference="cAw-PU-SSP"/>
                                 <exclude reference="gLT-mv-ZP5"/>
                                 <include reference="yoG-Nj-Idu"/>
-                                <exclude reference="19c-lb-5qd"/>
-                                <include reference="mGn-VU-ymg"/>
-                                <include reference="q6O-e9-ezu"/>
                             </mask>
                         </variation>
                     </view>
@@ -2145,6 +2158,9 @@
                                 <color key="textColor" red="1" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="392" width="280" height="87"/>
+                                </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="　第四、不可對皮膚任何的抓撓行爲，有些人的皮膚往往會在刺青之後的三到四天之內，出現癢的現象，請不要擔心，這是皮膚的正常反應，一般兩天之後就會消失，一定不能抓，也不能撓。" translatesAutoresizingMaskIntoConstraints="NO" id="24l-Op-s2C">
                                 <rect key="frame" x="20" y="516.5" width="280" height="97"/>
@@ -2152,6 +2168,9 @@
                                 <color key="textColor" red="1" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="517" width="280" height="97"/>
+                                </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpa-aJ-f2G">
                                 <rect key="frame" x="20" y="76.5" width="280" height="127"/>
@@ -2160,6 +2179,9 @@
                                 <color key="textColor" red="1" green="0.78119875969999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="77" width="280" height="127"/>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -2467,6 +2489,9 @@
                                         </button>
                                         <imageView userInteractionEnabled="NO" tag="191" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lva-Wn-UtH" userLabel="play1_win" customClass="PFImageView">
                                             <rect key="frame" x="13.5" y="61" width="90" height="56"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="14" y="61" width="90" height="56"/>
+                                            </variation>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" tag="192" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gpc-iA-9Za" userLabel="play2_win" customClass="PFImageView">
                                             <rect key="frame" x="215" y="61" width="90" height="56"/>
@@ -2681,9 +2706,15 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="match_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q5M-g8-HMU" customClass="PFImageView">
                                                     <rect key="frame" x="26.5" y="48" width="75" height="70"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="27" y="48" width="75" height="70"/>
+                                                    </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="match_lose.png" translatesAutoresizingMaskIntoConstraints="NO" id="sLi-CD-sLz" customClass="PFImageView">
                                                     <rect key="frame" x="221.5" y="48" width="75" height="70"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="222" y="48" width="75" height="70"/>
+                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -2774,15 +2805,15 @@
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="njj-2d-hlP"/>
-        <segue reference="MsR-o8-LCf"/>
-        <segue reference="GKR-Sh-PFv"/>
-        <segue reference="J3U-K8-EAV"/>
-        <segue reference="I2d-H1-dOC"/>
-        <segue reference="NNn-nc-gd0"/>
         <segue reference="nCF-OP-zd7"/>
+        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="aaL-oi-ElB"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="DyC-w1-YQe"/>
+        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="QTr-PV-D3h"/>
         <segue reference="efc-B0-k9H"/>
-        <segue reference="Oz0-Qe-dUn"/>
         <segue reference="Kb2-fp-xV0"/>
     </inferredMetricsTieBreakers>
 </document>
