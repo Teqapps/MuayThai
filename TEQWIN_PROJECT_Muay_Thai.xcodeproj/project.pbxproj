@@ -78,6 +78,7 @@
 		42322EA51A4136F100A6BA67 /* FACEBOOK.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */; };
 		42322EA71A41373800A6BA67 /* fb.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 42322EA61A41373800A6BA67 /* fb.PNG */; };
 		424215E11A5A927F00291FB4 /* MuayThai_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 424215E01A5A927F00291FB4 /* MuayThai_history.png */; };
+		424EBF891A5BBCF600D93746 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424EBF881A5BBCF600D93746 /* MediaPlayer.framework */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
 		4265874E1A1C8EA9002C0E93 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4265874C1A1C8EA9002C0E93 /* twitter.png */; };
@@ -323,6 +324,7 @@
 		42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FACEBOOK.PNG; sourceTree = "<group>"; };
 		42322EA61A41373800A6BA67 /* fb.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.PNG; sourceTree = "<group>"; };
 		424215E01A5A927F00291FB4 /* MuayThai_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MuayThai_history.png; sourceTree = "<group>"; };
+		424EBF881A5BBCF600D93746 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
 		42630058199071F3007B8C8F /* Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map_ViewController.m; path = ../Map_ViewController.m; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424EBF891A5BBCF600D93746 /* MediaPlayer.framework in Frameworks */,
 				42223ED919B5615400F0D058 /* libz.1.1.3.dylib in Frameworks */,
 				42223ED719B5613300F0D058 /* Accounts.framework in Frameworks */,
 				4282CA061A47CFDA00661365 /* ParseUI.framework in Frameworks */,
@@ -579,6 +582,7 @@
 		42193F8F1985FE08007E3C52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				424EBF881A5BBCF600D93746 /* MediaPlayer.framework */,
 				422D2F5C1A49643500C4BF1D /* FacebookSDK.framework */,
 				4282C9FD1A47CFDA00661365 /* Bolts.framework */,
 				4282C9FE1A47CFDA00661365 /* Parse.framework */,

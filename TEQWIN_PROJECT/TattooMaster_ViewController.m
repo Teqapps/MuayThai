@@ -68,7 +68,9 @@
     self.table_view.backgroundView = imageView;
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    
     self.navigationItem.backBarButtonItem = backButton;
+     self.tabBarController.tabBar.hidden = NO;
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
         newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
