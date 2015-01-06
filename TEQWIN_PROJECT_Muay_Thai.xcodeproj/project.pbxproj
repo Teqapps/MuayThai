@@ -479,8 +479,6 @@
 		42AF211819EBC6D000FC3BEC /* ImageExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageExampleCell.h; sourceTree = "<group>"; };
 		42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageExampleCell.m; sourceTree = "<group>"; };
 		42B2CE621A564C38006EF790 /* home_news_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_news_off.png; sourceTree = "<group>"; };
-		42C7E0831A5B8968001F4008 /* zh-Hans-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-HK"; path = "zh-Hans-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		42C7E0841A5B8968001F4008 /* zh-Hans-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-HK"; path = "zh-Hans-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		42CB3DE21A19D71800BB10DC /* wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat.png; sourceTree = "<group>"; };
 		42CB3DE41A19D71B00BB10DC /* wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wechat@2x.png"; sourceTree = "<group>"; };
 		42DB2C3A1A09D7FF002BAF1B /* muay_history.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = muay_history.jpg; sourceTree = "<group>"; };
@@ -1044,14 +1042,23 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 				da,
+				es,
 				fi,
+				fr,
+				it,
+				ja,
+				ko,
 				nl,
 				no,
+				pl,
+				pt,
+				ru,
+				sv,
 				zh_CN,
 				zh_TW,
 				English,
-				"zh-Hans-HK",
 			);
 			mainGroup = 42193F841985FE08007E3C52;
 			productRefGroup = 42193F8E1985FE08007E3C52 /* Products */;
@@ -1294,7 +1301,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				42193F9A1985FE08007E3C52 /* en */,
-				42C7E0841A5B8968001F4008 /* zh-Hans-HK */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1303,7 +1309,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				42193FB91985FE08007E3C52 /* en */,
-				42C7E0831A5B8968001F4008 /* zh-Hans-HK */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
