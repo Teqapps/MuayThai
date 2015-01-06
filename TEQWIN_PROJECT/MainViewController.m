@@ -36,9 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray *languages = [NSLocale preferredLanguages];
-    NSString *currentLanguage = [languages objectAtIndex:0];
-    NSLog ( @"%@" , currentLanguage);
  //   [self queryParseMethod_1];
     UIImage *home_news = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_newsTap = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
