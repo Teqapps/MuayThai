@@ -493,7 +493,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="90" width="320" height="70"/>
                                 </variation>
                             </view>
@@ -1560,7 +1560,8 @@
                                         <exclude reference="qAQ-0K-7nc"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                     <mask key="constraints">
                                         <include reference="Y64-LF-Uuc"/>
                                         <include reference="qAQ-0K-7nc"/>
@@ -2468,8 +2469,8 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="155" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="194" translatesAutoresizingMaskIntoConstraints="NO" id="b0h-U0-Fxt">
                                                     <rect key="frame" x="83" y="31" width="194" height="58"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.91596605330000003" green="0.75147900700000003" blue="0.37052606719999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -2518,7 +2519,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-65.625" y="1505.2816901408451"/>
+            <point key="canvasLocation" x="180" y="1305.75"/>
         </scene>
         <!--Match_ViewController-->
         <scene sceneID="VPs-P9-iYx">
@@ -2904,15 +2905,15 @@
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aaL-oi-ElB"/>
         <segue reference="nCF-OP-zd7"/>
-        <segue reference="ZAO-5P-2Zd"/>
-        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="MsR-o8-LCf"/>
+        <segue reference="njj-2d-hlP"/>
+        <segue reference="J3U-K8-EAV"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="Jan-aP-9Jn"/>
-        <segue reference="DyC-w1-YQe"/>
-        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="imN-Ia-XWJ"/>
+        <segue reference="tPv-nD-LkF"/>
         <segue reference="efc-B0-k9H"/>
-        <segue reference="Oz0-Qe-dUn"/>
-        <segue reference="Kb2-fp-xV0"/>
     </inferredMetricsTieBreakers>
 </document>

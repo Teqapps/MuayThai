@@ -95,6 +95,7 @@
     return hight;
     
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     self.view.backgroundColor=[UIColor grayColor];
     
