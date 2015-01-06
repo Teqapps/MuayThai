@@ -479,7 +479,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
                                 <rect key="frame" x="0.0" y="77" width="320" height="76"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_banner4.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-JJ-k59">
@@ -815,43 +815,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CE5-X5-zOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-28.125" y="763.73239436619713"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="BWO-Ly-NXh">
-            <objects>
-                <viewController id="22S-nC-yuk" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JXM-yx-I4e"/>
-                        <viewControllerLayoutGuide type="bottom" id="Kap-RY-pBb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yfR-nG-nTk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzx-nE-y9y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-30" y="-89" width="400" height="800"/>
-                                </variation>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Yzx-nE-y9y"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Yzx-nE-y9y"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lUi-jZ-Hw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1806" y="622.5"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="ilu-Je-fq0">
@@ -1582,7 +1545,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PxZ-Pw-f0c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qh5-Ud-sCW">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muayhsitory_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-we-bSD">
@@ -1606,6 +1569,7 @@
                                 </variation>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-pu-x9V">
+                                <rect key="frame" x="8" y="14" width="304" height="382"/>
                                 <color key="backgroundColor" red="0.031372550870000002" green="0.0078431377190000002" blue="0.0078431377190000002" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="273" id="1Nj-x5-KWN"/>
@@ -1753,7 +1717,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wJh-3V-tA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KxI-lV-Gw9">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="muayhsitory_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="qMm-Z7-j31">
@@ -1776,6 +1740,7 @@
                                 </variation>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNV-Ln-XxK">
+                                <rect key="frame" x="0.0" y="158" width="320" height="258"/>
                                 <color key="backgroundColor" red="0.031372550874948502" green="0.0078431377187371254" blue="0.0078431377187371254" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="273" id="mtr-Yi-Yeg"/>
@@ -1849,12 +1814,12 @@
                                 <exclude reference="LPi-u9-ZCa"/>
                                 <exclude reference="W6a-ET-eNv"/>
                                 <exclude reference="i31-sP-45p"/>
-                                <exclude reference="3BM-oK-TXZ"/>
-                                <exclude reference="Eem-6b-Dl3"/>
-                                <exclude reference="kU9-nd-shZ"/>
                                 <exclude reference="Pq7-59-Wtz"/>
                                 <exclude reference="rit-5m-1UI"/>
                                 <exclude reference="tIf-xz-hri"/>
+                                <exclude reference="3BM-oK-TXZ"/>
+                                <exclude reference="Eem-6b-Dl3"/>
+                                <exclude reference="kU9-nd-shZ"/>
                                 <exclude reference="0a8-Zk-kDI"/>
                                 <exclude reference="x0y-4f-i1b"/>
                             </mask>
@@ -1867,12 +1832,12 @@
                                 <include reference="LPi-u9-ZCa"/>
                                 <include reference="W6a-ET-eNv"/>
                                 <include reference="i31-sP-45p"/>
-                                <include reference="3BM-oK-TXZ"/>
-                                <include reference="Eem-6b-Dl3"/>
-                                <include reference="kU9-nd-shZ"/>
                                 <include reference="Pq7-59-Wtz"/>
                                 <include reference="rit-5m-1UI"/>
                                 <include reference="tIf-xz-hri"/>
+                                <include reference="3BM-oK-TXZ"/>
+                                <include reference="Eem-6b-Dl3"/>
+                                <include reference="kU9-nd-shZ"/>
                                 <include reference="0a8-Zk-kDI"/>
                                 <include reference="x0y-4f-i1b"/>
                             </mask>
@@ -2566,7 +2531,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.72708608699999999" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <searchBar key="tableHeaderView" hidden="YES" opaque="NO" contentMode="redraw" barStyle="blackTranslucent" id="3mH-BC-o34">
+                        <searchBar key="tableHeaderView" opaque="NO" contentMode="redraw" barStyle="blackTranslucent" id="3mH-BC-o34">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2940,15 +2905,15 @@
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nCF-OP-zd7"/>
         <segue reference="MsR-o8-LCf"/>
         <segue reference="njj-2d-hlP"/>
         <segue reference="J3U-K8-EAV"/>
-        <segue reference="nCF-OP-zd7"/>
-        <segue reference="Oz0-Qe-dUn"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="Jan-aP-9Jn"/>
         <segue reference="ZAO-5P-2Zd"/>
-        <segue reference="aaL-oi-ElB"/>
-        <segue reference="efc-B0-k9H"/>
+        <segue reference="imN-Ia-XWJ"/>
         <segue reference="tPv-nD-LkF"/>
+        <segue reference="efc-B0-k9H"/>
     </inferredMetricsTieBreakers>
 </document>
