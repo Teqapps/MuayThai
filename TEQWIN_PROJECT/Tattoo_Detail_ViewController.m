@@ -382,7 +382,7 @@
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            CGSize itemSize = CGSizeMake(20, 20);
+            CGSize itemSize = CGSizeMake(50, 50);
             UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
             CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
             [ cell.parseImage.image drawInRect:imageRect];
