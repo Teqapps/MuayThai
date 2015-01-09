@@ -88,10 +88,6 @@
                 _profile_image.file =[object objectForKey:@"image"];
                 [_profile_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     // self.profileimage.file=self.tattoomasterCell.imageFile;
-                    _profile_image.layer.cornerRadius =_profile_image.frame.size.width / 2;
-                    _profile_image.layer.borderWidth = 0.0f;
-                    _profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
-                    _profile_image.clipsToBounds = YES;
                     
                     _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
                     UIGraphicsEndImageContext();

@@ -121,10 +121,10 @@
         UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
         CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
         thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-        thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
-        thumbnailImageView.layer.borderWidth=2.0;
-        thumbnailImageView.layer.masksToBounds = YES;
-        thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
+       // thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
+      //  thumbnailImageView.layer.borderWidth=2.0;
+      //  thumbnailImageView.layer.masksToBounds = YES;
+      //  thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
         [thumbnailImageView.image drawInRect:imageRect];
         thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
