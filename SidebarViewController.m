@@ -26,13 +26,11 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
     if ([PFUser currentUser]) {
         // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
-        //  UIGraphicsEndImageContext()    ;
         self.profile_image.image=[UIImage imageNamed:@"ICON.png"];
-        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-        self.profile_image.layer.borderWidth = 0.0f;
+        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width/2;
+        self.profile_image.layer.borderWidth = 2.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
         self.profile_image.clipsToBounds = YES;
         
@@ -87,15 +85,15 @@
             
         } else {
             // If user is linked to neither, let's use their username for the Welcome label.
-            self.welcome.text =[NSString stringWithFormat:NSLocalizedString(@" %@", nil), [PFUser currentUser].username];
+            self.welcome.text =[NSString stringWithFormat:NSLocalizedString(@"%@", nil), [PFUser currentUser].username];
             
         }
         
     } else {
         //self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
         
- //    self.profile_image.frame = CGRectMake(16,24, 45,45);
-        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
+        
+        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width/2;
         self.profile_image.layer.borderWidth =2.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
         self.profile_image.clipsToBounds = YES;
@@ -114,6 +112,8 @@
     // Set the name in the header view label
     NSString *name = [PFUser currentUser][@"profile"][@"name"];
     if (name) {
+        UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:20];
+        self.welcome.font=font;
         self.welcome.text = name;
     }
     
@@ -127,18 +127,18 @@
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                    if (connectionError == nil && data != nil) {
-                                       self.profile_image.image = //UIGraphicsGetImageFromCurrentImageContext();
-                                       //  UIGraphicsEndImageContext();
+                                       // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                                       
                                        self.profile_image.image = [UIImage imageWithData:data];
                                        
                                        // Add a nice corner radius to the image
-                                       self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-                                       self.profile_image.layer.borderWidth = 0.0f;
+                                       self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width/2;
+                                       self.profile_image.layer.borderWidth = 3.0f;
                                        self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
                                        self.profile_image.clipsToBounds = YES;
                                        
                                    } else {
-                                       
+                                       NSLog(@"Failed to load profile photo.");
                                    }
                                }];
     }

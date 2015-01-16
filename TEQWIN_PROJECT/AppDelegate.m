@@ -29,7 +29,7 @@ LoginUIViewController *viewController ;
     
     //然后这里设定关联，此处把indexPath关联到alert上
     
-   
+
 
           // Optional: automatically send uncaught exceptions to Google Analytics.
   //  [GAI sharedInstance].trackUncaughtExceptions = YES;
