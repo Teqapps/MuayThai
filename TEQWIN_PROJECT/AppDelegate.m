@@ -20,7 +20,7 @@ UINavigationController *navigation;
 LoginUIViewController *viewController ;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    sleep(1);
+    sleep(0);
 
    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
@@ -29,7 +29,7 @@ LoginUIViewController *viewController ;
     
     //然后这里设定关联，此处把indexPath关联到alert上
     
-
+   
 
           // Optional: automatically send uncaught exceptions to Google Analytics.
   //  [GAI sharedInstance].trackUncaughtExceptions = YES;

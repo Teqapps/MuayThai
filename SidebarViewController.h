@@ -21,5 +21,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *welcome;
 @property (weak, nonatomic) IBOutlet UIImageView *profile_image;
 
-
 @end

@@ -39,7 +39,7 @@
     _loadingSpinner.hidden = NO;
     [_loadingSpinner startAnimating];
     PFQuery *query = [PFQuery queryWithClassName:@"Full_ad"];
-    query.cachePolicy = kPFCachePolicyNetworkElseCache ;
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork ;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
            // query.cachePolicy = kPFCachePolicyCacheThenNetwork ;
@@ -59,19 +59,18 @@
                 
                 
                 for (PFObject *object in objects) {
-                    PFFile * imagefile;
-                    imagefile = [object objectForKey:@"ad_image"];
                     
-                  
+                    _ad_image.file = [object objectForKey:@"ad_image"];
+                    
+                    [_ad_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
                         
-                        _ad_image.file = imagefile;
-                    [_ad_image loadInBackground];
+                        _ad_image.image = [UIImage imageWithData:data];
                        _loadingSpinner.hidden = YES;
                         [_loadingSpinner stopAnimating];
                             [_golink setEnabled:YES];
                         
-                    }}}];}];
+                    }];}}}];}];
     
 
 

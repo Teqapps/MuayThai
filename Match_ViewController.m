@@ -58,7 +58,6 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
-    [self stylePFLoadingViewTheHardWay];
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
@@ -131,37 +130,6 @@
 
 
 
-}
-- (void)stylePFLoadingViewTheHardWay
-{
-    UIColor *labelTextColor = [UIColor whiteColor];
-    UIColor *labelShadowColor = [UIColor darkGrayColor];
-    UIActivityIndicatorViewStyle activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-    
-    // go through all of the subviews until you find a PFLoadingView subclass
-    for (UIView *subview in self.view.subviews)
-    {
-        if ([subview class] == NSClassFromString(@"PFLoadingView"))
-        {
-            // find the loading label and loading activity indicator inside the PFLoadingView subviews
-            for (UIView *loadingViewSubview in subview.subviews) {
-                if ([loadingViewSubview isKindOfClass:[UILabel class]])
-                {
-                    UILabel *label = (UILabel *)loadingViewSubview;
-                    {
-                        label.textColor = labelTextColor;
-                        label.shadowColor = labelShadowColor;
-                    }
-                }
-                
-                if ([loadingViewSubview isKindOfClass:[UIActivityIndicatorView class]])
-                {
-                    UIActivityIndicatorView *activityIndicatorView = (UIActivityIndicatorView *)loadingViewSubview;
-                    activityIndicatorView.activityIndicatorViewStyle = activityIndicatorViewStyle;
-                }
-            }
-        }
-    }
 }
 
 
@@ -371,19 +339,18 @@
         Boxer_1_imageView.layer.masksToBounds = YES;
         Boxer_1_imageView.layer.borderColor=[[UIColor blackColor] CGColor];
 
-        
+        Boxer_1_imageView.image = UIGraphicsGetImageFromCurrentImageContext();
        // UIGraphicsEndImageContext();
-             
-       Boxer_1_imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext() ;
-
-        Boxer_1_imageView.image = [UIImage imageNamed:@"ICON.png"];
-
-                Boxer_1_imageView.file    = Boxer_1_image;
-        
+ 
+        [Boxer_1_image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+            
+                Boxer_1_imageView.image = [UIImage imageWithData:data];
+                [loadingSpinner stopAnimating];
+                loadingSpinner.hidden = YES;
                
-        [Boxer_1_imageView loadInBackground];
-        
+            }}
+         ];
         
         PFFile *Boxer_2_image = [object objectForKey:@"Boxer_2_image"];
         PFImageView *Boxer_2_imageView = (PFImageView*)[cell viewWithTag:99];
@@ -393,26 +360,24 @@
         Boxer_2_imageView.layer.borderWidth=2;
         Boxer_2_imageView.layer.masksToBounds = YES;
         Boxer_2_imageView.layer.borderColor=[[UIColor blackColor] CGColor];
-     
-       
-   
+
         Boxer_2_imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext() ;
-        
        // UIGraphicsEndImageContext();
 
         
-     ;
-                               Boxer_2_imageView.image = [UIImage imageNamed:@"ICON.png"];
+        loadingSpinner_2.hidden= NO;
+        [loadingSpinner_2 startAnimating];
+        [Boxer_2_image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
             
-        
-        Boxer_2_imageView.file=Boxer_2_image;
-        [loadingSpinner_2 stopAnimating];
-        loadingSpinner_2.hidden = YES;
-                  [Boxer_2_imageView loadInBackground];
-        
-        [loadingSpinner stopAnimating];
-        loadingSpinner.hidden = YES;
+                          Boxer_2_imageView.image = [UIImage imageNamed:@"ICON.png"];
+            
+                              Boxer_2_imageView.image = [UIImage imageWithData:data];
+                [loadingSpinner_2 stopAnimating];
+                loadingSpinner_2.hidden = YES;
+                
+            }}
+         ];
          PFImageView *Match_Result_1_imageView = (PFImageView*)[cell viewWithTag:191];
          PFImageView *Match_Result_1_imageView_lose = (PFImageView*)[cell viewWithTag:133];
         
