@@ -479,7 +479,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Yq-HfP">
                                 <rect key="frame" x="0.0" y="77" width="320" height="76"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muay_banner4.png" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-JJ-k59">
@@ -929,8 +929,7 @@
                                                         <exclude reference="RHj-As-s3W"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="CCK-Ef-ufi"/>
                                                         <include reference="RHj-As-s3W"/>
@@ -1562,7 +1561,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="88" width="320" height="416"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                     <mask key="constraints">
                                         <include reference="Y64-LF-Uuc"/>
                                         <include reference="qAQ-0K-7nc"/>
@@ -2904,15 +2903,15 @@
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZAO-5P-2Zd"/>
-        <segue reference="6Hf-gE-6OJ"/>
-        <segue reference="DyC-w1-YQe"/>
-        <segue reference="QTr-PV-D3h"/>
-        <segue reference="aaL-oi-ElB"/>
-        <segue reference="Jan-aP-9Jn"/>
-        <segue reference="PPs-fJ-uhp"/>
-        <segue reference="cXc-Cg-QFH"/>
-        <segue reference="tPv-nD-LkF"/>
+        <segue reference="I2d-H1-dOC"/>
+        <segue reference="NNn-nc-gd0"/>
+        <segue reference="njj-2d-hlP"/>
+        <segue reference="GKR-Sh-PFv"/>
+        <segue reference="nCF-OP-zd7"/>
+        <segue reference="MsR-o8-LCf"/>
+        <segue reference="J3U-K8-EAV"/>
         <segue reference="efc-B0-k9H"/>
+        <segue reference="QTr-PV-D3h"/>
+        <segue reference="tPv-nD-LkF"/>
     </inferredMetricsTieBreakers>
 </document>
