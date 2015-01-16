@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
     [self queryParseMethod_news];
-    UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
+    UIImage *image = [UIImage imageNamed:@"background_news.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
     // Add image view on top of table view

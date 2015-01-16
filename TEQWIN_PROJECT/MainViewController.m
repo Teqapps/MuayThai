@@ -36,34 +36,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   // self.searchbar.translucent = YES;
+    self.searchbar.backgroundImage = [UIImage new];
+    self.searchbar.scopeBarBackgroundImage = [UIImage new];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+
  //   [self queryParseMethod_1];
-    UIImage *home_news = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_newsTap = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_news = [[UIImage imageNamed:@"new_main_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_newsTap = [[UIImage imageNamed:@"new_main_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_news setImage:home_news forState:UIControlStateNormal];
     [self.home_news setImage:home_newsTap forState:UIControlStateHighlighted];
     
-    UIImage *home_branches = [[UIImage imageNamed:@"home_braches_1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_branchesTap = [[UIImage imageNamed:@"home_braches_1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_branches = [[UIImage imageNamed:@"new_main_club.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_branchesTap = [[UIImage imageNamed:@"new_main_club.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_branchs setImage:home_branches forState:UIControlStateNormal];
     [self.home_branchs setImage:home_branchesTap forState:UIControlStateHighlighted];
 
-    UIImage *home_profiles = [[UIImage imageNamed:@"home_profiles.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_profilesTap = [[UIImage imageNamed:@"home_profiles.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_profiles = [[UIImage imageNamed:@"new_main_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_profilesTap = [[UIImage imageNamed:@"new_main_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_profile setImage:home_profiles forState:UIControlStateNormal];
     [self.home_profile setImage:home_profilesTap forState:UIControlStateHighlighted];
 
-    UIImage *home_history = [[UIImage imageNamed:@"home_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_historyTap = [[UIImage imageNamed:@"home_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_history = [[UIImage imageNamed:@"new_main_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_historyTap = [[UIImage imageNamed:@"new_main_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_history setImage:home_history forState:UIControlStateNormal];
     [self.home_history setImage:home_historyTap forState:UIControlStateHighlighted];
 
-    UIImage *home_notice = [[UIImage imageNamed:@"home_allert.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_noticeTap = [[UIImage imageNamed:@"home_allert.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_notice = [[UIImage imageNamed:@"new_main_notice.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_noticeTap = [[UIImage imageNamed:@"new_main_notice.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_notice setImage:home_notice forState:UIControlStateNormal];
     [self.home_notice setImage:home_noticeTap forState:UIControlStateHighlighted];
 
-    UIImage *home_match = [[UIImage imageNamed:@"home_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_matchTap = [[UIImage imageNamed:@"home_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_match = [[UIImage imageNamed:@"new_main_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_matchTap = [[UIImage imageNamed:@"new_main_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_contact setImage:home_match forState:UIControlStateNormal];
     [self.home_contact setImage:home_matchTap forState:UIControlStateHighlighted];
 

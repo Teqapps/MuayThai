@@ -58,7 +58,7 @@
 {
     [super viewDidLoad];
     [self stylePFLoadingViewTheHardWay];
-    UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
+    UIImage *image = [UIImage imageNamed:@"background_news.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
     // Add image view on top of table view
@@ -398,12 +398,12 @@
         heart_statues = (PFImageView*)[cell viewWithTag:107];
         if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
             
-            heart_statues.image = [UIImage imageNamed:@"icon-liked.png"];
+            heart_statues.image = [UIImage imageNamed:@"new_liked.png"];
         }
         else
         {
             
-            heart_statues.image = [UIImage imageNamed:@"icon-like.png"];
+            heart_statues.image = [UIImage imageNamed:@"new_like.png"];
         }
         // UICollectionView *cellImageCollection=(UICollectionView *)[cell viewWithTag:9];
         
@@ -415,12 +415,12 @@
         
         if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
             
-            cell.imageView.image = [UIImage imageNamed:@"icon-liked.png"];
+            cell.imageView.image = [UIImage imageNamed:@"new_liked.png"];
         }
         else
         {
             
-            cell.imageView.image = [UIImage imageNamed:@"icon-like.png"];
+            cell.imageView.image = [UIImage imageNamed:@"new_like.png"];
         }
         
         cell.textLabel.text = [object objectForKey:@"name"];

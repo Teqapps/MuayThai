@@ -105,8 +105,7 @@
     
     
     [super viewWillAppear:animated];
-    
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+       [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if ([PFUser currentUser]) {
         PFQuery *bookmarkquery = [PFQuery queryWithClassName:@"muay_member"];
         
@@ -555,9 +554,9 @@
 - (IBAction)showlike:(id)sender {
     [self queryParseMethod];
     self.like.textColor=[UIColor grayColor];
-    self.like_btn.image=[UIImage imageNamed:@"icon-liked.png"];
+    self.like_btn.image=[UIImage imageNamed:@"new_liked.png"];
     self.bookmark.textColor=[UIColor whiteColor];
-    self.bookmark_btn.image=[UIImage imageNamed:@"icon-favorite.png"];
+    self.bookmark_btn.image=[UIImage imageNamed:@"new_bookmark.png"];
     
 }
 
@@ -565,9 +564,9 @@
 - (IBAction)showbookmark:(id)sender {
     [self bookmark_query];
     self.like.textColor=[UIColor whiteColor];
-    self.like_btn.image=[UIImage imageNamed:@"icon-like.png"];
+    self.like_btn.image=[UIImage imageNamed:@"new_like.png"];
     self.bookmark.textColor=[UIColor grayColor];
-    self.bookmark_btn.image=[UIImage imageNamed:@"icon-favorited.png"];
+    self.bookmark_btn.image=[UIImage imageNamed:@"new_bookmarked.png"];
     
 }
 

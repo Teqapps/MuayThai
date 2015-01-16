@@ -46,7 +46,7 @@
         test =@"沒有簡介";
     }
     self.automaticallyAdjustsScrollViewInsets = NO;
-     self.news_detail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+     self.news_detail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_news.png"]];
 
     self.news_detail.text=test;
     self.news_detail.layer.cornerRadius=8.0f;

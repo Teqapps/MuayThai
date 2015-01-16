@@ -65,7 +65,7 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    UIImage *image = [UIImage imageNamed:@"background_4.png"];
+    UIImage *image = [UIImage imageNamed:@"background_news.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
     // Add image view on top of table view

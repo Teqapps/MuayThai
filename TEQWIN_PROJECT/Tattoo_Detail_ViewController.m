@@ -56,10 +56,12 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
-    
+     UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
+    self.desc.font=font;
     NSString *lorum =self.tattoomasterCell.desc;
     self.desc.layer.cornerRadius=8.0f;
     self.desc.layer.borderWidth=0.0;
+      self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
     //for use labrect with UITextView you set the font of UITextView:
     //label.font = [UIFont systemFontOfSize:17];
     
@@ -93,7 +95,7 @@
     }
     else
     {
-        _lbltel.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lbltel.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
@@ -102,7 +104,7 @@
     }
     else
     {
-        _lbladdress.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lbladdress.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     
     _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
@@ -111,7 +113,7 @@
     }
     else
     {
-        _lblemail.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lblemail.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
     if ([self.tattoomasterCell.website isEqual:@""]) {
@@ -119,7 +121,7 @@
     }
     else
     {
-        _lblweb.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lblweb.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     // Create ParallaxHeaderView with specified size, and set it as uitableView Header, that's it
     self.view.backgroundColor =[UIColor blackColor];
@@ -172,17 +174,17 @@
     
     //set segmented control
     if ([self.tattoomasterCell.bookmark containsObject:[PFUser currentUser].objectId]) {
-        self.bookmark_image.image =[UIImage imageNamed:@"icon-favorited.png"];
+        self.bookmark_image.image =[UIImage imageNamed:@"new_bookmarked.png"];
     }
     else {
-        self.bookmark_image.image =[UIImage imageNamed:@"icon-favorite.png"];
+        self.bookmark_image.image =[UIImage imageNamed:@"new_bookmark.png"];
     }
     
     if ([self.tattoomasterCell.favorites containsObject:[PFUser currentUser].objectId]) {
-        self.fav_image.image =[UIImage imageNamed:@"icon-liked.png"];
+        self.fav_image.image =[UIImage imageNamed:@"new_liked.png"];
     }
     else {
-        self.fav_image.image =[UIImage imageNamed:@"icon-like.png"];
+        self.fav_image.image =[UIImage imageNamed:@"new_like.png"];
     }
     self.master_name.text=self.tattoomasterCell.name;
     
@@ -420,7 +422,7 @@
     CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
-    return rect.size.height + 20;
+    return rect.size.height + 30;
     
     
 }
@@ -846,7 +848,7 @@
             
             [self dislike];
             
-            self.fav_image.image =[UIImage imageNamed:@"icon-like.png"];
+            self.fav_image.image =[UIImage imageNamed:@"new_like.png"];
             
         }
         
@@ -855,7 +857,7 @@
             
             [self likeImage];
             
-            self.fav_image.image =[UIImage imageNamed:@"icon-liked.png"];
+            self.fav_image.image =[UIImage imageNamed:@"new_liked.png"];
             
         }
     }
@@ -891,7 +893,7 @@
             
             [self nobookmark];
             
-            self.bookmark_image.image =[UIImage imageNamed:@"icon-favorite.png"];
+            self.bookmark_image.image =[UIImage imageNamed:@"new_bookmark.png"];
             
         }
         
@@ -901,7 +903,7 @@
             [self bookmark];
             
             
-            self.bookmark_image.image =[UIImage imageNamed:@"icon-favorited.png"];
+            self.bookmark_image.image =[UIImage imageNamed:@"new_bookmarked.png"];
             
         }
     }
