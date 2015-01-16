@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [self querydetail];
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -86,43 +86,51 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
 [self queryParseMethod_boxer1];
-
-
-      PFQuery *query = [PFQuery queryWithClassName:@"Boxers"];
+    
+}
+- (void)querydetail{
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Boxers"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-  //   query.cachePolicy = kPFCachePolicyCacheElseNetwork;
+    //   query.cachePolicy = kPFCachePolicyCacheElseNetwork;
     //[query whereKey:@"Boxer_1_id" equalTo:self.tattoomasterCell.boxer_id];
     [query whereKey:@"boxer_id" equalTo:self.tattoomasterCell.boxer_id];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-      
+            
             for (PFObject *object in objects) {
-                            _club_image.file = [object objectForKey:@"Club_image"];
+                PFFile * clubfile;
+                clubfile = [object objectForKey:@"Club_image"];
                 _loadingSpinner_2.hidden = NO;
                 [_loadingSpinner_2 startAnimating];
-                [_club_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                    _club_image.image = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    _club_image.image = [UIImage imageWithData:data];
-                    _loadingSpinner_2.hidden = YES;
-                    [_loadingSpinner_2 stopAnimating];
                 
-                }];
-                _profile_image.file = [object objectForKey:@"Image"];
+                _club_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                _club_image.image = [UIImage imageNamed:@"muay_banner6.png"];
+                _club_image.file  = clubfile;
+                [_club_image loadInBackground];
+                _loadingSpinner_2.hidden = YES;
+                [_loadingSpinner_2 stopAnimating];
+                
+                PFFile * profile;
+                profile = [object objectForKey:@"Image"];
                 _loadingSpinner_1.hidden = NO;
                 [_loadingSpinner_1 startAnimating];
-                [_profile_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                    _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    _profile_image.image = [UIImage imageWithData:data];
-                    _loadingSpinner_1.hidden = YES;
-                    [_loadingSpinner_1 stopAnimating];
-                    
-                }];
+                
+                _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                _profile_image.image = [UIImage imageNamed:@"ICON.png"];
+                _profile_image.file = profile;
+                [_profile_image loadInBackground];
+                _loadingSpinner_1.hidden = YES;
+                [_loadingSpinner_1 stopAnimating];
+                
+                
                 
             }
-         
-        
+            
+            
         }}];
 
 }
