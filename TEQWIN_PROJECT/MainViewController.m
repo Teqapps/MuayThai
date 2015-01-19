@@ -330,7 +330,7 @@
     
     // cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
     cell.club_image.layer.backgroundColor=[[UIColor clearColor] CGColor];
-    cell.club_image.layer.cornerRadius= 30;
+    cell.club_image.layer.cornerRadius= 27.5;
     cell.club_image.layer.borderWidth=0.0;
     cell.club_image.layer.masksToBounds = YES;
     cell.club_image.layer.borderColor=[[UIColor whiteColor] CGColor];
