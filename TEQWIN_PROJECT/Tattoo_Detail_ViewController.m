@@ -348,16 +348,18 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (objects.count ==0) {
+            
+                self.noimageview.image=[UIImage imageNamed:@"main_background.png"];
                 
-                self.noimage.text = @"noimage";
-            }
+                
+                                       }
             else{
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
                 
                 
                 self.noimage.text=@"";
                 
-                
+                    self.noimageview.image=[UIImage imageNamed:@""];
                 
                 [_imagesCollection reloadData];
             }}
@@ -382,11 +384,19 @@
     imageObject = [imageFilesArray_image objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
     
-    cell.loadingSpinner.hidden = NO;
+    if (imageFilesArray_image.count ==0) {
+        NSLog(@"00");
+        
+    }
+    else {
+        NSLog(@"11");
+    }
+     cell.loadingSpinner.hidden = NO;
     [cell.loadingSpinner startAnimating];
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
+          
               CGSize itemSize = CGSizeMake(40, 40);
             UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
             CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);

@@ -350,10 +350,11 @@
         
         
         //thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-        // thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
-        //thumbnailImageView.layer.borderWidth=0.0;
-        // thumbnailImageView.layer.masksToBounds = YES;
-        //thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
+         thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
+        thumbnailImageView.layer.borderWidth=4.0;
+         thumbnailImageView.layer.masksToBounds = YES;
+        thumbnailImageView.layer.borderColor=[UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
+
         
         thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -374,6 +375,11 @@
         count=[object objectForKey:@"favorites"];
         UILabel *count_like = (UILabel*) [cell viewWithTag:105];
         count_like.text = [NSString stringWithFormat:@"%lu",(unsigned long)count.count];
+        
+        viewcount=[object objectForKey:@"view"];
+        UILabel *count_view = (UILabel*) [cell viewWithTag:134];
+        count_view.text = [NSString stringWithFormat:@"%lu",(unsigned long)viewcount.count];
+        
         
         UILabel *master_desc = (UILabel*) [cell viewWithTag:187];
         if ([[object objectForKey:@"desc"] isEqual:@""] || [object objectForKey:@"desc"]==nil ) {
