@@ -74,7 +74,7 @@ LoginUIViewController *viewController ;
 
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"background.jpg"]
                                      //  forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:30.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:0.0/255.0 alpha:0.2]];
     
      //  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.755 green:0.655 blue:0.0 alpha:1]];
         NSShadow *shadow = [[NSShadow alloc] init];
@@ -97,10 +97,17 @@ LoginUIViewController *viewController ;
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
          (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     }
-    [UINavigationBar appearance].translucent=NO;
+    
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+   // [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+   // [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+   // [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+   
+  //  [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+
+    
        return YES;
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

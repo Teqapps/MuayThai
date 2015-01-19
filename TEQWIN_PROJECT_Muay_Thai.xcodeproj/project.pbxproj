@@ -78,6 +78,9 @@
 		4225CBCF1A68C51A00D5CF28 /* new_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 4225CBCB1A68C51A00D5CF28 /* new_like.png */; };
 		4225CBD01A68C51A00D5CF28 /* new_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 4225CBCC1A68C51A00D5CF28 /* new_liked.png */; };
 		4225CBD21A68C81800D5CF28 /* new_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 4225CBD11A68C81800D5CF28 /* new_view.png */; };
+		4225CBD41A6C9F3A00D5CF28 /* loading_login_backgroud.png in Resources */ = {isa = PBXBuildFile; fileRef = 4225CBD31A6C9F3A00D5CF28 /* loading_login_backgroud.png */; };
+		4225CBD61A6C9F9100D5CF28 /* loginview_fieldbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4225CBD51A6C9F9100D5CF28 /* loginview_fieldbackground.png */; };
+		4225CBD81A6CC1C900D5CF28 /* bao.png in Resources */ = {isa = PBXBuildFile; fileRef = 4225CBD71A6CC1C900D5CF28 /* bao.png */; };
 		422D2F5D1A49643500C4BF1D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422D2F5C1A49643500C4BF1D /* FacebookSDK.framework */; };
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		42322EA51A4136F100A6BA67 /* FACEBOOK.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */; };
@@ -359,6 +362,9 @@
 		4225CBCB1A68C51A00D5CF28 /* new_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_like.png; sourceTree = "<group>"; };
 		4225CBCC1A68C51A00D5CF28 /* new_liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_liked.png; sourceTree = "<group>"; };
 		4225CBD11A68C81800D5CF28 /* new_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_view.png; sourceTree = "<group>"; };
+		4225CBD31A6C9F3A00D5CF28 /* loading_login_backgroud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_login_backgroud.png; sourceTree = "<group>"; };
+		4225CBD51A6C9F9100D5CF28 /* loginview_fieldbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginview_fieldbackground.png; sourceTree = "<group>"; };
+		4225CBD71A6CC1C900D5CF28 /* bao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bao.png; sourceTree = "<group>"; };
 		422D2F5C1A49643500C4BF1D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		42317A6819B709FC00C54F54 /* teqwin_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqwin_logo.png; sourceTree = "<group>"; };
 		42322EA41A4136F100A6BA67 /* FACEBOOK.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FACEBOOK.PNG; sourceTree = "<group>"; };
@@ -1063,6 +1069,7 @@
 			children = (
 				4225CBD11A68C81800D5CF28 /* new_view.png */,
 				4225CBC91A68C51A00D5CF28 /* new_bookmark.png */,
+				4225CBD71A6CC1C900D5CF28 /* bao.png */,
 				4225CBCA1A68C51A00D5CF28 /* new_bookmarked.png */,
 				4225CBCB1A68C51A00D5CF28 /* new_like.png */,
 				4225CBCC1A68C51A00D5CF28 /* new_liked.png */,
@@ -1074,6 +1081,7 @@
 				42833FAA1A68AFDF004D97C0 /* new_main_profile.png */,
 				42833F931A68AC30004D97C0 /* new_logo1.png */,
 				42833F941A68AC30004D97C0 /* new_logo2.png */,
+				4225CBD51A6C9F9100D5CF28 /* loginview_fieldbackground.png */,
 				42833F951A68AC30004D97C0 /* new_logo3.png */,
 				42833F961A68AC30004D97C0 /* new_logo4.png */,
 				42833F971A68AC30004D97C0 /* new_vs.png */,
@@ -1094,6 +1102,7 @@
 				42E12A9F1A67CB49005EA79F /* new_history.png */,
 				42E12A921A67C804005EA79F /* new_home.png */,
 				42833F831A67D5A5004D97C0 /* signupbtn_2.png */,
+				4225CBD31A6C9F3A00D5CF28 /* loading_login_backgroud.png */,
 				42E12A931A67C804005EA79F /* new_match.png */,
 				42E12A941A67C804005EA79F /* new_news.png */,
 				42E12A951A67C804005EA79F /* new_notice.png */,
@@ -1196,6 +1205,7 @@
 			files = (
 				42833F7E1A67D269004D97C0 /* loginbtn_off.png in Resources */,
 				42833F9B1A68AC30004D97C0 /* new_logo2.png in Resources */,
+				4225CBD61A6C9F9100D5CF28 /* loginview_fieldbackground.png in Resources */,
 				4219409E198789DB007E3C52 /* ICON.png in Resources */,
 				422279A71A2C1A5600AA7915 /* muay_app_icon_1_76.png in Resources */,
 				427F76481A53D9C200D08FCF /* muay_banner6.png in Resources */,
@@ -1221,6 +1231,7 @@
 				420E2F6119F9EC3F00667E6C /* whatsapp.png in Resources */,
 				427D349F199E076400814463 /* dropbox.png in Resources */,
 				427D34A2199E076400814463 /* evernote@2x.png in Resources */,
+				4225CBD41A6C9F3A00D5CF28 /* loading_login_backgroud.png in Resources */,
 				422279161A27165F00AA7915 /* home_branches.png in Resources */,
 				426587531A1C8EBA002C0E93 /* sina-weibo@2x.png in Resources */,
 				42A960051A032F41002C0508 /* icon-share.png in Resources */,
@@ -1228,6 +1239,7 @@
 				42833F771A67D12E004D97C0 /* loading_forget_off.png in Resources */,
 				4222798F1A2853ED00AA7915 /* main_background.png in Resources */,
 				42833F9E1A68AC30004D97C0 /* new_vs.png in Resources */,
+				4225CBD81A6CC1C900D5CF28 /* bao.png in Resources */,
 				42996E341A442AAD00385FE0 /* login-button-small.png in Resources */,
 				42E12AA51A67CE23005EA79F /* loginbtn.png in Resources */,
 				42996E261A4400D400385FE0 /* dismiss_off.png in Resources */,

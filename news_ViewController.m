@@ -121,10 +121,10 @@
         UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
         CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
         thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-       // thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
-      //  thumbnailImageView.layer.borderWidth=2.0;
-      //  thumbnailImageView.layer.masksToBounds = YES;
-      //  thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
+        thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
+       thumbnailImageView.layer.borderWidth=0.0;
+       thumbnailImageView.layer.masksToBounds = YES;
+       thumbnailImageView.layer.borderColor=[[UIColor blackColor] CGColor];
         [thumbnailImageView.image drawInRect:imageRect];
         thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -141,8 +141,8 @@
         UILabel *news = (UILabel*) [cell viewWithTag:155];
         
         news.text = [imageObject objectForKey:@"news"];
-        news.textColor =[UIColor colorWithRed:234.0/255.0
-                                        green:192.0/255.0 blue:94/255.0 alpha:1.0];
+        news.textColor =[UIColor colorWithRed:190.0/255.0
+                                        green:190.0/255.0 blue:190.0/255.0 alpha:1.0];
         // news.textColor =[UIColor grayColor];
     }
     cell.backgroundColor = [UIColor clearColor];

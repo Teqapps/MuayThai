@@ -80,7 +80,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     searchbar.hidden = !searchbar.hidden;
-    self.navigationController.navigationBar.translucent=NO;
+   // self.navigationController.navigationBar.translucent=NO;
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     

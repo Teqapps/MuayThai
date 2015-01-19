@@ -59,6 +59,15 @@
 {
     [super viewDidLoad];
     [self stylePFLoadingViewTheHardWay];
+    for (UIView *subView in searchbar.subviews) {
+        for (UIView *secondLevelSubview in subView.subviews) {
+            if (![secondLevelSubview isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+                [secondLevelSubview removeFromSuperview];
+            }
+        }
+    }
+    searchbar.tintColor = [UIColor whiteColor];
+    searchbar.barTintColor =[UIColor whiteColor];
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
@@ -105,7 +114,7 @@
         }
     }];
 
-    self.navigationController.navigationBar.translucent=NO;
+    self.navigationController.navigationBar.translucent=YES;
 
     
 }
@@ -367,9 +376,9 @@
 
         Boxer_1_imageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
        Boxer_1_imageView.layer.cornerRadius= Boxer_1_imageView.frame.size.width / 2;
-        Boxer_1_imageView.layer.borderWidth=3.0f;
+        Boxer_1_imageView.layer.borderWidth=4.0f;
         Boxer_1_imageView.layer.masksToBounds = YES;
-        Boxer_1_imageView.layer.borderColor=[UIColor colorWithRed:37.0f/255.0f green:0.0f/255.0f blue:7.0f/255.0f alpha:1].CGColor;
+        Boxer_1_imageView.layer.borderColor=[UIColor colorWithRed:40.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
 
         
        // UIGraphicsEndImageContext();
@@ -390,9 +399,9 @@
       
         Boxer_2_imageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
         Boxer_2_imageView.layer.cornerRadius= Boxer_2_imageView.frame.size.width / 2;
-        Boxer_2_imageView.layer.borderWidth=3.0f;
+        Boxer_2_imageView.layer.borderWidth=4.0f;
         Boxer_2_imageView.layer.masksToBounds = YES;
-        Boxer_2_imageView.layer.borderColor=[UIColor colorWithRed:37.0f/255.0f green:0.0f/255.0f blue:7.0f/255.0f alpha:1].CGColor;
+        Boxer_2_imageView.layer.borderColor=[UIColor colorWithRed:40.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
      
        
    

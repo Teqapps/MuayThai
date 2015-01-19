@@ -64,7 +64,7 @@
     [self.logInView.logInButton setTitle:nil forState:UIControlStateNormal];
     [self.logInView.logInButton setTitle:nil forState:UIControlStateHighlighted];
     
-    
+
     // Set field text color
   
     [self.logInView.usernameField setPlaceholder:@"Enter Username"];
@@ -96,7 +96,7 @@
     [self.logInView.signUpButton setFrame:CGRectMake(165.0f, 290.0f, 145.0f, 40.0f)];
     [self.logInView.usernameField setFrame:CGRectMake(0.0f, 160.0f, 320.0f, 50.0f)];
     [self.logInView.passwordField setFrame:CGRectMake(0.0f, 210.0f, 320.0f, 50.0f)];
-    [self.fieldsBackground setFrame:CGRectMake(0.0f, 0.0f, 250.0f, 100.0f)];
+    [self.fieldsBackground setFrame:CGRectMake(35.0f, 160.0f, 320.0f, 100.0f)];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

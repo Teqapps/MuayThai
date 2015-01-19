@@ -36,18 +36,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // transparency for UIToolbar
-    self.searchbar.translucent = YES;
-       // transparency for UINavigationBar
-       self.searchbar.translucent = YES;
-       // transparency for UITabBar
-    self.searchbar.backgroundImage = [UIImage new];
-      UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    for (UIView *subView in _searchbar.subviews) {
+        for (UIView *secondLevelSubview in subView.subviews) {
+            if (![secondLevelSubview isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+                [secondLevelSubview removeFromSuperview];
+            }
+        }
+    }
+ _searchbar.tintColor = [UIColor whiteColor];
+    _searchbar.barTintColor =[UIColor whiteColor];
+    //  UIGraphicsBeginImageContext(self.view.frame.size);
+   // [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
+  //  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+  //  UIGraphicsEndImageContext();
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+  //  self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
 
  //   [self queryParseMethod_1];
@@ -112,7 +115,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.image_collection setCollectionViewLayout:flowLayout];
     
-    flowLayout.itemSize = CGSizeMake(320,180);
+    flowLayout.itemSize = CGSizeMake(320,230);
     NSLog(@"hehe%f",[[UIScreen mainScreen] bounds].size.height/2.81);
     [flowLayout setMinimumLineSpacing:0.0f];
 
