@@ -36,10 +36,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   // self.searchbar.translucent = YES;
+    // transparency for UIToolbar
+    self.searchbar.translucent = YES;
+       // transparency for UINavigationBar
+       self.searchbar.translucent = YES;
+       // transparency for UITabBar
     self.searchbar.backgroundImage = [UIImage new];
-    self.searchbar.scopeBarBackgroundImage = [UIImage new];
-    UIGraphicsBeginImageContext(self.view.frame.size);
+      UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

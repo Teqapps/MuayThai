@@ -43,6 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     NSLog(@"%@",self.tattoomasterCell.promotion_image);
     NSLog(@"%@",self.tattoomasterCell.imageFile);
     //These two steps are important
@@ -59,8 +60,8 @@
      UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
     self.desc.font=font;
     NSString *lorum =self.tattoomasterCell.desc;
-    self.desc.layer.cornerRadius=8.0f;
-    self.desc.layer.borderWidth=0.0;
+  //  self.desc.layer.cornerRadius=8.0f;
+  //  self.desc.layer.borderWidth=0.0;
       self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
     //for use labrect with UITextView you set the font of UITextView:
     //label.font = [UIFont systemFontOfSize:17];
@@ -68,11 +69,11 @@
     CGSize maxSize = CGSizeMake(320, 410);
     CGRect labrect = [lorum boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_desc.font} context:Nil];
     if ([UIScreen mainScreen].bounds.size.height ==480) {
-        [self.scrollView setContentSize:CGSizeMake(320, 580+labrect.size.height+200)];
+        [self.scrollView setContentSize:CGSizeMake(320, 580+labrect.size.height+250)];
     }
     else
     {
-        [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+labrect.size.height+100)];
+        [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+labrect.size.height+150)];
         
     }
     NSLog(@"1%f",[UIScreen mainScreen].bounds.size.height);
@@ -80,13 +81,14 @@
     _desc.text = lorum;
     //for use UITextView you should comment the line under
     //_desc.numberOfLines = 0;
-    _desc.frame = CGRectMake(0, 355, 320, labrect.size.height+15);
+    _desc.frame = CGRectMake(23, 355, 280, labrect.size.height+24);
     
     
     
     _profileimage.layer.cornerRadius =_profileimage.frame.size.width / 2;
-    _profileimage.layer.borderWidth = 0.0f;
-    _profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
+    _profileimage.layer.borderWidth = 3.0f;
+    _profileimage.layer.borderColor = [UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:7.0f/255.0f alpha:1].CGColor;
+    //_profileimage.layer.borderColor = [UIColor brownColor].CGColor;
     _profileimage.clipsToBounds = YES;
     _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
     _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
@@ -158,7 +160,8 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.imagesCollection setCollectionViewLayout:flowLayout];
-    flowLayout.itemSize = CGSizeMake(70, 70);
+    flowLayout.itemSize = CGSizeMake(320  , 220);
+      [flowLayout setMinimumLineSpacing:0.0f];
     self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
@@ -384,7 +387,7 @@
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            CGSize itemSize = CGSizeMake(20, 20);
+              CGSize itemSize = CGSizeMake(40, 40);
             UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
             CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
             [ cell.parseImage.image drawInRect:imageRect];

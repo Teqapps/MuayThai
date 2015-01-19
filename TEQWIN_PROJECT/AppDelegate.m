@@ -97,7 +97,7 @@ LoginUIViewController *viewController ;
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
          (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     }
-    
+    [UINavigationBar appearance].translucent=NO;
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
