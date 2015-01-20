@@ -120,6 +120,12 @@
                 
                 _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
                 UIGraphicsEndImageContext();
+                _profile_image.layer.backgroundColor=[[UIColor clearColor] CGColor];
+                _profile_image.layer.cornerRadius= _profile_image.frame.size.width / 2;
+                _profile_image.layer.borderWidth=0.0f;
+                _profile_image.layer.masksToBounds = YES;
+                _profile_image.layer.borderColor=[UIColor colorWithRed:40.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
+
                 _profile_image.image = [UIImage imageNamed:@"ICON.png"];
                 _profile_image.file = profile;
                 [_profile_image loadInBackground];
@@ -243,6 +249,7 @@
     if ([[imageObject objectForKey:@"Boxer_results"]isEqualToString:@"Win"]) {
         
         Match_Result_1_imageView.image = [UIImage imageNamed:@"match_win.png"];
+        
        boxer_1_name.textColor=[UIColor yellowColor];
     }
     else

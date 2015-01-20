@@ -86,7 +86,7 @@
     
     
     _profileimage.layer.cornerRadius =_profileimage.frame.size.width / 2;
-    _profileimage.layer.borderWidth = 3.0f;
+    _profileimage.layer.borderWidth = 0.0f;
     _profileimage.layer.borderColor = [UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:7.0f/255.0f alpha:1].CGColor;
     //_profileimage.layer.borderColor = [UIColor brownColor].CGColor;
     _profileimage.clipsToBounds = YES;

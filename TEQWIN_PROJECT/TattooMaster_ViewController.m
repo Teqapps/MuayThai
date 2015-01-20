@@ -351,7 +351,7 @@
         
         //thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
          thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
-        thumbnailImageView.layer.borderWidth=4.0;
+        thumbnailImageView.layer.borderWidth=0.0;
          thumbnailImageView.layer.masksToBounds = YES;
         thumbnailImageView.layer.borderColor=[UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
 
