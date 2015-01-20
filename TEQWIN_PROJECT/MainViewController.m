@@ -316,7 +316,7 @@
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.parseImage.image=[UIImage imageNamed:@"main_background.png"];
-  //  cell.club_image.image=[UIImage imageNamed:@"image_icon.png"];
+    cell.club_image.image=[UIImage imageNamed:@"image_icon.png"];
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
       PFFile *avstar = [imageObject objectForKey:@"image"];
     

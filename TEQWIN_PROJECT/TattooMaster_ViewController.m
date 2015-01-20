@@ -360,7 +360,7 @@
         UIGraphicsEndImageContext();
         
         //
-       // thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
+        thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
         thumbnailImageView.file = thumbnail;
         [thumbnailImageView loadInBackground];
         [loadingSpinner stopAnimating];

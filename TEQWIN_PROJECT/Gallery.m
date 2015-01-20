@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     // Create array object and assign it to _feedItems variable
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    //self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = NO;
     shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.frame];
     shareCircleView.delegate = self;
     [self.navigationController.view addSubview:shareCircleView];
