@@ -380,36 +380,21 @@
     
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.parseImage.image =[UIImage imageNamed:@"image_icon.png"];
+    cell.detailimage.image =[UIImage imageNamed:@"image_icon.png"];
     imageObject = [imageFilesArray_image objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
+    cell.loading.hidden = NO;
+    [cell.loading startAnimating];
+
+
     
-    if (imageFilesArray_image.count ==0) {
-        NSLog(@"00");
-        
-    }
-    else {
-        NSLog(@"11");
-    }
-     cell.loadingSpinner.hidden = NO;
-    [cell.loadingSpinner startAnimating];
+  
     
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-          
-              CGSize itemSize = CGSizeMake(40, 40);
-            UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-            [ cell.parseImage.image drawInRect:imageRect];
-            cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext() ;
-            cell.parseImage.image = [UIImage imageWithData:data];
-            [cell.loadingSpinner stopAnimating];
-            cell.loadingSpinner.hidden = YES;
+            cell.detailimage.file = imageFile;
+    
+            [   cell.detailimage loadInBackground];
             
-            
-        }
-    }];
+   
     
     return cell;
 }
