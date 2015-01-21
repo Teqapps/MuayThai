@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
 {
     [super viewDidLoad];
     [self queryParseMethod];
-     [self queryParseMethod_2];
+    
     
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"showgallery" dimensions:dimensions];
@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     // Create array object and assign it to _feedItems variable
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    //self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = NO;
     shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.frame];
     shareCircleView.delegate = self;
     [self.navigationController.view addSubview:shareCircleView];
@@ -91,40 +91,6 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     else{
     }
 }
-- (void)queryParseMethod_2 {
-    NSLog(@"start query");
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    
-    [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if ([objects count] == 0) {
-            
-        }
-        if (!error) {
-            NSArray * array;
-            array = [[NSArray alloc] initWithArray:objects];
-            for (PFObject *object in objects) {
-                
-                _master_image.file =[object objectForKey:@"image"];
-                [_master_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                    // self.profileimage.file=self.tattoomasterCell.imageFile;
-                    _master_image.layer.cornerRadius =_master_image.frame.size.width / 2;
-                    _master_image.layer.borderWidth = 0.0f;
-                   _master_image.layer.borderColor = [UIColor whiteColor].CGColor;
-                    _master_image.clipsToBounds = YES;
-                    
-                  _master_image.image = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                  _master_image.image = [UIImage imageWithData:data];
-                }];
-            }}
-    }];
-    
-    
-}
-
 
 
 
@@ -236,7 +202,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     image_desc = (UILabel*) [cell viewWithTag:199];
     image_desc.text = [imageObject objectForKey:@"image_desc"];
     if ([imageObject objectForKey:@"image_desc"] ==nil ||[[imageObject objectForKey:@"image_desc"]  isEqual:@""] ) {
-        image_desc.text = @"　";
+        image_desc.text = @"　　";
     }
     else{
         image_desc.text= [imageObject objectForKey:@"image_desc"];
@@ -248,7 +214,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
 
 //按圖第一下放大至fullscreen
 -(void)actionTap:(UITapGestureRecognizer *)sender{
-    isshow=YES;
+    
     CGPoint location = [sender locationInView:self.tableView];
     NSIndexPath *indexPath  = [self.tableView indexPathForRowAtPoint:location];
     
@@ -276,11 +242,6 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     fullImageView.backgroundColor=[UIColor blackColor];
     fullImageView.userInteractionEnabled=YES;
     [fullImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap2:)]];
-        button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; //3
-    [button setTitle:@"Close" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [button addTarget:self action:@selector(buttonclose:) forControlEvents:UIControlEventTouchUpInside];//2
     fullImageView.contentMode=UIViewContentModeScaleAspectFit;
     
     if (![fullImageView superview]) {
@@ -289,20 +250,15 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
         
         [self.view.window addSubview:fullImageView];
         [self.view.window addSubview:test];
-         [self.view.window addSubview:button];
+        
         
         test.frame=frame_first;
         fullImageView.frame=frame_first;
         [UIView animateWithDuration:0.5 animations:^{
             
             fullImageView.frame=CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height);
-            UIImage *home_news = [[UIImage imageNamed:@"dismiss_on.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            UIImage *home_newsTap = [[UIImage imageNamed:@"dismiss_off.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            [button setImage:home_news forState:UIControlStateNormal];
-            [button setImage:home_newsTap forState:UIControlStateHighlighted];
-            test.frame=CGRectMake(0, self.view.frame.size.height-44, 320,test.contentSize.height);
-            button.frame=CGRectMake(250, 50, 50,50);
             
+            test.frame=CGRectMake(0, self.view.frame.size.height-44, 320,test.contentSize.height);
             ;
             
         } completion:^(BOOL finished) {
@@ -316,38 +272,14 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     
 }
 
+
 ////按圖第二下縮回原型
 -(void)actionTap2:(UITapGestureRecognizer *)sender{
-    if (isshow==YES) {
-        [UIView animateWithDuration:0.5 animations:^{
-            
-            test.frame=frame_first;
-            
-            [test removeFromSuperview];
-        } completion:^(BOOL finished) {
-            
-            [test removeFromSuperview];
-        }];    [UIApplication sharedApplication].statusBarHidden=NO;
-        
-        isshow=NO;
-        
-    }
-    else
-    {
-        test.frame= CGRectMake(0,  self.view.frame.size.height-44, 320,400);
-        test.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];;
-        [self.view.window addSubview:test];
-        
-        isshow=YES;
-    }
-}
--(void)buttonclose:(UITapGestureRecognizer *)sender{
     
     [UIView animateWithDuration:0.5 animations:^{
         
         fullImageView.frame=frame_first;
         test.frame=frame_first;
-        button.hidden=YES;
     } completion:^(BOOL finished) {
         [fullImageView removeFromSuperview];
         [test removeFromSuperview];
@@ -356,7 +288,6 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     [UIApplication sharedApplication].statusBarHidden=NO;
     
 }
-
 
 
 

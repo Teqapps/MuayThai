@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self querydetail];
+
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -46,7 +46,7 @@
         test =@"沒有簡介";
     }
     self.automaticallyAdjustsScrollViewInsets = NO;
-     self.news_detail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_news.png"]];
+     self.news_detail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
 
     self.news_detail.text=test;
     self.news_detail.layer.cornerRadius=8.0f;
@@ -86,57 +86,43 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
 [self queryParseMethod_boxer1];
-    
-}
-- (void)querydetail{
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Boxers"];
+
+
+      PFQuery *query = [PFQuery queryWithClassName:@"Boxers"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    //   query.cachePolicy = kPFCachePolicyCacheElseNetwork;
+  //   query.cachePolicy = kPFCachePolicyCacheElseNetwork;
     //[query whereKey:@"Boxer_1_id" equalTo:self.tattoomasterCell.boxer_id];
     [query whereKey:@"boxer_id" equalTo:self.tattoomasterCell.boxer_id];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            
+      
             for (PFObject *object in objects) {
-                PFFile * clubfile;
-                clubfile = [object objectForKey:@"Club_image"];
+                            _club_image.file = [object objectForKey:@"Club_image"];
                 _loadingSpinner_2.hidden = NO;
                 [_loadingSpinner_2 startAnimating];
+                [_club_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    _club_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    _club_image.image = [UIImage imageWithData:data];
+                    _loadingSpinner_2.hidden = YES;
+                    [_loadingSpinner_2 stopAnimating];
                 
-                _club_image.image = UIGraphicsGetImageFromCurrentImageContext();
-                UIGraphicsEndImageContext();
-                _club_image.image = [UIImage imageNamed:@"muay_banner6.png"];
-                _club_image.file  = clubfile;
-                [_club_image loadInBackground];
-                _loadingSpinner_2.hidden = YES;
-                [_loadingSpinner_2 stopAnimating];
-                
-                PFFile * profile;
-                profile = [object objectForKey:@"Image"];
+                }];
+                _profile_image.file = [object objectForKey:@"Image"];
                 _loadingSpinner_1.hidden = NO;
                 [_loadingSpinner_1 startAnimating];
-                
-                _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
-                UIGraphicsEndImageContext();
-                _profile_image.layer.backgroundColor=[[UIColor clearColor] CGColor];
-                _profile_image.layer.cornerRadius= _profile_image.frame.size.width / 2;
-                _profile_image.layer.borderWidth=0.0f;
-                _profile_image.layer.masksToBounds = YES;
-                _profile_image.layer.borderColor=[UIColor colorWithRed:40.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
-
-                _profile_image.image = [UIImage imageNamed:@"ICON.png"];
-                _profile_image.file = profile;
-                [_profile_image loadInBackground];
-                _loadingSpinner_1.hidden = YES;
-                [_loadingSpinner_1 stopAnimating];
-                
-                
+                [_profile_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    _profile_image.image = [UIImage imageWithData:data];
+                    _loadingSpinner_1.hidden = YES;
+                    [_loadingSpinner_1 stopAnimating];
+                    
+                }];
                 
             }
-            
-            
+         
+        
         }}];
 
 }
@@ -249,7 +235,6 @@
     if ([[imageObject objectForKey:@"Boxer_results"]isEqualToString:@"Win"]) {
         
         Match_Result_1_imageView.image = [UIImage imageNamed:@"match_win.png"];
-        
        boxer_1_name.textColor=[UIColor yellowColor];
     }
     else

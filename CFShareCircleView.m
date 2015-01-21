@@ -45,8 +45,8 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _sharers = [[NSMutableArray alloc] initWithObjects: [CFSharer whatsapp],[CFSharer more],[CFSharer sina_weibo],[CFSharer twitter],[CFSharer facebook],nil];
-        
+             _sharers = [[NSMutableArray alloc] initWithObjects:[CFSharer whatsapp],[CFSharer more],[CFSharer sina_weibo],[CFSharer twitter],[CFSharer facebook],nil];
+
         [self setUpCircleLayers];
     }
     return self;
@@ -63,9 +63,7 @@
 
 - (void)layoutSubviews {
     // Adjust geometry when updating the subviews.
-    
-    
-    _overlayLayer.frame = CGRectMake(0, 0, 320, 568 );
+    _overlayLayer.frame = self.bounds;
     _origin = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     _currentPosition = _origin;
     if(_circleIsVisible) {
@@ -75,15 +73,13 @@
     }
     if(_sharingOptionsIsVisible)
         _sharingOptionsView.frame = self.bounds;
-    
-    
     [self updateLayers];
 }
 
 #pragma mark -
 #pragma mark - Private methods
 
-- (void)setUpCircleLayers {
+- (void)setUpCircleLayers {  
     // Set all the defaults for the share circle.
     _imageLayers = [[NSMutableArray alloc] init];
     self.hidden = YES;
@@ -232,7 +228,7 @@
     CGRect rect = CGRectMake(0.0f, 0.0f, 45.0f, 45.0f);
     UIImage *closeButtonImage = [UIImage imageNamed:@"close.png"];
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0f);
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextRef context = UIGraphicsGetCurrentContext();    
     CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:35.0/255.0 green:35.0/255.0 blue:35.0/255.0 alpha:1.0] CGColor]);
     CGContextFillRect(context, rect);
     [closeButtonImage drawInRect:CGRectMake(15.0f,15.0f,closeButtonImage.size.width,closeButtonImage.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
@@ -324,7 +320,7 @@
             float y = layer.position.y - sinf(trig)*PATH_SIZE/2.0;
             [_sharerLocations addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
             layer.position = [[_sharerLocations objectAtIndex:i] CGPointValue];
-        }
+        }  
     } else {
         for(int i = 0; i < _numberSharersInCircle; i++) {
             // Animate the base layer for the main rotation.
@@ -431,7 +427,7 @@
     CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
     CGContextFillRect(context, rect);
     UIImage *tempImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    UIGraphicsEndImageContext();    
     return tempImage;
 }
 
@@ -544,7 +540,7 @@
         imageView = [[UIImageView alloc] initWithFrame:CGRectMake(30.0, 15.0, 30.0, 30.0)];
         imageView.tag = IMAGE_VIEW_TAG;
         [cell.contentView addSubview:imageView];
-    }
+    }   
     
     // Set the label and image properties.
     nameLabel.text = sharer.name;
