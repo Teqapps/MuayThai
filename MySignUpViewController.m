@@ -19,19 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.signUpView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"muay_login_bg_2.png"]]];
+  
+    [self.signUpView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"login_background.png"]]];
     [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]]];
     
     // Change button apperance
-    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"dismiss_on.png"] forState:UIControlStateNormal];
-    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"dismiss_off.png"] forState:UIControlStateHighlighted];
+    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"loading_icon_cancel.png"] forState:UIControlStateNormal];
+    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"loading_icon_cancel_off.png"] forState:UIControlStateHighlighted];
+
     
 
     [self.signUpView.usernameField setPlaceholder:@"Enter Username"];
     [self.signUpView.passwordField setPlaceholder:@"Enter Password"];
     [self.signUpView.emailField setPlaceholder:@"Enter Email"];
+
+
     
+    [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"signupbtn_2.png"] forState:UIControlStateNormal];
+    [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"signupbtn_2_off.png"] forState:UIControlStateHighlighted];
+    [self.signUpView.signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+    [self.signUpView.signUpButton setTitle:@"Sign Up" forState:UIControlStateHighlighted];
+    
+
     // Add background for fields
     // [self setFieldsBackground:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SignUpFieldBG.png"]]];
     [self.signUpView insertSubview:fieldsBackground atIndex:1];
@@ -63,16 +72,14 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
+    [self.signUpView.dismissButton setFrame:CGRectMake(280.0f, 50.0f, 30.0f, 30.0f)];
+    [self.signUpView.logo setFrame:CGRectMake(75.0f, 70.0f,178.0f, 41.5f)];
     
-    [self.signUpView.dismissButton setFrame:CGRectMake(260.0f, 30.0f, 40.0f, 40.0f)];
-    [self.signUpView.logo setFrame:CGRectMake(150.0f, 30.0f,100.0f, 30.0f)];
-    [self.signUpView.signUpButton setFrame:CGRectMake(0.0f,300.0f, 320.0f, 40.0f)];
+    [self.signUpView.signUpButton setFrame:CGRectMake(40.0f,310.0f, 240.0f, 40.0f)];
     //  [self.fieldsBackground setFrame:CGRectMake(35.0f, 145.0f, 250.0f, 174.0f)];
-    [self.signUpView.usernameField setFrame:CGRectMake(35.0f, 145.0f, 250.0f, 50.0f)];
-    [self.signUpView.passwordField setFrame:CGRectMake(35.0f, 195.0f, 250.0f, 50.0f)];
-    [self.signUpView.emailField setFrame:CGRectMake(35.0f, 245.0f, 250.0f, 50.0f)];
-    
-}
+    [self.signUpView.usernameField setFrame:CGRectMake(0.0f, 145.0f,320.0f, 50.0f)];
+    [self.signUpView.passwordField setFrame:CGRectMake(0.0f, 195.0f,320.0f, 50.0f)];
+    [self.signUpView.emailField setFrame:CGRectMake(0.0f, 245.0f, 320.0f, 50.0f)];}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

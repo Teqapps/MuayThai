@@ -58,7 +58,7 @@
 {
     [super viewDidLoad];
     [self stylePFLoadingViewTheHardWay];
-    UIImage *image = [UIImage imageNamed:@"muayhsitory_background.png"];
+    UIImage *image = [UIImage imageNamed:@"background_news.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
     // Add image view on top of table view
@@ -80,7 +80,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     searchbar.hidden = !searchbar.hidden;
-    self.navigationController.navigationBar.translucent=NO;
+   // self.navigationController.navigationBar.translucent=NO;
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     
@@ -350,16 +350,17 @@
         
         
         //thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-        // thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
-        //thumbnailImageView.layer.borderWidth=0.0;
-        // thumbnailImageView.layer.masksToBounds = YES;
-        //thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
+         thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
+        thumbnailImageView.layer.borderWidth=0.0;
+         thumbnailImageView.layer.masksToBounds = YES;
+        thumbnailImageView.layer.borderColor=[UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
+
         
         thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         //
-        thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
+       // thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
         thumbnailImageView.file = thumbnail;
         [thumbnailImageView loadInBackground];
         [loadingSpinner stopAnimating];
@@ -374,6 +375,11 @@
         count=[object objectForKey:@"favorites"];
         UILabel *count_like = (UILabel*) [cell viewWithTag:105];
         count_like.text = [NSString stringWithFormat:@"%lu",(unsigned long)count.count];
+        
+        viewcount=[object objectForKey:@"view"];
+        UILabel *count_view = (UILabel*) [cell viewWithTag:134];
+        count_view.text = [NSString stringWithFormat:@"%lu",(unsigned long)viewcount.count];
+        
         
         UILabel *master_desc = (UILabel*) [cell viewWithTag:187];
         if ([[object objectForKey:@"desc"] isEqual:@""] || [object objectForKey:@"desc"]==nil ) {
@@ -398,12 +404,12 @@
         heart_statues = (PFImageView*)[cell viewWithTag:107];
         if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
             
-            heart_statues.image = [UIImage imageNamed:@"icon-liked.png"];
+            heart_statues.image = [UIImage imageNamed:@"new_liked.png"];
         }
         else
         {
             
-            heart_statues.image = [UIImage imageNamed:@"icon-like.png"];
+            heart_statues.image = [UIImage imageNamed:@"new_like.png"];
         }
         // UICollectionView *cellImageCollection=(UICollectionView *)[cell viewWithTag:9];
         
@@ -415,12 +421,12 @@
         
         if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
             
-            cell.imageView.image = [UIImage imageNamed:@"icon-liked.png"];
+            cell.imageView.image = [UIImage imageNamed:@"new_liked.png"];
         }
         else
         {
             
-            cell.imageView.image = [UIImage imageNamed:@"icon-like.png"];
+            cell.imageView.image = [UIImage imageNamed:@"new_like.png"];
         }
         
         cell.textLabel.text = [object objectForKey:@"name"];

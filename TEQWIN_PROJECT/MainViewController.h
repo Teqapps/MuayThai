@@ -42,5 +42,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *home_notice;
 @property (weak, nonatomic) IBOutlet UIButton *home_contact;
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationbar;
 
 @end

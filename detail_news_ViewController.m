@@ -29,8 +29,8 @@
     [self queryParseMethod_2];
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"show_detai_news" dimensions:dimensions];
-    
-    _news_detail.backgroundColor = [[UIColor blackColor ]colorWithAlphaComponent:0.5f];
+    self.title =@"詳細";
+    _news_detail.backgroundColor = [[UIColor blackColor ]colorWithAlphaComponent:1.0f];
     _news_detail.layer.cornerRadius=8.0f;
     _news_detail.layer.borderWidth=1.0f;
     _news_detail.layer.borderColor =[[UIColor grayColor] CGColor];
@@ -51,9 +51,10 @@
     self.name.text =self.tattoomasterCell.name;
     _news_detail.text=self.tattoomasterCell.news;
     self.profile_image.file=self.tattoomasterCell.imageFile;
-    //self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
+    self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
+     self.profile_image.layer.masksToBounds = YES;
     self.profile_image.layer.borderWidth = 0.0f;
-    self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.profile_image.layer.borderColor = [[UIColor whiteColor]CGColor];
     self.profile_image.clipsToBounds = YES;
     
 }
@@ -88,10 +89,6 @@
                 _profile_image.file =[object objectForKey:@"image"];
                 [_profile_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     // self.profileimage.file=self.tattoomasterCell.imageFile;
-                    _profile_image.layer.cornerRadius =_profile_image.frame.size.width / 2;
-                    _profile_image.layer.borderWidth = 0.0f;
-                    _profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
-                    _profile_image.clipsToBounds = YES;
                     
                     _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
                     UIGraphicsEndImageContext();
