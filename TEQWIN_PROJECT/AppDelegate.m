@@ -20,7 +20,7 @@ UINavigationController *navigation;
 LoginUIViewController *viewController ;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    sleep(0);
+    sleep(1);
 
    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
@@ -29,7 +29,7 @@ LoginUIViewController *viewController ;
     
     //然后这里设定关联，此处把indexPath关联到alert上
     
-   
+
 
           // Optional: automatically send uncaught exceptions to Google Analytics.
   //  [GAI sharedInstance].trackUncaughtExceptions = YES;
@@ -74,7 +74,7 @@ LoginUIViewController *viewController ;
 
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"background.jpg"]
                                      //  forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:30.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:0.0/255.0 alpha:0.2]];
     
      //  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.755 green:0.655 blue:0.0 alpha:1]];
         NSShadow *shadow = [[NSShadow alloc] init];
@@ -83,7 +83,7 @@ LoginUIViewController *viewController ;
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
-                                                           [UIFont fontWithName:@"TimesNewRomanPS-ItalicMT" size:21.0], NSFontAttributeName, nil]];
+                                                           [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:21.0], NSFontAttributeName, nil]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
    // NSLog(@"hehe%@",[PFInstallation currentInstallation].installationId  );
@@ -100,7 +100,14 @@ LoginUIViewController *viewController ;
     
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+   // [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+   // [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+   // [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+   
+  //  [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+
+    
        return YES;
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

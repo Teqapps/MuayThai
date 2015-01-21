@@ -43,6 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     NSLog(@"%@",self.tattoomasterCell.promotion_image);
     NSLog(@"%@",self.tattoomasterCell.imageFile);
     //These two steps are important
@@ -56,21 +57,23 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
-    
+     UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
+    self.desc.font=font;
     NSString *lorum =self.tattoomasterCell.desc;
-    self.desc.layer.cornerRadius=8.0f;
-    self.desc.layer.borderWidth=0.0;
+  //  self.desc.layer.cornerRadius=8.0f;
+  //  self.desc.layer.borderWidth=0.0;
+      self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
     //for use labrect with UITextView you set the font of UITextView:
     //label.font = [UIFont systemFontOfSize:17];
     
     CGSize maxSize = CGSizeMake(320, 410);
     CGRect labrect = [lorum boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_desc.font} context:Nil];
     if ([UIScreen mainScreen].bounds.size.height ==480) {
-        [self.scrollView setContentSize:CGSizeMake(320, 580+labrect.size.height+200)];
+        [self.scrollView setContentSize:CGSizeMake(320, 580+labrect.size.height+250)];
     }
     else
     {
-        [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+labrect.size.height+100)];
+        [self.scrollView setContentSize:CGSizeMake(320, [UIScreen mainScreen].bounds.size.height+labrect.size.height+150)];
         
     }
     NSLog(@"1%f",[UIScreen mainScreen].bounds.size.height);
@@ -78,13 +81,14 @@
     _desc.text = lorum;
     //for use UITextView you should comment the line under
     //_desc.numberOfLines = 0;
-    _desc.frame = CGRectMake(0, 355, 320, labrect.size.height+15);
+    _desc.frame = CGRectMake(23, 355, 280, labrect.size.height+24);
     
     
     
     _profileimage.layer.cornerRadius =_profileimage.frame.size.width / 2;
     _profileimage.layer.borderWidth = 0.0f;
-    _profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
+    _profileimage.layer.borderColor = [UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:7.0f/255.0f alpha:1].CGColor;
+    //_profileimage.layer.borderColor = [UIColor brownColor].CGColor;
     _profileimage.clipsToBounds = YES;
     _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
     _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
@@ -93,7 +97,7 @@
     }
     else
     {
-        _lbltel.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lbltel.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
@@ -102,7 +106,7 @@
     }
     else
     {
-        _lbladdress.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lbladdress.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     
     _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
@@ -111,7 +115,7 @@
     }
     else
     {
-        _lblemail.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lblemail.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
     if ([self.tattoomasterCell.website isEqual:@""]) {
@@ -119,7 +123,7 @@
     }
     else
     {
-        _lblweb.textColor =[UIColor colorWithRed:54.0/256.0 green:199.0/256.0 blue:252.0/256.0 alpha:1 ];
+        _lblweb.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     // Create ParallaxHeaderView with specified size, and set it as uitableView Header, that's it
     self.view.backgroundColor =[UIColor blackColor];
@@ -156,7 +160,8 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.imagesCollection setCollectionViewLayout:flowLayout];
-    flowLayout.itemSize = CGSizeMake(70, 70);
+    flowLayout.itemSize = CGSizeMake(320  , 220);
+      [flowLayout setMinimumLineSpacing:0.0f];
     self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
@@ -172,17 +177,17 @@
     
     //set segmented control
     if ([self.tattoomasterCell.bookmark containsObject:[PFUser currentUser].objectId]) {
-        self.bookmark_image.image =[UIImage imageNamed:@"icon-favorited.png"];
+        self.bookmark_image.image =[UIImage imageNamed:@"new_bookmarked.png"];
     }
     else {
-        self.bookmark_image.image =[UIImage imageNamed:@"icon-favorite.png"];
+        self.bookmark_image.image =[UIImage imageNamed:@"new_bookmark.png"];
     }
     
     if ([self.tattoomasterCell.favorites containsObject:[PFUser currentUser].objectId]) {
-        self.fav_image.image =[UIImage imageNamed:@"icon-liked.png"];
+        self.fav_image.image =[UIImage imageNamed:@"new_liked.png"];
     }
     else {
-        self.fav_image.image =[UIImage imageNamed:@"icon-like.png"];
+        self.fav_image.image =[UIImage imageNamed:@"new_like.png"];
     }
     self.master_name.text=self.tattoomasterCell.name;
     
@@ -343,16 +348,18 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (objects.count ==0) {
+            
+                self.noimageview.image=[UIImage imageNamed:@"main_background.png"];
                 
-                self.noimage.text = @"noimage";
-            }
+                
+                                       }
             else{
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
                 
                 
                 self.noimage.text=@"";
                 
-                
+                    self.noimageview.image=[UIImage imageNamed:@""];
                 
                 [_imagesCollection reloadData];
             }}
@@ -373,28 +380,21 @@
     
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.parseImage.image =[UIImage imageNamed:@"image_icon.png"];
+   // cell.detailimage.image =[UIImage imageNamed:@"image_icon.png"];
     imageObject = [imageFilesArray_image objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
+    cell.loading.hidden = NO;
+    [cell.loading startAnimating];
+
+
     
-    cell.loadingSpinner.hidden = NO;
-    [cell.loadingSpinner startAnimating];
+  
     
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            CGSize itemSize = CGSizeMake(20, 20);
-            UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-            [ cell.parseImage.image drawInRect:imageRect];
-            cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext() ;
-            cell.parseImage.image = [UIImage imageWithData:data];
-            [cell.loadingSpinner stopAnimating];
-            cell.loadingSpinner.hidden = YES;
+            cell.detailimage.file = imageFile;
+    
+            [   cell.detailimage loadInBackground];
             
-            
-        }
-    }];
+   
     
     return cell;
 }
@@ -420,7 +420,7 @@
     CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
-    return rect.size.height + 20;
+    return rect.size.height + 30;
     
     
 }
@@ -846,7 +846,7 @@
             
             [self dislike];
             
-            self.fav_image.image =[UIImage imageNamed:@"icon-like.png"];
+            self.fav_image.image =[UIImage imageNamed:@"new_like.png"];
             
         }
         
@@ -855,7 +855,7 @@
             
             [self likeImage];
             
-            self.fav_image.image =[UIImage imageNamed:@"icon-liked.png"];
+            self.fav_image.image =[UIImage imageNamed:@"new_liked.png"];
             
         }
     }
@@ -891,7 +891,7 @@
             
             [self nobookmark];
             
-            self.bookmark_image.image =[UIImage imageNamed:@"icon-favorite.png"];
+            self.bookmark_image.image =[UIImage imageNamed:@"new_bookmark.png"];
             
         }
         
@@ -901,7 +901,7 @@
             [self bookmark];
             
             
-            self.bookmark_image.image =[UIImage imageNamed:@"icon-favorited.png"];
+            self.bookmark_image.image =[UIImage imageNamed:@"new_bookmarked.png"];
             
         }
     }
