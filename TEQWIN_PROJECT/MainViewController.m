@@ -36,46 +36,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  _searchbar.tintColor = [UIColor whiteColor];
-    _searchbar.barTintColor =[UIColor blackColor];
-    
-    
-    //  UIGraphicsBeginImageContext(self.view.frame.size);
-   // [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
-  //  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-  //  UIGraphicsEndImageContext();
-    
-  //  self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-[self queryParseMethod];
-   [self queryParseMethod_1];
-    UIImage *home_news = [[UIImage imageNamed:@"new_main_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_newsTap = [[UIImage imageNamed:@"new_main_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+ //   [self queryParseMethod_1];
+    UIImage *home_news = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_newsTap = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_news setImage:home_news forState:UIControlStateNormal];
     [self.home_news setImage:home_newsTap forState:UIControlStateHighlighted];
     
-    UIImage *home_branches = [[UIImage imageNamed:@"new_main_club.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_branchesTap = [[UIImage imageNamed:@"new_main_club.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_branches = [[UIImage imageNamed:@"home_braches_1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_branchesTap = [[UIImage imageNamed:@"home_braches_1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_branchs setImage:home_branches forState:UIControlStateNormal];
     [self.home_branchs setImage:home_branchesTap forState:UIControlStateHighlighted];
 
-    UIImage *home_profiles = [[UIImage imageNamed:@"new_main_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_profilesTap = [[UIImage imageNamed:@"new_main_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_profiles = [[UIImage imageNamed:@"home_profiles.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_profilesTap = [[UIImage imageNamed:@"home_profiles.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_profile setImage:home_profiles forState:UIControlStateNormal];
     [self.home_profile setImage:home_profilesTap forState:UIControlStateHighlighted];
 
-    UIImage *home_history = [[UIImage imageNamed:@"new_main_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_historyTap = [[UIImage imageNamed:@"new_main_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_history = [[UIImage imageNamed:@"home_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_historyTap = [[UIImage imageNamed:@"home_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_history setImage:home_history forState:UIControlStateNormal];
     [self.home_history setImage:home_historyTap forState:UIControlStateHighlighted];
 
-    UIImage *home_notice = [[UIImage imageNamed:@"new_main_notice.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_noticeTap = [[UIImage imageNamed:@"new_main_notice.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_notice = [[UIImage imageNamed:@"home_allert.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_noticeTap = [[UIImage imageNamed:@"home_allert.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_notice setImage:home_notice forState:UIControlStateNormal];
     [self.home_notice setImage:home_noticeTap forState:UIControlStateHighlighted];
 
-    UIImage *home_match = [[UIImage imageNamed:@"new_main_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_matchTap = [[UIImage imageNamed:@"new_main_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_match = [[UIImage imageNamed:@"home_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_matchTap = [[UIImage imageNamed:@"home_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_contact setImage:home_match forState:UIControlStateNormal];
     [self.home_contact setImage:home_matchTap forState:UIControlStateHighlighted];
 
@@ -110,7 +98,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.image_collection setCollectionViewLayout:flowLayout];
     
-    flowLayout.itemSize = CGSizeMake(320,230);
+    flowLayout.itemSize = CGSizeMake(320,180);
     NSLog(@"hehe%f",[[UIScreen mainScreen] bounds].size.height/2.81);
     [flowLayout setMinimumLineSpacing:0.0f];
 
@@ -160,7 +148,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+    [self queryParseMethod];
    
 
   //  self.screenName = @"Main";
@@ -294,7 +282,75 @@
 
 
 
+ - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 
+{
+    static NSString *simpleTableIdentifier = @"favcell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
+    }
+    if (tableView == self.main_tableview) {
+    // Configure the cell
+    // Configure the cell
+    PFObject *imageObject = [news_array objectAtIndex:indexPath.row];
+    PFFile *thumbnail = [imageObject objectForKey:@"image"];
+    PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
+ //  CGSize itemSize = CGSizeMake(70, 70);
+   // UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+  //  CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+  //  thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
+  //  thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
+    thumbnailImageView.layer.borderWidth=2.0;
+  //  thumbnailImageView.layer.masksToBounds = YES;
+    thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
+ //   [thumbnailImageView.image drawInRect:imageRect];
+    thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
+    
+    thumbnailImageView.file = thumbnail;
+
+
+    [thumbnailImageView loadInBackground];
+    
+    
+    UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
+    nameLabel.text = [imageObject objectForKey:@"name"];
+    
+    UILabel *news = (UILabel*) [cell viewWithTag:155];
+      
+    news.text = [imageObject objectForKey:@"news"];
+        news.textColor =[UIColor colorWithRed:196/255.0
+                                        green:160/255.0 blue:81/255.0 alpha:1.0];
+
+       // news.textColor =[UIColor grayColor];
+    }
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        PFObject* object = self.searchResults[indexPath.row];
+        
+        
+        if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
+            cell.imageView.image = [UIImage imageNamed:@"icon-liked.png"];
+            
+        }
+        else
+        {
+            
+            cell.imageView.image = [UIImage imageNamed:@"icon-like.png"];
+        }
+       
+        cell.textLabel.text = [object objectForKey:@"name"];
+        cell.detailTextLabel.text =[object objectForKey:@"person_incharge"];
+        
+    }
+
+      return cell;
+}
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -316,27 +372,35 @@
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.parseImage.image=[UIImage imageNamed:@"main_background.png"];
-  //  cell.club_image.image=[UIImage imageNamed:@"image_icon.png"];
+    cell.thumbnail.image=[UIImage imageNamed:@"image_icon.png"];
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
       PFFile *avstar = [imageObject objectForKey:@"image"];
     
-
-    cell.name.text=[imageObject objectForKey:@"name"];
+    UILabel *name = (UILabel*) [cell viewWithTag:166];
+    name.text = [imageObject objectForKey:@"name"];
+    
    
     PFFile *imageFile = [imageObject objectForKey:@"promotion_image"];
     cell.loadingSpinner.hidden = NO;
     [cell.loadingSpinner startAnimating];
 
+    CGSize itemSize = CGSizeMake(40, 40);
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    /*
+    cell.thumbnail.layer.backgroundColor=[[UIColor clearColor] CGColor];
+    cell.thumbnail.layer.cornerRadius= cell.thumbnail.frame.size.width/2;
+    cell.thumbnail.layer.borderWidth=0.0;
+    cell.thumbnail.layer.masksToBounds = YES;
+    cell.thumbnail.layer.borderColor=[[UIColor whiteColor] CGColor];
+    */
+    [ cell.thumbnail.image drawInRect:imageRect];
+    cell.thumbnail.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext() ;
     
-    // cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
-    cell.club_image.layer.backgroundColor=[[UIColor clearColor] CGColor];
-    cell.club_image.layer.cornerRadius= 27.5;
-    cell.club_image.layer.borderWidth=0.0;
-    cell.club_image.layer.masksToBounds = YES;
-    cell.club_image.layer.borderColor=[[UIColor whiteColor] CGColor];
+   // cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
     
-
-    cell.club_image.file = avstar;
+    cell.thumbnail.file = avstar;
  
     
     
@@ -351,7 +415,7 @@
     // UIGraphicsEndImageContext();
     [ cell.parseImage loadInBackground];
     // UIGraphicsEndImageContext();
-    [ cell.club_image loadInBackground];
+    [ cell.thumbnail loadInBackground];
 
     return cell;
 }

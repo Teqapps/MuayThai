@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     // Create array object and assign it to _feedItems variable
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    //self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = NO;
     shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.frame];
     shareCircleView.delegate = self;
     [self.navigationController.view addSubview:shareCircleView];
@@ -236,7 +236,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     image_desc = (UILabel*) [cell viewWithTag:199];
     image_desc.text = [imageObject objectForKey:@"image_desc"];
     if ([imageObject objectForKey:@"image_desc"] ==nil ||[[imageObject objectForKey:@"image_desc"]  isEqual:@""] ) {
-        image_desc.text = @"　";
+        image_desc.text = @"　　";
     }
     else{
         image_desc.text= [imageObject objectForKey:@"image_desc"];
@@ -248,7 +248,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
 
 //按圖第一下放大至fullscreen
 -(void)actionTap:(UITapGestureRecognizer *)sender{
-    isshow=YES;
+    
     CGPoint location = [sender locationInView:self.tableView];
     NSIndexPath *indexPath  = [self.tableView indexPathForRowAtPoint:location];
     
@@ -296,12 +296,9 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
         [UIView animateWithDuration:0.5 animations:^{
             
             fullImageView.frame=CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height);
-            UIImage *home_news = [[UIImage imageNamed:@"dismiss_on.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            UIImage *home_newsTap = [[UIImage imageNamed:@"dismiss_off.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            [button setImage:home_news forState:UIControlStateNormal];
-            [button setImage:home_newsTap forState:UIControlStateHighlighted];
+            
             test.frame=CGRectMake(0, self.view.frame.size.height-44, 320,test.contentSize.height);
-            button.frame=CGRectMake(250, 50, 50,50);
+            button.frame=CGRectMake(250, 30, 50,50);
             
             ;
             
