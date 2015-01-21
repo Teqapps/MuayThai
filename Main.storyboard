@@ -179,7 +179,8 @@
                                                             <exclude reference="xCG-F5-Zju"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="82" width="320" height="92"/>
                                                         <mask key="subviews">
                                                             <include reference="b39-7h-t7L"/>
                                                         </mask>
@@ -2335,7 +2336,7 @@
                                     <outlet property="delegate" destination="oJ1-Dk-Y59" id="xnt-Kq-sDg"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-fe-RxH" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-fe-RxH" customClass="PFImageView">
                                 <rect key="frame" x="115" y="34" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="csm-jD-XOR"/>
@@ -3455,14 +3456,14 @@
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PPs-fJ-uhp"/>
         <segue reference="nCF-OP-zd7"/>
         <segue reference="aaL-oi-ElB"/>
-        <segue reference="QTr-PV-D3h"/>
-        <segue reference="Jan-aP-9Jn"/>
-        <segue reference="ZAO-5P-2Zd"/>
         <segue reference="cXc-Cg-QFH"/>
         <segue reference="DyC-w1-YQe"/>
+        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="imN-Ia-XWJ"/>
         <segue reference="Kb2-fp-xV0"/>
         <segue reference="efc-B0-k9H"/>
     </inferredMetricsTieBreakers>

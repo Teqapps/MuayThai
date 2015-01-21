@@ -294,6 +294,75 @@
 
 
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    static NSString *simpleTableIdentifier = @"favcell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
+    }
+    if (tableView == self.main_tableview) {
+        // Configure the cell
+        // Configure the cell
+        PFObject *imageObject = [news_array objectAtIndex:indexPath.row];
+        PFFile *thumbnail = [imageObject objectForKey:@"image"];
+        PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
+        //  CGSize itemSize = CGSizeMake(70, 70);
+        // UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+        //  CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+        //  thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
+        //  thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
+        thumbnailImageView.layer.borderWidth=2.0;
+        //  thumbnailImageView.layer.masksToBounds = YES;
+        thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
+        //   [thumbnailImageView.image drawInRect:imageRect];
+        thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
+        
+        thumbnailImageView.file = thumbnail;
+        
+        
+        [thumbnailImageView loadInBackground];
+        
+        
+        UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
+        nameLabel.text = [imageObject objectForKey:@"name"];
+        
+        UILabel *news = (UILabel*) [cell viewWithTag:155];
+        
+        news.text = [imageObject objectForKey:@"news"];
+        news.textColor =[UIColor colorWithRed:196/255.0
+                                        green:160/255.0 blue:81/255.0 alpha:1.0];
+        
+        // news.textColor =[UIColor grayColor];
+    }
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        PFObject* object = self.searchResults[indexPath.row];
+        
+        
+        if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
+            cell.imageView.image = [UIImage imageNamed:@"new_liked.png"];
+            
+        }
+        else
+        {
+            
+            cell.imageView.image = [UIImage imageNamed:@"new_like.png"];
+        }
+        
+        cell.textLabel.text = [object objectForKey:@"name"];
+        cell.detailTextLabel.text =[object objectForKey:@"person_incharge"];
+        
+    }
+    
+    return cell;
+}
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
