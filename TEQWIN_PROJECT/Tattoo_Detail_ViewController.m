@@ -388,7 +388,9 @@
     
     
     
-    
+    cell.detailimage.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext() ;
+
     
     cell.detailimage.file = imageFile;
     
