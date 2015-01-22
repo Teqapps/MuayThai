@@ -43,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     NSLog(@"%@",self.tattoomasterCell.promotion_image);
     NSLog(@"%@",self.tattoomasterCell.imageFile);
     //These two steps are important
@@ -57,12 +57,12 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
-     UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
+    UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
     self.desc.font=font;
     NSString *lorum =self.tattoomasterCell.desc;
-  //  self.desc.layer.cornerRadius=8.0f;
-  //  self.desc.layer.borderWidth=0.0;
-      self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
+    //  self.desc.layer.cornerRadius=8.0f;
+    //  self.desc.layer.borderWidth=0.0;
+    self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
     //for use labrect with UITextView you set the font of UITextView:
     //label.font = [UIFont systemFontOfSize:17];
     
@@ -161,7 +161,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(320  , 220);
-      [flowLayout setMinimumLineSpacing:0.0f];
+    [flowLayout setMinimumLineSpacing:0.0f];
     self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
@@ -348,18 +348,18 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (objects.count ==0) {
-            
+                
                 self.noimageview.image=[UIImage imageNamed:@"main_background.png"];
                 
                 
-                                       }
+            }
             else{
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
                 
                 
                 self.noimage.text=@"";
                 
-                    self.noimageview.image=[UIImage imageNamed:@""];
+                self.noimageview.image=[UIImage imageNamed:@""];
                 
                 [_imagesCollection reloadData];
             }}
@@ -380,21 +380,23 @@
     
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-   // cell.detailimage.image =[UIImage imageNamed:@"image_icon.png"];
+    // cell.detailimage.image =[UIImage imageNamed:@"image_icon.png"];
     imageObject = [imageFilesArray_image objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
     cell.loading.hidden = NO;
     [cell.loading startAnimating];
+    
+    
+    
+    cell.detailimage.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext() ;
 
-
     
-  
+    cell.detailimage.file = imageFile;
     
-            cell.detailimage.file = imageFile;
+    [   cell.detailimage loadInBackground];
     
-            [   cell.detailimage loadInBackground];
-            
-   
+    
     
     return cell;
 }
