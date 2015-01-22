@@ -45,7 +45,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _sharers = [[NSMutableArray alloc] initWithObjects: [CFSharer whatsapp],[CFSharer more],[CFSharer sina_weibo],[CFSharer twitter],[CFSharer facebook],nil];
+        _sharers = [[NSMutableArray alloc] initWithObjects:[CFSharer whatsapp],[CFSharer more],[CFSharer sina_weibo],[CFSharer twitter],[CFSharer facebook],nil];
         
         [self setUpCircleLayers];
     }
@@ -63,9 +63,7 @@
 
 - (void)layoutSubviews {
     // Adjust geometry when updating the subviews.
-    
-    
-    _overlayLayer.frame = CGRectMake(0, 0, 320, 568 );
+    _overlayLayer.frame = self.bounds;
     _origin = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     _currentPosition = _origin;
     if(_circleIsVisible) {
@@ -75,8 +73,6 @@
     }
     if(_sharingOptionsIsVisible)
         _sharingOptionsView.frame = self.bounds;
-    
-    
     [self updateLayers];
 }
 

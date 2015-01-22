@@ -59,14 +59,13 @@
 {
     [super viewDidLoad];
     [self stylePFLoadingViewTheHardWay];
-    /*
     for (UIView *subView in searchbar.subviews) {
         for (UIView *secondLevelSubview in subView.subviews) {
             if (![secondLevelSubview isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
                 [secondLevelSubview removeFromSuperview];
             }
         }
-    }*/
+    }
     searchbar.tintColor = [UIColor whiteColor];
     searchbar.barTintColor =[UIColor whiteColor];
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
@@ -115,7 +114,7 @@
         }
     }];
 
-    //self.navigationController.navigationBar.translucent=YES;
+    self.navigationController.navigationBar.translucent=YES;
 
     
 }
