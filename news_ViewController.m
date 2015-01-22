@@ -59,10 +59,10 @@
     hud.mode = MBProgressHUDModeIndeterminate   ;
     hud.labelText = @"Loading";
     [hud show:YES];
-    PFQuery *query = [PFQuery queryWithClassName:@"Jewelry_Shop"];
+    PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
     //query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     // [query whereKey:@"news" equalTo:self.tattoomasterCell.master_id];
-    [query whereKey:@"Shop_news_approve" equalTo:[NSNumber numberWithBool:YES]];
+    [query whereKey:@"news_approve" equalTo:[NSNumber numberWithBool:YES]];
     
     
     [query orderByDescending:@"updatedAt"];
@@ -115,16 +115,16 @@
         // Configure the cell
         // Configure the cell
         PFObject *imageObject = [news_array objectAtIndex:indexPath.row];
-        PFFile *thumbnail = [imageObject objectForKey:@"Shop_icon"];
+        PFFile *thumbnail = [imageObject objectForKey:@"image"];
         PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
         CGSize itemSize = CGSizeMake(70, 70);
         UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
         CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
         thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
         thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
-        thumbnailImageView.layer.borderWidth=0.0;
-        thumbnailImageView.layer.masksToBounds = YES;
-        thumbnailImageView.layer.borderColor=[[UIColor blackColor] CGColor];
+       thumbnailImageView.layer.borderWidth=0.0;
+       thumbnailImageView.layer.masksToBounds = YES;
+       thumbnailImageView.layer.borderColor=[[UIColor blackColor] CGColor];
         [thumbnailImageView.image drawInRect:imageRect];
         thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -136,11 +136,11 @@
         
         
         UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
-        nameLabel.text = [imageObject objectForKey:@"Shop_name"];
+        nameLabel.text = [imageObject objectForKey:@"Name"];
         
         UILabel *news = (UILabel*) [cell viewWithTag:155];
         
-        news.text = [imageObject objectForKey:@"Shop_news"];
+        news.text = [imageObject objectForKey:@"news"];
         news.textColor =[UIColor colorWithRed:190.0/255.0
                                         green:190.0/255.0 blue:190.0/255.0 alpha:1.0];
         // news.textColor =[UIColor grayColor];
@@ -160,26 +160,26 @@
         TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
         
         tattoomasterCell.object_id = [object objectForKey:@"object"];
-        tattoomasterCell.muay_id = [object objectForKey:@"Shop_id"];
-        tattoomasterCell.name = [object objectForKey:@"Shop_name"];
-        //   tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
-        //    tattoomasterCell.gender=[object objectForKey:@"gender"];
-        tattoomasterCell.imageFile=[object objectForKey:@"Shop_icon"];
-        tattoomasterCell.tel = [object objectForKey:@"Shop_tel"];
-        //  tattoomasterCell.fax = [object objectForKey:@"fax"];
-        tattoomasterCell.address = [object objectForKey:@"Shop_address"];
-        tattoomasterCell.latitude = [object objectForKey:@"Shop_latitude"];
-        tattoomasterCell.longitude = [object objectForKey:@"Shop_longitude"];
-        tattoomasterCell.email = [object objectForKey:@"Shop_email"];
-        tattoomasterCell.website = [object objectForKey:@"Shop_website"];
-        tattoomasterCell.desc = [object objectForKey:@"Shop_desc"];
-        // tattoomasterCell.imageFile = [object objectForKey:@"image"];
-        tattoomasterCell.promotion_image=[object objectForKey:@"Shop_promotion_image"];
-        tattoomasterCell.favorites = [object objectForKey:@"Shop_favorites"];
-        tattoomasterCell.bookmark =[object objectForKey:@"Shop_bookmark"];
-        tattoomasterCell.view = [object objectForKey:@"Shop_view"];
-        tattoomasterCell.news = [object objectForKey:@"Shop_news"];
-        tattoomasterCell.news_view = [object objectForKey:@"Shop_news_view"];
+        tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
+        tattoomasterCell.name = [object objectForKey:@"name"];
+        tattoomasterCell.person_incharge=[object objectForKey:@"person_incharge"];
+        tattoomasterCell.gender=[object objectForKey:@"gender"];
+        tattoomasterCell.imageFile=[object objectForKey:@"image"];
+        tattoomasterCell.tel = [object objectForKey:@"tel"];
+        tattoomasterCell.fax = [object objectForKey:@"fax"];
+        tattoomasterCell.address = [object objectForKey:@"address"];
+        tattoomasterCell.latitude = [object objectForKey:@"latitude"];
+        tattoomasterCell.longitude = [object objectForKey:@"longitude"];
+        tattoomasterCell.email = [object objectForKey:@"email"];
+        tattoomasterCell.website = [object objectForKey:@"website"];
+        tattoomasterCell.desc = [object objectForKey:@"desc"];
+        tattoomasterCell.imageFile = [object objectForKey:@"image"];
+        tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
+        tattoomasterCell.favorites = [object objectForKey:@"favorites"];
+        tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
+        tattoomasterCell.view = [object objectForKey:@"view"];
+        tattoomasterCell.news = [object objectForKey:@"news"];
+        tattoomasterCell.news_view = [object objectForKey:@"news_view"];
         tattoomasterCell.object_id = object.objectId;
         
         destViewController.tattoomasterCell = tattoomasterCell;
@@ -187,7 +187,7 @@
         //object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
         //[object saveInBackground];
         //NSLog(@"%@",object[@"view"]);
-        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"Shop_news_view"];
+        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"news_view"];
         [object saveInBackground];
         
     }

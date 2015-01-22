@@ -80,7 +80,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     searchbar.hidden = !searchbar.hidden;
-    // self.navigationController.navigationBar.translucent=NO;
+   // self.navigationController.navigationBar.translucent=NO;
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     
@@ -350,17 +350,17 @@
         
         
         //thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-        thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
+         thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
         thumbnailImageView.layer.borderWidth=0.0;
-        thumbnailImageView.layer.masksToBounds = YES;
+         thumbnailImageView.layer.masksToBounds = YES;
         thumbnailImageView.layer.borderColor=[UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
-        
+
         
         thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         //
-        // thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
+       // thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
         thumbnailImageView.file = thumbnail;
         [thumbnailImageView loadInBackground];
         [loadingSpinner stopAnimating];

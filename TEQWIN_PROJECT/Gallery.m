@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
 {
     [super viewDidLoad];
     [self queryParseMethod];
-    [self queryParseMethod_2];
+     [self queryParseMethod_2];
     
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"showgallery" dimensions:dimensions];
@@ -112,12 +112,12 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
                     // self.profileimage.file=self.tattoomasterCell.imageFile;
                     _master_image.layer.cornerRadius =_master_image.frame.size.width / 2;
                     _master_image.layer.borderWidth = 0.0f;
-                    _master_image.layer.borderColor = [UIColor whiteColor].CGColor;
+                   _master_image.layer.borderColor = [UIColor whiteColor].CGColor;
                     _master_image.clipsToBounds = YES;
                     
-                    _master_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                  _master_image.image = UIGraphicsGetImageFromCurrentImageContext();
                     UIGraphicsEndImageContext();
-                    _master_image.image = [UIImage imageWithData:data];
+                  _master_image.image = [UIImage imageWithData:data];
                 }];
             }}
     }];
@@ -276,7 +276,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     fullImageView.backgroundColor=[UIColor blackColor];
     fullImageView.userInteractionEnabled=YES;
     [fullImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap2:)]];
-    button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; //3
+        button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; //3
     [button setTitle:@"Close" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
@@ -289,7 +289,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
         
         [self.view.window addSubview:fullImageView];
         [self.view.window addSubview:test];
-        [self.view.window addSubview:button];
+         [self.view.window addSubview:button];
         
         test.frame=frame_first;
         fullImageView.frame=frame_first;
