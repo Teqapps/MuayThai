@@ -6,30 +6,22 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>053BA91C-732E-46AA-9A7A-FFAF426046A5</string>
-	<key>IDESourceControlProjectName</key>
-	<string>TEQWIN_PROJECT_Muay_Thai</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1504930CCC14DB815FE73165811FB99C2AFC490C</key>
-		<string>https://github.com/Teqapps/MuayThai.git</string>
 		<key>AB2F1866A6F2B38F20C0FA1CBD3F6D1FB6683CCA</key>
 		<string>https://github.com/Teqapps/ListingMobileiOS.git</string>
 	</dict>
-	<key>IDESourceControlProjectPath</key>
-	<string>TEQWIN_PROJECT_Muay_Thai.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1504930CCC14DB815FE73165811FB99C2AFC490C</key>
-		<string>../..</string>
 		<key>AB2F1866A6F2B38F20C0FA1CBD3F6D1FB6683CCA</key>
-		<string>../../../ListingMobileiOS</string>
+		<string>ListingMobileiOS/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Teqapps/MuayThai.git</string>
+	<string>https://github.com/Teqapps/ListingMobileiOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1504930CCC14DB815FE73165811FB99C2AFC490C</string>
+	<string>AB2F1866A6F2B38F20C0FA1CBD3F6D1FB6683CCA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -39,14 +31,6 @@
 			<string>AB2F1866A6F2B38F20C0FA1CBD3F6D1FB6683CCA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ListingMobileiOS</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1504930CCC14DB815FE73165811FB99C2AFC490C</string>
-			<key>IDESourceControlWCCName</key>
-			<string>MuayThai</string>
 		</dict>
 	</array>
 </dict>
