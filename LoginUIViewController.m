@@ -46,10 +46,10 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor grayColor];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:30.0/255.0 alpha:1.0]];
+    // [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:30.0/255.0 alpha:1.0]];
     
     //  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.755 green:0.655 blue:0.0 alpha:1]];
-
+    
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
@@ -105,7 +105,7 @@
     
     
     [super viewWillAppear:animated];
-       [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if ([PFUser currentUser]) {
         PFQuery *bookmarkquery = [PFQuery queryWithClassName:@"muay_member"];
         
@@ -204,7 +204,7 @@
             self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"%@", nil), [PFUser currentUser].username];
             
         }
-      
+        
     }
     
 }
@@ -395,7 +395,7 @@
     UIView *bgColorView = [[UIView alloc] init];
     bgColorView.backgroundColor =  [[UIColor colorWithRed:85.0/256.0 green:85.0/256.0 blue:85.0/256.0 alpha:1 ]colorWithAlphaComponent:0.5f];
     [cell setSelectedBackgroundView:bgColorView];
-
+    
     return cell;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -420,7 +420,7 @@
         tattoomasterCell.website = [imageObject objectForKey:@"website"];
         tattoomasterCell.desc = [imageObject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [imageObject objectForKey:@"image"];
-         tattoomasterCell.promotion_image=[imageObject objectForKey:@"promotion_image"];
+        tattoomasterCell.promotion_image=[imageObject objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [imageObject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[imageObject objectForKey:@"bookmark"];
         tattoomasterCell.view = [imageObject objectForKey:@"view"];
@@ -577,8 +577,8 @@
 }
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-    // Remove the row from data model
-  //  [self unlikeImage];
+// Remove the row from data model
+//  [self unlikeImage];
 //}
 
 - (IBAction)Fav:(id)sender {

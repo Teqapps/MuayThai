@@ -52,7 +52,7 @@
     _news_detail.text=self.tattoomasterCell.news;
     self.profile_image.file=self.tattoomasterCell.imageFile;
     self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-     self.profile_image.layer.masksToBounds = YES;
+    self.profile_image.layer.masksToBounds = YES;
     self.profile_image.layer.borderWidth = 0.0f;
     self.profile_image.layer.borderColor = [[UIColor whiteColor]CGColor];
     self.profile_image.clipsToBounds = YES;

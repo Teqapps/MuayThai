@@ -156,14 +156,14 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    menuItems = @[@"主頁", @"新消息",@"泰拳歷史" ,@"泰拳小知識",@"找拳館",@"找比賽",@"關於我們"];
+    menuItems = @[@"主頁", @"新消息",@"泰拳歷史" ,@"泰拳注意事項",@"找拳館",@"找比賽",@"關於我們"];
     list =[[NSMutableArray alloc]init];
     
     [list addObject:[NSString stringWithFormat:@"主頁"]];
     
     [list addObject:[NSString stringWithFormat:@"新消息"]];
     [list addObject:[NSString stringWithFormat:@"泰拳歷史"]];
-    [list addObject:[NSString stringWithFormat:@"泰拳小知識"]];
+    [list addObject:[NSString stringWithFormat:@"泰拳注意事項"]];
     [list addObject:[NSString stringWithFormat:@"找拳館"]];
     [list addObject:[NSString stringWithFormat:@"找比賽"]];
     [list addObject:[NSString stringWithFormat:@"關於我們"]];
@@ -243,7 +243,7 @@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             
-            cell.textLabel.text=@"泰拳小知識";
+            cell.textLabel.text=@"泰拳注意事項";
             cell.imageView.image=[UIImage imageNamed:@"new_notice.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
