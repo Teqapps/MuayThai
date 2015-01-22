@@ -3457,14 +3457,14 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nCF-OP-zd7"/>
-        <segue reference="aaL-oi-ElB"/>
         <segue reference="cXc-Cg-QFH"/>
-        <segue reference="DyC-w1-YQe"/>
         <segue reference="ZAO-5P-2Zd"/>
-        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="DyC-w1-YQe"/>
         <segue reference="PPs-fJ-uhp"/>
-        <segue reference="imN-Ia-XWJ"/>
-        <segue reference="Kb2-fp-xV0"/>
+        <segue reference="QTr-PV-D3h"/>
+        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="efc-B0-k9H"/>
+        <segue reference="Kb2-fp-xV0"/>
     </inferredMetricsTieBreakers>
 </document>
