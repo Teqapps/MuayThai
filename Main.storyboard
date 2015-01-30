@@ -880,16 +880,6 @@
                                                     <action selector="btn_web:" destination="zCD-pb-qjH" eventType="touchUpInside" id="282-37-lz0"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="簡介" translatesAutoresizingMaskIntoConstraints="NO" id="qra-uh-bBL">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                                                <color key="textColor" red="0.8637279753989362" green="0.8637279753989362" blue="0.8637279753989362" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="20" y="359" width="280" height="121"/>
-                                                </variation>
-                                            </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-Ra-a2G">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <subviews>
@@ -1002,6 +992,16 @@
                                                     <rect key="frame" x="14" y="243" width="80" height="80"/>
                                                 </variation>
                                             </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="簡介" translatesAutoresizingMaskIntoConstraints="NO" id="qra-uh-bBL">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.8637279753989362" green="0.8637279753989362" blue="0.8637279753989362" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="17" y="362" width="280" height="121"/>
+                                                </variation>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.14509803921568629" green="0.0" blue="0.027450980392156862" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <variation key="default">
@@ -2124,6 +2124,9 @@
                                 <color key="textColor" red="1" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="391.5" width="280" height="87"/>
+                                </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="　第四、不可對皮膚任何的抓撓行爲，有些人的皮膚往往會在刺青之後的三到四天之內，出現癢的現象，請不要擔心，這是皮膚的正常反應，一般兩天之後就會消失，一定不能抓，也不能撓。" translatesAutoresizingMaskIntoConstraints="NO" id="24l-Op-s2C">
                                 <rect key="frame" x="20" y="516.5" width="280" height="97"/>
@@ -2131,6 +2134,9 @@
                                 <color key="textColor" red="1" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="516.5" width="280" height="97"/>
+                                </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpa-aJ-f2G">
                                 <rect key="frame" x="20" y="76.5" width="280" height="127"/>
@@ -2139,6 +2145,9 @@
                                 <color key="textColor" red="1" green="0.78119875969999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="76.5" width="280" height="127"/>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -2644,6 +2653,9 @@
                                         </button>
                                         <imageView userInteractionEnabled="NO" tag="191" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lva-Wn-UtH" userLabel="play1_win" customClass="PFImageView">
                                             <rect key="frame" x="13.5" y="61" width="90" height="56"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="13.5" y="61" width="90" height="56"/>
+                                            </variation>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" tag="192" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gpc-iA-9Za" userLabel="play2_win" customClass="PFImageView">
                                             <rect key="frame" x="215" y="61" width="90" height="56"/>
@@ -2978,9 +2990,15 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="match_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q5M-g8-HMU" customClass="PFImageView">
                                                     <rect key="frame" x="26.5" y="48" width="75" height="70"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="26.5" y="48" width="75" height="70"/>
+                                                    </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="match_lose.png" translatesAutoresizingMaskIntoConstraints="NO" id="sLi-CD-sLz" customClass="PFImageView">
                                                     <rect key="frame" x="221.5" y="48" width="75" height="70"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="221.5" y="48" width="75" height="70"/>
+                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
