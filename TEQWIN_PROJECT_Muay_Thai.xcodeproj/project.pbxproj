@@ -64,6 +64,9 @@
 		424215E11A5A927F00291FB4 /* MuayThai_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 424215E01A5A927F00291FB4 /* MuayThai_history.png */; };
 		424BB5C31A70E54C0009C9BF /* new_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 424BB5C21A70E54C0009C9BF /* new_background.png */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
+		4259257F1A92E3E5000104BB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4259257A1A92E3E5000104BB /* HomeViewController.m */; };
+		425925801A92E3E5000104BB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4259257C1A92E3E5000104BB /* SignUpViewController.m */; };
+		425925811A92E3E5000104BB /* LoggedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4259257E1A92E3E5000104BB /* LoggedInViewController.m */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
 		4265874E1A1C8EA9002C0E93 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4265874C1A1C8EA9002C0E93 /* twitter.png */; };
 		4265874F1A1C8EA9002C0E93 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4265874D1A1C8EA9002C0E93 /* twitter@2x.png */; };
@@ -313,6 +316,12 @@
 		424215E01A5A927F00291FB4 /* MuayThai_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MuayThai_history.png; sourceTree = "<group>"; };
 		424BB5C21A70E54C0009C9BF /* new_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_background.png; sourceTree = "<group>"; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
+		425925791A92E3E5000104BB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4259257A1A92E3E5000104BB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4259257B1A92E3E5000104BB /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		4259257C1A92E3E5000104BB /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		4259257D1A92E3E5000104BB /* LoggedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggedInViewController.h; sourceTree = "<group>"; };
+		4259257E1A92E3E5000104BB /* LoggedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggedInViewController.m; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
 		42630058199071F3007B8C8F /* Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map_ViewController.m; path = ../Map_ViewController.m; sourceTree = "<group>"; };
 		4265871E1A1B463D002C0E93 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -556,6 +565,7 @@
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
+				425925781A92E3CF000104BB /* Login&Signup View */,
 				42833F891A67D7CF004D97C0 /* login.png */,
 				42E12A8E1A67C7FA005EA79F /* new_image */,
 				42996DEF1A43FFE200385FE0 /* Match_Image */,
@@ -738,6 +748,19 @@
 				42193FA61985FE08007E3C52 /* ViewController.m */,
 			);
 			name = "SideBar & Main";
+			sourceTree = "<group>";
+		};
+		425925781A92E3CF000104BB /* Login&Signup View */ = {
+			isa = PBXGroup;
+			children = (
+				425925791A92E3E5000104BB /* HomeViewController.h */,
+				4259257A1A92E3E5000104BB /* HomeViewController.m */,
+				4259257B1A92E3E5000104BB /* SignUpViewController.h */,
+				4259257C1A92E3E5000104BB /* SignUpViewController.m */,
+				4259257D1A92E3E5000104BB /* LoggedInViewController.h */,
+				4259257E1A92E3E5000104BB /* LoggedInViewController.m */,
+			);
+			name = "Login&Signup View";
 			sourceTree = "<group>";
 		};
 		42630028198B3A72007B8C8F /* photo */ = {
@@ -1273,6 +1296,7 @@
 				42223EDE19B5677F00F0D058 /* MyLogInViewController.m in Sources */,
 				42193FA71985FE08007E3C52 /* ViewController.m in Sources */,
 				420E2F7819FE225900667E6C /* aboutus_map.m in Sources */,
+				425925801A92E3E5000104BB /* SignUpViewController.m in Sources */,
 				42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */,
 				42A4918019E2370C00E4D65E /* noticeViewController.m in Sources */,
 				426ED3F819C2C3D00024E817 /* VPImageCropperViewController.m in Sources */,
@@ -1282,6 +1306,7 @@
 				42996E1A1A4400B100385FE0 /* ImageCell.m in Sources */,
 				427D3B2F19A32B9E00814463 /* LoginUIViewController.m in Sources */,
 				42996E1C1A4400B100385FE0 /* Match_ViewController.m in Sources */,
+				425925811A92E3E5000104BB /* LoggedInViewController.m in Sources */,
 				42193FA11985FE08007E3C52 /* AppDelegate.m in Sources */,
 				42A4917D19E2370300E4D65E /* historyViewController.m in Sources */,
 				42193FD619860291007E3C52 /* TattooMaster_ViewController.m in Sources */,
@@ -1300,6 +1325,7 @@
 				421940921987380F007E3C52 /* Master_Map_ViewController.m in Sources */,
 				426587591A1C8F6B002C0E93 /* Line.m in Sources */,
 				42996E1D1A4400B100385FE0 /* MatchCell.m in Sources */,
+				4259257F1A92E3E5000104BB /* HomeViewController.m in Sources */,
 				42996E1E1A4400B100385FE0 /* PopupViewController.m in Sources */,
 				42193F9D1985FE08007E3C52 /* main.m in Sources */,
 				42A0095C19EF5E05003DCD0D /* Search_TableViewController.m in Sources */,
@@ -1439,7 +1465,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
-				PROVISIONING_PROFILE = "40046c5e-b72a-45a2-bc88-e24122e48557";
+				PROVISIONING_PROFILE = "cd529e22-27ea-4d31-b651-36597fcc728a";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
@@ -1469,7 +1495,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = TEQWIN_PROJECT_Muay_Thai;
-				PROVISIONING_PROFILE = "40046c5e-b72a-45a2-bc88-e24122e48557";
+				PROVISIONING_PROFILE = "cd529e22-27ea-4d31-b651-36597fcc728a";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
