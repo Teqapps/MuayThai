@@ -2660,7 +2660,7 @@
                                         <imageView userInteractionEnabled="NO" tag="192" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gpc-iA-9Za" userLabel="play2_win" customClass="PFImageView">
                                             <rect key="frame" x="215" y="61" width="90" height="56"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63I-Il-Vy4" customClass="PFImageView">
+                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63I-Il-Vy4" customClass="PFImageView">
                                             <rect key="frame" x="0.0" y="151" width="320" height="50"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARY-M7-KaP">

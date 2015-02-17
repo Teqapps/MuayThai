@@ -258,8 +258,7 @@
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
     [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
-    
-    
+       [query orderByAscending:@"muays_id"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     
@@ -267,7 +266,7 @@
     // and then subsequently do a query against the network.
     
     
-    [query orderByAscending:@"muay_id"];
+
     
     return query;
     
