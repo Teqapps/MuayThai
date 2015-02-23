@@ -92,6 +92,8 @@
     _profileimage.clipsToBounds = YES;
     _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
     _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textViewTapped:)];
+    [_lbltel addGestureRecognizer:gestureRecognizer];
     if ([self.tattoomasterCell.tel isEqual:@""]) {
         
     }
@@ -101,6 +103,8 @@
     }
     _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
+    UITapGestureRecognizer *add_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(address_tap:)];
+    [_lbladdress addGestureRecognizer:add_tap];
     if ([self.tattoomasterCell.address isEqual:@""]) {
         
     }
@@ -110,6 +114,9 @@
     }
     
     _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
+    UITapGestureRecognizer *email_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(email_tap:)];
+    [_lblemail addGestureRecognizer:email_tap];
+
     if ([self.tattoomasterCell.email  isEqual:@""]) {
         
     }
@@ -118,6 +125,8 @@
         _lblemail.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
+    UITapGestureRecognizer *web_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(web_tap:)];
+    [_lblweb addGestureRecognizer:web_tap];
     if ([self.tattoomasterCell.website isEqual:@""]) {
         
     }
@@ -975,6 +984,25 @@
 
 - (IBAction)showsearch:(id)sender {
     [_detailsearchbar becomeFirstResponder];}
+-(void)textViewTapped:(UITapGestureRecognizer *)sender{
+    if ([self.tattoomasterCell.tel  isEqual:@""]) {
+        [sender setEnabled:NO];
+        
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"撥號"
+                                                        message:@"確定要撥號嗎？"
+                                                       delegate:self
+                                              cancelButtonTitle:@"否"
+                                              otherButtonTitles:@"是",nil];
+        //然后这里设定关联，此处把indexPath关联到alert上
+        
+        [alert show];
+    }
+
+    
+    
+}
 - (IBAction)btn_tel:(id)sender {
     if ([self.tattoomasterCell.tel  isEqual:@""]) {
         [sender setEnabled:NO];
@@ -991,8 +1019,7 @@
         [alert show];
     }
 }
-
-- (IBAction)btn_address:(id)sender {
+-(void)address_tap:(UITapGestureRecognizer *)sender{
     if ([self.tattoomasterCell.address  isEqual:@""]) {
         [sender setEnabled:NO];
         
@@ -1002,9 +1029,26 @@
         [self.navigationController pushViewController:mapVC animated:YES];
         mapVC.tattoomasterCell=_tattoomasterCell;
     }
+
+    
+}
+-(void)web_tap:(UITapGestureRecognizer *)sender{
+    if ([self.tattoomasterCell.website  isEqual:@""]) {
+        [sender setEnabled:NO];
+        
+    }
+    else{
+        //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
+        
+    }
 }
 
-- (IBAction)btn_email:(id)sender {
+
+- (IBAction)btn_address:(id)sender {
+    
+  }
+-(void)email_tap:(UITapGestureRecognizer *)sender{
     //Create the MailComposeViewController
     if ([self.tattoomasterCell.email   isEqual:@""]) {
         [sender setEnabled:NO];
@@ -1040,16 +1084,9 @@
         }
     }
 }
+- (IBAction)btn_email:(id)sender {
+    }
 
 - (IBAction)btn_web:(id)sender {
-    if ([self.tattoomasterCell.website  isEqual:@""]) {
-        [sender setEnabled:NO];
-        
-    }
-    else{
-        //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
-        
-    }
-}
+   }
 @end

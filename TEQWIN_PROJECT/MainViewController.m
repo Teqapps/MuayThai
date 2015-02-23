@@ -136,6 +136,9 @@
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    SWRevealViewController *revealController = [self revealViewController];
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
 }
 
 - (void)queryParseMethod_1 {

@@ -26,6 +26,10 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    NSIndexPath *indexPat = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableview scrollToRowAtIndexPath:indexPat atScrollPosition:UITableViewScrollPositionMiddle animated:YES   ];
+    [self.revealViewController.frontViewController.view setUserInteractionEnabled:NO];
+    [self.revealViewController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if ([PFUser currentUser]) {
         // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
         self.profile_image.image=[UIImage imageNamed:@"ICON.png"];
@@ -104,8 +108,14 @@
     
 }
 
-
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.revealViewController.frontViewController.view setUserInteractionEnabled:YES];
+    
+    
+    
+    
+}
 // Set received values if they are not nil and reload the table
 - (void)_updateProfileData {
     
