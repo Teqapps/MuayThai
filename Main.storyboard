@@ -1148,8 +1148,8 @@
                             <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="A-Z"/>
-                                <segment title="Z-A"/>
+                                <segment title="First"/>
+                                <segment title="Second"/>
                             </segments>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="進階搜尋" id="5Eq-d1-2wt">
@@ -1188,13 +1188,12 @@
         <!--View Controller-->
         <scene sceneID="sbA-Gp-Z0P">
             <objects>
-                <viewController id="j1f-QJ-kjh" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="j1f-QJ-kjh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cBw-N6-4ki"/>
                         <viewControllerLayoutGuide type="bottom" id="Nw7-mh-Lfe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZWo-Ob-isZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1337,7 +1336,8 @@
                                         <exclude reference="xAP-Ya-coE"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="232" width="320" height="504"/>
                                     <mask key="constraints">
                                         <include reference="Nnx-Gh-hkt"/>
                                         <include reference="xAP-Ya-coE"/>
@@ -4409,16 +4409,16 @@ Preferential offer  晚間9折</string>
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jan-aP-9Jn"/>
-        <segue reference="nCF-OP-zd7"/>
-        <segue reference="aaL-oi-ElB"/>
-        <segue reference="QTr-PV-D3h"/>
-        <segue reference="cXc-Cg-QFH"/>
-        <segue reference="DyC-w1-YQe"/>
-        <segue reference="PPs-fJ-uhp"/>
-        <segue reference="ZAO-5P-2Zd"/>
-        <segue reference="Kb2-fp-xV0"/>
         <segue reference="efc-B0-k9H"/>
+        <segue reference="GKR-Sh-PFv"/>
+        <segue reference="nCF-OP-zd7"/>
+        <segue reference="NNn-nc-gd0"/>
+        <segue reference="MsR-o8-LCf"/>
+        <segue reference="njj-2d-hlP"/>
+        <segue reference="J3U-K8-EAV"/>
+        <segue reference="oJl-ZI-CtJ"/>
+        <segue reference="Oz0-Qe-dUn"/>
+        <segue reference="Kb2-fp-xV0"/>
         <segue reference="hvi-Ie-wq3"/>
     </inferredMetricsTieBreakers>
 </document>
