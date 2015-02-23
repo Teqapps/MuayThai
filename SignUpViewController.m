@@ -7,7 +7,7 @@
 //
 
 #import "SignUpViewController.h"
-
+#import <MobileCoreServices/MobileCoreServices.h>
 @interface SignUpViewController ()
 
 @end
@@ -26,12 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self addPickerView];
-
-         [self.scrollview setContentSize:CGSizeMake(320,  900)];
+   
+  
+         [self.scrollview setContentSize:CGSizeMake(320,  1500)];
 	// Do any additional setup after loading the view.
     blood_array = [[NSArray alloc] initWithObjects:@"O-",@"O+",@"A-",@"A+",@"B-",@"B+",@"AB-",@"AB+",nil];
-   
+       level_array = [[NSArray alloc] initWithObjects:@"Beginner(0-1year)",@"Intermediate(1-3year)",@"Advanced(3year+)", nil];
+    studio_array = [[NSArray alloc] initWithObjects:@"耀龍拳館",@"拳館",@"拳館888", nil];
+    
+   instructor_array = [[NSArray alloc] initWithObjects:@"梁偉耀-A00106",@"李耀東-A00206",@"葉文龍-A00306", nil];
+   glove_array = [[NSArray alloc] initWithObjects:@"8oz",@"10oz",@"12oz",@"14oz",@"16oz",@"18oz", nil];
+   professional_array = [[NSArray alloc] initWithObjects:@"Studio Master",@"Class 1 Instructor",@"Class 2 Instructor", @"Class 3 Instructor",@"Star Fighter", @"Referee",@"Judge",nil];
     _emailEntry.returnKeyType = UIReturnKeyDone;
     [_emailEntry setDelegate:self];
     _usernameEntry.returnKeyType = UIReturnKeyDone;
@@ -45,38 +50,7 @@
 
 }
 
-   
-    -(void)addPickerView{
-        pickerArray = [[NSArray alloc]initWithObjects:@"Beginner (0 - 1year)",
-                       @"Intermdiate (1 - 3year)",@"Advanced (3year+)", nil];
-        myTextField = [[UITextField alloc]initWithFrame:
-                       CGRectMake(10, 100, 300, 30)];
-        myTextField.borderStyle = UITextBorderStyleRoundedRect;
-        myTextField.textAlignment = UITextAlignmentCenter;
-        myTextField.delegate = self;
-        [self.view addSubview:myTextField];
-        [myTextField setPlaceholder:@""];
-        myPickerView = [[UIPickerView alloc]init];
-        myPickerView.dataSource = self;
-        myPickerView.delegate = self;
-        myPickerView.showsSelectionIndicator = YES;
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Done" style:UIBarButtonItemStyleDone
-                                       target:self action:@selector(done:)];
-        UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
-                              CGRectMake(0, self.view.frame.size.height-
-                                         myPickerView.frame.size.height-50, 320, 50)];
-        [toolBar setBarStyle:UIBarStyleBlackOpaque];
-        NSArray *toolbarItems = [NSArray arrayWithObjects: 
-                                 doneButton, nil];
-        [toolBar setItems:toolbarItems];
-        myTextField.inputView = myPickerView;
-        myTextField.inputAccessoryView = toolBar;
-        
-    }
-- (void)done:(id)sender {
-     [myPickerView removeFromSuperview];
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -152,9 +126,11 @@
         default:
             break;
     }
-
-    
-    
+    [user setObject:[NSString stringWithFormat:@"%@",picker1_string] forKey:@"level"];
+  [user setObject:[NSString stringWithFormat:@"%@",picker2_string] forKey:@"current_studio"];
+      [user setObject:[NSString stringWithFormat:@"%@",picker3_string] forKey:@"current_instructor"];
+      [user setObject:[NSString stringWithFormat:@"%@",picker4_string] forKey:@"glove_size"];
+      [user setObject:[NSString stringWithFormat:@"%@",picker5_string] forKey:@"professional_status"];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
@@ -176,42 +152,75 @@
     }];
 }
 
-#pragma mark - Picker View Data source
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
--(NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component{
-    return [pickerArray count];
-}
-#pragma mark - TextField delegate
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    if ([textField isEqual:myTextField]) {
-       [self addPickerView];
-        return YES;
-
-    } else {
-        return YES;
-
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if (pickerView==_picker1) {
+        _picker1_lbl.text=[level_array objectAtIndex:row];
+        picker1_string=[level_array objectAtIndex:row];
     }
-    return NO;
+    if (pickerView==_picker2) {
+       _picker2_lbl.text=[studio_array objectAtIndex:row];
+           picker2_string=[studio_array objectAtIndex:row];
+    }
+    if (pickerView==_picker3) {
+        _picker3_lbl.text=[instructor_array objectAtIndex:row];
+           picker3_string=[instructor_array objectAtIndex:row];
+    }
+    if (pickerView==_picker4) {
+        _picker4_lbl.text=[glove_array objectAtIndex:row];
+           picker4_string=[glove_array objectAtIndex:row];
+    }
+    else {
+        _picker5_lbl.text=[professional_array objectAtIndex:row];
+           picker5_string=[professional_array objectAtIndex:row];
+    }
+    
 }
 
-#pragma mark- Picker View Delegate
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:
-(NSInteger)row inComponent:(NSInteger)component{
-    [myTextField setText:[pickerArray objectAtIndex:row]];
-  
-
-
-
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1; // It's for second pickerview
 }
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:
-(NSInteger)row forComponent:(NSInteger)component{
-    return [pickerArray objectAtIndex:row];
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if (pickerView==_picker1) {
+        return [level_array objectAtIndex:row];
+    }
+    if (pickerView==_picker2) {
+        return [studio_array objectAtIndex:row];
+    }
+    if (pickerView==_picker3) {
+        return [instructor_array objectAtIndex:row];
+    }
+
+    if (pickerView==_picker4) {
+        return [glove_array objectAtIndex:row];
+    }
+
+    else{
+        return [professional_array objectAtIndex:row];
+    }
+
+    
 }
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    if (pickerView==_picker1) {
+        return[level_array count]; //It's for first PickerView
+        
+    }
+     if (pickerView==_picker2) {
+        return [level_array count];
+    }
+    if (pickerView==_picker3) {
+        return [instructor_array count];
+    }
+    if (pickerView==_picker4) {
+        return [glove_array count];
+    }
+    else{
+        return [professional_array count];
+    }
+}
+
+#pragma mark - TextField delegate
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
@@ -363,5 +372,40 @@ numberOfRowsInComponent:(NSInteger)component{
             break;
     }
 
+}
+- (void)showPhotoLibary
+{
+    if (([UIImagePickerController isSourceTypeAvailable:
+          UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)) {
+        return;
+    }
+    
+    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
+    mediaUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    // Displays saved pictures from the Camera Roll album.
+    mediaUI.mediaTypes = @[(NSString*)kUTTypeImage];
+    
+    // Hides the controls for moving & scaling pictures
+    mediaUI.allowsEditing = NO;
+    
+    mediaUI.delegate = self;
+    
+    [self.navigationController presentModalViewController: mediaUI animated: YES];
+}
+
+- (IBAction)change_icon:(id)sender {
+    {
+        [self showPhotoLibary];
+        NSLog(@"...");
+    
+    }
+
+}
+- (void) imagePickerController: (UIImagePickerController *) picker didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    UIImage *originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    _profile.image = originalImage;
+    
 }
 @end
