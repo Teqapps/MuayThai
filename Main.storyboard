@@ -1155,7 +1155,6 @@
                         <barButtonItem key="rightBarButtonItem" title="進階搜尋" id="5Eq-d1-2wt">
                             <connections>
                                 <action selector="showsearch:" destination="488-73-Amk" id="7RZ-rc-0df"/>
-                                <segue destination="j1f-QJ-kjh" kind="show" id="Knt-VK-y22"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1184,24 +1183,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="108" y="-116.25"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="sbA-Gp-Z0P">
-            <objects>
-                <viewController id="j1f-QJ-kjh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cBw-N6-4ki"/>
-                        <viewControllerLayoutGuide type="bottom" id="Nw7-mh-Lfe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZWo-Ob-isZ">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="toh-Bj-6b9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="627" y="-116.25"/>
         </scene>
         <!--Gallery-->
         <scene sceneID="Gdt-n3-lqK">
@@ -1337,7 +1318,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="232" width="320" height="504"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                     <mask key="constraints">
                                         <include reference="Nnx-Gh-hkt"/>
                                         <include reference="xAP-Ya-coE"/>
