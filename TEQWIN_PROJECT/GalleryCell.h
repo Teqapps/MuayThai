@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
 @interface GalleryCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UITextView *image_desc;
+@property (weak, nonatomic) IBOutlet PFImageView *news_image;
+
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;
 - (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;

@@ -135,6 +135,12 @@
 		428E7C561A0086A900CA2C14 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C551A0086A900CA2C14 /* ICON.png */; };
 		428E7C581A0087A900CA2C14 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C571A0087A900CA2C14 /* background@2x.jpg */; };
 		429558AE1A3A9A7100CCE969 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429558AD1A3A9A7100CCE969 /* ParseUI.framework */; };
+		4298DCA01A9AD86600351693 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298DC951A9AD86600351693 /* JTSImageViewController.m */; };
+		4298DCA11A9AD86600351693 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298DC971A9AD86600351693 /* JTSImageInfo.m */; };
+		4298DCA21A9AD86600351693 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298DC991A9AD86600351693 /* JTSSimpleImageDownloader.m */; };
+		4298DCA31A9AD86600351693 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298DC9B1A9AD86600351693 /* JTSAnimatedGIFUtility.m */; };
+		4298DCA41A9AD86600351693 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298DC9D1A9AD86600351693 /* UIImage+JTSImageEffects.m */; };
+		4298DCA51A9AD86600351693 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298DC9F1A9AD86600351693 /* UIApplication+JTSImageViewController.m */; };
 		42996E001A4400A500385FE0 /* home_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 42996DF01A4400A500385FE0 /* home_win.png */; };
 		42996E011A4400A500385FE0 /* match_lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 42996DF11A4400A500385FE0 /* match_lose.png */; };
 		42996E021A4400A500385FE0 /* match_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 42996DF21A4400A500385FE0 /* match_win.png */; };
@@ -403,6 +409,18 @@
 		428E7C551A0086A900CA2C14 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
 		428E7C571A0087A900CA2C14 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
 		429558AD1A3A9A7100CCE969 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		4298DC941A9AD86600351693 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		4298DC951A9AD86600351693 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		4298DC961A9AD86600351693 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		4298DC971A9AD86600351693 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		4298DC981A9AD86600351693 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		4298DC991A9AD86600351693 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		4298DC9A1A9AD86600351693 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		4298DC9B1A9AD86600351693 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		4298DC9C1A9AD86600351693 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		4298DC9D1A9AD86600351693 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
+		4298DC9E1A9AD86600351693 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		4298DC9F1A9AD86600351693 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
 		42996DF01A4400A500385FE0 /* home_win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_win.png; sourceTree = "<group>"; };
 		42996DF11A4400A500385FE0 /* match_lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = match_lose.png; sourceTree = "<group>"; };
 		42996DF21A4400A500385FE0 /* match_win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = match_win.png; sourceTree = "<group>"; };
@@ -565,6 +583,7 @@
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
+				4298DC931A9AD83D00351693 /* imageview_sources */,
 				425925781A92E3CF000104BB /* Login&Signup View */,
 				42833F891A67D7CF004D97C0 /* login.png */,
 				42E12A8E1A67C7FA005EA79F /* new_image */,
@@ -883,6 +902,25 @@
 				427D3B2E19A32B9E00814463 /* LoginUIViewController.m */,
 			);
 			name = "Login System";
+			sourceTree = "<group>";
+		};
+		4298DC931A9AD83D00351693 /* imageview_sources */ = {
+			isa = PBXGroup;
+			children = (
+				4298DC941A9AD86600351693 /* JTSImageViewController.h */,
+				4298DC951A9AD86600351693 /* JTSImageViewController.m */,
+				4298DC961A9AD86600351693 /* JTSImageInfo.h */,
+				4298DC971A9AD86600351693 /* JTSImageInfo.m */,
+				4298DC981A9AD86600351693 /* JTSSimpleImageDownloader.h */,
+				4298DC991A9AD86600351693 /* JTSSimpleImageDownloader.m */,
+				4298DC9A1A9AD86600351693 /* JTSAnimatedGIFUtility.h */,
+				4298DC9B1A9AD86600351693 /* JTSAnimatedGIFUtility.m */,
+				4298DC9C1A9AD86600351693 /* UIImage+JTSImageEffects.h */,
+				4298DC9D1A9AD86600351693 /* UIImage+JTSImageEffects.m */,
+				4298DC9E1A9AD86600351693 /* UIApplication+JTSImageViewController.h */,
+				4298DC9F1A9AD86600351693 /* UIApplication+JTSImageViewController.m */,
+			);
+			name = imageview_sources;
 			sourceTree = "<group>";
 		};
 		42996DEE1A43FFCE00385FE0 /* Match */ = {
@@ -1300,6 +1338,7 @@
 				42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */,
 				42A4918019E2370C00E4D65E /* noticeViewController.m in Sources */,
 				426ED3F819C2C3D00024E817 /* VPImageCropperViewController.m in Sources */,
+				4298DCA21A9AD86600351693 /* JTSSimpleImageDownloader.m in Sources */,
 				426ED39319B9AF560024E817 /* TattooMasterCell.m in Sources */,
 				42996E1B1A4400B100385FE0 /* Boxers_Detail.m in Sources */,
 				42193FCE1985FECF007E3C52 /* MainViewController.m in Sources */,
@@ -1315,21 +1354,26 @@
 				42DB2C511A0A0951002BAF1B /* detail_news_ViewController.m in Sources */,
 				42630059199071F3007B8C8F /* Map_ViewController.m in Sources */,
 				420E2F6F19FDFB8900667E6C /* aboutusViewController.m in Sources */,
+				4298DCA41A9AD86600351693 /* UIImage+JTSImageEffects.m in Sources */,
 				42223EDF19B5677F00F0D058 /* MySignUpViewController.m in Sources */,
 				420E2F7B19FE246200667E6C /* aboutus_map_detail.m in Sources */,
 				426ED39B19BD88990024E817 /* Tattoo_Detail_ViewController.m in Sources */,
+				4298DCA51A9AD86600351693 /* UIApplication+JTSImageViewController.m in Sources */,
 				42193FCA1985FE42007E3C52 /* SWRevealViewController.m in Sources */,
 				427D34B5199E077F00814463 /* CFShareCircleView.m in Sources */,
 				42EA3D6619C827600051057C /* Gallery.m in Sources */,
 				42EA3D6319C8273F0051057C /* GalleryCell.m in Sources */,
 				421940921987380F007E3C52 /* Master_Map_ViewController.m in Sources */,
 				426587591A1C8F6B002C0E93 /* Line.m in Sources */,
+				4298DCA11A9AD86600351693 /* JTSImageInfo.m in Sources */,
 				42996E1D1A4400B100385FE0 /* MatchCell.m in Sources */,
+				4298DCA31A9AD86600351693 /* JTSAnimatedGIFUtility.m in Sources */,
 				4259257F1A92E3E5000104BB /* HomeViewController.m in Sources */,
 				42996E1E1A4400B100385FE0 /* PopupViewController.m in Sources */,
 				42193F9D1985FE08007E3C52 /* main.m in Sources */,
 				42A0095C19EF5E05003DCD0D /* Search_TableViewController.m in Sources */,
 				427D34B6199E077F00814463 /* CFSharer.m in Sources */,
+				4298DCA01A9AD86600351693 /* JTSImageViewController.m in Sources */,
 				42193FC91985FE42007E3C52 /* SidebarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
