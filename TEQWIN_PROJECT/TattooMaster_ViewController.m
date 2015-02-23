@@ -57,6 +57,7 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
+    
     [self stylePFLoadingViewTheHardWay];
     UIImage *image = [UIImage imageNamed:@"background_news.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
@@ -258,7 +259,11 @@
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
     [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
-       [query orderByAscending:@"muays_id"];
+    switch (_segmentedcontroller.selectedSegmentIndex) {
+        case 3:
+ [query orderByDescending:type];
+    }
+     [query orderByAscending:type];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     
@@ -673,5 +678,38 @@
 
 
 - (IBAction)gogallery:(id)sender {
+}
+
+- (IBAction)segmented:(id)sender {
+    switch (_segmentedcontroller.selectedSegmentIndex) {
+        case 0:
+            type =@"muay_id";
+            NSLog(@"%@",type);
+          
+            // [_imagesCollection reloadData];
+            [self refreshTable:nil];
+            break;
+        case 1:
+            type =@"muay_id";
+            NSLog(@"%@",type);
+            
+            // [_imagesCollection reloadData];
+            [self refreshTable:nil];
+            break;
+
+        case 2:
+            type =@"name";
+            NSLog(@"%@",type);
+            
+            // [_imagesCollection reloadData];
+            [self refreshTable:nil];
+            break;
+
+        default:
+            break;
+    }
+
+
+    
 }
 @end
