@@ -1038,18 +1038,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="x3c-u3-UJo">
-                            <rect key="frame" x="0.0" y="64" width="320" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="所有"/>
-                                <segment title="A-Z"/>
-                                <segment title="Z-A"/>
-                            </segments>
+                        <searchBar key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" text="" id="lah-7H-DfT">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="1"/>
+                            <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <action selector="segmented:" destination="488-73-Amk" eventType="valueChanged" id="adX-lp-5Jx"/>
+                                <outlet property="delegate" destination="488-73-Amk" id="mYO-UH-gAn"/>
                             </connections>
-                        </segmentedControl>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" rowHeight="123" id="acF-SW-3Kp">
                                 <rect key="frame" x="0.0" y="130" width="320" height="251"/>
@@ -1145,7 +1142,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="7Y6-vs-AP5">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Xr6-9H-N8V"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Nnd-t5-Yh6">
+                            <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="進階搜尋" id="5Eq-d1-2wt">
                             <connections>
                                 <action selector="showsearch:" destination="488-73-Amk" id="7RZ-rc-0df"/>
@@ -1158,7 +1164,7 @@
                     <connections>
                         <outlet property="btnSearch" destination="5Eq-d1-2wt" id="ocS-ft-irb"/>
                         <outlet property="searchDisplayController" destination="Uy1-Y9-FLw" id="B8t-eY-lKX"/>
-                        <outlet property="segmentedcontroller" destination="x3c-u3-UJo" id="DC1-Sx-RKz"/>
+                        <outlet property="searchbar" destination="lah-7H-DfT" id="qoB-dG-mJ9"/>
                         <outlet property="sidebarButton" destination="Xr6-9H-N8V" id="4S4-rJ-tPC"/>
                         <outlet property="table_view" destination="YXb-hL-ggL" id="WGS-w7-EG3"/>
                     </connections>
@@ -1170,6 +1176,7 @@
                 <searchDisplayController id="Uy1-Y9-FLw">
                     <connections>
                         <outlet property="delegate" destination="488-73-Amk" id="kBz-4Y-E0F"/>
+                        <outlet property="searchBar" destination="lah-7H-DfT" id="SlS-qF-mJE"/>
                         <outlet property="searchContentsController" destination="488-73-Amk" id="y9V-Tc-1p4"/>
                         <outlet property="searchResultsDataSource" destination="488-73-Amk" id="PvQ-i1-udx"/>
                         <outlet property="searchResultsDelegate" destination="488-73-Amk" id="j4N-ZY-Ra3"/>
@@ -1187,27 +1194,8 @@
                         <viewControllerLayoutGuide type="bottom" id="Nw7-mh-Lfe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZWo-Ob-isZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxq-Mf-pLf">
-                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="128" width="320" height="162"/>
-                                </variation>
-                            </pickerView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="kxq-Mf-pLf"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="kxq-Mf-pLf"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -1349,7 +1337,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                    <rect key="frame" x="0.0" y="232" width="320" height="504"/>
                                     <mask key="constraints">
                                         <include reference="Nnx-Gh-hkt"/>
                                         <include reference="xAP-Ya-coE"/>

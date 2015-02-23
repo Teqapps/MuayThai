@@ -25,14 +25,12 @@
     NSIndexPath *indexPath;
     NSArray*imageFilesArray_image;
     PFQuery * searchquery;
-    PFQuery *seg_query;
     PFObject *installid;
      PFQuery * installquery;
          NSArray * installarray;
     UIButton *gallary_button;
     PFImageView *gallary_image;
     NSArray *viewcount;
-    NSString *type;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedcontroller;
@@ -42,7 +40,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSearch;
 
 - (IBAction)gogallery:(id)sender;
-- (IBAction)segmented:(id)sender;
 
 @property (nonatomic, assign) BOOL isFav;
 
