@@ -136,6 +136,9 @@
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    SWRevealViewController *revealController = [self revealViewController];
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
 }
 
 - (void)queryParseMethod_1 {
@@ -271,7 +274,7 @@
     [self.searchResults addObjectsFromArray:results];
     
     NSPredicate *searchPredicate =
-    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@", searchTerm];
+    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@ OR person_incharge CONTAINS[cd]%@", searchTerm,searchTerm];
     _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
     
     // if(![scope isEqualToString:@"全部"]) {
@@ -345,20 +348,10 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         PFObject* object = self.searchResults[indexPath.row];
         
-        
-        if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
-            cell.imageView.image = [UIImage imageNamed:@"new_liked.png"];
-            
-        }
-        else
-        {
-            
-            cell.imageView.image = [UIImage imageNamed:@"new_like.png"];
-        }
-        
         cell.textLabel.text = [object objectForKey:@"name"];
         cell.detailTextLabel.text =[object objectForKey:@"person_incharge"];
-        
+        cell.textLabel.font=[UIFont systemFontOfSize:11.0f];
+         cell.detailTextLabel.font=[UIFont systemFontOfSize:10.0f];
     }
     
     return cell;

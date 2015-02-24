@@ -76,13 +76,19 @@
         
         // Create the sign up view controller
         MySignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        MainViewController *mainviewcontroller= [[MainViewController alloc]init];
+        signUpViewController.fields = (PFSignUpFieldsUsernameAndPassword
+                                                    | PFSignUpFieldsSignUpButton
+                                                    | PFSignUpFieldsEmail
+                                                    | PFSignUpFieldsAdditional
+                                                    | PFSignUpFieldsDismissButton);
         
         
         logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton| PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton |PFLogInFieldsPasswordForgotten  ;
         // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
+        
         // Set the gesture
+            
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
         
         [self presentViewController:logInViewController animated:YES completion:NULL];
@@ -515,8 +521,7 @@
 // Sent to the delegate to determine whether the sign up request should be submitted to the server.
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
     BOOL informationComplete = YES;
-    
-    // loop through all of the submitted data
+      // loop through all of the submitted data
     for (id key in info) {
         NSString *field = [info objectForKey:key];
         if (!field || !field.length) { // check completion
@@ -535,6 +540,7 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    NSLog(@"on9 jai");
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
