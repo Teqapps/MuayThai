@@ -98,20 +98,20 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     
     // Set the background view of the table view
     self.table_view.backgroundView = imageView;
-    
+    /*
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
         newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
         self.tableView.bounds = newBounds;
-    }
+    }*/
     
     self.title =@"找拳館";
     //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];
     
-    searchbar.hidden = !searchbar.hidden;
+    //searchbar.hidden = !searchbar.hidden;
     // self.navigationController.navigationBar.translucent=NO;
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
