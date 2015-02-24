@@ -110,16 +110,6 @@
 /*!
  @abstract The email for the `PFUser`.
  */
-@property (nonatomic, strong) NSString *weight;
-
-/*!
- @abstract The email for the `PFUser`.
- */
-@property (nonatomic, strong) NSString *height;
-
-/*!
- @abstract The email for the `PFUser`.
- */
 @property (nonatomic, strong) NSString *email;
 
 /*!

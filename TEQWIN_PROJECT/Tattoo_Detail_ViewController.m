@@ -43,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     NSLog(@"%@",self.tattoomasterCell.promotion_image);
     NSLog(@"%@",self.tattoomasterCell.imageFile);
     //These two steps are important
@@ -57,12 +57,12 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
-    UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
+     UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
     self.desc.font=font;
     NSString *lorum =self.tattoomasterCell.desc;
-    //  self.desc.layer.cornerRadius=8.0f;
-    //  self.desc.layer.borderWidth=0.0;
-    self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
+  //  self.desc.layer.cornerRadius=8.0f;
+  //  self.desc.layer.borderWidth=0.0;
+      self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
     //for use labrect with UITextView you set the font of UITextView:
     //label.font = [UIFont systemFontOfSize:17];
     
@@ -92,8 +92,6 @@
     _profileimage.clipsToBounds = YES;
     _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
     _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textViewTapped:)];
-    [_lbltel addGestureRecognizer:gestureRecognizer];
     if ([self.tattoomasterCell.tel isEqual:@""]) {
         
     }
@@ -103,8 +101,6 @@
     }
     _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
-    UITapGestureRecognizer *add_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(address_tap:)];
-    [_lbladdress addGestureRecognizer:add_tap];
     if ([self.tattoomasterCell.address isEqual:@""]) {
         
     }
@@ -114,9 +110,6 @@
     }
     
     _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
-    UITapGestureRecognizer *email_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(email_tap:)];
-    [_lblemail addGestureRecognizer:email_tap];
-
     if ([self.tattoomasterCell.email  isEqual:@""]) {
         
     }
@@ -125,8 +118,6 @@
         _lblemail.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
-    UITapGestureRecognizer *web_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(web_tap:)];
-    [_lblweb addGestureRecognizer:web_tap];
     if ([self.tattoomasterCell.website isEqual:@""]) {
         
     }
@@ -170,7 +161,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(320  , 220);
-    [flowLayout setMinimumLineSpacing:0.0f];
+      [flowLayout setMinimumLineSpacing:0.0f];
     self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
@@ -357,18 +348,18 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (objects.count ==0) {
-                
+            
                 self.noimageview.image=[UIImage imageNamed:@"main_background.png"];
                 
                 
-            }
+                                       }
             else{
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
                 
                 
                 self.noimage.text=@"";
                 
-                self.noimageview.image=[UIImage imageNamed:@""];
+                    self.noimageview.image=[UIImage imageNamed:@""];
                 
                 [_imagesCollection reloadData];
             }}
@@ -389,23 +380,36 @@
     
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    // cell.detailimage.image =[UIImage imageNamed:@"image_icon.png"];
+    cell.parseImage.image =[UIImage imageNamed:@"image_icon.png"];
     imageObject = [imageFilesArray_image objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
-    cell.loading.hidden = NO;
-    [cell.loading startAnimating];
     
+    if (imageFilesArray_image.count ==0) {
+        NSLog(@"00");
+        
+    }
+    else {
+        NSLog(@"11");
+    }
+     cell.loadingSpinner.hidden = NO;
+    [cell.loadingSpinner startAnimating];
     
-    
-    cell.detailimage.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext() ;
-
-    
-    cell.detailimage.file = imageFile;
-    
-    [   cell.detailimage loadInBackground];
-    
-    
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+          
+              CGSize itemSize = CGSizeMake(40, 40);
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+            [ cell.parseImage.image drawInRect:imageRect];
+            cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext() ;
+            cell.parseImage.image = [UIImage imageWithData:data];
+            [cell.loadingSpinner stopAnimating];
+            cell.loadingSpinner.hidden = YES;
+            
+            
+        }
+    }];
     
     return cell;
 }
@@ -984,25 +988,6 @@
 
 - (IBAction)showsearch:(id)sender {
     [_detailsearchbar becomeFirstResponder];}
--(void)textViewTapped:(UITapGestureRecognizer *)sender{
-    if ([self.tattoomasterCell.tel  isEqual:@""]) {
-        [sender setEnabled:NO];
-        
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"撥號"
-                                                        message:@"確定要撥號嗎？"
-                                                       delegate:self
-                                              cancelButtonTitle:@"否"
-                                              otherButtonTitles:@"是",nil];
-        //然后这里设定关联，此处把indexPath关联到alert上
-        
-        [alert show];
-    }
-
-    
-    
-}
 - (IBAction)btn_tel:(id)sender {
     if ([self.tattoomasterCell.tel  isEqual:@""]) {
         [sender setEnabled:NO];
@@ -1019,7 +1004,8 @@
         [alert show];
     }
 }
--(void)address_tap:(UITapGestureRecognizer *)sender{
+
+- (IBAction)btn_address:(id)sender {
     if ([self.tattoomasterCell.address  isEqual:@""]) {
         [sender setEnabled:NO];
         
@@ -1029,26 +1015,9 @@
         [self.navigationController pushViewController:mapVC animated:YES];
         mapVC.tattoomasterCell=_tattoomasterCell;
     }
-
-    
-}
--(void)web_tap:(UITapGestureRecognizer *)sender{
-    if ([self.tattoomasterCell.website  isEqual:@""]) {
-        [sender setEnabled:NO];
-        
-    }
-    else{
-        //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
-        
-    }
 }
 
-
-- (IBAction)btn_address:(id)sender {
-    
-  }
--(void)email_tap:(UITapGestureRecognizer *)sender{
+- (IBAction)btn_email:(id)sender {
     //Create the MailComposeViewController
     if ([self.tattoomasterCell.email   isEqual:@""]) {
         [sender setEnabled:NO];
@@ -1084,9 +1053,16 @@
         }
     }
 }
-- (IBAction)btn_email:(id)sender {
-    }
 
 - (IBAction)btn_web:(id)sender {
-   }
+    if ([self.tattoomasterCell.website  isEqual:@""]) {
+        [sender setEnabled:NO];
+        
+    }
+    else{
+        //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
+        
+    }
+}
 @end

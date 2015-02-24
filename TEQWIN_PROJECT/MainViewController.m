@@ -18,11 +18,11 @@
 @interface MainViewController ()
 
 {
-    int lastClickedRow;
-    
+     int lastClickedRow;
+
     NSArray *_feedItems;
-    
-    
+
+   
 }
 @property (nonatomic, strong) UISearchDisplayController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults;
@@ -36,19 +36,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _searchbar.tintColor = [UIColor whiteColor];
+  _searchbar.tintColor = [UIColor whiteColor];
     _searchbar.barTintColor =[UIColor blackColor];
     
     
     //  UIGraphicsBeginImageContext(self.view.frame.size);
-    // [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
-    //  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    //  UIGraphicsEndImageContext();
+   // [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
+  //  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+  //  UIGraphicsEndImageContext();
     
-    //  self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+  //  self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    [self queryParseMethod];
-    [self queryParseMethod_1];
+[self queryParseMethod];
+   [self queryParseMethod_1];
     UIImage *home_news = [[UIImage imageNamed:@"new_main_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_newsTap = [[UIImage imageNamed:@"new_main_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_news setImage:home_news forState:UIControlStateNormal];
@@ -58,32 +58,32 @@
     UIImage *home_branchesTap = [[UIImage imageNamed:@"new_main_club.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_branchs setImage:home_branches forState:UIControlStateNormal];
     [self.home_branchs setImage:home_branchesTap forState:UIControlStateHighlighted];
-    
+
     UIImage *home_profiles = [[UIImage imageNamed:@"new_main_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_profilesTap = [[UIImage imageNamed:@"new_main_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_profile setImage:home_profiles forState:UIControlStateNormal];
     [self.home_profile setImage:home_profilesTap forState:UIControlStateHighlighted];
-    
+
     UIImage *home_history = [[UIImage imageNamed:@"new_main_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_historyTap = [[UIImage imageNamed:@"new_main_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_history setImage:home_history forState:UIControlStateNormal];
     [self.home_history setImage:home_historyTap forState:UIControlStateHighlighted];
-    
+
     UIImage *home_notice = [[UIImage imageNamed:@"new_main_notice.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_noticeTap = [[UIImage imageNamed:@"new_main_notice.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_notice setImage:home_notice forState:UIControlStateNormal];
     [self.home_notice setImage:home_noticeTap forState:UIControlStateHighlighted];
-    
+
     UIImage *home_match = [[UIImage imageNamed:@"new_main_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_matchTap = [[UIImage imageNamed:@"new_main_match.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.home_contact setImage:home_match forState:UIControlStateNormal];
     [self.home_contact setImage:home_matchTap forState:UIControlStateHighlighted];
+
     
     
     
     
-    
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+         if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         //然后这里设定关联，此处把indexPath关联到alert上
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"需要登入嗎？"
@@ -100,29 +100,29 @@
         
         // app already launched
     }
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    
+
+      UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+     
     self.navigationItem.backBarButtonItem = backButton;
-    
+   
     // scroll search bar out of sight
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.image_collection setCollectionViewLayout:flowLayout];
     
-    flowLayout.itemSize = CGSizeMake(320,180);
+    flowLayout.itemSize = CGSizeMake(320,230);
     NSLog(@"hehe%f",[[UIScreen mainScreen] bounds].size.height/2.81);
     [flowLayout setMinimumLineSpacing:0.0f];
-    
-    // [flowLayout setMinimumLineSpacing:0.0f];
-    
-    // int randomImgNumber = arc4random_uniform(5);
-    
-    // PFObject *object = [imageFilesArray objectAtIndex:randomImgNumber];
-    
+
+   // [flowLayout setMinimumLineSpacing:0.0f];
+  
+   // int randomImgNumber = arc4random_uniform(5);
+
+   // PFObject *object = [imageFilesArray objectAtIndex:randomImgNumber];
+
     
     self.title = @"主頁";
-    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+//self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
@@ -136,10 +136,7 @@
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    SWRevealViewController *revealController = [self revealViewController];
-    [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
-}
+   }
 
 - (void)queryParseMethod_1 {
     PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
@@ -164,13 +161,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    
-    
-    //  self.screenName = @"Main";
-    searchquery = [PFQuery queryWithClassName:@"muay_member"];
+   
+
+  //  self.screenName = @"Main";
+        searchquery = [PFQuery queryWithClassName:@"muay_member"];
     //[query whereKey:@"Name" containsString:searchTerm];
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+ [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 -(void)itemsDownloaded:(NSArray *)items
 {
@@ -198,7 +195,7 @@
         
         
     }
-    
+
 }
 
 - (void)queryParseMethod {
@@ -211,29 +208,29 @@
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query whereKey:@"promotion_approve" equalTo:[NSNumber numberWithBool:YES]];
     
-    [query orderByAscending:@"muay_id"];
+     [query orderByAscending:@"muay_id"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] == 0) {
-        }
+                }
         if (!error) {
             
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
-            self.page.numberOfPages = imageFilesArray.count;
-            [_image_collection reloadData];
-            
+             self.page.numberOfPages = imageFilesArray.count;
+           [_image_collection reloadData];
+
             [hud hide:YES];
-            
+
         }
-        
+   
     }];
-    
-    
+
+
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return nil;
-    // return @"最新消息";
+      // return @"最新消息";
 }
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
 {
@@ -249,14 +246,14 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
+
     // Return the number of rows in the section.
     if (tableView == self.main_tableview) {
         
-        return [news_array count];
+    return [news_array count];
         
     } else {
-        
+
         return self.searchResults.count;
         
     }
@@ -264,7 +261,7 @@
 
 -(void)filterResults:(NSString *)searchTerm scope:(NSString*)scope
 {
-    
+
     [self.searchResults removeAllObjects];
     
     
@@ -274,7 +271,7 @@
     [self.searchResults addObjectsFromArray:results];
     
     NSPredicate *searchPredicate =
-    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@ OR person_incharge CONTAINS[cd]%@", searchTerm,searchTerm];
+    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@", searchTerm];
     _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
     
     // if(![scope isEqualToString:@"全部"]) {
@@ -297,65 +294,6 @@
 
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-
-{
-    static NSString *simpleTableIdentifier = @"favcell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil) {
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
-    }
-    if (tableView == self.main_tableview) {
-        // Configure the cell
-        // Configure the cell
-        PFObject *imageObject = [news_array objectAtIndex:indexPath.row];
-        PFFile *thumbnail = [imageObject objectForKey:@"image"];
-        PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
-        //  CGSize itemSize = CGSizeMake(70, 70);
-        // UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-        //  CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-        //  thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-        //  thumbnailImageView.layer.cornerRadius=thumbnailImageView.frame.size.width/2;
-        thumbnailImageView.layer.borderWidth=2.0;
-        //  thumbnailImageView.layer.masksToBounds = YES;
-        thumbnailImageView.layer.borderColor=[[UIColor whiteColor] CGColor];
-        //   [thumbnailImageView.image drawInRect:imageRect];
-        thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        thumbnailImageView.image = [UIImage imageNamed:@"placeholder.jpg"];
-        
-        thumbnailImageView.file = thumbnail;
-        
-        
-        [thumbnailImageView loadInBackground];
-        
-        
-        UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
-        nameLabel.text = [imageObject objectForKey:@"name"];
-        
-        UILabel *news = (UILabel*) [cell viewWithTag:155];
-        
-        news.text = [imageObject objectForKey:@"news"];
-        news.textColor =[UIColor colorWithRed:196/255.0
-                                        green:160/255.0 blue:81/255.0 alpha:1.0];
-        
-        // news.textColor =[UIColor grayColor];
-    }
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        PFObject* object = self.searchResults[indexPath.row];
-        
-        cell.textLabel.text = [object objectForKey:@"name"];
-        cell.detailTextLabel.text =[object objectForKey:@"person_incharge"];
-        cell.textLabel.font=[UIFont systemFontOfSize:11.0f];
-         cell.detailTextLabel.font=[UIFont systemFontOfSize:10.0f];
-    }
-    
-    return cell;
-}
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -378,31 +316,31 @@
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.parseImage.image=[UIImage imageNamed:@"main_background.png"];
-    //  cell.club_image.image=[UIImage imageNamed:@"image_icon.png"];
+    cell.club_image.image=[UIImage imageNamed:@"image_icon.png"];
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
-    PFFile *avstar = [imageObject objectForKey:@"image"];
+      PFFile *avstar = [imageObject objectForKey:@"image"];
     
-    
+
     cell.name.text=[imageObject objectForKey:@"name"];
-    
+   
     PFFile *imageFile = [imageObject objectForKey:@"promotion_image"];
     cell.loadingSpinner.hidden = NO;
     [cell.loadingSpinner startAnimating];
-    
+
     
     // cell.thumbnail.image = [UIImage imageNamed:@"background.jpg"];
     cell.club_image.layer.backgroundColor=[[UIColor clearColor] CGColor];
-    cell.club_image.layer.cornerRadius= 30;
+    cell.club_image.layer.cornerRadius= 27.5;
     cell.club_image.layer.borderWidth=0.0;
     cell.club_image.layer.masksToBounds = YES;
     cell.club_image.layer.borderColor=[[UIColor whiteColor] CGColor];
     
-    
+
     cell.club_image.file = avstar;
+ 
     
     
-    
-    // [ cell.parseImage.image drawInRect:imageRect];
+   // [ cell.parseImage.image drawInRect:imageRect];
     cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext() ;
     
@@ -414,7 +352,7 @@
     [ cell.parseImage loadInBackground];
     // UIGraphicsEndImageContext();
     [ cell.club_image loadInBackground];
-    
+
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -422,11 +360,11 @@
     if (tableView == self.main_tableview) {
         
         selectobject = [news_array  objectAtIndex:indexPath.row];
-    } else {
-        
+           } else {
+ 
         
         selectobject = [_searchResults  objectAtIndex:indexPath.row];
-        
+       
         Tattoo_Detail_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Tattoo_Detail_ViewController"];
         [self.navigationController pushViewController:mapVC animated:YES];
         TattooMasterCell * tattoomasterCell = [[TattooMasterCell alloc] init];
@@ -445,14 +383,14 @@
         tattoomasterCell.website = [selectobject objectForKey:@"website"];
         tattoomasterCell.desc = [selectobject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [selectobject objectForKey:@"image"];
-        tattoomasterCell.promotion_image=[selectobject objectForKey:@"promotion_image"];
+      tattoomasterCell.promotion_image=[selectobject objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [selectobject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[selectobject objectForKey:@"bookmark"];
         tattoomasterCell.view = [selectobject objectForKey:@"view"];
         tattoomasterCell.object_id = selectobject.objectId;
         
         mapVC.tattoomasterCell = tattoomasterCell;
-        
+    
     }
     
     
@@ -462,12 +400,12 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"godetail"]) {
         NSIndexPath *indexPath = [self.image_collection indexPathForCell:sender];
-        
+
         Tattoo_Detail_ViewController *destViewController = segue.destinationViewController;
         
         PFObject *object = [imageFilesArray objectAtIndex:indexPath.row];
         TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
-        
+   
         tattoomasterCell.object_id = [object objectForKey:@"object"];
         tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
         tattoomasterCell.name = [object objectForKey:@"name"];
@@ -489,15 +427,15 @@
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
         tattoomasterCell.view = [object objectForKey:@"view"];
         tattoomasterCell.object_id = object.objectId;
-        
+
         destViewController.tattoomasterCell = tattoomasterCell;
-        NSDictionary *dimensions = @{ @"name":[object objectForKey:@"name"]};
+             NSDictionary *dimensions = @{ @"name":[object objectForKey:@"name"]};
         [PFAnalytics trackEvent:@"showmaster" dimensions:dimensions];
-        
+
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
         [object saveInBackground];
-        
-    }
+
+        }
     if ([segue.identifier isEqualToString:@"gonewdetail"]) {
         NSIndexPath *indexPath = [self.main_tableview indexPathForCell:sender];
         
@@ -521,22 +459,22 @@
         tattoomasterCell.website = [object objectForKey:@"website"];
         tattoomasterCell.desc = [object objectForKey:@"desc"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
-        tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
+         tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
         tattoomasterCell.view = [object objectForKey:@"view"];
         tattoomasterCell.news = [object objectForKey:@"news"];
-        tattoomasterCell.news_view = [object objectForKey:@"news_view"];
+          tattoomasterCell.news_view = [object objectForKey:@"news_view"];
         tattoomasterCell.object_id = object.objectId;
         NSLog(@"heheahha%@",[object objectForKey:@"promotion_image"]);
         destViewController.tattoomasterCell = tattoomasterCell;
-        
+    
         [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"news_view"];
         [object saveInBackground];
         
     }
-    
-}
+
+        }
 
 
 

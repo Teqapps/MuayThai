@@ -38,7 +38,6 @@
 @property (nonatomic, strong) TattooMasterCell *tattoomasterCell;
 @property (nonatomic, assign) BOOL isFav;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
-
 @property (weak, nonatomic) IBOutlet PFImageView *profile_image;
 @property (weak, nonatomic) IBOutlet UITableView *TABLEVIEW;
 @property (weak, nonatomic) IBOutlet UIButton *logout;
