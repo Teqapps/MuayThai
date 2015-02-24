@@ -1037,8 +1037,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Nhf-Xo-e4O">
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackTranslucent" placeholder="搜尋，拳館名稱/負責人" backgroundImage="search_bacground.png" id="Nhf-Xo-e4O">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -1061,22 +1061,16 @@
                                                 <rect key="frame" x="48" y="52" width="20" height="20"/>
                                             </variation>
                                         </activityIndicatorView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="264" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-Jp-u37">
-                                            <rect key="frame" x="131" y="8" width="148" height="60"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" tag="161" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXy-EB-MZN">
                                             <rect key="frame" x="136" y="75" width="20" height="20"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="132" y="81" width="20" height="20"/>
+                                                <rect key="frame" x="132" y="89" width="20" height="20"/>
                                             </variation>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" tag="107" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new_like.png" translatesAutoresizingMaskIntoConstraints="NO" id="59Q-ji-xB6">
                                             <rect key="frame" x="169" y="75" width="20" height="20"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="169" y="81" width="20" height="20"/>
+                                                <rect key="frame" x="169" y="89" width="20" height="20"/>
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="105" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AI-QI-pCL">
@@ -1085,13 +1079,13 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="193" y="77" width="18" height="26.5"/>
+                                                <rect key="frame" x="193" y="85" width="18" height="26.5"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="107" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="gwC-z8-TGb">
                                             <rect key="frame" x="169" y="75" width="20" height="20"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="218" y="84" width="20" height="14"/>
+                                                <rect key="frame" x="218" y="92" width="20" height="14"/>
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="134" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N98-qg-DfR">
@@ -1100,7 +1094,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="244" y="78" width="38" height="26.5"/>
+                                                <rect key="frame" x="244" y="86" width="38" height="26.5"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bao.png" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-MD-Ssv">
@@ -1115,6 +1109,24 @@
                                                 <rect key="frame" x="13" y="17" width="90" height="90"/>
                                             </variation>
                                         </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="264" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-Jp-u37">
+                                            <rect key="frame" x="131" y="8" width="148" height="60"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="131" y="8" width="148" height="49"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="108" contentMode="left" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="264" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-DL-3R6">
+                                            <rect key="frame" x="131" y="8" width="148" height="60"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="131" y="56" width="79" height="25"/>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                     <variation key="default">
                                         <mask key="subviews">
@@ -1143,14 +1155,6 @@
                     <navigationItem key="navigationItem" id="7Y6-vs-AP5">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Xr6-9H-N8V"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Nnd-t5-Yh6">
-                            <rect key="frame" x="-61" y="-14" width="123" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                            </segments>
-                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="進階搜尋" id="5Eq-d1-2wt">
                             <connections>
                                 <action selector="address_search:" destination="488-73-Amk" id="bkR-9m-wWk"/>
@@ -1316,7 +1320,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PxZ-Pw-f0c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qh5-Ud-sCW">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_news.png" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-we-bSD">
@@ -1331,8 +1335,7 @@
                                         <exclude reference="xAP-Ya-coE"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="232" width="320" height="504"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Nnx-Gh-hkt"/>
                                         <include reference="xAP-Ya-coE"/>
@@ -1517,7 +1520,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wJh-3V-tA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KxI-lV-Gw9">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="background_news.png" translatesAutoresizingMaskIntoConstraints="NO" id="qMm-Z7-j31">
@@ -2338,13 +2341,13 @@ Preferential offer  晚間9折</string>
             <objects>
                 <tableViewController storyboardIdentifier="Match_ViewController" title="Match_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HL8-vW-K61" customClass="Match_ViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="202" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Yp-wJ-o2H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" opaque="NO" contentMode="redraw" barStyle="blackTranslucent" backgroundImage="search_bacground.png" id="3mH-BC-o34">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <textInputTraits key="textInputTraits"/>
@@ -4404,13 +4407,13 @@ Preferential offer  晚間9折</string>
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nCF-OP-zd7"/>
         <segue reference="Jan-aP-9Jn"/>
-        <segue reference="cXc-Cg-QFH"/>
-        <segue reference="PPs-fJ-uhp"/>
-        <segue reference="ZAO-5P-2Zd"/>
-        <segue reference="DyC-w1-YQe"/>
+        <segue reference="nCF-OP-zd7"/>
         <segue reference="aaL-oi-ElB"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="DyC-w1-YQe"/>
+        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="cXc-Cg-QFH"/>
         <segue reference="Oz0-Qe-dUn"/>
         <segue reference="Kb2-fp-xV0"/>
         <segue reference="efc-B0-k9H"/>

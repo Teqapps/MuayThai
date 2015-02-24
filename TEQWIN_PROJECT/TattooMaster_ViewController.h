@@ -38,6 +38,7 @@
     NSArray *region_nt;
     NSString *club;
     NSString *region;
+        UILabel *address_region;
 }
 @property (nonatomic, strong) UITextField *pickerViewTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedcontroller;
@@ -45,6 +46,7 @@
 @property IBOutlet UISearchBar *searchbar;
 - (IBAction)showsearch:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSearch;
+- (IBAction)segmented:(id)sender;
 
 - (IBAction)gogallery:(id)sender;
 - (IBAction)address_search:(id)sender;

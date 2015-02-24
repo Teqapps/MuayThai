@@ -57,10 +57,9 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
-    // set the frame to zero
     area = [[NSArray alloc] initWithObjects:@"全選",@"香港島",@"九龍",@"新界", nil];
-     region_hk = [[NSArray alloc] initWithObjects:@"全選",@"上環",@"中環",@"灣仔",@"銅鑼灣",@"跑馬地",@"黃竹坑",@"鴨脷洲",@"北角",@"鰂魚涌",@"西灣河",@"柴灣",@"天后",@"炮台山",@"西營盤",@"筲箕灣",@"金鐘",@"太古",@"香港仔", nil];
-region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"油麻地",@"旺角",@"太子",@"深水埗",@"長沙灣",@"新蒲崗",@"觀塘",@"鑽石山",@"大角咀",@"牛頭角",@"何文田",@"土瓜灣",@"九龍城",@"荔枝角",@"油塘",@"紅磡",@"九龍塘", nil];
+    region_hk = [[NSArray alloc] initWithObjects:@"全選",@"上環",@"中環",@"灣仔",@"銅鑼灣",@"跑馬地",@"黃竹坑",@"鴨脷洲",@"北角",@"鰂魚涌",@"西灣河",@"柴灣",@"天后",@"炮台山",@"西營盤",@"筲箕灣",@"金鐘",@"太古",@"香港仔", nil];
+    region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"油麻地",@"旺角",@"太子",@"深水埗",@"長沙灣",@"新蒲崗",@"觀塘",@"鑽石山",@"大角咀",@"牛頭角",@"何文田",@"土瓜灣",@"九龍城",@"荔枝角",@"油塘",@"紅磡",@"九龍塘", nil];
     region_nt = [[NSArray alloc] initWithObjects:@"全選",@"葵涌",@"荃灣",@"火炭",@"元朗",@"上水",@"沙田",@"屯門",@"葵芳",@"大埔",@"粉嶺",@"", nil];
     self.pickerViewTextField = [[UITextField alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.pickerViewTextField];
@@ -83,13 +82,6 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     // the middle button is to make the Done button align to right
     [toolBar setItems:[NSArray arrayWithObjects:cancelButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], doneButton, nil]];
     self.pickerViewTextField.inputAccessoryView = toolBar;
-
-    
-    searchquery = [PFQuery queryWithClassName:@"muay_member"];
-    //[query whereKey:@"Name" containsString:searchTerm];
-    
-    searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
-    
     
     
     [self stylePFLoadingViewTheHardWay];
@@ -102,19 +94,19 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     // Set the background view of the table view
     self.table_view.backgroundView = imageView;
     /*
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    self.navigationItem.backBarButtonItem = backButton;
-    CGRect newBounds = self.tableView.bounds;
-    if (self.tableView.bounds.origin.y < 44) {
-        newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
-        self.tableView.bounds = newBounds;
-    }*/
-    
+     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+     self.navigationItem.backBarButtonItem = backButton;
+     CGRect newBounds = self.tableView.bounds;
+     if (self.tableView.bounds.origin.y < 44) {
+     newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
+     self.tableView.bounds = newBounds;
+     }
+     */
     self.title =@"找拳館";
     //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];
-    /*
-    searchbar.hidden = !searchbar.hidden;*/
+    
+    // searchbar.hidden = !searchbar.hidden;
     // self.navigationController.navigationBar.translucent=NO;
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
@@ -170,14 +162,37 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     //[self refreshTable:nil];
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     // scroll search bar out of sight
- 
-    //  self.screenName = @"Main";
+    CGRect newBounds = self.tableView.bounds;
+    if (self.tableView.bounds.origin.y < 44) {
+        newBounds.origin.y = newBounds.origin.y;
+        self.tableView.bounds = newBounds;
+    }
     searchquery = [PFQuery queryWithClassName:@"muay_member"];
     //[query whereKey:@"Name" containsString:searchTerm];
+    
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
+    //
+    installquery = [PFQuery queryWithClassName:@"Installation"];
+    
+    installquery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [installquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            installarray = [[NSArray alloc] initWithArray:objects];
+            
+        }
+    }];
+    
     
 }
-
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    CGRect newBounds = self.tableView.bounds;
+    if (self.tableView.bounds.origin.y < 44) {
+        newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
+        self.tableView.bounds = newBounds;
+    }
+    
+    
+}
 
 - (IBAction)showsearch:(id)sender {
     [searchbar becomeFirstResponder];
@@ -196,26 +211,29 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
         
     }
 }
+
 -(void)filterResults:(NSString *)searchTerm scope:(NSString*)scope
 {
-    
     [self.searchResults removeAllObjects];
     
     
     
     NSArray *results  = [searchquery findObjects];
+    NSLog(@"%d",results.count);
     searchquery.cachePolicy=kPFCachePolicyCacheElseNetwork;
     [self.searchResults addObjectsFromArray:results];
     
     NSPredicate *searchPredicate =
-    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@ OR person_incharge CONTAINS[cd]%@", searchTerm,searchTerm];
-    _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
+   [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@ OR person_incharge CONTAINS[cd]%@", searchTerm,searchTerm];    _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
+    
+    
     
     // if(![scope isEqualToString:@"全部"]) {
     // Further filter the array with the scope
     //   NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"Gender contains[cd] %@", scope];
     
     //  _searchResults = [NSMutableArray arrayWithArray:[_searchResults filteredArrayUsingPredicate:resultPredicate]];
+    
 }//}
 
 //當search 更新時， tableview 就會更新，無論scope select 咩
@@ -228,8 +246,6 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     
     return YES;
 }
-
-
 //當scope 更新時，tableview 就會更新 （但要有search text)
 //- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 //{
@@ -268,17 +284,10 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
     [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
-     [query whereKey:@"area" containsString:club];
+    [query whereKey:@"area" containsString:club];
     [query whereKey:@"region" containsString:region];
-       [query orderByAscending:@"muays_id"];
+    [query orderByAscending:@"muays_id"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    
-    
-    // If no objects are loaded in memory, we look to the cache first to fill the table
-    // and then subsequently do a query against the network.
-    
-    
-
     
     return query;
     
@@ -379,7 +388,9 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
         
         UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
         nameLabel.text = [object objectForKey:@"name"];
-        
+        address_region = (UILabel*) [cell viewWithTag:108];
+        address_region.text=[object objectForKey:@"region"];
+
         //  UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
         //  prepTimeLabel.text = [object objectForKey:@"address"];
         
@@ -429,11 +440,22 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         PFObject* object = self.searchResults[indexPath.row];
         
-        
+        /*
+        if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
+            
+            cell.imageView.image = [UIImage imageNamed:@"new_liked.png"];
+        }
+        else
+        {
+            
+            cell.imageView.image = [UIImage imageNamed:@"new_like.png"];
+        }*/
         
         cell.textLabel.text = [object objectForKey:@"name"];
-        cell.detailTextLabel.text =[object objectForKey:@"gender"];
-        
+        cell.detailTextLabel.text =[object objectForKey:@"person_incharge"];
+        cell.textLabel.font=[UIFont systemFontOfSize:11.0f];
+        cell.detailTextLabel.font=[UIFont systemFontOfSize:10.0f];
+
     }
     gallary_image = (PFImageView*)[cell viewWithTag:161];
     gallary_button = (UIButton*)[cell viewWithTag:162];
@@ -675,12 +697,13 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
 }
 
 
+
+
 - (IBAction)gogallery:(id)sender {
 }
-
 - (IBAction)address_search:(id)sender {
-     [self.pickerViewTextField becomeFirstResponder];
-   
+    [self.pickerViewTextField becomeFirstResponder];
+    
 }
 - (void)cancelTouched:(UIBarButtonItem *)sender
 {
@@ -692,27 +715,35 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
 {
     // hide the picker view
     [self.pickerViewTextField resignFirstResponder];
-     NSLog(@"ON999%@",region);
-      if ([club isEqualToString:@"全選"]) {
-          club=@"";
-           region=@"";
-      }
-    if ([club isEqualToString:@"香港島"] && [region isEqualToString:@"全選"]) {
+    NSLog(@"ON999%@",region);
+    if ([club isEqualToString:@"全選"]) {
+        club=@"";
+        region=@"";
+        NSLog(@"CLUB%@",club);
+        NSLog(@"region%@",region);
+
+    }
+    else if ([club isEqualToString:@"香港島"] && [region isEqualToString:@"全選"]) {
         club=@"香港島";
         region=@"";
-        
+        NSLog(@"CLUB%@",club);
+        NSLog(@"region%@",region);
+
     }
-       if ([club isEqualToString:@"九龍"] && [region isEqualToString:@"全選"]) {
+    else if ([club isEqualToString:@"九龍"] && [region isEqualToString:@"全選"]) {
         club=@"九龍";
         region=@"";
-        
-    }
-
-    if ([club isEqualToString:@"新界"] && [region isEqualToString:@"全選"]) {
-        club=@"新界";
         NSLog(@"CLUB%@",club);
-        region=@"";
+        NSLog(@"region%@",region);
+
+    }
+    
+    else if ([club isEqualToString:@"新界"] && [region isEqualToString:@"全選"]) {
+        club=@"新界";
         
+        region=@"";
+        NSLog(@"CLUB%@",club);
+        NSLog(@"region%@",region);
     }
     
     [self refreshTable:nil];
@@ -741,7 +772,7 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
             return [region_nt count];
         }
         // if...
-       
+        
     }
     
     return 0;
@@ -750,7 +781,7 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
 #pragma mark - UIPickerViewDelegate
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-  
+    
     if(component ==0)
     {
         return [area objectAtIndex:row];
@@ -765,10 +796,10 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
         if ([club isEqualToString:@"新界"]) {
             return [region_nt objectAtIndex:row];
         }
-
-      
-
-           }
+        
+        
+        
+    }
     
     return 0;
 }
@@ -778,26 +809,31 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     if (component == 0) {
         club=[[NSString alloc] initWithFormat:@"%@" , [area objectAtIndex:row]];
         NSLog(@"%@",club);
-        [pickerView reloadComponent:1];
+         [pickerView reloadComponent:1];
     }
+    else{
     if ([club isEqualToString:@"香港島"]) {
+      
         region =[region_hk objectAtIndex:row];
-     
-        NSLog(@"%@",[region_hk objectAtIndex:row]);
-       
 
+        NSLog(@"%@",[region_hk objectAtIndex:row]);
+        
+        
     }
     if ([club isEqualToString:@"九龍"]) {
+
         region =[region_kl objectAtIndex:row];
-       
-        NSLog(@"%@",[region_hk objectAtIndex:row]);
-       
+
+        NSLog(@"%@",[region_kl objectAtIndex:row]);
+        
         
     }
     if ([club isEqualToString:@"新界"]) {
+
         region =[region_nt objectAtIndex:row];
        
-        NSLog(@"%@",[region_hk objectAtIndex:row]);
-       
-    }}
+        NSLog(@"%@",[region_nt objectAtIndex:row]);
+        
+    }}}
+
 @end
