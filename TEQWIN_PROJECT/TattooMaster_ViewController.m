@@ -85,7 +85,10 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     self.pickerViewTextField.inputAccessoryView = toolBar;
 
     
+    searchquery = [PFQuery queryWithClassName:@"muay_member"];
+    //[query whereKey:@"Name" containsString:searchTerm];
     
+    searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
     
     
     
@@ -98,20 +101,20 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     
     // Set the background view of the table view
     self.table_view.backgroundView = imageView;
-    
+    /*
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     CGRect newBounds = self.tableView.bounds;
     if (self.tableView.bounds.origin.y < 44) {
         newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
         self.tableView.bounds = newBounds;
-    }
+    }*/
     
     self.title =@"找拳館";
     //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];
-    
-    searchbar.hidden = !searchbar.hidden;
+    /*
+    searchbar.hidden = !searchbar.hidden;*/
     // self.navigationController.navigationBar.translucent=NO;
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
@@ -167,37 +170,14 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     //[self refreshTable:nil];
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     // scroll search bar out of sight
-    CGRect newBounds = self.tableView.bounds;
-    if (self.tableView.bounds.origin.y < 44) {
-        newBounds.origin.y = newBounds.origin.y;
-        self.tableView.bounds = newBounds;
-    }
+ 
+    //  self.screenName = @"Main";
     searchquery = [PFQuery queryWithClassName:@"muay_member"];
     //[query whereKey:@"Name" containsString:searchTerm];
-    
     searchquery.cachePolicy=kPFCachePolicyNetworkElseCache;
-    //
-    installquery = [PFQuery queryWithClassName:@"Installation"];
-    
-    installquery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    [installquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            installarray = [[NSArray alloc] initWithArray:objects];
-            
-        }
-    }];
-    
     
 }
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    CGRect newBounds = self.tableView.bounds;
-    if (self.tableView.bounds.origin.y < 44) {
-        newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
-        self.tableView.bounds = newBounds;
-    }
-    
-    
-}
+
 
 - (IBAction)showsearch:(id)sender {
     [searchbar becomeFirstResponder];
@@ -216,30 +196,26 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
         
     }
 }
-
 -(void)filterResults:(NSString *)searchTerm scope:(NSString*)scope
 {
+    
     [self.searchResults removeAllObjects];
     
     
     
     NSArray *results  = [searchquery findObjects];
-    NSLog(@"%d",results.count);
     searchquery.cachePolicy=kPFCachePolicyCacheElseNetwork;
     [self.searchResults addObjectsFromArray:results];
     
     NSPredicate *searchPredicate =
-    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@", searchTerm];
+    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@ OR person_incharge CONTAINS[cd]%@", searchTerm,searchTerm];
     _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
-    
-    
     
     // if(![scope isEqualToString:@"全部"]) {
     // Further filter the array with the scope
     //   NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"Gender contains[cd] %@", scope];
     
     //  _searchResults = [NSMutableArray arrayWithArray:[_searchResults filteredArrayUsingPredicate:resultPredicate]];
-    
 }//}
 
 //當search 更新時， tableview 就會更新，無論scope select 咩
@@ -252,6 +228,8 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
     
     return YES;
 }
+
+
 //當scope 更新時，tableview 就會更新 （但要有search text)
 //- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 //{
@@ -452,15 +430,6 @@ region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"
         PFObject* object = self.searchResults[indexPath.row];
         
         
-        if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
-            
-            cell.imageView.image = [UIImage imageNamed:@"new_liked.png"];
-        }
-        else
-        {
-            
-            cell.imageView.image = [UIImage imageNamed:@"new_like.png"];
-        }
         
         cell.textLabel.text = [object objectForKey:@"name"];
         cell.detailTextLabel.text =[object objectForKey:@"gender"];

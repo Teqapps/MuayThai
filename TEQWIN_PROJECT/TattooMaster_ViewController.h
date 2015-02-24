@@ -34,7 +34,7 @@
     NSArray *area;
      NSArray *region_hk;
     NSArray *region_kl;
-
+ NSArray *search_array;
     NSArray *region_nt;
     NSString *club;
     NSString *region;

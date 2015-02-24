@@ -90,7 +90,7 @@
                                     <outlet property="delegate" destination="CZH-Rz-gDi" id="nHf-Kp-G9m"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" barStyle="blackTranslucent" backgroundImage="search_bacground.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-3p-J7n">
+                            <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="搜尋，拳館名稱/負責人" backgroundImage="search_bacground.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-3p-J7n">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="IdT-fb-Xf7"/>
@@ -1038,13 +1038,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" text="" id="lah-7H-DfT">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Nhf-Xo-e4O">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="1"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <outlet property="delegate" destination="488-73-Amk" id="mYO-UH-gAn"/>
+                                <outlet property="delegate" destination="488-73-Amk" id="kTm-Tn-gNm"/>
                             </connections>
                         </searchBar>
                         <prototypes>
@@ -1161,23 +1160,20 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="Uy1-Y9-FLw" id="B8t-eY-lKX"/>
-                        <outlet property="searchbar" destination="lah-7H-DfT" id="qoB-dG-mJ9"/>
+                        <outlet property="searchDisplayController" destination="Wx8-x2-4Rj" id="uj6-uB-c3B"/>
+                        <outlet property="searchbar" destination="Nhf-Xo-e4O" id="2qZ-Lo-BPf"/>
                         <outlet property="sidebarButton" destination="Xr6-9H-N8V" id="4S4-rJ-tPC"/>
                         <outlet property="table_view" destination="YXb-hL-ggL" id="WGS-w7-EG3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRJ-sT-dD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="pXD-Oh-nt9"/>
-                <searchDisplayController id="kOl-Fg-W8I"/>
-                <searchDisplayController id="KBc-O3-GG6"/>
-                <searchDisplayController id="Uy1-Y9-FLw">
+                <searchDisplayController id="Wx8-x2-4Rj">
                     <connections>
-                        <outlet property="delegate" destination="488-73-Amk" id="kBz-4Y-E0F"/>
-                        <outlet property="searchBar" destination="lah-7H-DfT" id="SlS-qF-mJE"/>
-                        <outlet property="searchContentsController" destination="488-73-Amk" id="y9V-Tc-1p4"/>
-                        <outlet property="searchResultsDataSource" destination="488-73-Amk" id="PvQ-i1-udx"/>
-                        <outlet property="searchResultsDelegate" destination="488-73-Amk" id="j4N-ZY-Ra3"/>
+                        <outlet property="delegate" destination="488-73-Amk" id="kik-HG-Dp2"/>
+                        <outlet property="searchBar" destination="Nhf-Xo-e4O" id="ez7-yN-eDN"/>
+                        <outlet property="searchContentsController" destination="488-73-Amk" id="EJ9-Nm-wMl"/>
+                        <outlet property="searchResultsDataSource" destination="488-73-Amk" id="tPX-js-Eco"/>
+                        <outlet property="searchResultsDelegate" destination="488-73-Amk" id="kmz-7H-tr8"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -1336,7 +1332,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                    <rect key="frame" x="0.0" y="232" width="320" height="504"/>
                                     <mask key="constraints">
                                         <include reference="Nnx-Gh-hkt"/>
                                         <include reference="xAP-Ya-coE"/>
@@ -4408,16 +4404,16 @@ Preferential offer  晚間9折</string>
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="efc-B0-k9H"/>
-        <segue reference="GKR-Sh-PFv"/>
         <segue reference="nCF-OP-zd7"/>
-        <segue reference="NNn-nc-gd0"/>
-        <segue reference="MsR-o8-LCf"/>
-        <segue reference="njj-2d-hlP"/>
-        <segue reference="J3U-K8-EAV"/>
-        <segue reference="oJl-ZI-CtJ"/>
+        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="DyC-w1-YQe"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="Oz0-Qe-dUn"/>
         <segue reference="Kb2-fp-xV0"/>
+        <segue reference="efc-B0-k9H"/>
         <segue reference="hvi-Ie-wq3"/>
     </inferredMetricsTieBreakers>
 </document>
