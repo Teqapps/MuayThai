@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     // Create array object and assign it to _feedItems variable
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    self.navigationController.navigationBar.translucent = NO;
+    //self.navigationController.navigationBar.translucent = NO;
     shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.frame];
     shareCircleView.delegate = self;
     [self.navigationController.view addSubview:shareCircleView];
@@ -236,7 +236,7 @@ typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     image_desc = (UILabel*) [cell viewWithTag:199];
     image_desc.text = [imageObject objectForKey:@"image_desc"];
     if ([imageObject objectForKey:@"image_desc"] ==nil ||[[imageObject objectForKey:@"image_desc"]  isEqual:@""] ) {
-        image_desc.text = @"　　";
+        image_desc.text = @"　";
     }
     else{
         image_desc.text= [imageObject objectForKey:@"image_desc"];
