@@ -836,7 +836,45 @@
             [self.tableView deselectRowAtIndexPath:self.tattoomasterCell.clickindexpath animated:NO];
         }
     }
+    if ([segue.identifier isEqualToString:@"showcomment"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Tattoo_Detail_ViewController *destViewController = segue.destinationViewController;
+        
+        PFObject *object_comment = [imageFilesArray objectAtIndex:indexPath.row];
+        TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
+        
+        tattoomasterCell.object_id = [object_comment objectForKey:@"object"];
+        tattoomasterCell.muay_id = [object_comment objectForKey:@"muay_id"];
+        tattoomasterCell.name = [object_comment objectForKey:@"name"];
+        tattoomasterCell.person_incharge=[object_comment objectForKey:@"person_incharge"];
+        tattoomasterCell.gender=[object_comment objectForKey:@"gender"];
+        tattoomasterCell.imageFile =[object_comment objectForKey:@"image"];
+        tattoomasterCell.tel = [object_comment objectForKey:@"tel"];
+        tattoomasterCell.fax = [object_comment objectForKey:@"fax"];
+        tattoomasterCell.address = [object_comment objectForKey:@"address"];
+        tattoomasterCell.latitude = [object_comment objectForKey:@"latitude"];
+        tattoomasterCell.longitude = [object_comment objectForKey:@"longitude"];
+        tattoomasterCell.email = [object_comment objectForKey:@"email"];
+        tattoomasterCell.website = [object_comment objectForKey:@"website"];
+        tattoomasterCell.desc = [object_comment objectForKey:@"desc"];
+        tattoomasterCell.imageFile = [object_comment objectForKey:@"image"];
+        tattoomasterCell.promotion_image=[object_comment objectForKey:@"promotion_image"];
+        tattoomasterCell.favorites = [object_comment objectForKey:@"favorites"];
+        tattoomasterCell.bookmark =[object_comment objectForKey:@"bookmark"];
+        tattoomasterCell.view = [object_comment objectForKey:@"view"];
+        tattoomasterCell.object_id = object_comment.objectId;
+        destViewController.tattoomasterCell = tattoomasterCell;
+        //  NSInteger myInteger = [tattoomasterCell.view integerValue];
+        //  object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
+        //  [object saveInBackground];
+        NSLog(@"vvv%@",[object_comment objectForKey:@"muay_id"]);
+        
+        
+        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
+        [object saveInBackground];
+    }
     
+
 }
 
 

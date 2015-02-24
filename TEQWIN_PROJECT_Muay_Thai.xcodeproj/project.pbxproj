@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4209CDFE1A9C4D4F009C5F68 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209CDFD1A9C4D4F009C5F68 /* Comment.m */; };
 		420E2F6119F9EC3F00667E6C /* whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E2F5F19F9EC3F00667E6C /* whatsapp.png */; };
 		420E2F6219F9EC3F00667E6C /* whatsapp@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E2F6019F9EC3F00667E6C /* whatsapp@2X.png */; };
 		420E2F6519FA3C1A00667E6C /* lineicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E2F6319FA3C1A00667E6C /* lineicon.png */; };
@@ -249,6 +250,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4209CDFC1A9C4D4F009C5F68 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		4209CDFD1A9C4D4F009C5F68 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		420E2F5F19F9EC3F00667E6C /* whatsapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsapp.png; sourceTree = "<group>"; };
 		420E2F6019F9EC3F00667E6C /* whatsapp@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2X.png"; sourceTree = "<group>"; };
 		420E2F6319FA3C1A00667E6C /* lineicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineicon.png; sourceTree = "<group>"; };
@@ -580,9 +583,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4209CDFB1A9C4D45009C5F68 /* COMMENT */ = {
+			isa = PBXGroup;
+			children = (
+				4209CDFC1A9C4D4F009C5F68 /* Comment.h */,
+				4209CDFD1A9C4D4F009C5F68 /* Comment.m */,
+			);
+			name = COMMENT;
+			sourceTree = "<group>";
+		};
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
+				4209CDFB1A9C4D45009C5F68 /* COMMENT */,
 				4298DC931A9AD83D00351693 /* imageview_sources */,
 				425925781A92E3CF000104BB /* Login&Signup View */,
 				42833F891A67D7CF004D97C0 /* login.png */,
@@ -1350,6 +1363,7 @@
 				42A4917D19E2370300E4D65E /* historyViewController.m in Sources */,
 				42193FD619860291007E3C52 /* TattooMaster_ViewController.m in Sources */,
 				4268646A1A1459530043582C /* news_ViewController.m in Sources */,
+				4209CDFE1A9C4D4F009C5F68 /* Comment.m in Sources */,
 				426ED3E919C04A030024E817 /* MBProgressHUD.m in Sources */,
 				42DB2C511A0A0951002BAF1B /* detail_news_ViewController.m in Sources */,
 				42630059199071F3007B8C8F /* Map_ViewController.m in Sources */,

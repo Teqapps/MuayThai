@@ -692,8 +692,7 @@
         //  NSLog(@"%D",tattoomasterCell.clickindexpath.row);
         
     }
-    
-    
+       
 }
 
 
