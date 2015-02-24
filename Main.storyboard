@@ -1293,16 +1293,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="7Y6-vs-AP5">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Xr6-9H-N8V"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="5Eq-d1-2wt">
-                            <connections>
-                                <action selector="showsearch:" destination="488-73-Amk" id="7RZ-rc-0df"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="5Eq-d1-2wt"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btnSearch" destination="5Eq-d1-2wt" id="ocS-ft-irb"/>
                         <outlet property="searchDisplayController" destination="Uy1-Y9-FLw" id="B8t-eY-lKX"/>
                         <outlet property="searchbar" destination="lah-7H-DfT" id="qoB-dG-mJ9"/>
                         <outlet property="sidebarButton" destination="Xr6-9H-N8V" id="4S4-rJ-tPC"/>
@@ -3078,15 +3073,15 @@
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jan-aP-9Jn"/>
+        <segue reference="ZAO-5P-2Zd"/>
         <segue reference="nCF-OP-zd7"/>
         <segue reference="PPs-fJ-uhp"/>
-        <segue reference="aaL-oi-ElB"/>
-        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="Jan-aP-9Jn"/>
         <segue reference="cXc-Cg-QFH"/>
-        <segue reference="QTr-PV-D3h"/>
         <segue reference="DyC-w1-YQe"/>
-        <segue reference="efc-B0-k9H"/>
+        <segue reference="aaL-oi-ElB"/>
+        <segue reference="Oz0-Qe-dUn"/>
         <segue reference="Kb2-fp-xV0"/>
+        <segue reference="efc-B0-k9H"/>
     </inferredMetricsTieBreakers>
 </document>
