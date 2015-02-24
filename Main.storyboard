@@ -1154,15 +1154,13 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="進階搜尋" id="5Eq-d1-2wt">
                             <connections>
-                                <action selector="showsearch:" destination="488-73-Amk" id="7RZ-rc-0df"/>
-                                <segue destination="j1f-QJ-kjh" kind="show" id="Knt-VK-y22"/>
+                                <action selector="address_search:" destination="488-73-Amk" id="bkR-9m-wWk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btnSearch" destination="5Eq-d1-2wt" id="ocS-ft-irb"/>
                         <outlet property="searchDisplayController" destination="Uy1-Y9-FLw" id="B8t-eY-lKX"/>
                         <outlet property="searchbar" destination="lah-7H-DfT" id="qoB-dG-mJ9"/>
                         <outlet property="sidebarButton" destination="Xr6-9H-N8V" id="4S4-rJ-tPC"/>
@@ -1194,6 +1192,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nw7-mh-Lfe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZWo-Ob-isZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1337,7 +1336,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="232" width="320" height="504"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                     <mask key="constraints">
                                         <include reference="Nnx-Gh-hkt"/>
                                         <include reference="xAP-Ya-coE"/>
