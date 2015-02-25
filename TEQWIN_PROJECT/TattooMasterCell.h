@@ -20,14 +20,13 @@
 @property (nonatomic, strong) NSString *tel; // name of recipe
 @property (nonatomic, strong) NSString *fax; // name of recipe
 @property (nonatomic, strong) NSString *address; // name of recipe
-@property (nonatomic, strong) NSString *region; // name of recipe
 @property (nonatomic, strong) NSString *latitude; // name of recipe
 @property (nonatomic, strong) NSString *longitude; // preparation time
 @property (nonatomic, strong) NSString *email; // name of recipe
 @property (nonatomic, strong) NSString *website; // preparation time
 @property (nonatomic, strong) NSString *desc; // preparation time
 @property (nonatomic, strong) PFFile *imageFile; // image of recipe
-@property (nonatomic, strong) PFFile *promotion_image; // image of recipe
+@property (nonatomic, strong) PFFile *promotion; // image of recipe
 @property (nonatomic, strong) NSString *news; // image of recipe
 @property (nonatomic, strong) NSArray *favorites; // preparation time
 @property (nonatomic, strong) NSArray *bookmark; // preparation time
