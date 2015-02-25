@@ -13,6 +13,8 @@
 
 @interface Comment : PFQueryTableViewController
 
+- (IBAction)ADDCOMMENT:(id)sender;
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) TattooMasterCell *tattoomasterCell;
 @end
 

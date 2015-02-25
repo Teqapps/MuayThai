@@ -12,7 +12,7 @@
 #import "SWRevealViewController.h"
 #import "TattooMaster_ViewController.h"
 #import "Master_Map_ViewController.h"
-
+#import "Comment.h"
 #import "Map_ViewController.h"
 #import "LoginUIViewController.h"
 @import CoreData;
@@ -154,7 +154,7 @@
         self.view_count.text = @"1";
     }
     else{
-        self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count];
+        self.view_count.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.view.count];
     }
     //self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count    ]   ;
     //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
@@ -164,7 +164,7 @@
     self.view.backgroundColor =[UIColor blackColor];
     [self queryParseMethod];
     [self queryParseMethod_image];
-    
+    [self queryParseMethod_comment];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -172,7 +172,8 @@
     flowLayout.itemSize = CGSizeMake(320  , 220);
     [flowLayout setMinimumLineSpacing:0.0f];
     self.title =self.tattoomasterCell.name;
-    self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
+    self.count_like.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.favorites.count    ]   ;
+    
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
         
         
@@ -310,6 +311,25 @@
                                          selectedScopeButtonIndex]]];
     
     return YES;
+}
+- (void)queryParseMethod_comment {
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    
+    [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            
+        }
+        if (!error) {
+            comment_count = [[NSArray alloc] initWithArray:objects];
+            
+
+            self.comment_count.text =[NSString stringWithFormat:@"%lu",(unsigned long)[comment_count count]];
+        }
+    }];
 }
 - (void)queryParseMethod {
     
@@ -838,7 +858,7 @@
     }
     if ([segue.identifier isEqualToString:@"showcomment"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Tattoo_Detail_ViewController *destViewController = segue.destinationViewController;
+        Comment *destViewController = segue.destinationViewController;
         
         PFObject *object_comment = [imageFilesArray objectAtIndex:indexPath.row];
         TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];

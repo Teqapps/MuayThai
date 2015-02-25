@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4209CDFE1A9C4D4F009C5F68 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209CDFD1A9C4D4F009C5F68 /* Comment.m */; };
+		4209CE011A9C5FFB009C5F68 /* NewRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209CE001A9C5FFB009C5F68 /* NewRecipeViewController.m */; };
 		420E2F6119F9EC3F00667E6C /* whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E2F5F19F9EC3F00667E6C /* whatsapp.png */; };
 		420E2F6219F9EC3F00667E6C /* whatsapp@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E2F6019F9EC3F00667E6C /* whatsapp@2X.png */; };
 		420E2F6519FA3C1A00667E6C /* lineicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E2F6319FA3C1A00667E6C /* lineicon.png */; };
@@ -224,6 +225,7 @@
 		42E12AA21A67CBD6005EA79F /* background_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E12AA11A67CBD6005EA79F /* background_news.png */; };
 		42E12AA51A67CE23005EA79F /* loginbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E12AA31A67CE23005EA79F /* loginbtn.png */; };
 		42E12AA61A67CE23005EA79F /* signupbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E12AA41A67CE23005EA79F /* signupbtn.png */; };
+		42E212241A9C827F00C664DC /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E212231A9C827F00C664DC /* comment.png */; };
 		42EA3D6319C8273F0051057C /* GalleryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA3D6219C8273F0051057C /* GalleryCell.m */; };
 		42EA3D6619C827600051057C /* Gallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA3D6519C827600051057C /* Gallery.m */; };
 		42EA4ECE19CAE1B20051057C /* Facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 42EA4ECD19CAE1B20051057C /* Facebook-icon.png */; };
@@ -252,6 +254,8 @@
 /* Begin PBXFileReference section */
 		4209CDFC1A9C4D4F009C5F68 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		4209CDFD1A9C4D4F009C5F68 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		4209CDFF1A9C5FFB009C5F68 /* NewRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRecipeViewController.h; sourceTree = "<group>"; };
+		4209CE001A9C5FFB009C5F68 /* NewRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRecipeViewController.m; sourceTree = "<group>"; };
 		420E2F5F19F9EC3F00667E6C /* whatsapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsapp.png; sourceTree = "<group>"; };
 		420E2F6019F9EC3F00667E6C /* whatsapp@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whatsapp@2X.png"; sourceTree = "<group>"; };
 		420E2F6319FA3C1A00667E6C /* lineicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineicon.png; sourceTree = "<group>"; };
@@ -518,6 +522,7 @@
 		42E12AA11A67CBD6005EA79F /* background_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_news.png; sourceTree = "<group>"; };
 		42E12AA31A67CE23005EA79F /* loginbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbtn.png; sourceTree = "<group>"; };
 		42E12AA41A67CE23005EA79F /* signupbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signupbtn.png; sourceTree = "<group>"; };
+		42E212231A9C827F00C664DC /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
 		42EA3D6119C8273F0051057C /* GalleryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryCell.h; sourceTree = "<group>"; };
 		42EA3D6219C8273F0051057C /* GalleryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryCell.m; sourceTree = "<group>"; };
 		42EA3D6419C827600051057C /* Gallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gallery.h; sourceTree = "<group>"; };
@@ -586,8 +591,11 @@
 		4209CDFB1A9C4D45009C5F68 /* COMMENT */ = {
 			isa = PBXGroup;
 			children = (
+				42E212231A9C827F00C664DC /* comment.png */,
 				4209CDFC1A9C4D4F009C5F68 /* Comment.h */,
 				4209CDFD1A9C4D4F009C5F68 /* Comment.m */,
+				4209CDFF1A9C5FFB009C5F68 /* NewRecipeViewController.h */,
+				4209CE001A9C5FFB009C5F68 /* NewRecipeViewController.m */,
 			);
 			name = COMMENT;
 			sourceTree = "<group>";
@@ -1177,6 +1185,7 @@
 				4225CBD61A6C9F9100D5CF28 /* loginview_fieldbackground.png in Resources */,
 				4219409E198789DB007E3C52 /* ICON.png in Resources */,
 				42833F7E1A67D269004D97C0 /* loginbtn_off.png in Resources */,
+				42E212241A9C827F00C664DC /* comment.png in Resources */,
 				427F76481A53D9C200D08FCF /* muay_banner6.png in Resources */,
 				420E2F6519FA3C1A00667E6C /* lineicon.png in Resources */,
 				42996E081A4400A500385FE0 /* footer_matches_2.png in Resources */,
@@ -1388,6 +1397,7 @@
 				42A0095C19EF5E05003DCD0D /* Search_TableViewController.m in Sources */,
 				427D34B6199E077F00814463 /* CFSharer.m in Sources */,
 				4298DCA01A9AD86600351693 /* JTSImageViewController.m in Sources */,
+				4209CE011A9C5FFB009C5F68 /* NewRecipeViewController.m in Sources */,
 				42193FC91985FE42007E3C52 /* SidebarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
