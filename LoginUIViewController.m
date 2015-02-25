@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Facebook Inc. All rights reserved.
 //
 
-/* This sample implements Login with Facebook using the standard Login button. 
+/* This sample implements Login with Facebook using the standard Login button.
  It asks for the public_profile, email and user_likes permissions.
  You can see the tutorial that accompanies this sample here:
  https://developers.facebook.com/docs/ios/login-tutorial/#login-button
@@ -14,7 +14,7 @@
  For simplicity, this sample does limited error handling. You can read more
  about handling errors in our Error Handling guide:
  https://developers.facebook.com/docs/ios/errors
-*/
+ */
 #import "Gallery.h"
 #import "MBProgressHUD.h"
 #import "Tattoo_Detail_ViewController.h"
@@ -26,10 +26,11 @@
 #import "LoginUIViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "MyLogInViewController.h"
 #import "MySignUpViewController.h"
 #import "MainViewController.h"
-
+#import  <ParseFacebookUtils/PFFacebookUtils.h>
 @interface LoginUIViewController ()
 
 {
@@ -45,28 +46,29 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor grayColor];
-
+    // [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:30.0/255.0 alpha:1.0]];
     
+    //  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.755 green:0.655 blue:0.0 alpha:1]];
     
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     
-
-  
     
-      _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+    
+    
+    _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-
     
- [self.logout setImage:[UIImage imageNamed:@"heart_empty.png"] forState:UIControlStateNormal];
+    
+    [self.logout setImage:[UIImage imageNamed:@"heart_empty.png"] forState:UIControlStateNormal];
     
     self.title=@"我的檔案";
     // Set the gesture
-       if (![PFUser currentUser]) { // No user logged in
+    if (![PFUser currentUser]) { // No user logged in
         // Create the log in view controller
         
         MyLogInViewController *logInViewController = [[MyLogInViewController alloc] init];
@@ -74,18 +76,27 @@
         
         // Create the sign up view controller
         MySignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        MainViewController *mainviewcontroller= [[MainViewController alloc]init];
+        signUpViewController.fields = (PFSignUpFieldsUsernameAndPassword
+                                                    | PFSignUpFieldsSignUpButton
+                                                    | PFSignUpFieldsEmail
+                                                    | PFSignUpFieldsAdditional
+                                                    | PFSignUpFieldsDismissButton);
         
-       
-         logInViewController.fields = PFLogInFieldsFacebook | PFLogInFieldsDismissButton  ;
+        
+        logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton| PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton |PFLogInFieldsPasswordForgotten  ;
         // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
+        
         // Set the gesture
+            
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
+        
         [self presentViewController:logInViewController animated:YES completion:NULL];
-           
+        
     }
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 -(CGFloat) tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -94,10 +105,13 @@
     return hight;
     
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     self.view.backgroundColor=[UIColor grayColor];
+    
+    
     [super viewWillAppear:animated];
-     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if ([PFUser currentUser]) {
         PFQuery *bookmarkquery = [PFQuery queryWithClassName:@"muay_member"];
         
@@ -134,10 +148,10 @@
     }
     
     
-
+    
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
+    
     if ([PFUser currentUser]) {
         self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
         self.profile_image.layer.borderWidth = 3.0f;
@@ -163,8 +177,6 @@
                 
                 
                 
-                
-                
                 // handle response
                 if (!error) {
                     // Parse the data received
@@ -182,7 +194,11 @@
                     }
                     
                     userProfile[@"pictureURL"] = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID];
-                    
+                    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:userProfile[@"pictureURL"]]];
+                    NSLog(@"dllm%@",data);
+                    NSString *filename1 = [NSString stringWithFormat:@"%@.png", @"image"];
+                    PFFile *imageFile1 = [PFFile fileWithName:filename1 data:data];
+                    [[PFUser currentUser] setObject:imageFile1 forKey:@"imageFile"];
                     [[PFUser currentUser] setObject:userProfile forKey:@"profile"];
                     [[PFUser currentUser] saveInBackground];
                     [self _updateProfileData];
@@ -195,12 +211,12 @@
             
         } else {
             // If user is linked to neither, let's use their username for the Welcome label.
-            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"歡迎 %@", nil), [PFUser currentUser].username];
+            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"%@", nil), [PFUser currentUser].username];
             
         }
         
     }
-   
+    
 }
 // Set received values if they are not nil and reload the table
 - (void)_updateProfileData {
@@ -241,14 +257,14 @@
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
     [hud show:YES];
- 
+    
     PFQuery *query = [PFQuery queryWithClassName:@"muay_member"];
     
     [query whereKey:@"favorites" equalTo:[PFUser currentUser].objectId];
     
-   
-   // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-   
+    
+    // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] == 0) {
             query.cachePolicy = kPFCachePolicyCacheThenNetwork;
@@ -256,10 +272,10 @@
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
             
-                            [TABLEVIEW reloadData];
-          
+            [TABLEVIEW reloadData];
+            
             [hud hide:YES];
-                  }
+        }
     }];
 }
 - (void)bookmark_query {
@@ -273,7 +289,7 @@
     [query whereKey:@"bookmark" equalTo:[PFUser currentUser].objectId];
     
     
-   // query.cachePolicy = kPFCachePolicyNetworkOnly;
+    // query.cachePolicy = kPFCachePolicyNetworkOnly;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] == 0) {
@@ -281,7 +297,7 @@
         }
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
-           
+            
             
             [TABLEVIEW reloadData];
             
@@ -303,12 +319,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //lastClickedRow = indexPath.row;
-
-   // selectobject = [imageFilesArray objectAtIndex:indexPath.row];
-   // PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
     
-   
-
+    // selectobject = [imageFilesArray objectAtIndex:indexPath.row];
+    // PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
+    
+    
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -316,7 +332,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
-      
+        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
@@ -353,17 +369,17 @@
             
             sex_statues.image = [UIImage imageNamed:@"icon-sex-f.png"];
         }
-
+    
     UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
     nameLabel.text = [imageObject objectForKey:@"name"];
-    
+    nameLabel.numberOfLines =3;
     UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
     prepTimeLabel.text = [imageObject objectForKey:@"gender"];
     
-     PFImageView *fav = (PFImageView*)[cell viewWithTag:120];
-      if ([[imageObject objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
-    fav.image = [UIImage imageNamed:favstring];
-      }
+    PFImageView *fav = (PFImageView*)[cell viewWithTag:120];
+    if ([[imageObject objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
+        fav.image = [UIImage imageNamed:favstring];
+    }
     else
     {
         fav.image = [UIImage imageNamed:favstring];
@@ -371,12 +387,12 @@
     
     gallary_image = (PFImageView*)[cell viewWithTag:161];
     gallary_button = (UIButton*)[cell viewWithTag:162];
-
+    
     
     if ([[imageObject objectForKey:@"gallary_displayallow"]isEqualToValue:[NSNumber numberWithBool:YES]]) {
         NSLog(@"%@",self.tattoomasterCell.muay_id);
         gallary_image.image=[UIImage imageNamed:@"photo_on.png"];
-        
+        gallary_button.enabled=YES;
     }
     else
     {
@@ -386,7 +402,10 @@
         NSLog(@"%@",self.tattoomasterCell.muay_id);
         
     }
-
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor =  [[UIColor colorWithRed:85.0/256.0 green:85.0/256.0 blue:85.0/256.0 alpha:1 ]colorWithAlphaComponent:0.5f];
+    [cell setSelectedBackgroundView:bgColorView];
+    
     return cell;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -411,12 +430,12 @@
         tattoomasterCell.website = [imageObject objectForKey:@"website"];
         tattoomasterCell.desc = [imageObject objectForKey:@"desc"];
         tattoomasterCell.imageFile = [imageObject objectForKey:@"image"];
-        tattoomasterCell.promotion=[imageObject objectForKey:@"promotion"];
+        tattoomasterCell.promotion_image=[imageObject objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [imageObject objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[imageObject objectForKey:@"bookmark"];
         tattoomasterCell.view = [imageObject objectForKey:@"view"];
         tattoomasterCell.object_id = imageObject.objectId;
-
+        
         destViewController.tattoomasterCell = tattoomasterCell;
         
     }
@@ -429,7 +448,7 @@
         
         PFObject *object = [imageFilesArray objectAtIndex:indexPath.row];
         TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
-      //  tattoomasterCell.clickindexpath =[self.TABLEVIEW indexPathForRowAtPoint:correctedPoint];
+        //  tattoomasterCell.clickindexpath =[self.TABLEVIEW indexPathForRowAtPoint:correctedPoint];
         tattoomasterCell.clickindexpath =0;
         tattoomasterCell.object_id = [object objectForKey:@"object"];
         tattoomasterCell.muay_id = [object objectForKey:@"muay_id"];
@@ -446,19 +465,19 @@
         tattoomasterCell.website = [object objectForKey:@"website"];
         tattoomasterCell.desc = [object objectForKey:@"desc"];
         tattoomasterCell.imageFile = [object objectForKey:@"image"];
-        tattoomasterCell.promotion=[object objectForKey:@"promotion"];
+        tattoomasterCell.promotion_image=[object objectForKey:@"promotion_image"];
         tattoomasterCell.favorites = [object objectForKey:@"favorites"];
         tattoomasterCell.bookmark =[object objectForKey:@"bookmark"];
         tattoomasterCell.view = [object objectForKey:@"view"];
         tattoomasterCell.object_id = object.objectId;
-
+        
         destViewController.tattoomasterCell = tattoomasterCell;
         
         
         NSLog(@"%@333",tattoomasterCell.clickindexpath);
         
     }
-
+    
 }
 
 
@@ -497,7 +516,7 @@
 // Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
     [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"] animated:YES];
-
+    
 }
 
 
@@ -506,8 +525,7 @@
 // Sent to the delegate to determine whether the sign up request should be submitted to the server.
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
     BOOL informationComplete = YES;
-    
-    // loop through all of the submitted data
+      // loop through all of the submitted data
     for (id key in info) {
         NSString *field = [info objectForKey:key];
         if (!field || !field.length) { // check completion
@@ -526,6 +544,7 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    NSLog(@"on9 jai");
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -543,54 +562,54 @@
 #pragma mark - ()
 
 - (IBAction)showlike:(id)sender {
-     [self queryParseMethod];
+    [self queryParseMethod];
     self.like.textColor=[UIColor grayColor];
-    self.like_btn.image=[UIImage imageNamed:@"icon-liked.png"];
+    self.like_btn.image=[UIImage imageNamed:@"new_liked.png"];
     self.bookmark.textColor=[UIColor whiteColor];
-    self.bookmark_btn.image=[UIImage imageNamed:@"icon-favorite.png"];
-
+    self.bookmark_btn.image=[UIImage imageNamed:@"new_bookmark.png"];
+    
 }
 
 
 - (IBAction)showbookmark:(id)sender {
-       [self bookmark_query];
+    [self bookmark_query];
     self.like.textColor=[UIColor whiteColor];
-     self.like_btn.image=[UIImage imageNamed:@"icon-like.png"];
+    self.like_btn.image=[UIImage imageNamed:@"new_like.png"];
     self.bookmark.textColor=[UIColor grayColor];
-   self.bookmark_btn.image=[UIImage imageNamed:@"icon-favorited.png"];
-
+    self.bookmark_btn.image=[UIImage imageNamed:@"new_bookmarked.png"];
+    
 }
 
 - (IBAction)logOutButtonTapAction:(id)sender {
     [PFUser logOut];
     [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"] animated:YES];
-
+    
 }
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Remove the row from data model
-     [self unlikeImage];
-}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+// Remove the row from data model
+//  [self unlikeImage];
+//}
 
 - (IBAction)Fav:(id)sender {
     UIButton *button = sender;
     CGPoint correctedPoint =
     [button convertPoint:button.bounds.origin toView:self.TABLEVIEW];
     NSIndexPath *indexPath =  [self.TABLEVIEW indexPathForRowAtPoint:correctedPoint];
-
-   // NSLog(@"%ld",(long)button.tag);
-   
-     selectobject = [imageFilesArray objectAtIndex:indexPath.row];
-   // NSLog(@"%@",selectobject);
+    
+    // NSLog(@"%ld",(long)button.tag);
+    
+    selectobject = [imageFilesArray objectAtIndex:indexPath.row];
+    // NSLog(@"%@",selectobject);
     if ([[selectobject objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
-
-  //  [self unlikeImage];
-     
-      }
+        
+        //  [self unlikeImage];
+        
+    }
     else
     {
-    //     [self likeImage];
-
+        //     [self likeImage];
+        
     }
     
 }
@@ -616,7 +635,7 @@
             NSLog(@"liked picture!");
             [self unlikedSuccess];
             
-         
+            
         }
         else {
             [self unlikedFail];

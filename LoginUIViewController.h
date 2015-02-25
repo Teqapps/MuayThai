@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
-#import <Parse/PFLogInViewController.h>
+#import <ParseUI/ParseUI.h>
 @interface LoginUIViewController : UIViewController<PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate,UITableViewDataSource, UITableViewDelegate>
 {
  
@@ -38,6 +38,7 @@
 @property (nonatomic, strong) TattooMasterCell *tattoomasterCell;
 @property (nonatomic, assign) BOOL isFav;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+
 @property (weak, nonatomic) IBOutlet PFImageView *profile_image;
 @property (weak, nonatomic) IBOutlet UITableView *TABLEVIEW;
 @property (weak, nonatomic) IBOutlet UIButton *logout;

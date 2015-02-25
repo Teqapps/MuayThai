@@ -10,7 +10,7 @@
 
 @implementation TattooMasterCell
 @synthesize name;
-
+@synthesize region;
 @synthesize imageFile;
-
+@synthesize promotion_image;
 @end
