@@ -54,7 +54,7 @@
     if ([self.tattoomasterCell.desc isEqual:@""]||self.tattoomasterCell.desc ==nil) {
         self.tattoomasterCell.desc =@"沒有簡介";
     }
-    self.automaticallyAdjustsScrollViewInsets = NO;
+ //   self.automaticallyAdjustsScrollViewInsets = NO;
     // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
     UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
@@ -171,13 +171,15 @@
     [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(320  , 220);
     [flowLayout setMinimumLineSpacing:0.0f];
+    
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
     barButton.title = @"";
     self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
+    /*
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor blackColor], NSForegroundColorAttributeName,
-      [UIFont fontWithName:@"ArialMT" size:9.0], NSFontAttributeName,nil]];
+      [UIFont fontWithName:@"ArialMT" size:9.0], NSFontAttributeName,nil]];*/
         self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.favorites.count    ]   ;
     
@@ -245,32 +247,53 @@
     
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 0)
-        return 1.0f;
     return 32.0f;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    if (section == 0) {
-        return nil;
-    } else {
-        return @"xx";
-    }
+    return @"產品參數";
+    
+    
 }
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    if (section == 0) {
-        return nil;
-    } else {
-        return @"xx";
-    }
+    return @"產品簡介";
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section == 0)
-        return 1.0f;
+    
     return 32.0f;
+}
+-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 32)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 7, tableView.bounds.size.width - 10, 18)];
+    label.text = @"產品參數";
+    [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:15.0]];
+    label.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
+    
+    label.backgroundColor = [UIColor clearColor];
+    [headerView addSubview:label];
+    
+    [headerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.17]];
+    
+    return headerView;
+}
+-(UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 32)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 7, tableView.bounds.size.width - 10, 18)];
+    label.text = @"產品簡介";
+    [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:15.0]];
+    label.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
+    label.backgroundColor = [UIColor clearColor];
+    [headerView addSubview:label];
+    [headerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.17]];
+    
+    return headerView;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
