@@ -10,8 +10,9 @@
 #import "TattooMasterCell.h"
 #import "Tattoo_Detail_ViewController.h"
 #import <Parse/Parse.h>
-
+#import <ParseUI/ParseUI.h>
 @interface Comment : PFQueryTableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addcomment;
 
 - (IBAction)ADDCOMMENT:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;

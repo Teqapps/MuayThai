@@ -37,7 +37,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UITableViewCell appearance] setBackgroundColor:[UIColor clearColor]];
+    UIImage *image = [UIImage imageNamed:@"background_news.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    // Add image view on top of table view
+    [self.tableView addSubview:imageView];
     
+    // Set the background view of the table view
+    self.tableView.backgroundView = imageView;
     _comment_content.layer.borderWidth = 1.0f;
     
     _comment_content.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -115,7 +123,6 @@
 }
 
 
- 
 - (IBAction)save:(id)sender {
 
 
@@ -151,17 +158,17 @@
                     
                     if (!error) {
                         // Show success message
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved the recipe" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"完成" message:@"成功留言" delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil, nil];
                         [alert show];
                         
                         // Notify table view to reload the recipes from Parse cloud
                         [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTable" object:self];
                         
                         // Dismiss the controller
-                      [self.navigationController popViewControllerAnimated:YES];
+                        [self.navigationController popViewControllerAnimated:YES];
                         
                     } else {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failure" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"留言失敗" message:[error localizedDescription] delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil, nil];
                         [alert show];
                         
                     }
@@ -178,13 +185,11 @@
     
    else if ([PFUser currentUser][@"imageFile"]==nil) {
         
-        PFFile *pffile = [PFUser currentUser][@"imageFile"];
-        NSLog(@"on9jai%@",pffile);
-        
-        [pffile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+      
             UIImage * ICONIMAGE;
-            ICONIMAGE=[UIImage imageNamed:@"icon.PNG"];
-            NSData * imageData1 =UIImagePNGRepresentation(ICONIMAGE);
+            ICONIMAGE=[UIImage imageNamed:@"ICON.png"];
+            NSData * imageData1 =UIImageJPEGRepresentation(ICONIMAGE, 0.3);
+
             NSString *filename1 = [NSString stringWithFormat:@"%@.png", @"image"];
             PFFile *imageFile1 = [PFFile fileWithName:filename1 data:imageData1];
             
@@ -201,24 +206,24 @@
                 
                 if (!error) {
                     // Show success message
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved the recipe" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"完成" message:@"成功留言" delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil, nil];
                     [alert show];
                     
                     // Notify table view to reload the recipes from Parse cloud
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTable" object:self];
                     
                     // Dismiss the controller
-                    [self dismissViewControllerAnimated:YES completion:nil];
+                       [self.navigationController popViewControllerAnimated:YES];
                     
                 } else {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failure" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"留言失敗" message:[error localizedDescription] delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil, nil];
                     [alert show];
                     
                 }
                 
             }];
             
-        }];
+
 
    }
   

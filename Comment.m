@@ -39,7 +39,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-      self.title=@"留言";
+     if (![PFUser currentUser]) {
+   self.navigationItem.rightBarButtonItem = nil;
+     }
+    self.title=@"留言";
+    UIImage *image = [UIImage imageNamed:@"background_news.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    // Add image view on top of table view
+    [self.tableview addSubview:imageView];
+    
+    // Set the background view of the table view
+    self.tableview.backgroundView = imageView;
     NSDate *currentDateWithOffset = [NSDate dateWithTimeIntervalSinceNow:[[NSTimeZone localTimeZone] secondsFromGMT]];
     
 
@@ -195,7 +206,7 @@
     
     UITextView *content = (UITextView*) [cell viewWithTag:103];
      content.text = [object objectForKey:@"content"];
-    
+    cell.backgroundColor=[UIColor clearColor];
     return cell;
 }
 
@@ -228,16 +239,36 @@
     
     PFObject *object = [self.objects objectAtIndex:indexPath.row];
     
-    if ([PFUser currentUser].objectId !=[object objectForKey:@"userid"]) {
-        return NO;
+    if ([PFUser currentUser].objectId ==[object objectForKey:@"userid"]) {
+        return YES;
     }
 else
-    return YES;
+    return NO;
 
 
 }
     
+- (CGFloat) tableView: (UITableView*) tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
 
+{
+    
+    PFObject *object = [self.objects objectAtIndex:indexPath.row];
+    NSString *cellText = [object objectForKey:@"content"];
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
+    NSAttributedString *attributedText =
+    [[NSAttributedString alloc]
+     initWithString:cellText
+     attributes:@
+     {
+     NSFontAttributeName: cellFont
+     }];
+    CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    return rect.size.height + 90;
+    
+    
+}
 - (void) objectsDidLoad:(NSError *)error
 {
     [super objectsDidLoad:error];

@@ -171,7 +171,14 @@
     [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(320  , 220);
     [flowLayout setMinimumLineSpacing:0.0f];
-    self.title =self.tattoomasterCell.name;
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
+    barButton.title = @"";
+    self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor blackColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"ArialMT" size:9.0], NSFontAttributeName,nil]];
+        self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.favorites.count    ]   ;
     
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
