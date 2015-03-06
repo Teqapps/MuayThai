@@ -33,7 +33,7 @@
 }
 
 + (CFSharer *)whatsapp {
-    return [[CFSharer alloc] initWithName:@"Whatsapp" imageName:@"new_whatsapp.png"];
+    return [[CFSharer alloc] initWithName:@"Whatsapp" imageName:@"whatsapp.png"];
 }
 
 + (CFSharer *)facebook {
@@ -57,9 +57,9 @@
     return [[CFSharer alloc] initWithName:@"more" imageName:@"more.png"];
 }
 + (CFSharer *)twitter {
-    return [[CFSharer alloc] initWithName:@"twitter" imageName:@"new_twitter.png"];
+    return [[CFSharer alloc] initWithName:@"twitter" imageName:@"twitter.png"];
 }
 + (CFSharer *)sina_weibo {
-    return [[CFSharer alloc] initWithName:@"sina_weibo" imageName:@"new_sina.png"];
+    return [[CFSharer alloc] initWithName:@"sina_weibo" imageName:@"sina-weibo.png"];
 }
 @end
