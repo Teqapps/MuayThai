@@ -285,7 +285,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1140" y="-42"/>
+            <point key="canvasLocation" x="1132.5" y="-53.25"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="PIX-3s-mzZ">
@@ -633,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVq-KN-ThY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1395" y="864.75"/>
+            <point key="canvasLocation" x="1875" y="783.80281690140839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wPd-JZ-RwP">
@@ -1098,7 +1098,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1828.5" y="-60.75"/>
+            <point key="canvasLocation" x="1657.5" y="-68.25"/>
         </scene>
         <!--Master Map View Controller-->
         <scene sceneID="KqT-rk-QDT">
@@ -1895,13 +1895,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-fe-RxH" customClass="PFImageView">
-                                <rect key="frame" x="115" y="34" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="csm-jD-XOR"/>
-                                    <constraint firstAttribute="height" constant="90" id="f50-Zg-Kph"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-JF-2nr">
                                 <rect key="frame" x="0.0" y="169" width="320" height="335"/>
                                 <color key="backgroundColor" red="0.3551713198" green="0.3551713198" blue="0.3551713198" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
@@ -1952,6 +1945,13 @@
                                     <outlet property="delegate" destination="oJ1-Dk-Y59" id="xnt-Kq-sDg"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-fe-RxH" customClass="PFImageView">
+                                <rect key="frame" x="115" y="34" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="csm-jD-XOR"/>
+                                    <constraint firstAttribute="height" constant="90" id="f50-Zg-Kph"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -2026,7 +2026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNg-eE-dtF" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-696" y="729.75"/>
+            <point key="canvasLocation" x="-854" y="835"/>
         </scene>
         <!--Aboutus map detail-->
         <scene sceneID="f04-Sn-MEO">
@@ -2045,7 +2045,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bd2-qa-Gjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645.5" y="1514.25"/>
+            <point key="canvasLocation" x="1507.5" y="1472.5352112676055"/>
         </scene>
         <!--Aboutus map-->
         <scene sceneID="sYr-5c-5X0">
@@ -2085,7 +2085,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pow-jv-hbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="1494.75"/>
+            <point key="canvasLocation" x="800.625" y="1480.9859154929577"/>
         </scene>
         <!--Title-->
         <scene sceneID="LFC-Ic-wQf">
@@ -2231,7 +2231,7 @@
                                     <rect key="frame" x="0.0" y="-67" width="320" height="571"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="196" translatesAutoresizingMaskIntoConstraints="NO" id="ad6-mp-i2L">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="196" translatesAutoresizingMaskIntoConstraints="NO" id="ad6-mp-i2L">
                                 <rect key="frame" x="120" y="45" width="196" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="CNt-8l-ZmM"/>
@@ -2272,7 +2272,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="view.png" translatesAutoresizingMaskIntoConstraints="NO" id="V4m-n5-4sy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view.png" translatesAutoresizingMaskIntoConstraints="NO" id="V4m-n5-4sy">
                                 <rect key="frame" x="230" y="17" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="QEu-oG-nzH"/>
@@ -2291,7 +2291,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkt-Qj-cce">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkt-Qj-cce">
                                 <rect key="frame" x="258" y="16" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="SR8-LM-07P"/>
@@ -2313,7 +2313,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bao.png" translatesAutoresizingMaskIntoConstraints="NO" id="iy7-Og-yT9" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bao.png" translatesAutoresizingMaskIntoConstraints="NO" id="iy7-Og-yT9" customClass="PFImageView">
                                 <rect key="frame" x="12" y="16" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="15i-r7-d0w"/>
@@ -4592,7 +4592,7 @@ Preferential offer  晚間9折</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vF4-W8-obg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1833" y="-749.25"/>
+            <point key="canvasLocation" x="-1491" y="-1070.25"/>
         </scene>
         <!--Logged In View Controller-->
         <scene sceneID="YKc-yu-GK5">
@@ -4959,16 +4959,16 @@ Preferential offer  晚間9折</string>
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m9C-EI-Prw"/>
-        <segue reference="nCF-OP-zd7"/>
-        <segue reference="ZAO-5P-2Zd"/>
-        <segue reference="PPs-fJ-uhp"/>
-        <segue reference="cXc-Cg-QFH"/>
-        <segue reference="aaL-oi-ElB"/>
         <segue reference="Jan-aP-9Jn"/>
-        <segue reference="DyC-w1-YQe"/>
+        <segue reference="nCF-OP-zd7"/>
         <segue reference="QTr-PV-D3h"/>
-        <segue reference="efc-B0-k9H"/>
+        <segue reference="PPs-fJ-uhp"/>
+        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="cXc-Cg-QFH"/>
+        <segue reference="DyC-w1-YQe"/>
+        <segue reference="aaL-oi-ElB"/>
         <segue reference="Kb2-fp-xV0"/>
+        <segue reference="efc-B0-k9H"/>
+        <segue reference="hvi-Ie-wq3"/>
     </inferredMetricsTieBreakers>
 </document>
