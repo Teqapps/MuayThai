@@ -110,16 +110,6 @@
 /*!
  @abstract The email for the `PFUser`.
  */
-@property (nonatomic, strong) NSString *weight;
-
-/*!
- @abstract The email for the `PFUser`.
- */
-@property (nonatomic, strong) NSString *height;
-
-/*!
- @abstract The email for the `PFUser`.
- */
 @property (nonatomic, strong) NSString *email;
 
 /*!
@@ -169,7 +159,7 @@
  */
 - (void)signUpInBackgroundWithBlock:(PFBooleanResultBlock)block;
 
-/*!
+/*
  @abstract Signs up the user *asynchronously*.
 
  @discussion This will also enforce that the username isn't already taken.
@@ -234,7 +224,7 @@
 + (BFTask *)logInWithUsernameInBackground:(NSString *)username
                                  password:(NSString *)password;
 
-/*!
+/*
  @abstract Makes an *asynchronous* request to login a user with specified credentials.
 
  @discussion Returns an instance of the successfully logged in `PFUser`.
@@ -310,7 +300,7 @@
  */
 + (BFTask *)becomeInBackground:(NSString *)sessionToken;
 
-/*!
+/*
  @abstract Makes an *asynchronous* request to become a user with the given session token.
 
  @discussion Returns an instance of the successfully logged in `PFUser`. This also caches the user locally
@@ -384,7 +374,7 @@
  */
 + (BFTask *)requestPasswordResetForEmailInBackground:(NSString *)email;
 
-/*!
+/*
  @abstract Send a password reset request *asynchronously* for a specified email and sets an error object.
 
  @discussion If a user account exists with that email, an email will be sent to that address

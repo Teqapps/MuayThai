@@ -12,6 +12,8 @@
 	<dict>
 		<key>1504930CCC14DB815FE73165811FB99C2AFC490C</key>
 		<string>https://github.com/Teqapps/MuayThai.git</string>
+		<key>835940AAF4B4CCAA47EDD041179B89C7EE8AB60C</key>
+		<string>https://github.com/lys2907/jewelry_app.git</string>
 		<key>AB2F1866A6F2B38F20C0FA1CBD3F6D1FB6683CCA</key>
 		<string>https://github.com/Teqapps/ListingMobileiOS.git</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>1504930CCC14DB815FE73165811FB99C2AFC490C</key>
 		<string>../..</string>
+		<key>835940AAF4B4CCAA47EDD041179B89C7EE8AB60C</key>
+		<string>../../../jewelry_app_github</string>
 		<key>AB2F1866A6F2B38F20C0FA1CBD3F6D1FB6683CCA</key>
 		<string>../../../ListingMobileiOS</string>
 	</dict>
@@ -32,6 +36,14 @@
 	<string>1504930CCC14DB815FE73165811FB99C2AFC490C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>835940AAF4B4CCAA47EDD041179B89C7EE8AB60C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>jewelry_app_github</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
