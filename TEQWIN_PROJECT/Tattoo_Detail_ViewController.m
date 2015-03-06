@@ -12,7 +12,7 @@
 #import "SWRevealViewController.h"
 #import "TattooMaster_ViewController.h"
 #import "Master_Map_ViewController.h"
-#import "Comment.h"
+
 #import "Map_ViewController.h"
 #import "LoginUIViewController.h"
 @import CoreData;
@@ -43,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     NSLog(@"%@",self.tattoomasterCell.promotion_image);
     NSLog(@"%@",self.tattoomasterCell.imageFile);
     //These two steps are important
@@ -54,15 +54,15 @@
     if ([self.tattoomasterCell.desc isEqual:@""]||self.tattoomasterCell.desc ==nil) {
         self.tattoomasterCell.desc =@"沒有簡介";
     }
- //   self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
-    UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
+     UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
     self.desc.font=font;
     NSString *lorum =self.tattoomasterCell.desc;
-    //  self.desc.layer.cornerRadius=8.0f;
-    //  self.desc.layer.borderWidth=0.0;
-    self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
+  //  self.desc.layer.cornerRadius=8.0f;
+  //  self.desc.layer.borderWidth=0.0;
+      self.desc.layer.borderColor =[[UIColor grayColor] CGColor];
     //for use labrect with UITextView you set the font of UITextView:
     //label.font = [UIFont systemFontOfSize:17];
     
@@ -92,8 +92,6 @@
     _profileimage.clipsToBounds = YES;
     _lblincharge.text =[NSString stringWithFormat:@"負責人：%@",self.tattoomasterCell.person_incharge];
     _lbltel.text =[NSString stringWithFormat:@"電話：%@",self.tattoomasterCell.tel];
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textViewTapped:)];
-    [_lbltel addGestureRecognizer:gestureRecognizer];
     if ([self.tattoomasterCell.tel isEqual:@""]) {
         
     }
@@ -103,8 +101,6 @@
     }
     _lblfax.text=[NSString stringWithFormat:@"FAX：%@",self.tattoomasterCell.fax];
     _lbladdress.text=[NSString stringWithFormat:@"地址：%@",self.tattoomasterCell.address];
-    UITapGestureRecognizer *add_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(address_tap:)];
-    [_lbladdress addGestureRecognizer:add_tap];
     if ([self.tattoomasterCell.address isEqual:@""]) {
         
     }
@@ -114,9 +110,6 @@
     }
     
     _lblemail.text=[NSString stringWithFormat:@"電郵：%@",self.tattoomasterCell.email];
-    UITapGestureRecognizer *email_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(email_tap:)];
-    [_lblemail addGestureRecognizer:email_tap];
-
     if ([self.tattoomasterCell.email  isEqual:@""]) {
         
     }
@@ -125,8 +118,6 @@
         _lblemail.textColor =[UIColor colorWithRed:256.0/256.0 green:256.0/256.0 blue:256.0/256.0 alpha:1 ];
     }
     _lblweb.text=[NSString stringWithFormat:@"網址：%@",self.tattoomasterCell.website];
-    UITapGestureRecognizer *web_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(web_tap:)];
-    [_lblweb addGestureRecognizer:web_tap];
     if ([self.tattoomasterCell.website isEqual:@""]) {
         
     }
@@ -154,7 +145,7 @@
         self.view_count.text = @"1";
     }
     else{
-        self.view_count.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.view.count];
+        self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count];
     }
     //self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count    ]   ;
     //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
@@ -164,25 +155,15 @@
     self.view.backgroundColor =[UIColor blackColor];
     [self queryParseMethod];
     [self queryParseMethod_image];
-    [self queryParseMethod_comment];
+    
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(320  , 220);
-    [flowLayout setMinimumLineSpacing:0.0f];
-    
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
-    barButton.title = @"";
-    self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
-    /*
-    [[UINavigationBar appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor blackColor], NSForegroundColorAttributeName,
-      [UIFont fontWithName:@"ArialMT" size:9.0], NSFontAttributeName,nil]];*/
-        self.title =self.tattoomasterCell.name;
-    self.count_like.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.favorites.count    ]   ;
-    
+      [flowLayout setMinimumLineSpacing:0.0f];
+    self.title =self.tattoomasterCell.name;
+    self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
         
         
@@ -247,53 +228,32 @@
     
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section == 0)
+        return 1.0f;
     return 32.0f;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    return @"產品參數";
-    
-    
+    if (section == 0) {
+        return nil;
+    } else {
+        return @"xx";
+    }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    return @"產品簡介";
-    
+    if (section == 0) {
+        return nil;
+    } else {
+        return @"xx";
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    
+    if (section == 0)
+        return 1.0f;
     return 32.0f;
-}
--(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 32)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 7, tableView.bounds.size.width - 10, 18)];
-    label.text = @"產品參數";
-    [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:15.0]];
-    label.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
-    
-    label.backgroundColor = [UIColor clearColor];
-    [headerView addSubview:label];
-    
-    [headerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.17]];
-    
-    return headerView;
-}
--(UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 32)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 7, tableView.bounds.size.width - 10, 18)];
-    label.text = @"產品簡介";
-    [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:15.0]];
-    label.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
-    label.backgroundColor = [UIColor clearColor];
-    [headerView addSubview:label];
-    [headerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.17]];
-    
-    return headerView;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -342,25 +302,6 @@
     
     return YES;
 }
-- (void)queryParseMethod_comment {
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    
-    [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if ([objects count] == 0) {
-            
-        }
-        if (!error) {
-            comment_count = [[NSArray alloc] initWithArray:objects];
-            
-
-            self.comment_count.text =[NSString stringWithFormat:@"%lu",(unsigned long)[comment_count count]];
-        }
-    }];
-}
 - (void)queryParseMethod {
     
     
@@ -407,18 +348,18 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (objects.count ==0) {
-                
+            
                 self.noimageview.image=[UIImage imageNamed:@"main_background.png"];
                 
                 
-            }
+                                       }
             else{
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
                 
                 
                 self.noimage.text=@"";
                 
-                self.noimageview.image=[UIImage imageNamed:@""];
+                    self.noimageview.image=[UIImage imageNamed:@""];
                 
                 [_imagesCollection reloadData];
             }}
@@ -439,23 +380,36 @@
     
     static NSString *cellIdentifier = @"imageCell";
     ImageExampleCell *cell = (ImageExampleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    // cell.detailimage.image =[UIImage imageNamed:@"image_icon.png"];
+    cell.parseImage.image =[UIImage imageNamed:@"image_icon.png"];
     imageObject = [imageFilesArray_image objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
-    cell.loading.hidden = NO;
-    [cell.loading startAnimating];
     
+    if (imageFilesArray_image.count ==0) {
+        NSLog(@"00");
+        
+    }
+    else {
+        NSLog(@"11");
+    }
+     cell.loadingSpinner.hidden = NO;
+    [cell.loadingSpinner startAnimating];
     
-    
-    cell.detailimage.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext() ;
-
-    
-    cell.detailimage.file = imageFile;
-    
-    [   cell.detailimage loadInBackground];
-    
-    
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+          
+              CGSize itemSize = CGSizeMake(40, 40);
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+            [ cell.parseImage.image drawInRect:imageRect];
+            cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext() ;
+            cell.parseImage.image = [UIImage imageWithData:data];
+            [cell.loadingSpinner stopAnimating];
+            cell.loadingSpinner.hidden = YES;
+            
+            
+        }
+    }];
     
     return cell;
 }
@@ -886,45 +840,7 @@
             [self.tableView deselectRowAtIndexPath:self.tattoomasterCell.clickindexpath animated:NO];
         }
     }
-    if ([segue.identifier isEqualToString:@"showcomment"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Comment *destViewController = segue.destinationViewController;
-        
-        PFObject *object_comment = [imageFilesArray objectAtIndex:indexPath.row];
-        TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
-        
-        tattoomasterCell.object_id = [object_comment objectForKey:@"object"];
-        tattoomasterCell.muay_id = [object_comment objectForKey:@"muay_id"];
-        tattoomasterCell.name = [object_comment objectForKey:@"name"];
-        tattoomasterCell.person_incharge=[object_comment objectForKey:@"person_incharge"];
-        tattoomasterCell.gender=[object_comment objectForKey:@"gender"];
-        tattoomasterCell.imageFile =[object_comment objectForKey:@"image"];
-        tattoomasterCell.tel = [object_comment objectForKey:@"tel"];
-        tattoomasterCell.fax = [object_comment objectForKey:@"fax"];
-        tattoomasterCell.address = [object_comment objectForKey:@"address"];
-        tattoomasterCell.latitude = [object_comment objectForKey:@"latitude"];
-        tattoomasterCell.longitude = [object_comment objectForKey:@"longitude"];
-        tattoomasterCell.email = [object_comment objectForKey:@"email"];
-        tattoomasterCell.website = [object_comment objectForKey:@"website"];
-        tattoomasterCell.desc = [object_comment objectForKey:@"desc"];
-        tattoomasterCell.imageFile = [object_comment objectForKey:@"image"];
-        tattoomasterCell.promotion_image=[object_comment objectForKey:@"promotion_image"];
-        tattoomasterCell.favorites = [object_comment objectForKey:@"favorites"];
-        tattoomasterCell.bookmark =[object_comment objectForKey:@"bookmark"];
-        tattoomasterCell.view = [object_comment objectForKey:@"view"];
-        tattoomasterCell.object_id = object_comment.objectId;
-        destViewController.tattoomasterCell = tattoomasterCell;
-        //  NSInteger myInteger = [tattoomasterCell.view integerValue];
-        //  object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
-        //  [object saveInBackground];
-        NSLog(@"vvv%@",[object_comment objectForKey:@"muay_id"]);
-        
-        
-        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
-        [object saveInBackground];
-    }
     
-
 }
 
 
@@ -1072,25 +988,6 @@
 
 - (IBAction)showsearch:(id)sender {
     [_detailsearchbar becomeFirstResponder];}
--(void)textViewTapped:(UITapGestureRecognizer *)sender{
-    if ([self.tattoomasterCell.tel  isEqual:@""]) {
-        [sender setEnabled:NO];
-        
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"撥號"
-                                                        message:@"確定要撥號嗎？"
-                                                       delegate:self
-                                              cancelButtonTitle:@"否"
-                                              otherButtonTitles:@"是",nil];
-        //然后这里设定关联，此处把indexPath关联到alert上
-        
-        [alert show];
-    }
-
-    
-    
-}
 - (IBAction)btn_tel:(id)sender {
     if ([self.tattoomasterCell.tel  isEqual:@""]) {
         [sender setEnabled:NO];
@@ -1107,7 +1004,8 @@
         [alert show];
     }
 }
--(void)address_tap:(UITapGestureRecognizer *)sender{
+
+- (IBAction)btn_address:(id)sender {
     if ([self.tattoomasterCell.address  isEqual:@""]) {
         [sender setEnabled:NO];
         
@@ -1117,26 +1015,9 @@
         [self.navigationController pushViewController:mapVC animated:YES];
         mapVC.tattoomasterCell=_tattoomasterCell;
     }
-
-    
-}
--(void)web_tap:(UITapGestureRecognizer *)sender{
-    if ([self.tattoomasterCell.website  isEqual:@""]) {
-        [sender setEnabled:NO];
-        
-    }
-    else{
-        //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
-        
-    }
 }
 
-
-- (IBAction)btn_address:(id)sender {
-    
-  }
--(void)email_tap:(UITapGestureRecognizer *)sender{
+- (IBAction)btn_email:(id)sender {
     //Create the MailComposeViewController
     if ([self.tattoomasterCell.email   isEqual:@""]) {
         [sender setEnabled:NO];
@@ -1172,9 +1053,16 @@
         }
     }
 }
-- (IBAction)btn_email:(id)sender {
-    }
 
 - (IBAction)btn_web:(id)sender {
-   }
+    if ([self.tattoomasterCell.website  isEqual:@""]) {
+        [sender setEnabled:NO];
+        
+    }
+    else{
+        //   NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.tattoomasterCell.website ]];
+        
+    }
+}
 @end

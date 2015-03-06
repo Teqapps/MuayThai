@@ -34,13 +34,11 @@
     self.title=@"泰拳注意事項";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.textview_1.layer.cornerRadius=8.0f;
-    self.textview_1.layer.borderWidth=0.0;
+    self.textview_1.layer.borderWidth=2.0;
     self.textview_1.layer.borderColor =[[UIColor colorWithRed:150.0/255.0
                                                         green:150.0/255.0
                                                          blue:150.0/255.0
                                                         alpha:1.0] CGColor];
-
-
     
     
     _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
