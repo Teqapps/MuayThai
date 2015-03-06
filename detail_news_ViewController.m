@@ -47,7 +47,7 @@
     frame.size.height =  self.news_detail.contentSize.height;
     self.news_detail.frame = frame;
     [ self.news_detail sizeToFit];
-    [self.news_detail setScrollEnabled:NO];
+    [self.news_detail setScrollEnabled:YES];
     self.news_detail.dataDetectorTypes = UIDataDetectorTypeLink;
 
     

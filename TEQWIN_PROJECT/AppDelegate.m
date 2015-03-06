@@ -70,21 +70,7 @@ LoginUIViewController *viewController ;
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation saveInBackground];
-    NSDate *date = [NSDate date];
-    NSTimeZone *timezone = [[NSTimeZone alloc] initWithName:@"Europe/London"];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
-    //設定時間格式
-    [formatter setDateFormat:@"YYYY-MM-d HH:mm:ss"];
-    
-    //設定時區
-    [formatter setTimeZone:timezone];
-    
-    //時間格式正規化並做時區校正
-    NSString *correctDate = [formatter stringFromDate:date];
-    
-    NSLog(@"地點：%@   當地時間：%@",[timezone name], correctDate);
-
     
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"background.jpg"]
     //  forBarMetrics:UIBarMetricsDefault];

@@ -12,7 +12,7 @@
 #import "SWRevealViewController.h"
 #import "TattooMaster_ViewController.h"
 #import "Master_Map_ViewController.h"
-#import "Comment.h"
+
 #import "Map_ViewController.h"
 #import "LoginUIViewController.h"
 @import CoreData;
@@ -54,7 +54,7 @@
     if ([self.tattoomasterCell.desc isEqual:@""]||self.tattoomasterCell.desc ==nil) {
         self.tattoomasterCell.desc =@"沒有簡介";
     }
- //   self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     // self.desc.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
     UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:12];
@@ -154,7 +154,7 @@
         self.view_count.text = @"1";
     }
     else{
-        self.view_count.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.view.count];
+        self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count];
     }
     //self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count    ]   ;
     //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
@@ -164,25 +164,15 @@
     self.view.backgroundColor =[UIColor blackColor];
     [self queryParseMethod];
     [self queryParseMethod_image];
-    [self queryParseMethod_comment];
+    
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(320  , 220);
     [flowLayout setMinimumLineSpacing:0.0f];
-    
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
-    barButton.title = @"";
-    self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
-    /*
-    [[UINavigationBar appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor blackColor], NSForegroundColorAttributeName,
-      [UIFont fontWithName:@"ArialMT" size:9.0], NSFontAttributeName,nil]];*/
-        self.title =self.tattoomasterCell.name;
-    self.count_like.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.favorites.count    ]   ;
-    
+    self.title =self.tattoomasterCell.name;
+    self.count_like.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
         
         
@@ -247,53 +237,32 @@
     
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section == 0)
+        return 1.0f;
     return 32.0f;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    return @"產品參數";
-    
-    
+    if (section == 0) {
+        return nil;
+    } else {
+        return @"xx";
+    }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    return @"產品簡介";
-    
+    if (section == 0) {
+        return nil;
+    } else {
+        return @"xx";
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    
+    if (section == 0)
+        return 1.0f;
     return 32.0f;
-}
--(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 32)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 7, tableView.bounds.size.width - 10, 18)];
-    label.text = @"產品參數";
-    [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:15.0]];
-    label.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
-    
-    label.backgroundColor = [UIColor clearColor];
-    [headerView addSubview:label];
-    
-    [headerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.17]];
-    
-    return headerView;
-}
--(UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 32)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 7, tableView.bounds.size.width - 10, 18)];
-    label.text = @"產品簡介";
-    [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:15.0]];
-    label.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
-    label.backgroundColor = [UIColor clearColor];
-    [headerView addSubview:label];
-    [headerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.17]];
-    
-    return headerView;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -341,25 +310,6 @@
                                          selectedScopeButtonIndex]]];
     
     return YES;
-}
-- (void)queryParseMethod_comment {
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    
-    [query whereKey:@"muay_id" equalTo:self.tattoomasterCell.muay_id];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if ([objects count] == 0) {
-            
-        }
-        if (!error) {
-            comment_count = [[NSArray alloc] initWithArray:objects];
-            
-
-            self.comment_count.text =[NSString stringWithFormat:@"%lu",(unsigned long)[comment_count count]];
-        }
-    }];
 }
 - (void)queryParseMethod {
     
@@ -886,45 +836,7 @@
             [self.tableView deselectRowAtIndexPath:self.tattoomasterCell.clickindexpath animated:NO];
         }
     }
-    if ([segue.identifier isEqualToString:@"showcomment"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Comment *destViewController = segue.destinationViewController;
-        
-        PFObject *object_comment = [imageFilesArray objectAtIndex:indexPath.row];
-        TattooMasterCell *tattoomasterCell = [[TattooMasterCell alloc] init];
-        
-        tattoomasterCell.object_id = [object_comment objectForKey:@"object"];
-        tattoomasterCell.muay_id = [object_comment objectForKey:@"muay_id"];
-        tattoomasterCell.name = [object_comment objectForKey:@"name"];
-        tattoomasterCell.person_incharge=[object_comment objectForKey:@"person_incharge"];
-        tattoomasterCell.gender=[object_comment objectForKey:@"gender"];
-        tattoomasterCell.imageFile =[object_comment objectForKey:@"image"];
-        tattoomasterCell.tel = [object_comment objectForKey:@"tel"];
-        tattoomasterCell.fax = [object_comment objectForKey:@"fax"];
-        tattoomasterCell.address = [object_comment objectForKey:@"address"];
-        tattoomasterCell.latitude = [object_comment objectForKey:@"latitude"];
-        tattoomasterCell.longitude = [object_comment objectForKey:@"longitude"];
-        tattoomasterCell.email = [object_comment objectForKey:@"email"];
-        tattoomasterCell.website = [object_comment objectForKey:@"website"];
-        tattoomasterCell.desc = [object_comment objectForKey:@"desc"];
-        tattoomasterCell.imageFile = [object_comment objectForKey:@"image"];
-        tattoomasterCell.promotion_image=[object_comment objectForKey:@"promotion_image"];
-        tattoomasterCell.favorites = [object_comment objectForKey:@"favorites"];
-        tattoomasterCell.bookmark =[object_comment objectForKey:@"bookmark"];
-        tattoomasterCell.view = [object_comment objectForKey:@"view"];
-        tattoomasterCell.object_id = object_comment.objectId;
-        destViewController.tattoomasterCell = tattoomasterCell;
-        //  NSInteger myInteger = [tattoomasterCell.view integerValue];
-        //  object[@"view"] =[NSNumber numberWithFloat:(myInteger+ 1)];
-        //  [object saveInBackground];
-        NSLog(@"vvv%@",[object_comment objectForKey:@"muay_id"]);
-        
-        
-        [object addUniqueObject:[PFInstallation currentInstallation].objectId forKey:@"view"];
-        [object saveInBackground];
-    }
     
-
 }
 
 

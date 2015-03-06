@@ -194,11 +194,7 @@
                     }
                     
                     userProfile[@"pictureURL"] = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID];
-                    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:userProfile[@"pictureURL"]]];
-                    NSLog(@"dllm%@",data);
-                    NSString *filename1 = [NSString stringWithFormat:@"%@.png", @"image"];
-                    PFFile *imageFile1 = [PFFile fileWithName:filename1 data:data];
-                    [[PFUser currentUser] setObject:imageFile1 forKey:@"imageFile"];
+                    
                     [[PFUser currentUser] setObject:userProfile forKey:@"profile"];
                     [[PFUser currentUser] saveInBackground];
                     [self _updateProfileData];

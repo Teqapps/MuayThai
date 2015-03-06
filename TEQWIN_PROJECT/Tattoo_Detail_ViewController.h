@@ -23,7 +23,7 @@
     PFObject *object;
     NSMutableArray *list;
     NSArray*imageFilesArray_image;
-    NSArray * comment_count;
+    
     
 }
 
@@ -74,7 +74,6 @@
 @property (strong, nonatomic) NSDictionary *data;
 @property (weak, nonatomic) IBOutlet UIImageView *bookmark_image;
 
-@property (weak, nonatomic) IBOutlet UILabel *comment_count;
 @property (nonatomic, assign) BOOL isbookmark;
 @property (nonatomic, assign) BOOL isFav;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
