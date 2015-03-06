@@ -31,15 +31,25 @@
     UIButton *gallary_button;
     PFImageView *gallary_image;
     NSArray *viewcount;
+    NSArray *area;
+     NSArray *region_hk;
+    NSArray *region_kl;
+ NSArray *search_array;
+    NSArray *region_nt;
+    NSString *club;
+    NSString *region;
+        UILabel *address_region;
 }
-
+@property (nonatomic, strong) UITextField *pickerViewTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedcontroller;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property IBOutlet UISearchBar *searchbar;
 - (IBAction)showsearch:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSearch;
+- (IBAction)segmented:(id)sender;
 
 - (IBAction)gogallery:(id)sender;
+- (IBAction)address_search:(id)sender;
 
 @property (nonatomic, assign) BOOL isFav;
 
