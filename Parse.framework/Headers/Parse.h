@@ -50,8 +50,6 @@
 
 #endif
 
-PF_ASSUME_NONNULL_BEGIN
-
 /*!
  The `Parse` class contains static functions that handle global configuration for the Parse framework.
  */
@@ -89,13 +87,6 @@ PF_ASSUME_NONNULL_BEGIN
  */
 + (void)enableLocalDatastore;
 
-/*!
- @abstract Flag that indicates whether Local Datastore is enabled.
-
- @returns `YES` if Local Datastore is enabled, otherwise `NO`.
- */
-+ (BOOL)isLocalDatastoreEnabled;
-
 #if PARSE_IOS_ONLY
 
 ///--------------------------------------
@@ -120,34 +111,4 @@ PF_ASSUME_NONNULL_BEGIN
 
 #endif
 
-///--------------------------------------
-/// @name Logging
-///--------------------------------------
-
-/*!
- @abstract Sets the level of logging to display.
-
- @discussion By default:
- - If running inside an app that was downloaded from iOS App Store - it is set to <PFLogLevelNone>
- - All other cases - it is set to <PFLogLevelWarning>
-
- @param logLevel Log level to set.
- @see PFLogLevel
- */
-+ (void)setLogLevel:(PFLogLevel)logLevel;
-
-/*!
- @abstract Log level that will be displayed.
-
- @discussion By default:
- - If running inside an app that was downloaded from iOS App Store - it is set to <PFLogLevelNone>
- - All other cases - it is set to <PFLogLevelWarning>
-
- @returns A <PFLogLevel> value.
- @see PFLogLevel
- */
-+ (PFLogLevel)logLevel;
-
 @end
-
-PF_ASSUME_NONNULL_END

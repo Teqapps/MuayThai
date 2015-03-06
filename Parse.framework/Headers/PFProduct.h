@@ -5,11 +5,8 @@
 //
 
 #import <Parse/PFFile.h>
-#import <Parse/PFNullability.h>
 #import <Parse/PFObject.h>
 #import <Parse/PFSubclassing.h>
-
-PF_ASSUME_NONNULL_BEGIN
 
 /*!
  The `PFProduct` class represents an in-app purchase product on the Parse server.
@@ -34,7 +31,7 @@ PF_ASSUME_NONNULL_BEGIN
 /*!
  @abstract A <PFQuery> that could be used to fetch all product instances from Parse.
  */
-+ (PF_NULLABLE PFQuery *)query;
++ (PFQuery *)query;
 
 ///--------------------------------------
 /// @name Product-specific Properties
@@ -45,37 +42,35 @@ PF_ASSUME_NONNULL_BEGIN
 
  @discussion This should match the product identifier in iTunes Connect exactly.
  */
-@property (PF_NULLABLE_PROPERTY nonatomic, strong) NSString *productIdentifier;
+@property (nonatomic, strong) NSString *productIdentifier;
 
 /*!
  @abstract The icon of the product.
  */
-@property (PF_NULLABLE_PROPERTY nonatomic, strong) PFFile *icon;
+@property (nonatomic, strong) PFFile *icon;
 
 /*!
  @abstract The title of the product.
  */ 
-@property (PF_NULLABLE_PROPERTY nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *title;
 
 /*!
  @abstract The subtitle of the product.
  */
-@property (PF_NULLABLE_PROPERTY nonatomic, strong) NSString *subtitle;
+@property (nonatomic, strong) NSString *subtitle;
 
 /*!
  @abstract The order in which the product information is displayed in <PFProductTableViewController>.
 
  @discussion The product with a smaller order is displayed earlier in the <PFProductTableViewController>.
  */
-@property (PF_NULLABLE_PROPERTY nonatomic, strong) NSNumber *order;
+@property (nonatomic, strong) NSNumber *order;
 
 /*!
  @abstract The name of the associated download.
 
  @discussion If there is no downloadable asset, it should be `nil`.
  */
-@property (PF_NULLABLE_PROPERTY nonatomic, strong, readonly) NSString *downloadName;
+@property (nonatomic, strong, readonly) NSString *downloadName;
 
 @end
-
-PF_ASSUME_NONNULL_END
