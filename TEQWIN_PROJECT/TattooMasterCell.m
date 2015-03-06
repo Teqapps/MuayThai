@@ -12,5 +12,5 @@
 @synthesize name;
 
 @synthesize imageFile;
-
+@synthesize promotion_image;
 @end

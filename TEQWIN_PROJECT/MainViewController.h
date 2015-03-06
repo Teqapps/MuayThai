@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "TattooMasterCell.h"
 //#import "GAITrackedViewController.h"
 @protocol passNames <NSObject>
@@ -34,6 +35,13 @@
 @property (weak, nonatomic) IBOutlet PFImageView *main_image;
 @property (weak, nonatomic) IBOutlet UICollectionView *image_collection;
 @property (weak, nonatomic) IBOutlet UITableView *main_tableview;
+@property (weak, nonatomic) IBOutlet UIButton *home_news;
+@property (weak, nonatomic) IBOutlet UIButton *home_branchs;
+@property (weak, nonatomic) IBOutlet UIButton *home_profile;
+@property (weak, nonatomic) IBOutlet UIButton *home_history;
+@property (weak, nonatomic) IBOutlet UIButton *home_notice;
+@property (weak, nonatomic) IBOutlet UIButton *home_contact;
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationbar;
 
 @end

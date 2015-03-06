@@ -26,7 +26,7 @@
 @property (nonatomic, strong) NSString *website; // preparation time
 @property (nonatomic, strong) NSString *desc; // preparation time
 @property (nonatomic, strong) PFFile *imageFile; // image of recipe
-@property (nonatomic, strong) PFFile *promotion; // image of recipe
+@property (nonatomic, strong) PFFile *promotion_image; // image of recipe
 @property (nonatomic, strong) NSString *news; // image of recipe
 @property (nonatomic, strong) NSArray *favorites; // preparation time
 @property (nonatomic, strong) NSArray *bookmark; // preparation time

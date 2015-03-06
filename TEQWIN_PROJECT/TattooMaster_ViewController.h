@@ -30,6 +30,7 @@
          NSArray * installarray;
     UIButton *gallary_button;
     PFImageView *gallary_image;
+    NSArray *viewcount;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedcontroller;

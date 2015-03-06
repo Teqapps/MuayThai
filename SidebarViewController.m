@@ -5,12 +5,14 @@
 //  Created by Simon on 29/6/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
-
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
 #import "LoginUIViewController.h"
 #import "MBProgressHUD.h"
 #import "LoginUIViewController.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 @interface SidebarViewController ()
 
 @end
@@ -24,15 +26,18 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+    NSIndexPath *indexPat = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableview scrollToRowAtIndexPath:indexPat atScrollPosition:UITableViewScrollPositionMiddle animated:YES   ];
+    [self.revealViewController.frontViewController.view setUserInteractionEnabled:NO];
+    [self.revealViewController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     if ([PFUser currentUser]) {
-       // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
-      //  UIGraphicsEndImageContext()    ;
-        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-        self.profile_image.layer.borderWidth = 3.0f;
+        // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
+        self.profile_image.image=[UIImage imageNamed:@"ICON.png"];
+        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width/2;
+        self.profile_image.layer.borderWidth = 2.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
         self.profile_image.clipsToBounds = YES;
-
+        
         
         
         if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
@@ -84,32 +89,41 @@
             
         } else {
             // If user is linked to neither, let's use their username for the Welcome label.
-            self.welcome.text =[NSString stringWithFormat:NSLocalizedString(@"歡迎 %@", nil), [PFUser currentUser].username];
+            self.welcome.text =[NSString stringWithFormat:NSLocalizedString(@"%@", nil), [PFUser currentUser].username];
             
         }
         
     } else {
-      //  self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
-   // UIGraphicsEndImageContext();
-        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-        self.profile_image.layer.borderWidth = 3.0f;
+        //self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        
+        self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width/2;
+        self.profile_image.layer.borderWidth =2.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
         self.profile_image.clipsToBounds = YES;
-
-        self.profile_image.image = [UIImage imageNamed:@"FACEBOOK.JPG"];
+        
+        self.profile_image.image = [UIImage imageNamed:@"login.png"];
         self.welcome.text = nil;
     }
     
 }
 
-
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.revealViewController.frontViewController.view setUserInteractionEnabled:YES];
+    
+    
+    
+    
+}
 // Set received values if they are not nil and reload the table
 - (void)_updateProfileData {
-
+    
     // Set the name in the header view label
     NSString *name = [PFUser currentUser][@"profile"][@"name"];
     if (name) {
+        UIFont *font = [UIFont fontWithName:@"Arial-BoldMT" size:20];
+        self.welcome.font=font;
         self.welcome.text = name;
     }
     
@@ -123,18 +137,18 @@
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                    if (connectionError == nil && data != nil) {
-                                       self.profile_image.image = //UIGraphicsGetImageFromCurrentImageContext();
-                                     //  UIGraphicsEndImageContext();
+                                       // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                                       
                                        self.profile_image.image = [UIImage imageWithData:data];
                                        
                                        // Add a nice corner radius to the image
-                                       self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
+                                       self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width/2;
                                        self.profile_image.layer.borderWidth = 3.0f;
                                        self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
                                        self.profile_image.clipsToBounds = YES;
-
+                                       
                                    } else {
-                               
+                                       NSLog(@"Failed to load profile photo.");
                                    }
                                }];
     }
@@ -143,26 +157,27 @@
 
 - (void)viewDidLoad
 {
- 
+  
     self.tableview.backgroundColor = [UIColor clearColor];
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"muay_menu.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"background_news.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-   UIGraphicsEndImageContext();
+    UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    menuItems = @[@"主頁", @"新消息",@"泰拳歷史" ,@"泰拳小知識",@"找拳館",@"關於我們"];
+    menuItems = @[@"主頁", @"新消息",@"泰拳歷史" ,@"泰拳注意事項",@"找拳館",@"找比賽",@"關於我們"];
     list =[[NSMutableArray alloc]init];
     
     [list addObject:[NSString stringWithFormat:@"主頁"]];
     
     [list addObject:[NSString stringWithFormat:@"新消息"]];
     [list addObject:[NSString stringWithFormat:@"泰拳歷史"]];
-    [list addObject:[NSString stringWithFormat:@"泰拳小知識"]];
+    [list addObject:[NSString stringWithFormat:@"泰拳注意事項"]];
     [list addObject:[NSString stringWithFormat:@"找拳館"]];
+    [list addObject:[NSString stringWithFormat:@"找比賽"]];
     [list addObject:[NSString stringWithFormat:@"關於我們"]];
-   ;
+    ;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -183,7 +198,10 @@
     // Return the number of rows in the section.
     return [list count];
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
@@ -191,21 +209,21 @@
     if (cell==nil) {
         cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
     }
-
+    
     switch (indexPath.row) {
             
-            case 0:
+        case 0:
         {
             cell.textLabel.font=[cell.textLabel.font fontWithSize:12];
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             
-            cell.imageView.image =[UIImage imageNamed:@"menu_home.png"];
+            cell.imageView.image =[UIImage imageNamed:@"new_home.png"];
             cell.textLabel.text=@"主頁";
             
             [cell.textLabel setTextColor:[UIColor whiteColor]];
             
-        
+            
         }
             break;
         case 1:
@@ -213,9 +231,9 @@
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             
-                   cell.imageView.image=[UIImage imageNamed:@"menu_news.png"];
+            cell.imageView.image=[UIImage imageNamed:@"new_news.png"];
             cell.textLabel.text=@"新消息";
-           
+            
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
             break;
@@ -223,7 +241,7 @@
         {   cell.textLabel.font=[cell.textLabel.font fontWithSize:12];
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
-                   cell.imageView.image=[UIImage imageNamed:@"menu_history.png"];
+            cell.imageView.image=[UIImage imageNamed:@"new_history.png"];
             cell.textLabel.text=@"泰拳歷史";
             
             [cell.textLabel setTextColor:[UIColor whiteColor]];
@@ -231,57 +249,73 @@
             break;
         case 3:
         {
-             cell.textLabel.font=[cell.textLabel.font fontWithSize:32];
+            cell.textLabel.font=[cell.textLabel.font fontWithSize:32];
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
-          
-            cell.textLabel.text=@"泰拳小知識";
-             cell.imageView.image=[UIImage imageNamed:@"menu_knowledge.png"];
-            [cell.textLabel setTextColor:[UIColor whiteColor]];
-        }
-            break;
-
-               case 4 :
-        {
-             cell.textLabel.font=[cell.textLabel.font fontWithSize:12];
-            UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
-            [cell.textLabel setFont:font];
-            //cell.imageView.image =[UIImage imageNamed:@"master_icon.png"];
-            cell.textLabel.text=@"找拳館";
-             cell.imageView.image=[UIImage imageNamed:@"menu_branches.png"];
+            
+            cell.textLabel.text=@"泰拳注意事項";
+            cell.imageView.image=[UIImage imageNamed:@"new_notice.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
             break;
             
-        case 5:
+        case 4 :
+        {
+            cell.textLabel.font=[cell.textLabel.font fontWithSize:12];
+            UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
+            [cell.textLabel setFont:font];
+            //cell.imageView.image =[UIImage imageNamed:@"master_icon.png"];
+            cell.textLabel.text=@"找拳館";
+            cell.imageView.image=[UIImage imageNamed:@"new_club.png"];
+            [cell.textLabel setTextColor:[UIColor whiteColor]];
+        }
+            break;
+            
+        case 5 :
+        {
+            cell.textLabel.font=[cell.textLabel.font fontWithSize:12];
+            UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
+            [cell.textLabel setFont:font];
+            //cell.imageView.image =[UIImage imageNamed:@"master_icon.png"];
+            cell.textLabel.text=@"找比賽";
+            cell.imageView.image=[UIImage imageNamed:@"new_match.png"];
+            [cell.textLabel setTextColor:[UIColor whiteColor]];
+        }
+            break;
+            
+        case 6:
         {
             cell.textLabel.font=[cell.textLabel.font fontWithSize:12];
             UIFont *font = [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:32];
             [cell.textLabel setFont:font];
             //cell.imageView.image =[UIImage imageNamed:@"master_icon.png"];
             cell.textLabel.text=@"關於我們";
-             cell.imageView.image=[UIImage imageNamed:@"menu_about.png"];
+            cell.imageView.image=[UIImage imageNamed:@"new_aboutus.png"];
             [cell.textLabel setTextColor:[UIColor whiteColor]];
         }
             break;
-
+            
     }
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView.backgroundColor = [UIColor clearColor];
-   
+  
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     //cell.backgroundColor =[UIColor clearColor];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor =  [[UIColor colorWithRed:85.0/256.0 green:85.0/256.0 blue:85.0/256.0 alpha:1 ]colorWithAlphaComponent:0.5f];
+    [cell setSelectedBackgroundView:bgColorView];
     return cell;
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-
+    
     // Set the title of navigation bar by using the menu items
     NSIndexPath *indexPath = [self.tableview indexPathForSelectedRow];
     UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
     destViewController.title = [[menuItems objectAtIndex:indexPath.row] capitalizedString];
     
-       
+    
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
         
@@ -298,6 +332,6 @@
 
 
 
-    
 
-   @end
+
+@end
