@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *tel; // name of recipe
 @property (nonatomic, strong) NSString *fax; // name of recipe
 @property (nonatomic, strong) NSString *address; // name of recipe
+@property (nonatomic, strong) NSString *region; // name of recipe
 @property (nonatomic, strong) NSString *latitude; // name of recipe
 @property (nonatomic, strong) NSString *longitude; // preparation time
 @property (nonatomic, strong) NSString *email; // name of recipe

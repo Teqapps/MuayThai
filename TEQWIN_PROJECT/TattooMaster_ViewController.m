@@ -57,6 +57,33 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
+    area = [[NSArray alloc] initWithObjects:@"全選",@"香港島",@"九龍",@"新界", nil];
+    region_hk = [[NSArray alloc] initWithObjects:@"全選",@"上環",@"中環",@"灣仔",@"銅鑼灣",@"跑馬地",@"黃竹坑",@"鴨脷洲",@"北角",@"鰂魚涌",@"西灣河",@"柴灣",@"天后",@"炮台山",@"西營盤",@"筲箕灣",@"金鐘",@"太古",@"香港仔", nil];
+    region_kl = [[NSArray alloc] initWithObjects:@"全選",@"尖沙咀",@"佐敦",@"油麻地",@"旺角",@"太子",@"深水埗",@"長沙灣",@"新蒲崗",@"觀塘",@"鑽石山",@"大角咀",@"牛頭角",@"何文田",@"土瓜灣",@"九龍城",@"荔枝角",@"油塘",@"紅磡",@"九龍塘", nil];
+    region_nt = [[NSArray alloc] initWithObjects:@"全選",@"葵涌",@"荃灣",@"火炭",@"元朗",@"上水",@"沙田",@"屯門",@"葵芳",@"大埔",@"粉嶺",@"", nil];
+    self.pickerViewTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:self.pickerViewTextField];
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    pickerView.showsSelectionIndicator = YES;
+    pickerView.dataSource = self;
+    pickerView.delegate = self;
+    
+    // set change the inputView (default is keyboard) to UIPickerView
+    self.pickerViewTextField.inputView = pickerView;
+    
+    // add a toolbar with Cancel & Done button
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolBar.barStyle = UIBarStyleBlackOpaque;
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTouched:)];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTouched:)];
+    
+    // the middle button is to make the Done button align to right
+    [toolBar setItems:[NSArray arrayWithObjects:cancelButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], doneButton, nil]];
+    self.pickerViewTextField.inputAccessoryView = toolBar;
+    
+    
     [self stylePFLoadingViewTheHardWay];
     UIImage *image = [UIImage imageNamed:@"background_news.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
@@ -66,21 +93,21 @@
     
     // Set the background view of the table view
     self.table_view.backgroundView = imageView;
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    self.navigationItem.backBarButtonItem = backButton;
-    CGRect newBounds = self.tableView.bounds;
-    if (self.tableView.bounds.origin.y < 44) {
-        newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
-        self.tableView.bounds = newBounds;
-    }
-    
+    /*
+     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+     self.navigationItem.backBarButtonItem = backButton;
+     CGRect newBounds = self.tableView.bounds;
+     if (self.tableView.bounds.origin.y < 44) {
+     newBounds.origin.y = newBounds.origin.y + self.searchbar.bounds.size.height;
+     self.tableView.bounds = newBounds;
+     }
+     */
     self.title =@"找拳館";
     //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     self.view.backgroundColor = [UIColor blackColor];
     
-    searchbar.hidden = !searchbar.hidden;
-   // self.navigationController.navigationBar.translucent=NO;
+    // searchbar.hidden = !searchbar.hidden;
+    // self.navigationController.navigationBar.translucent=NO;
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     
@@ -197,8 +224,7 @@
     [self.searchResults addObjectsFromArray:results];
     
     NSPredicate *searchPredicate =
-    [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@", searchTerm];
-    _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
+   [NSPredicate predicateWithFormat:@"name CONTAINS[cd]%@ OR person_incharge CONTAINS[cd]%@", searchTerm,searchTerm];    _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
     
     
     
@@ -258,16 +284,10 @@
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
     [query whereKey:@"allow_display" equalTo:[NSNumber numberWithBool:YES]];
-    
-    
+    [query whereKey:@"area" containsString:club];
+    [query whereKey:@"region" containsString:region];
+    [query orderByAscending:@"muays_id"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    
-    
-    // If no objects are loaded in memory, we look to the cache first to fill the table
-    // and then subsequently do a query against the network.
-    
-    
-    [query orderByAscending:@"muay_id"];
     
     return query;
     
@@ -350,17 +370,17 @@
         
         
         //thumbnailImageView.layer.backgroundColor=[[UIColor clearColor] CGColor];
-         thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
+        thumbnailImageView.layer.cornerRadius= thumbnailImageView.frame.size.width / 2;
         thumbnailImageView.layer.borderWidth=0.0;
-         thumbnailImageView.layer.masksToBounds = YES;
+        thumbnailImageView.layer.masksToBounds = YES;
         thumbnailImageView.layer.borderColor=[UIColor colorWithRed:45.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
-
+        
         
         thumbnailImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         //
-        thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
+        // thumbnailImageView.image = [UIImage imageNamed:@"image_icon.png"];
         thumbnailImageView.file = thumbnail;
         [thumbnailImageView loadInBackground];
         [loadingSpinner stopAnimating];
@@ -368,7 +388,9 @@
         
         UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
         nameLabel.text = [object objectForKey:@"name"];
-        
+        address_region = (UILabel*) [cell viewWithTag:108];
+        address_region.text=[object objectForKey:@"region"];
+
         //  UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
         //  prepTimeLabel.text = [object objectForKey:@"address"];
         
@@ -418,7 +440,7 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         PFObject* object = self.searchResults[indexPath.row];
         
-        
+        /*
         if ([[object objectForKey:@"favorites"]containsObject:[PFUser currentUser].objectId]) {
             
             cell.imageView.image = [UIImage imageNamed:@"new_liked.png"];
@@ -427,11 +449,13 @@
         {
             
             cell.imageView.image = [UIImage imageNamed:@"new_like.png"];
-        }
+        }*/
         
         cell.textLabel.text = [object objectForKey:@"name"];
-        cell.detailTextLabel.text =[object objectForKey:@"gender"];
-        
+        cell.detailTextLabel.text =[object objectForKey:@"person_incharge"];
+        cell.textLabel.font=[UIFont systemFontOfSize:11.0f];
+        cell.detailTextLabel.font=[UIFont systemFontOfSize:10.0f];
+
     }
     gallary_image = (PFImageView*)[cell viewWithTag:161];
     gallary_button = (UIButton*)[cell viewWithTag:162];
@@ -668,11 +692,147 @@
         //  NSLog(@"%D",tattoomasterCell.clickindexpath.row);
         
     }
-    
-    
+       
 }
+
+
 
 
 - (IBAction)gogallery:(id)sender {
 }
+- (IBAction)address_search:(id)sender {
+    [self.pickerViewTextField becomeFirstResponder];
+    
+}
+- (void)cancelTouched:(UIBarButtonItem *)sender
+{
+    // hide the picker view
+    [self.pickerViewTextField resignFirstResponder];
+}
+
+- (void)doneTouched:(UIBarButtonItem *)sender
+{
+    // hide the picker view
+    [self.pickerViewTextField resignFirstResponder];
+    NSLog(@"ON999%@",region);
+    if ([club isEqualToString:@"全選"]) {
+        club=@"";
+        region=@"";
+        NSLog(@"CLUB%@",club);
+        NSLog(@"region%@",region);
+
+    }
+    else if ([club isEqualToString:@"香港島"] && [region isEqualToString:@"全選"]) {
+        club=@"香港島";
+        region=@"";
+        NSLog(@"CLUB%@",club);
+        NSLog(@"region%@",region);
+
+    }
+    else if ([club isEqualToString:@"九龍"] && [region isEqualToString:@"全選"]) {
+        club=@"九龍";
+        region=@"";
+        NSLog(@"CLUB%@",club);
+        NSLog(@"region%@",region);
+
+    }
+    
+    else if ([club isEqualToString:@"新界"] && [region isEqualToString:@"全選"]) {
+        club=@"新界";
+        
+        region=@"";
+        NSLog(@"CLUB%@",club);
+        NSLog(@"region%@",region);
+    }
+    
+    [self refreshTable:nil];
+    // perform some action
+}
+#pragma mark - UIPickerViewDataSource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if(component ==0)
+    {
+        return [area count];
+    }
+    else {
+        if ([club isEqualToString:@"香港島"]) {
+            return [region_hk count];
+        }
+        if ([club isEqualToString:@"九龍"]) {
+            return [region_kl count];
+        }
+        if ([club isEqualToString:@"新界"]) {
+            return [region_nt count];
+        }
+        // if...
+        
+    }
+    
+    return 0;
+}
+
+#pragma mark - UIPickerViewDelegate
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    
+    if(component ==0)
+    {
+        return [area objectAtIndex:row];
+    }
+    else {
+        if ([club isEqualToString:@"香港島"]) {
+            return  [region_hk objectAtIndex:row];
+        }
+        if ([club isEqualToString:@"九龍"]) {
+            return [region_kl objectAtIndex:row];
+        }
+        if ([club isEqualToString:@"新界"]) {
+            return [region_nt objectAtIndex:row];
+        }
+        
+        
+        
+    }
+    
+    return 0;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (component == 0) {
+        club=[[NSString alloc] initWithFormat:@"%@" , [area objectAtIndex:row]];
+        NSLog(@"%@",club);
+         [pickerView reloadComponent:1];
+    }
+    else{
+    if ([club isEqualToString:@"香港島"]) {
+      
+        region =[region_hk objectAtIndex:row];
+
+        NSLog(@"%@",[region_hk objectAtIndex:row]);
+        
+        
+    }
+    if ([club isEqualToString:@"九龍"]) {
+
+        region =[region_kl objectAtIndex:row];
+
+        NSLog(@"%@",[region_kl objectAtIndex:row]);
+        
+        
+    }
+    if ([club isEqualToString:@"新界"]) {
+
+        region =[region_nt objectAtIndex:row];
+       
+        NSLog(@"%@",[region_nt objectAtIndex:row]);
+        
+    }}}
+
 @end

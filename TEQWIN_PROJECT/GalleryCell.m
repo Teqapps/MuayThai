@@ -9,7 +9,7 @@
 #import "GalleryCell.h"
 
 @implementation GalleryCell
-
+@synthesize news_image;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

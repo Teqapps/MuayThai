@@ -21,28 +21,28 @@ LoginUIViewController *viewController ;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     sleep(1);
-
-   
+    
+    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-
-
+    
+    
     
     //然后这里设定关联，此处把indexPath关联到alert上
     
-
-
-          // Optional: automatically send uncaught exceptions to Google Analytics.
-  //  [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    //  [GAI sharedInstance].trackUncaughtExceptions = YES;
     
     // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-  //  [GAI sharedInstance].dispatchInterval = 20;
+    //  [GAI sharedInstance].dispatchInterval = 20;
     
     // Optional: set Logger to VERBOSE for debug information.
-  //  [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    //  [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     
     // Initialize tracker. Replace with your tracking ID.
-   // [[GAI sharedInstance] trackerWithTrackingId:@"UA-56329849-2"];
-
+    // [[GAI sharedInstance] trackerWithTrackingId:@"UA-56329849-2"];
+    
     // Override point for customization after application launch.
     [Parse setApplicationId:@"Edo4mqMRpZRho3V0KMhNU3L56qFh9TOQ1SfwMx6o"
                   clientKey:@"a1pOFTR9QQrDIZcYo6TaCi4z49wlPqxNDDS71mHv"];
@@ -67,17 +67,31 @@ LoginUIViewController *viewController ;
             
             [alert show];
         }}];
-
+    
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation saveInBackground];
+    NSDate *date = [NSDate date];
+    NSTimeZone *timezone = [[NSTimeZone alloc] initWithName:@"Europe/London"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    //設定時間格式
+    [formatter setDateFormat:@"YYYY-MM-d HH:mm:ss"];
+    
+    //設定時區
+    [formatter setTimeZone:timezone];
+    
+    //時間格式正規化並做時區校正
+    NSString *correctDate = [formatter stringFromDate:date];
+    
+    NSLog(@"地點：%@   當地時間：%@",[timezone name], correctDate);
 
-
+    
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"background.jpg"]
-                                     //  forBarMetrics:UIBarMetricsDefault];
+    //  forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0/255.0 blue:0.0/255.0 alpha:0.2]];
     
-     //  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.755 green:0.655 blue:0.0 alpha:1]];
-        NSShadow *shadow = [[NSShadow alloc] init];
+    //  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.755 green:0.655 blue:0.0 alpha:1]];
+    NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
@@ -86,7 +100,7 @@ LoginUIViewController *viewController ;
                                                            [UIFont fontWithName:@"Bradley Hand ITC TT Bold" size:21.0], NSFontAttributeName, nil]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-   // NSLog(@"hehe%@",[PFInstallation currentInstallation].installationId  );
+    // NSLog(@"hehe%@",[PFInstallation currentInstallation].installationId  );
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
@@ -99,21 +113,21 @@ LoginUIViewController *viewController ;
     }
     
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-
-   // [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-   // [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-   // [[UINavigationBar appearance] setShadowImage:[UIImage new]];
-   
-  //  [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-
-
     
-       return YES;
+    // [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    // [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    // [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+    
+    //  [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    
+    
+    
+    return YES;
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *button = [alertView buttonTitleAtIndex:buttonIndex];
-       if([button isEqualToString:@"前往"])
+    if([button isEqualToString:@"前往"])
     {
         NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id946793334"];
         [[UIApplication sharedApplication] openURL:itunesURL];
@@ -130,8 +144,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     currentInstallation.channels = @[ @"global" ];
     [currentInstallation saveInBackground];
     NSLog(@"%@",currentInstallation);
-
-
+    
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -168,7 +182,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

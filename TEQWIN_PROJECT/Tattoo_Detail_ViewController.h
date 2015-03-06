@@ -23,7 +23,7 @@
     PFObject *object;
     NSMutableArray *list;
     NSArray*imageFilesArray_image;
-    
+    NSArray * comment_count;
     
 }
 
@@ -53,12 +53,16 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *sexy_image;
 @property (weak, nonatomic) IBOutlet UILabel *view_count;
-@property (weak, nonatomic) IBOutlet UILabel *lblincharge;
-@property (weak, nonatomic) IBOutlet UILabel *lbltel;
-@property (weak, nonatomic) IBOutlet UILabel *lblfax;
-@property (weak, nonatomic) IBOutlet UILabel *lbladdress;
-@property (weak, nonatomic) IBOutlet UILabel *lblemail;
-@property (weak, nonatomic) IBOutlet UILabel *lblweb;
+
+
+
+
+@property (weak, nonatomic) IBOutlet UITextView *lblincharge;
+@property (weak, nonatomic) IBOutlet UITextView *lbltel;
+@property (weak, nonatomic) IBOutlet UITextView *lblfax;
+@property (weak, nonatomic) IBOutlet UITextView *lbladdress;
+@property (weak, nonatomic) IBOutlet UITextView *lblemail;
+@property (weak, nonatomic) IBOutlet UITextView *lblweb;
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
@@ -70,6 +74,7 @@
 @property (strong, nonatomic) NSDictionary *data;
 @property (weak, nonatomic) IBOutlet UIImageView *bookmark_image;
 
+@property (weak, nonatomic) IBOutlet UILabel *comment_count;
 @property (nonatomic, assign) BOOL isbookmark;
 @property (nonatomic, assign) BOOL isFav;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
