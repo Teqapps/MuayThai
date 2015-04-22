@@ -242,7 +242,7 @@
 
 - (void)queryParseMethod_boxer1 {
 
-    
+    NSLog(@"count%lu",(unsigned long)self.objects.count);
     PFQuery *query = [PFQuery queryWithClassName:@"Banner"];
   
     //query.cachePolicy = kPFCachePolicyNetworkElseCache;
@@ -257,17 +257,18 @@
                 NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:objects];
                 NSUInteger count = [mutableArray count];
                 // See http://en.wikipedia.org/wiki/Fisher–Yates_shuffle
-            
+              
                     if (count > 1) {
                         for (NSUInteger i = count - 1; i > 0; --i) {
                             [mutableArray exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform((int32_t)(i + 1))];
+                            
                         }
                     }
 
-                
+               
                 
                 bannerarray = [NSArray arrayWithArray:mutableArray];
-            
+            NSLog(@"count%@",bannerarray);
     
                 [_table_view reloadData];
             
@@ -358,8 +359,7 @@
     // Configure the cell
    // selectobject = [boxer_array  objectAtIndex:indexPath.row];
     if (tableView == self.tableView) {
-
-       
+ 
         UIActivityIndicatorView *loadingSpinner_2 = (UIActivityIndicatorView*) [cell viewWithTag:111];
         UIActivityIndicatorView *loadingSpinner = (UIActivityIndicatorView*) [cell viewWithTag:110];
        

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F8N-o8-WTY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F8N-o8-WTY">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-hY-Gyw">
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-mE-MRo">
@@ -651,7 +651,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CE5-X5-zOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28.125" y="763.73239436619713"/>
+            <point key="canvasLocation" x="31.5" y="763.5"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="ilu-Je-fq0">
@@ -1209,7 +1209,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="193" y="85" width="18" height="26.5"/>
+                                                <rect key="frame" x="193" y="85" width="18" height="27"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="107" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="gwC-z8-TGb">
@@ -1224,7 +1224,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="244" y="86" width="38" height="26.5"/>
+                                                <rect key="frame" x="244" y="86" width="38" height="27"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bao.png" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-MD-Ssv">
@@ -1732,7 +1732,7 @@
                                 </variation>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xTY-5r-P4r" firstAttribute="leading" secondItem="KxI-lV-Gw9" secondAttribute="leading" constant="16" id="0Ea-4p-3lu"/>
                             <constraint firstItem="wJh-3V-tA1" firstAttribute="top" secondItem="qMm-Z7-j31" secondAttribute="bottom" id="0Nl-S3-R8e"/>
@@ -2113,7 +2113,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="391.5" width="280" height="87"/>
+                                    <rect key="frame" x="20" y="392" width="280" height="87"/>
                                 </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="　第四、不可對皮膚任何的抓撓行爲，有些人的皮膚往往會在刺青之後的三到四天之內，出現癢的現象，請不要擔心，這是皮膚的正常反應，一般兩天之後就會消失，一定不能抓，也不能撓。" translatesAutoresizingMaskIntoConstraints="NO" id="24l-Op-s2C">
@@ -2123,7 +2123,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="516.5" width="280" height="97"/>
+                                    <rect key="frame" x="20" y="517" width="280" height="97"/>
                                 </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpa-aJ-f2G">
@@ -2134,7 +2134,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="76.5" width="280" height="127"/>
+                                    <rect key="frame" x="20" y="77" width="280" height="127"/>
                                 </variation>
                             </textView>
                         </subviews>
@@ -2511,12 +2511,12 @@ Preferential offer  晚間9折</string>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdH-hy-KAu">
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YnZ-rA-8e5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.49900856599999999" green="0.49326871490000002" blue="0.47958032369999998" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.023529414089999999" green="0.02745098248" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -2663,7 +2663,7 @@ Preferential offer  晚間9折</string>
                                         <imageView userInteractionEnabled="NO" tag="191" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lva-Wn-UtH" userLabel="play1_win" customClass="PFImageView">
                                             <rect key="frame" x="13.5" y="61" width="90" height="56"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="13.5" y="61" width="90" height="56"/>
+                                                <rect key="frame" x="14" y="61" width="90" height="56"/>
                                             </variation>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" tag="192" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gpc-iA-9Za" userLabel="play2_win" customClass="PFImageView">
@@ -2843,7 +2843,7 @@ Preferential offer  晚間9折</string>
                                 </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dbs-mH-pZ8" firstAttribute="leading" secondItem="c6u-eQ-9C8" secondAttribute="leading" constant="264" id="525-qz-hlq"/>
@@ -3000,13 +3000,13 @@ Preferential offer  晚間9折</string>
                                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="match_win.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q5M-g8-HMU" customClass="PFImageView">
                                                     <rect key="frame" x="26.5" y="48" width="75" height="70"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="26.5" y="48" width="75" height="70"/>
+                                                        <rect key="frame" x="27" y="48" width="75" height="70"/>
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="match_lose.png" translatesAutoresizingMaskIntoConstraints="NO" id="sLi-CD-sLz" customClass="PFImageView">
                                                     <rect key="frame" x="221.5" y="48" width="75" height="70"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="221.5" y="48" width="75" height="70"/>
+                                                        <rect key="frame" x="222" y="48" width="75" height="70"/>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
@@ -3117,7 +3117,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="70" id="ujG-gj-5Fh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3139,7 +3139,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="bbI-J4-fYm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3161,7 +3161,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="uXf-aH-EBa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3183,7 +3183,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="Yuk-c1-71E"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3205,7 +3205,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="58" id="mOp-DO-6eP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3227,7 +3227,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="70" id="qiP-PD-DMx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3249,7 +3249,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="w6w-rH-8s1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3495,7 +3495,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="GQs-za-xBx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3575,7 +3575,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="70" id="bMr-6k-2c0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3597,7 +3597,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="94" id="kla-X7-TdL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3619,7 +3619,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="77" id="ray-7s-h0r"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3641,7 +3641,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="Z69-e5-4aS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3663,7 +3663,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="tVN-oO-Tts"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3731,7 +3731,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="t4D-Pf-SEb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3753,7 +3753,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="167" id="voW-xN-ANK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3798,7 +3798,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="D0a-Ow-Ljc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3820,7 +3820,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="167" id="n4D-pM-tmj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3865,7 +3865,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="height" constant="21" id="tb1-xb-tAE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3887,7 +3887,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="167" id="fFZ-fb-eDc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3932,7 +3932,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="134" id="RWW-X7-eiK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -3954,7 +3954,7 @@ Preferential offer  晚間9折</string>
                                             <constraint firstAttribute="width" constant="167" id="fVy-pI-PAp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -4517,7 +4517,7 @@ Preferential offer  晚間9折</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gc-dR-PHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XnS-AR-7cV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2335.5" y="-199.5"/>
+            <point key="canvasLocation" x="-3094.5" y="73.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="viV-Ti-YSE">
@@ -4578,7 +4578,7 @@ Preferential offer  晚間9折</string>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Application Logo Goes Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="c5N-k5-BVg">
                                 <rect key="frame" x="20" y="39" width="281" height="96"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -4592,7 +4592,7 @@ Preferential offer  晚間9折</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vF4-W8-obg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1833" y="-749.25"/>
+            <point key="canvasLocation" x="-2139" y="-746.25"/>
         </scene>
         <!--Logged In View Controller-->
         <scene sceneID="YKc-yu-GK5">
@@ -4696,7 +4696,7 @@ Preferential offer  晚間9折</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="8" y="63" width="279" height="76.5"/>
+                                                <rect key="frame" x="8" y="63" width="279" height="77"/>
                                             </variation>
                                         </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmg-cg-GvM">
@@ -4959,16 +4959,16 @@ Preferential offer  晚間9折</string>
         <image name="vs.png" width="124" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m9C-EI-Prw"/>
-        <segue reference="nCF-OP-zd7"/>
-        <segue reference="ZAO-5P-2Zd"/>
+        <segue reference="6Hf-gE-6OJ"/>
         <segue reference="PPs-fJ-uhp"/>
         <segue reference="cXc-Cg-QFH"/>
         <segue reference="aaL-oi-ElB"/>
-        <segue reference="Jan-aP-9Jn"/>
         <segue reference="DyC-w1-YQe"/>
+        <segue reference="Jan-aP-9Jn"/>
         <segue reference="QTr-PV-D3h"/>
-        <segue reference="efc-B0-k9H"/>
+        <segue reference="ZAO-5P-2Zd"/>
         <segue reference="Kb2-fp-xV0"/>
+        <segue reference="efc-B0-k9H"/>
+        <segue reference="m9C-EI-Prw"/>
     </inferredMetricsTieBreakers>
 </document>
