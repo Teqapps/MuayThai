@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     [self querydetail];
-    
+
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     [self queryParseMethod];
@@ -107,7 +107,7 @@
                 
                 _club_image.image = UIGraphicsGetImageFromCurrentImageContext();
                 UIGraphicsEndImageContext();
-                _club_image.image = [UIImage imageNamed:@"muay_banner6.png"];
+                //_club_image.image = [UIImage imageNamed:@"muay_banner6.png"];
                 _club_image.file  = clubfile;
                 [_club_image loadInBackground];
                 _loadingSpinner_2.hidden = YES;

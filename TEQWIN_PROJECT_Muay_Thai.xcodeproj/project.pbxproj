@@ -16,6 +16,7 @@
 		420E2F6F19FDFB8900667E6C /* aboutusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2F6E19FDFB8900667E6C /* aboutusViewController.m */; };
 		420E2F7819FE225900667E6C /* aboutus_map.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2F7719FE225900667E6C /* aboutus_map.m */; };
 		420E2F7B19FE246200667E6C /* aboutus_map_detail.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2F7A19FE246200667E6C /* aboutus_map_detail.m */; };
+		4210DAE11AE7986200E6C4DA /* POSTER.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4210DAE01AE7986200E6C4DA /* POSTER.jpg */; };
 		42193F911985FE08007E3C52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42193F901985FE08007E3C52 /* Foundation.framework */; };
 		42193F931985FE08007E3C52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42193F921985FE08007E3C52 /* CoreGraphics.framework */; };
 		42193F951985FE08007E3C52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42193F941985FE08007E3C52 /* UIKit.framework */; };
@@ -235,6 +236,7 @@
 		42EFDEA21A6E4675008FAAA0 /* new_sina.png in Resources */ = {isa = PBXBuildFile; fileRef = 42EFDE9E1A6E4675008FAAA0 /* new_sina.png */; };
 		42EFDEA31A6E4675008FAAA0 /* new_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 42EFDE9F1A6E4675008FAAA0 /* new_twitter.png */; };
 		42EFDEA41A6E4675008FAAA0 /* new_whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 42EFDEA01A6E4675008FAAA0 /* new_whatsapp.png */; };
+		42F071E51AE79C88007E247F /* CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F071E41AE79C88007E247F /* CustomIOSAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +264,7 @@
 		420E2F7719FE225900667E6C /* aboutus_map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutus_map.m; sourceTree = "<group>"; };
 		420E2F7919FE246200667E6C /* aboutus_map_detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutus_map_detail.h; sourceTree = "<group>"; };
 		420E2F7A19FE246200667E6C /* aboutus_map_detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutus_map_detail.m; sourceTree = "<group>"; };
+		4210DAE01AE7986200E6C4DA /* POSTER.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = POSTER.jpg; sourceTree = "<group>"; };
 		42193F8D1985FE08007E3C52 /* TEQWIN_PROJECT_Muay_Thai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEQWIN_PROJECT_Muay_Thai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42193F901985FE08007E3C52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42193F921985FE08007E3C52 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -535,6 +538,8 @@
 		42EFDE9E1A6E4675008FAAA0 /* new_sina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_sina.png; sourceTree = "<group>"; };
 		42EFDE9F1A6E4675008FAAA0 /* new_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_twitter.png; sourceTree = "<group>"; };
 		42EFDEA01A6E4675008FAAA0 /* new_whatsapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_whatsapp.png; sourceTree = "<group>"; };
+		42F071E31AE79C88007E247F /* CustomIOSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOSAlertView.h; sourceTree = "<group>"; };
+		42F071E41AE79C88007E247F /* CustomIOSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOSAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -600,7 +605,10 @@
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
+				42F071E31AE79C88007E247F /* CustomIOSAlertView.h */,
+				42F071E41AE79C88007E247F /* CustomIOSAlertView.m */,
 				427692021AA7F5800060C9A0 /* new_view.png */,
+				4210DAE01AE7986200E6C4DA /* POSTER.jpg */,
 				4209CDFB1A9C4D45009C5F68 /* COMMENT */,
 				4298DC931A9AD83D00351693 /* imageview_sources */,
 				425925781A92E3CF000104BB /* Login&Signup View */,
@@ -1179,6 +1187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4210DAE11AE7986200E6C4DA /* POSTER.jpg in Resources */,
 				42833F9B1A68AC30004D97C0 /* new_logo2.png in Resources */,
 				4225CBD61A6C9F9100D5CF28 /* loginview_fieldbackground.png in Resources */,
 				4219409E198789DB007E3C52 /* ICON.png in Resources */,
@@ -1354,6 +1363,7 @@
 				42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */,
 				42A4918019E2370C00E4D65E /* noticeViewController.m in Sources */,
 				426ED3F819C2C3D00024E817 /* VPImageCropperViewController.m in Sources */,
+				42F071E51AE79C88007E247F /* CustomIOSAlertView.m in Sources */,
 				4298DCA21A9AD86600351693 /* JTSSimpleImageDownloader.m in Sources */,
 				426ED39319B9AF560024E817 /* TattooMasterCell.m in Sources */,
 				42996E1B1A4400B100385FE0 /* Boxers_Detail.m in Sources */,

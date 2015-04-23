@@ -10,16 +10,19 @@
 #import "MatchCell.h"
 #import "ImageCell.h"
 #import <Parse/Parse.h>
-
-@interface Match_ViewController : PFQueryTableViewController
+#import "CustomIOSAlertView.h"
+@interface Match_ViewController : PFQueryTableViewController<CustomIOSAlertViewDelegate>
 {
+    NSArray * object_array;
+    PFObject *object_link;
+    NSString*LINK;
     NSArray *bannerarray;
     NSArray *imageFilesArray;
     NSMutableArray *imagesArray;
     PFObject *selectobject;
     PFObject *searchedobject;
     NSArray * count;
-
+    PFFile * clubfile;
     PFObject * object_id;
     PFImageView *heart_statues;
     PFImageView *sex_statues;
@@ -31,7 +34,7 @@
          NSArray * boxer_array;
     UIButton *gallary_button;
     PFImageView *gallary_image;
-
+    UIView *demoView;
     NSString * RANDOM;
     int r;
 
@@ -54,7 +57,7 @@
 - (IBAction)showsearch:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSearch;
 
-
+@property (nonatomic, assign) BOOL islink;
 - (IBAction)gogallery:(id)sender;
 
 @property (nonatomic, assign) BOOL isFav;

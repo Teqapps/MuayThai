@@ -58,6 +58,89 @@
 - (void)viewDidLoad;
 {
     [super viewDidLoad];
+    //THE ALERT VIEW
+    demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
+    
+    PFImageView *imageView1 = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
+    ;
+    PFQuery *query = [PFQuery queryWithClassName:@"Full_ad"];
+    [query getObjectInBackgroundWithId:@"H4zEeqNzW5" block:^(PFObject *gameScore, NSError *error) {
+        object_array =[query findObjects];
+        
+        for (PFObject *object in object_array) {
+            
+            if (object[@"ad_link"]==nil||[object[@"ad_link"]isEqualToString:@""]) {
+                _islink=NO;
+         
+                
+            }
+            else{
+                _islink=YES;
+            }
+            
+        }
+        // Do something with the returned PFObject in the gameScore variable.
+        
+        
+        
+        clubfile = [gameScore objectForKey:@"ad_image"];
+        
+        imageView1.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        //_club_image.image = [UIImage imageNamed:@"muay_banner6.png"];
+        imageView1.file  = clubfile;
+        
+        [imageView1 loadInBackground];
+        [demoView addSubview:imageView1];
+        // Here we need to pass a full frame
+        CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
+        
+        // Add some custom content to the alert view
+        [alertView setContainerView:demoView];
+        
+        // Modify the parameters
+        if (_islink==YES) {
+            [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"返回",@"進入詳細", nil]];
+            [alertView setDelegate:self];
+            
+        }
+        else{
+            [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"返回", nil]];
+            [alertView setDelegate:self];
+        }
+        // You may use a Block, rather than a delegate.
+        [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
+            if (buttonIndex==0) {
+                [alertView close];
+            }
+            if (buttonIndex==1) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[gameScore objectForKey:@"ad_link"]]];
+            }
+        }];
+        
+        [alertView setUseMotionEffects:true];
+        
+        // And launch the dialog
+        [alertView show];
+        
+    }];
+
+//----------------END OF ALERTVIEW----------------------------------------\\
+   
+    
+    /*
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    UIImageView *imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login.png"]];
+    [v addSubview:imageView1];
+    v.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:.6];
+    v.layer.cornerRadius = 5;
+    v.layer.shadowOpacity = 0.8;
+   v.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    
+    [self.view addSubview:v];
+
+        [self showAnimate];
+    /*
     [self stylePFLoadingViewTheHardWay];
     /*
     for (UIView *subView in searchbar.subviews) {
@@ -119,6 +202,15 @@
 
     
 }
+- (IBAction)launchDialog:(id)sender
+{
+   }
+
+- (void)customIOS7dialogButtonTouchUpInside: (CustomIOSAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+{
+  }
+
+
 - (void)refreshTable:(NSNotification *) notification
 {
     // Reload the recipes
@@ -142,6 +234,7 @@
 
 
 }
+
 - (void)stylePFLoadingViewTheHardWay
 {
     UIColor *labelTextColor = [UIColor whiteColor];
@@ -268,8 +361,7 @@
                
                 
                 bannerarray = [NSArray arrayWithArray:mutableArray];
-            NSLog(@"count%@",bannerarray);
-    
+             
                 [_table_view reloadData];
             
      
@@ -628,12 +720,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-    if ([segue.identifier isEqualToString:@"show_boxer_1"]) {
+    if ([segue.identifier isEqualToString:@"player1"]) {
         UIButton *button = sender;
         CGPoint correctedPoint =
         [button convertPoint:button.bounds.origin toView:self.tableView];
         NSIndexPath *indexPath =  [self.tableView indexPathForRowAtPoint:correctedPoint];
-        PopupViewController *destViewController = segue.destinationViewController;
+        Boxers_Detail *destViewController = segue.destinationViewController;
         
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
         MatchCell *tattoomasterCell = [[MatchCell alloc] init];
@@ -648,12 +740,12 @@
 
         destViewController.tattoomasterCell = tattoomasterCell;
          }
-    if ([segue.identifier isEqualToString:@"show_boxer_2"]) {
+    if ([segue.identifier isEqualToString:@"player2"]) {
         UIButton *button = sender;
         CGPoint correctedPoint =
         [button convertPoint:button.bounds.origin toView:self.tableView];
         NSIndexPath *indexPath =  [self.tableView indexPathForRowAtPoint:correctedPoint];
-        PopupViewController *destViewController = segue.destinationViewController;
+        Boxers_Detail *destViewController = segue.destinationViewController;
         
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
         MatchCell *tattoomasterCell = [[MatchCell alloc] init];
@@ -686,7 +778,6 @@
     
 
 }
-
 - (IBAction)gobannersite:(id)sender {
     [sender setEnabled:NO];
     UIButton *button = sender;
